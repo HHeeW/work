@@ -1,0 +1,25 @@
+/*table, td, th{
+    border:1px solid black;
+}*/
+.logo, .navigation{
+        text-align: center;
+    }
+h1{
+    font-size: 24px;
+    text-align: center;
+}
+li{
+    height: 33px;
+}
+.left{
+    text-align: left;
+}
+.center{
+    text-align: center;
+}
+.right{
+    text-align: right;
+}
+.box{
+    background-image: url(../images/favicon.png);
+}

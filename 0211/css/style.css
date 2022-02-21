@@ -1,0 +1,19 @@
+.container{
+    width: 800px;
+    margin: 50px auto;
+    border: 1px solid #333;
+}
+img{
+    margin-left: 15px;
+    float: right;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color:pink;
+    margin: 15px;
+    float: left;
+}
+.clear{
+    clear: both;
+}
