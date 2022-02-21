@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+body{font-family: 'Noto Sans KR', sans-serif;}
+.name{
+    text-align: center;
+}
+table{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+th{
+    border-bottom: 2px solid #ddd;
+    border-top: 2px solid #ddd;
+    height: 40px;
+}
+td{
+    border-bottom: 1px solid #777;
+    height: 40px;
+    text-align: left;
+    padding-left: 10px;
+}
+tr:hover{
+    background-color: #ddd;
+}
+.pageing{
+    text-align: center;
+    padding: 20px;
+}
+.pageing a{
+    text-decoration: none;
+    border: 1px solid #777;
+    margin-left: 2px;
+    margin-right: 2px;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    color: #777;
+}
+.pageing a:hover, a:active{
+    background-color: #ddd;
+}
+
+.box{
+    margin-left: 5%;
+    margin-top: 30px;
+    padding: 0;
+    height: 30px;
+}
+.sumbox{
+    width: 50px;
+    height: 30px;
+    color: #fff;
+    background-color: #333;
+}
+.textbox{
+    width: 200px;
+    height: 25px;
+}
+.list{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #333;
+}

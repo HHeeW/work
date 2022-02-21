@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="196.235" height="71.027" viewBox="0 0 196.235 71.027">
+  <g id="그룹_29" data-name="그룹 29" transform="translate(-29 -17.372)">
+    <g id="그룹_3" data-name="그룹 3" transform="translate(29.295 38.181)">
+      <g id="그룹_1" data-name="그룹 1">
+        <rect id="사각형_2" data-name="사각형 2" width="10" height="41" rx="5" transform="translate(18.705 -0.181)" fill="#fff"/>
+        <rect id="사각형_3" data-name="사각형 3" width="11" height="29" rx="5" transform="translate(8.705 5.819)" fill="#fff"/>
+        <rect id="사각형_4" data-name="사각형 4" width="10" height="17" rx="5" transform="translate(-0.295 11.819)" fill="#fff"/>
+      </g>
+      <g id="그룹_2" data-name="그룹 2" transform="translate(61.321)">
+        <rect id="사각형_2-2" data-name="사각형 2" width="10" height="41" rx="5" transform="translate(0.384 -0.181)" fill="#fff"/>
+        <rect id="사각형_3-2" data-name="사각형 3" width="11" height="29" rx="5" transform="translate(9.384 5.819)" fill="#fff"/>
+        <rect id="사각형_4-2" data-name="사각형 4" width="10" height="17" rx="5" transform="translate(18.384 11.819)" fill="#fff"/>
+      </g>
+      <rect id="사각형_5" data-name="사각형 5" width="34" height="8" transform="translate(27.705 16.819)" fill="#fff"/>
+    </g>
+    <text id="HEALTH" transform="translate(128 53)" fill="#fff" font-size="21" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">HEALTH</tspan></text>
+    <text id="TRAIN" transform="translate(137 72)" fill="#fff" font-size="21" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">TRAIN</tspan></text>
+    <path id="패스_1" data-name="패스 1" d="M75.5,37.354V15.585H205.606l17.076,36.429-17.076,29.6H75.5V65.674" transform="translate(-0.264 4.288)" fill="none" stroke="#fff" stroke-width="5"/>
+  </g>
+</svg>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>javascript</title>
+<style>
+    table{
+        width: 400px;
+    }
+    table, tr, td{
+        border-collapse: collapse;
+        border: 1px solid #333;
+    }
+    td{
+        padding: 20px;
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+<script>
+    // var i =0;
+    // while(i<20){
+    //     if(i == 10) break;
+    //     document.write("카운트" + i + "<br>");
+    //     i++;
+    // }
+    // document.write("<hr>")
+    // for(var i=0; i < 20; i++){
+    //     if(i % 2 == 1) continue;
+    //     document.write("카운트" + i + "<br>");
+    // }
+
+    // var sum = 0;
+    // while(sum<10){
+    //     document.write("카운트" + 5 * sum + "<br>");
+    //     sum++;
+    // }
+    // document.write("<hr>")
+    // var i = 1, sum;
+    // while(i<10){
+    //     sum = 9 * i;
+    //     document.write("카운트" + sum + "<br>");
+    //     i++;
+    // }
+    // document.write("<hr>")
+    // var i = 0, j = 0, k = 0;
+    // for(var i = 0; i < 5; i++){
+    //     for(var j = 0; j < 5; j++){
+    //         document.write(k);
+    //          k++;}
+    //     document.write("<br>");
+    // }
+var i = 1;
+while( i < 10){
+    document.write("5 X " + i + " = " + i * 5, "<br>");
+    i++;
+}
+document.write("<hr>");
+
+for(i = 1; i < 10; i++){
+    document.write("9 X " + i + " = " + i * 9, "<br>");
+}
+document.write("<hr>");
+
+var num = 1;
+var tbl = "<table>";
+for(var tr = 1; tr <= 5; tr++){
+    tbl += "<tr>";
+    for(var td = 1; td <=5; td++){
+        tbl +="<td>" + num + "</td>";
+        num++;
+    }
+    tbl+="</tr>";
+}
+tbl += "</table>";
+document.write(tbl);
+</script>
+</head>
+<body>
+ 
+</body>
+</html>
