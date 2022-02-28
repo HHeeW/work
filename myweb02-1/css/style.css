@@ -5,12 +5,15 @@ body{
     margin: 0;
     padding: 0;
 }
+a:link, a:visited{
+    text-decoration: none;
+    color: #222328;
+}
 .container{
     width: 1200px;
     text-align: center;
     border: 1px solid #000;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 /* header */
 header{
@@ -25,33 +28,49 @@ header{
     padding-top: 25px;
     background-color: antiquewhite;
 }
-/* ul gnb */
-ul.gnb{
-    margin-right: 50px;
+/* nav */
+nav{
+    height: 40px;
+    width: 60%;
+    float: right;
+
 }
-ul.gnb>li{
+.gnb, .lnb{
     border: 1px solid #000;
     float: right;
-    margin-top: 15px;
-    padding: 5px 30px;
-    list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
     font-size: 20px;
     position: relative;
 }
-
+ul.gnb>li {
+   width: 150px;
+   height: 40px;
+   float: left;
+}
+.lnb>li{
+    width: 50px;
+   height: 40px;
+   float: left;
+}
 ul.gnb>li:hover ul.lnb li{
     display: block;
 }
-li>a:link, li>a:visited{
-    text-decoration: none;
 
-}
 ul.gnb>li>a:hover{
     color: #fff;
     background-color: #000;
 }
-/* ul lnb */
+.gnb li>a,
+.lnb li>a
+{
+    display: block;
+    text-align: center;
+    line-height: 40px;
+}
 ul.lnb{
+    width: 150px;
     padding: 0;
     position: absolute;
     z-index: 10;
@@ -74,10 +93,7 @@ ul.lnb>li>a:hover{
 ul.lnb>li:nth-child(1){
     border-top: 1px solid #333;;
 }
-li>a:link, li>a:visited{
-    text-decoration: none;
-    color: #333;
-}
+
 /* slide */
 div.slide{
     width: 1200px;
