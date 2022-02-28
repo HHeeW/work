@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>박스 옵션조절</title>
+<style>
+    div{
+        width: 100px;
+        height: 100px;
+        margin: 50px;
+        background: red;
+        border-radius: 8px;
+        transition-duration: .5s;
+        transition-delay: .5s;
+        transition-property: width, height, transform;
+    }
+    .box1:hover{
+        transform: translate(-2px, -2px);
+        box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .3);
+        width: 200px;
+        height: 200px;
+    }
+    .box2:hover{
+        transform: rotate(40deg);
+        
+        box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .3);
+    }
+    .box3:hover{
+        transform: scale(1.5, 1.5);
+        box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .3);
+    }
+    .box4:hover{
+        transform: skew(30deg, 30deg);
+        box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, .3);
+    }
+</style>
+</head>
+<body>
+    <h1>transform</h1>
+    <ol>
+        <li>
+            이동옵션 : translate(x축, y축); , translateX(단위), translateY(단위)
+        </li>
+        <li>
+            회전옵션 : rotate(Ndeg); , rotateX(), rotateY(), rotateZ()
+        </li>
+        <li>
+            크기옵션 : scale(x축, y축), scaleX(), scaleY() (단위 배수)
+        </li>
+        <li>
+            모서리 각도 조정 : skew(Xdeg, Ydeg), skewX(), skewY()
+        </li>
+        <li>
+            행렬 : marix(scakeX(), skewY(), skewX(), sclaeY(), translateX(), translateY())
+        </li>
+    </ol>
+    <h1>transition</h1>
+    <ul>
+        <li>transition-duratio : 변환되는 속도를 지정</li>
+        <li>transition-delay : 변환대기 시간</li>
+        <li>transition-property : width height</li>
+        <li>transition-timing-function :
+            <ul>
+                <li>linear : 처음부터 끝까지 같은 속도</li>
+                <li>ease : 처음, 끝을 부드럽게 (기본값) </li>
+                <li>ease-in : 처음을 느리게</li>
+                <li>ease-out : 마지막을 느리게</li>
+                <li>ease-in-out : 처음 마지막을 느리게</li>
+                <li>cubic-bezier(n, n, n, n,) : 속도를 직접 셋팉</li>
+            </ul>
+        </li>
+        <li>transition : property duration timing-function delay</li>
+    </ul>
+    <div class="box1"></div>   
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+</html>
