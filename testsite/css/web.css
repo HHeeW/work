@@ -1,0 +1,31 @@
+*{box-sizing: border-box;}
+.container{
+    width: 1520px;
+    max-width: 100%;
+    margin: 100px auto;
+}
+body{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+a , a:link{
+    color: #000;
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+/* header */
+h1{
+    font-size: 100px;
+}
+ul.gnb{ 
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+ul.gnb li{
+    border: 1px solid #333;
+    width: 100px;
+}
