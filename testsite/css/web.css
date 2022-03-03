@@ -12,6 +12,7 @@ body{
     font-family: 'Gothic A1', sans-serif;
     font-size: 20px;
     color: #fff;
+    background: url(../images/001.jpg);
 }
 a , a:link{
     color: #fff;
