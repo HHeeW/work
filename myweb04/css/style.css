@@ -36,6 +36,9 @@ a.brand span.material-icons{
 .weight{
     font-weight: 700;
 }
+.light{
+    font-weight: 300;
+}
 .red{
     color: red;
 }
@@ -68,4 +71,57 @@ nav span.bar{
 a.search{
     float: right;
     line-height: 80px;
+}
+/* slider */
+.slider{
+    border-bottom: 5px solid #000;
+    
+}
+.slider>.container{
+    background: url(../images/002.png) no-repeat right bottom;
+    margin-bottom: -15px;
+    background-size: 350px;
+    padding-bottom: 100px;
+}
+.slider ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 46px;
+    margin-top: 35px;
+    font-weight: 300;
+    color: #999;
+}
+.slider li a {
+    display: block;
+    position: relative;
+    width: 70%;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.slider li a:hover span.list-text, .active{
+    font-weight: 700;
+}
+/* .slider span.list-text{
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */
+.slider span.cafe-text{
+    position: absolute;
+    top: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+/* my cafe */
+.mycafe{
+    padding: 50px 0 40px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #efefef;
 }
