@@ -99,7 +99,9 @@ nav{
     display: block;
 }
 
-
+.row{
+    background-color: rgba(200, 200, 200, .3);
+}
 /* aside 왼쪽 */
 aside button{
     width: 100px;
@@ -119,9 +121,9 @@ aside button{
 section{
     font-family: 'Dongle', sans-serif;
     font-size: 30px;
-    background-color: rgba(200, 200, 200, .3);
     padding: 0;
     color: #fff;
+    border: 1px solid #fff;
     }
 .srpbox span{
     font-size: 50px;
