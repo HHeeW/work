@@ -1,31 +1,172 @@
+@import url(fonts.css);
+@import url(all.min.css);
+@import url(animate.min.css);
+@import url(grid.css);
+@import url(grid2.css);
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
 *{box-sizing: border-box;}
-.container{
-    width: 1520px;
-    max-width: 100%;
-    margin: 100px auto;
-}
 body{
     text-align: center;
     margin: 0;
     padding: 0;
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 20px;
+    color: #fff;
 }
 a , a:link{
-    color: #000;
+    color: #fff;
     text-decoration: none;
+}
+.container{
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 li{
     list-style-type: none;
 }
 /* header */
-h1{
-    font-size: 100px;
+header{
+    background-size: 100%;
+    min-width: 500px;
 }
-ul.gnb{ 
+div.videobox{
+    position: relative;
+}
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+h1{
+    font-size: 70px;
+    margin: 30px 0;
+    padding:0;
+    color: #fff;
+    text-shadow: 2px 2px 2px #666;
+}
+nav{
     height: 50px;
+    margin: 10px;
+}
+.gnb{
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
-ul.gnb li{
-    border: 1px solid #333;
+.gnb>li{
+    width: 150px;
+}
+.gnb>li>a{
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    background-color: rgba(180, 180, 250, .8);
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px 1px;
+}
+.lnb{
+    margin: 0 auto;
+    padding: 0;
+}
+.lnb>li{
+    width: 130px;
+    margin: 0 auto;
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px 1px;
+    background-color: rgba(100, 100, 100, .7);
+    display: none;
+}
+.lnb>li>a{
+    color: #fff;
+    margin-top: 3px;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+}
+.lnb>li:hover{
+    background-color: rgb(180, 180, 250);
+    width: 150px;
+}
+.gnb>li:hover .lnb>li{
+    display: block;
+}
+
+
+/* aside 왼쪽 */
+aside button{
     width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(180, 180, 250);
+    box-shadow: 1px 1px 5px 1px;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+}
+
+
+/* **중앙** */
+section{
+    font-family: 'Dongle', sans-serif;
+    font-size: 30px;
+    background-color: rgba(200, 200, 200, .3);
+    padding: 0;
+    color: #fff;
+    }
+.srpbox span{
+    font-size: 50px;
+    vertical-align: middle;
+}
+.result-img{
+    height: 15px;
+}
+.me{
+    float: left;
+    width: 150px;
+    height: 170px;
+    margin-left: 50px;
+}
+.com{
+    float: right;
+    width: 150px;
+    height: 170px;
+    margin-right: 50px;
+}
+.me p, .com p{
+    margin: 0;
+    text-align: center;
+}
+.me div, .com div{
+    background-size: contain;
+    height: 150px;
+    background-repeat: no-repeat;
+}
+.btn-box{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+button.srp{
+    padding: 10px 20px;
+    font-size: 30px;
+    margin: 10px;
+    font-family: 'Dongle', sans-serif;
+}
+.s{
+    background-color: pink;
+}
+.r{
+    background-color: greenyellow;
+}
+.p{
+    background-color: aqua;
 }

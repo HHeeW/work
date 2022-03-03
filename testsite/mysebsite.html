@@ -4,26 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>연습 사이트</title>
-<link rel="stylesheet" href="css/animate.min.css">
-<link rel="stylesheet" href="css/grid.css">
-<link rel="stylesheet" href="css/grid2.css">
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/web.css">
 </head>
 <body>
     <div class="container">
-        <header><h1 class="animate__animated animate__backInDown animate__slow 1s">HeeWon Web Site</h1>
-        <ul class="gnb">
-            <li><a href="#">어제</a></li>
-            <li><a href="#">오늘</a></li>
-            <li><a href="#">내일</a></li>
-        </ul>
+        <header>
+            <div class="videobox">
+                <video width="100%" autoplay muted loop>
+                    <source src="video/forest_-_89420 (Original).mp4" type="video/mp4">
+                </video>
+            </div>
+            <h1 class="animate__animated animate__backInDown animate__slow 1s">HeeWon Web Site</h1>
+            <nav>
+                <ul class="gnb">
+                    <li class="animate__animated animate__backInLeft animate__slow 1s animate__delay-1s"><a href="#">어제</a>
+                        <ul class="lnb">
+                            <li><a href="#">먹은거</a></li>
+                            <li><a href="#">입은거</a></li>
+                            <li><a href="#">생활</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="animate__animated animate__backInDown animate__slow 1s animate__delay-1s"><a href="#">오늘</a>
+                        <ul class="lnb">
+                            <li><a href="#">먹은거</a></li>
+                            <li><a href="#">입은거</a></li>
+                            <li><a href="#">생활</a></li>
+                        </ul></li>
+                    <li class="animate__animated animate__backInRight animate__slow .5s animate__delay-1s"><a href="#">내일</a>
+                        <ul class="lnb">
+                            <li><a href="#">먹은거</a></li>
+                            <li><a href="#">입은거</a></li>
+                            <li><a href="#">생활</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </header>
         <main class="row">
-            <aside class="col-3">좌측</aside>
-            <section class="col-7">중앙</section>
-            <aside class="col-2">우측</aside>
+            <aside class="col-3">
+                <button class="random" onclick="on()">랜덤버튼</button>
+                <p id=lunch>점심 메뉴!</p> 
+            </aside>
+            <section class="col-6">
+                <div class="srpbox">
+                    <h1>가위, 바위, 보 게임<span class="material-icons-outlined">sports_esports</span></h1>
+                    <div class="result-box">
+                        <p id="result">가위, 바위, 보중 하나를 선택하세요.</p>
+                    </div>
+                    <div class="result-img">
+                        <div class="me">
+                            <div id="me" style="background-image: url(images/sc.png);"> </div>
+                            <p class="text-center">나</p>
+                        </div>
+                        <div class="com">
+                            <div id="com" style="background-image: url(images/ro.png);"></div>
+                            <p class="text-center">컴퓨터</p>
+                        </div>
+                    </div>
+                    <div class="btn-box">
+                        <button class="srp s" onclick="srp(0)">가위</button>
+                        <button class="srp r" onclick="srp(1)">바위</button>
+                        <button class="srp p" onclick="srp(2)">보</button>
+                    </div>
+                </div>
+            </section>
+            <aside class="col-3">우측</aside>
         </main>
-        <footer>푸터</footer>
+        <footer>
+
+        </footer>
      </div>
+
+     <script src="js/srp.js"></script>
 </body>
 </html>

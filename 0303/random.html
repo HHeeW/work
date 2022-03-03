@@ -6,10 +6,18 @@
 <title>점심 랜덤</title>
 </head>
 <body>
+    <button class="random" onclick="on()">랜덤버튼</button>
+    <p id=lunch>점심 메뉴!</p>
 <script>
     var menu = ["짜장면", "돈까스", "된장국", "김치찌개", "회덮밥", "라면", "햄버거"];
     var menuNum = Math.floor(Math.random()*menu.length);
     document.write(menu[menuNum]);
+
+    function on(){
+        var menu = ["짜장면", "돈까스", "된장국", "김치찌개", "회덮밥", "라면", "햄버거"];
+        var menuNum = Math.floor(Math.random()*menu.length);
+        document.getElementById("lunch").innerHTML = menu[menuNum];
+    }
 </script>
 </body>
 </html>
