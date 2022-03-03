@@ -99,7 +99,7 @@ a.search{
     padding-top:5px;
     padding-bottom:5px;
 }
-.slider li a:hover span.list-text, .active{
+.slider li a:hover span.list-text{
     font-weight: 700;
 }
 /* .slider span.list-text{
