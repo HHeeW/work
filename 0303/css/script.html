@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자바연습</title>
+</head>
+<body>
+
+    <script>
+        // var name = prompt('영문 이름을 입력하세요.', "");
+        // document.write("당신의 영문 이름은 "+name.toUpperCase()+"이군요.","<br>");
+
+        // var tel = prompt('전화번호를 입력하세요.', "");
+        // var slicetel = tel.substring(0, tel.length-4); //시작과 끝
+        // var slicetel = tel.substr(0, tel.length-4); //시작, 잘라낼 문자 갯수
+        // var slicetel = tel.slice(0, -4);
+        // document.write("당신의 전화번호는 : " + slicetel + "**** 입니다");
+        var email = prompt("이메일을 입력하세요", "");
+        var arr = ["co.kr", "com", " net", "or.kr", "org", "ac.kr", "go.kr"];
+        
+        if(email.indexOf("@") > 0){
+            for(i = 0; i < arr.length; i++){
+                if(email.indexOf(arr[i]) > 0){
+                    document.write(email);
+                }
+            }
+        }
+        else{
+            alert("이메일 형식이 잘못되었습니다.")
+        }
+        
+    </script>
+</body>
+</html>
