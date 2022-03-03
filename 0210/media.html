@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .movecontainer{
+            width: 800px;
+            height: 600px;
+            margin: 30px auto;
+            position: relative;
+        }
+        .movecontainer iframe{
+            width: 100%;
+            height: 100%;
+        }
+        h1{
+            position: absolute;
+            text-align: center;
+            top: 70%;
+            width: 100%;
+            background-color: rgba(122, 122, 122, 0.507);
+            color: white;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="movecontainer" >
+        <iframe src="https://www.youtube.com/embed/DeDaUw4ZeCg?autoplay=1&muted=1"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>      
+        <h1>영상 자막 고깃집 갔을 때</h1>
+    </div>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/00Yv511SSFo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <video width="600" height="400" controls autoplay muted poster="images/001.jpg">
+        
+        <source src="media/Bike - 72566.mp4" type="video/mp4">
+        <source src="media/Bike - 72566.ogg" type="video/ogg">
+        브라우저가 video를 지원하지 않습니다.
+    </video>
+
+    <object data="position.html" type="text/html" width="600"height="400"></object>
+    <iframe src="position.html" width="600" height="400" ></iframe>
+    <object data="media/LM.pdf" type="application/pdf" width="600" height="400"></object>
+    <object data="media/Bike - 72566.mp4" type="video/mp4" width="600" height="400">
+        <param name="src" value="media/Biki - 72566.mp4">
+        <param name="autostart" value="true">
+    </object>
+    <embed src="media/Bike - 72566.mp4" autostart="true">
+</body>
+</html>

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&family=Sunflower:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+body{
+    font-family: 'Sunflower', sans-serif;
+    font-size: 20px;
+}
+h1{
+    background-color: lightblue;
+    color: blueviolet;
+}
+a{
+    text-decoration: none;
+}
+.song{
+    font-family: 'Song Myung', serif;
+}
+.container{
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+.size30{
+    font-size: 30px;
+}
+.vertical{
+    width: 400px;
+    height: 300px;
+    border: 1px solid;
+    box-sizing: border-box;
+    text-align: center; 
+    margin: auto;    
+}
+.text{
+    vertical-align: middle;
+}
+.vertical div{
+    margin-top: 50px;
+}
+.deco0{
+    text-decoration: line-through blue solid 2px;
+    color: blueviolet;
+}
+.deco1{
+    text-decoration: overline plum double 3px;
+    text-align: left;
+}
+.deco2{
+    text-decoration: dashed underline greenyellow 2px;
+    text-align: right;
+}

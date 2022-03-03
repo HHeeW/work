@@ -1,0 +1,101 @@
+.container{
+    padding:50px;
+    display:flex;
+    width:1200px;
+    height:500px;
+    max-width:100%;
+    margin:10px auto;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items:center;
+}
+.tooltip{
+   border-bottom:1px dashed #333;
+   width:100px;
+   margin:80px;
+   padding:10px;
+   position:relative;
+   text-align: center;
+}
+.tooltiptext{
+   display:inline-block;
+   width:170px;
+   background:#333;
+   color:#fff;
+   text-align:center;
+   padding:10px;
+   border-radius:5px;
+   position:absolute;
+   z-index:1;
+   bottom:-50px;
+   left:-30px;
+   opacity:0;
+   transition: all .5s;
+}
+.tooltiptext::after{
+   content:"";
+   display:block;
+   width:0;
+   height:0;
+   position:absolute;
+   border-top:7px solid transparent;
+   border-left:7px solid transparent;
+   border-right:7px solid transparent;
+   border-bottom:7px solid #333;
+   left:50px;
+   top:-14px;
+}
+.tooltip:hover .tooltiptext{
+   opacity:1;
+}
+.tooltiptext1{
+    bottom:40px;
+    left:-30px;
+ }
+ .tooltiptext1::after{
+    border-top:7px solid #333;
+    border-left:7px solid transparent;
+    border-right:7px solid transparent;
+    border-bottom:7px solid transparent;
+    left:50px;
+    top:40px;
+ }
+ .tooltiptext2{
+    width:50px;
+    bottom:-30px;
+    left:120px;
+ }
+ .tooltiptext2::after{
+    border-top:7px solid transparent;
+    border-left:7px solid transparent;
+    border-right:7px solid #333;
+    border-bottom:7px solid transparent;
+    left:-14px;
+    top:40px;
+ }
+
+.tooltiptext3{
+    bottom:-60px;
+    left:-30px;
+}
+.tooltiptext2::after{
+    border-top:7px solid transparent;
+    border-left:7px solid transparent;
+    border-right:7px solid #333;
+    border-bottom:7px solid transparent;
+    left:-14px;
+    top:40px;
+ }
+ .tooltiptext4{
+    width:50px;
+    bottom:-30px;
+    left:-70px;
+ }
+ .tooltiptext4::after{
+    border-top:7px solid transparent;
+    border-left:7px solid #333;
+    border-right:7px solid transparent;
+    border-bottom:7px solid transparent;
+    left:70px;
+    top:40px;
+ }

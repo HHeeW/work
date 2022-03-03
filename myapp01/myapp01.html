@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>js 가위 바위 보</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>가위, 바위, 보 게임<span class="material-icons-outlined">
+            sports_esports
+            </span></h1>
+        <div class="result-box">
+            <p id="result">가위, 바위, 보중 하나를 선택하세요.</p>
+        </div>
+        <div class="result-img">
+            <div class="me">
+                <div id="me" style="background-image: url(images/sc.png);"> </div>
+                <p class="text-center">나</p>
+            </div>
+            <div class="com">
+                <div id="com" style="background-image: url(images/ro.png);"></div>
+                <p class="text-center">컴퓨터</p>
+            </div>
+        </div>
+        <div class="btn-box">
+            <button class="srp s" onclick="srp(0)">가위</button>
+            <button class="srp r" onclick="srp(1)">바위</button>
+            <button class="srp p" onclick="srp(2)">보</button>
+        </div>
+    </div>
+
+<script src="js/js.js"></script>
+</body>
+</html>

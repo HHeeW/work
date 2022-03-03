@@ -1,0 +1,9 @@
+h1{
+    color: blue;
+}
+div{
+    display: none;
+}
+div.box1{
+    display: block;
+}
