@@ -47,7 +47,6 @@ function lunch(){
     var menuNum = Math.floor(Math.random()*menu.length);
     document.getElementById("lunch").innerHTML = menu[menuNum]+" 먹자!";
 }
-
 function lotto(){
     var lotto =[], lotto1 =[], lotto2 =[], lotto3 =[];
     for(i = 1; i <= 7; i++){
