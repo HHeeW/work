@@ -48,8 +48,9 @@ function lunch(){
     document.getElementById("lunch").innerHTML = menu[menuNum]+" 먹자!";
 }
 function lotto(){
+    var lotto =[];
     for(i = 1; i <= 7; i++){
-        var lotto = Math.floor(Math.random()*45 + 1);
-        document.getElementById("lotto"+[i]).innerHTML = lotto;
+        lotto.push(Math.floor(Math.random()*45 + 1) + "\u00a0");
     }
+    document.getElementById("lotto").innerHTML = lotto;
 }

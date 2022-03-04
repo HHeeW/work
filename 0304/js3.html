@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>js3</title>
+</head>
+<body>
+<script>
+    var a = prompt("국어 점수를 입력하세요.");
+    var b = prompt("수학 점수를 입력하세요.");
+    var arr = [a, b];
+    
+    function textAvg(arrData){
+        var sum = 0;
+        for(var i = 0; i < arrData.length; i++){
+            sum += Number(arrData[i]);
+        }
+        var avg = sum / arrData.length;
+        return avg;
+    }
+    var result = testAvg(arr);
+    document.write("평균점수는" + result)
+</script>
+</body>
+</html>

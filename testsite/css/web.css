@@ -123,12 +123,6 @@ aside button:hover{
 aside div.lotto{
     margin: 0 auto;
     padding: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 300px;
-    gap: 10px;
 }
 
 
