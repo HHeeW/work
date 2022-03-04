@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자바 함수</title>
+<style>
+    .container{
+        width: 400px;
+        margin: 50px auto;
+    }
+    img{
+        max-width: 100%;
+    }
+    .btnbox{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 10px;
+    }
+    .btn{
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+</style>
+</head>
+<body>  
+    <div class="container">
+        <div id ="imgbox">
+            <img id="img" src="pd/t01.jpg" alt="001">
+        </div>
+        <div class="btnbox">
+            <button class="btn" type="button" onclick="gallery(0)"> 이전</button>
+            <button class="btn" type="button" onclick="gallery(1)"> 다음</button>
+        </div>
+        
+    </div>
+    <p id="num"></p>
+    <script>
+        var num = 1;
+        function gallery(n){
+            if(n){
+                if(num == 8)return;
+                num++;
+            }
+            else{
+                if(num == 1)return;
+                num--;
+            }
+           var imgTag = document.getElementById("imgbox");
+        //    imgTag.setAttribute("src", "pd/t0"+num+".jpg");
+            imgTag.innerHTML = '<img src = "pd/t0'+num+'.jpg" alt="t0'+num+'">';
+        }
+    </script>
+</body>
+</html>
