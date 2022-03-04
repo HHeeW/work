@@ -42,8 +42,14 @@ document.getElementById("result").innerHTML = str;
 document.getElementById("me").style.backgroundImage="url("+img+")";
 document.getElementById("com").style.backgroundImage="url("+img1+")";
 }
-function on(){
+function lunch(){
     var menu = ["짜장면", "돈까스", "된장국", "김치찌개", "회덮밥", "라면", "햄버거","볶음밥", "국수", "국밥"];
     var menuNum = Math.floor(Math.random()*menu.length);
     document.getElementById("lunch").innerHTML = menu[menuNum]+" 먹자!";
+}
+function lotto(){
+    for(i = 1; i <= 7; i++){
+        var lotto = Math.floor(Math.random()*45 + 1);
+        document.getElementById("lotto"+[i]).innerHTML = lotto;
+    }
 }

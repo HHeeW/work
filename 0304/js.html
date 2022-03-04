@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자바 함수</title>
+</head>
+<body id="btn">  
+    <div class="box">
+        <button type="button" onclick="eightDan(1)">1</button>
+        <button type="button" onclick="eightDan(2)">2</button>
+        <button type="button" onclick="eightDan(3)">3</button>
+        <button type="button" onclick="eightDan(4)">4</button>
+        <button type="button" onclick="eightDan(5)">5</button>
+        <button type="button" onclick="eightDan(6)">6</button>
+        <button type="button" onclick="eightDan(7)">7</button>
+        <button type="button" onclick="eightDan(8)">8</button>
+        <button type="button" onclick="eightDan(9)">9</button>
+    </div>
+    <p id="view"></p>
+    <button type="button" onclick="color()"> 다음</button>
+
+
+
+    <script>
+        var name = prompt("이름을 입력하세요");
+        var area = prompt("사는 곳을 입력하세요");
+        var r = confirm("인사말을 출력하시겠습니까?");
+        
+        if(r){
+            bow(name, area);
+        }
+        else{
+            document.write("end");
+        }
+        function bow(name, area){
+            document.write("안녕하세요"+ name + "입니다.", "<br>");
+            document.write("사는 곳은"+ area+ "입니다.");
+        }
+
+         var i = ["white", "yellow", "aqua", "purple", "pink"], j = 0;
+        function color(){
+            document.getElementById("btn").style.backgroundColor = i[j];
+            j++;
+            if (j == i.length){
+                j = 0;
+            }
+        }
+        function eightDan(e){
+            var i = 8;
+                sum = e*i;
+                document.getElementById("view").innerHTML = sum;
+        }
+    </script>
+</body>
+</html>
