@@ -12,6 +12,20 @@ body{
     margin: 0;
     font-size: 16px;
 }
+body button{ 
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 300px;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+body button.backicon{
+    left: 50px;
+}
+body button.forwardicon{
+    right: 50px;
+}
 a{
     text-decoration: none;
     color: #111;
@@ -21,7 +35,7 @@ a{
 }
 a.brand{
     display: block;
-    width: 95px;
+    width: 110px;
     height: 80px;
     text-align: center;
     font-size: 25px;
@@ -30,7 +44,7 @@ a.brand{
     line-height: 80px;
 }
 a.brand span.material-icons{
-    font-size: 30px;
+    font-size: 35px;
     vertical-align: middle;
 }
 .weight{
@@ -40,7 +54,7 @@ a.brand span.material-icons{
     font-weight: 300;
 }
 .red{
-    color: red;
+    color: #ff5555;
 }
 nav{
     padding-left: 60px;
@@ -61,15 +75,27 @@ nav a:hover{
 .text-right{
     text-align: right;
 }
+a.nav-btn{
+    /* display: none; */
+    position: absolute;
+    right: 30px;
+    top: 70px;
+}
+a.nav-btn>span{
+    font-size: 30px;
+}
 nav span.bar{
     border-right: 1px solid #ddd;
-    height: 14px;
+    width: 1px;
+    height: 12px;
     margin-left: 5px;
     margin-right: 5px;
     display: inline-block;
 }
+a.close-btn{
+    display: none;
+}
 a.search{
-    float: right;
     line-height: 80px;
 }
 /* slider */
@@ -102,26 +128,90 @@ a.search{
 .slider li a:hover span.list-text{
     font-weight: 700;
 }
-/* .slider span.list-text{
-    display: inline-block;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-} */
 .slider span.cafe-text{
-    position: absolute;
-    top: 5px;
-    font-size: 14px;
-    font-weight: 400;
-    color: #999;
-    vertical-align: top;
-    margin-left: 20px;
-    margin-top: 10px;
+    top:5px;
+    right:-50px;
+    font-size:14px;
+    font-weight:400;
+    color:#999;
+    vertical-align:top;
 }
 /* my cafe */
 .mycafe{
     padding: 50px 0 40px;
     background-color: #f8f8f8;
     border-bottom: 1px solid #efefef;
+}
+@media screen and (max-width: 768px) {
+    a.brand{
+        width: 200px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 900;
+        color: #ff5555;
+        line-height: 100px;
+    }
+    a.nav-btn{
+        display: block;
+    }
+    nav.col-10{
+        /* display: none; */
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, .9);
+        z-index: 100;
+        transition: all .3s;
+    }
+    nav>.row{
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    nav>.row a{
+        padding-left: 9px;
+        font-size: 25px;
+        color: #818181;
+        width: 100%;
+        display: block;
+        font-weight: 500;
+        line-height: 45px;
+    }
+    nav>.row a:hover{
+        color: #f1f1f1;
+    }
+    a.close-btn{
+        display: block;
+        position: absolute;
+        font-size: 40px;
+        color: #ffff;
+        top: 55px;
+        right: 10px;
+    }
+    a.close-btn>span{
+        font-size: 35px;
+    }
+    .slider>.container{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .slider ul{
+        font-size: 18px;
+        width: 90%;
+    }
+    .slider li a{
+        width: 95%;
+    }
+    .slider>.container{
+        background-size: 50%;
+    }
 }

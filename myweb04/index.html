@@ -12,34 +12,38 @@
 
 </head>
 <body>
+    <button type="button" id="back" class="backicon" onclick="slide(0)"><span class="material-icons-outlined "> arrow_back_ios</span></button>
+    <button type="button" id="forward" class="forwardicon" onclick="slide(1)"><span class="material-icons-outlined "> arrow_forward_ios</span></button>
     <div class="container">
         <!-- Header -->
         <header>
             <div class="row">
-                <div class="col-1">
-                    <a class="brand" href="#">
-                        <span class="material-icons outlined">star</span>CAFE
-                    </a>
+                <div class="col-2  col-tb-12">
+                    <a class="brand" href="#"><span class="material-icons outlined">star</span>CAFE </a>
                 </div>
-                <div class="col-6">
-                    <nav>
-                        <a href="#" class="weight red">홈</a>
-                        <a href="#">팬카페</a>
-                        <a href="#">카페랭킹</a>
-                        <a href="#">내카페</a>
-                        <span class="bar"></span>
-                        <a href="#" class="red">온라인교실</a>
-                    </nav>
-                </div>
-                <div class="col-5">
-                    <a href="#" class="search"><span class="material-icons">search</span></a>
-                </div>
+                <nav class="col-10" id="mynav">
+                    <a href="javascript:void(0);" class="nav-btn" onclick="openNav()"><span class="material-icons-outlined">menu</span></a>
+                    <a href="javascript:void(0)" class="close-btn" onclick="closeNav()"><span class="material-icons-outlined">close</span></a>
+                    <div class="row">
+                        <div class="col-8 col-tb-12">
+                            <a href="#" class="weight red">홈</a>
+                            <a href="#">팬카페</a>
+                            <a href="#">카페랭킹</a>
+                            <a href="#">내카페</a>
+                            <span class="bar"></span>
+                            <a href="#" class="red">온라인교실</a>
+                        </div>
+                        <div class="col-4 col-tb-12 text-right">
+                            <a href="#" class="search"><span class="material-icons">search</span></a>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </header>
     </div>
     <!-- /header -->
     <div class="slider">
-        <div class="container">
+        <div class="container animate__animated" id="slide1">
             <h3><span class="light">이야기 하나</span>야 '컴알못'두 할 수 있어</h3>
             <ul>
                 <li>
@@ -63,5 +67,6 @@
 
         </div>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
