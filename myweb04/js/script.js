@@ -6,14 +6,17 @@ function closeNav(){
 }
 
 var num = 1;
-        function slide(n){
-            if(n){
-                if(num == 5)num = 1;
-                num++;
-            }
-            else{
-                if(num == 1)num = 5;;
-                num--;
-            }
-           document.getElementById("slide1").classList.add('animate__fadeOutLeft')
-        }
+function slide(n){
+    if(n){
+        document.getElementById("slide"+num).style.display ='none';
+        num++;
+        if(num == 3){num = 1;}
+        document.getElementById("slide"+num).style.display = "block";
+    }
+    else{
+        document.getElementById("slide"+num).style.display ='none';
+        num--;
+        if(num == 0){num = 2;}
+        document.getElementById("slide"+num).style.display = "block";
+    }
+}
