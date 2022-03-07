@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>my doum cafe</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="row">
+                <div class="col-2  col-tb-12">
+                    <a class="brand" href="#"><span class="material-icons outlined">star</span>CAFE </a>
+                </div>
+                <nav class="col-10" id="mynav">
+                    <a href="javascript:void(0);" class="nav-btn" onclick="openNav()"><span class="material-icons-outlined">menu</span></a>
+                    <a href="javascript:void(0)" class="close-btn" onclick="closeNav()"><span class="material-icons-outlined">close</span></a>
+                    <div class="row">
+                        <div class="col-8 col-tb-12">
+                            <a href="#" class="weight red">홈</a>
+                            <a href="#">팬카페</a>
+                            <a href="#">카페랭킹</a>
+                            <a href="#">내카페</a>
+                            <span class="bar"></span>
+                            <a href="#" class="red">온라인교실</a>
+                        </div>
+                        <div class="col-4 col-tb-12 text-right">
+                            <a href="#" class="search"><span class="material-icons">search</span></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <!-- /header -->
+    <div class="slider">
+        <div class="container relative">
+            <a href="javascript:void(0)" class="prew" onclick="pSlide(-1)"><span class="material-icons-outlined "> arrow_back_ios</span></a>
+            <a href="javascript:void(0)" class="next" onclick="pSlide(1)"><span class="material-icons-outlined "> arrow_forward_ios</span></a>
+            <!-- loop -->
+            <div class="slidein">
+                <h3><span class="light">이야기 하나</span> 야 '컴알못'두 할 수 있어</h3>
+                <ul>
+                    <li>
+                        <a href="#"><span class="list-text">컴퓨터를 켜자마자! 가장 먼저 해야 할...</span><span class="cafe-text">한국토종</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">부팅 안되는 문제 원인 및 해결법</span><span class="cafe-text">도탁스</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">윈도우10 인터넷 빠르게 하는 방법</span><span class="cafe-text">나나카페</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">cmd창이 가끔 켜졌다가 3초정도</span><span class="cafe-text">모두카페</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slidein">
+                <h3><span class="light">이야기 둘</span> 야 '컴알못'두 할 수 있어</h3>
+                <ul>
+                    <li>
+                        <a href="#"><span class="list-text">컴퓨터를 켜자마자! 가장 먼저 해야 할...</span><span class="cafe-text">한국토종</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">부팅 안되는 문제 원인 및 해결법</span><span class="cafe-text">도탁스</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">윈도우10 인터넷 빠르게 하는 방법</span><span class="cafe-text">나나카페</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">cmd창이 가끔 켜졌다가 3초정도</span><span class="cafe-text">모두카페</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slidein">
+                <h3><span class="light">이야기 셋</span> 야 '컴알못'두 할 수 있어</h3>
+                <ul>
+                    <li>
+                        <a href="#"><span class="list-text">컴퓨터를 켜자마자! 가장 먼저 해야 할...</span><span class="cafe-text">한국토종</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">부팅 안되는 문제 원인 및 해결법</span><span class="cafe-text">도탁스</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">윈도우10 인터넷 빠르게 하는 방법</span><span class="cafe-text">나나카페</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">cmd창이 가끔 켜졌다가 3초정도</span><span class="cafe-text">모두카페</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slidein">
+                <h3><span class="light">이야기 넷</span> 야 '컴알못'두 할 수 있어</h3>
+                <ul>
+                    <li>
+                        <a href="#"><span class="list-text">컴퓨터를 켜자마자! 가장 먼저 해야 할...</span><span class="cafe-text">한국토종</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">부팅 안되는 문제 원인 및 해결법</span><span class="cafe-text">도탁스</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">윈도우10 인터넷 빠르게 하는 방법</span><span class="cafe-text">나나카페</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">cmd창이 가끔 켜졌다가 3초정도</span><span class="cafe-text">모두카페</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="slidein">
+                <h3><span class="light">이야기 다섯</span> 야 '컴알못'두 할 수 있어</h3>
+                <ul>
+                    <li>
+                        <a href="#"><span class="list-text">컴퓨터를 켜자마자! 가장 먼저 해야 할...</span><span class="cafe-text">한국토종</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">부팅 안되는 문제 원인 및 해결법</span><span class="cafe-text">도탁스</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">윈도우10 인터넷 빠르게 하는 방법</span><span class="cafe-text">나나카페</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="list-text">cmd창이 가끔 켜졌다가 3초정도</span><span class="cafe-text">모두카페</span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /loop -->
+        </div>
+    </div>
+    <!-- mycafe -->
+    <div class="mycafe">
+        <div class="container">
+
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
