@@ -34,7 +34,6 @@
     margin: 0 ;
     padding: 0;
     width: 2px;
-    height: 250px;
     left: 50%;
     border:1px solid #dfdfdf;
     position: absolute;
@@ -43,10 +42,24 @@
     animation-duration: 1s;
 }
 #sec{
+    margin-top: 50px;
+    height: 200px;
     animation-name: sec;
     animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+#min{
+    height: 150px;
+    margin-top: 100px;
+    width: 3px;
+    background-color: #dfdfdf;
+}
+#hour{
+    height: 100px;
+    margin-top: 150px;
+    width: 5px;
+    background-color: #dfdfdf;
 }
 .center{
     padding: 0;
@@ -54,7 +67,7 @@
     margin-top: 245px;
     width: 10px;
     height: 10px;
-   background-color: #efefef;
+    background-color: #efefef;
     border-radius: 50%;
 }
 

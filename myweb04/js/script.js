@@ -5,6 +5,23 @@ function closeNav(){
     document.getElementById("mynav").style.left="-100%";
 }
 
+var ind = 1;
+viewSlide(ind)
+function pSlide(){
+    viewSlide(ind += n);
+}
+function viewSlide(n){
+    var i,slides;
+    slides = document.getElementsByClassName("slidein");
+    if(n> slides.length) ind = 1;
+    if(n<1) ind = slides.length;
+    for(i=0; i<slides.length; i++){
+        slides[i].style.display = "none";
+    }
+    slides[ind-1].style.display = "block";
+}
+
+
 var num = 1;
 function slide(n){
     if(n){
