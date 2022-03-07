@@ -7,7 +7,7 @@ function closeNav(){
 
 var ind = 1;
 viewSlide(ind)
-function pSlide(){
+function pSlide(n){
     viewSlide(ind += n);
 }
 function viewSlide(n){
