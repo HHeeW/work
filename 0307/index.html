@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>탭매뉴</title>
+<style> 
+    .container{
+        width: 1000px;
+        margin: 30px auto;
+        position: relative;
+        overflow: auto;
+    }
+    .tab{
+        display: flex;
+        position: relative;
+    }
+    .tab a{
+        display: block;
+        width: 100px;
+        text-decoration: none;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-top: 1px solid #ddd;
+        border-left: 1px solid #dddd;
+        background-color: #efefef;
+        color: #999;
+        position: relative;
+        bottom: -1px;
+    }
+    .tab a:last-child{
+        border-right: 1px solid #ddd;
+    }
+    .tab a:hover, .tab a.active{
+        background-color: #fff;
+        color: #333;
+    }
+    .tabcontent{
+        border: 1px solid #ddd;
+        border-left:  1px solid #ddd;
+        border-right: 1px solid #ddd;
+        box-sizing: border-box;
+        padding: 15px 30px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="tab">
+            <a href="javascript:void(0)" class="tablinks" onclick="tab(e, 'a')">탭1</a>
+            <a href="javascript:void(0)" class="tablinks" onclick="tab(e, 'b')">탭2</a>
+            <a href="javascript:void(0)" class="tablinks" onclick="tab(e, 'c')">탭3</a>
+        </div>
+        <div class="tabcontent" id = "a">
+            <p>없으면 피어나기 인생에 석가는 원질이 같으며, 것은 보이는 있다. 청춘의 그들을 어디 부패뿐이다. 속에 없는 과실이 웅대한 그리하였는가?</p>
+        </div>
+        <div class="tabcontent" id = "b">
+            <p>뛰노는 되는 타오르고 풍부하게 것은 길을 그러므로 기관과 부패뿐이다. 되려니와, 풀이 같이, 대중을 충분히 가슴이 따뜻한 튼튼하며, 것이다.</p>
+        </div>
+        <div class="tabcontent" id = "c">
+            <p>오아이스도 영락과 그들은 같지 인류의 칼이다. 만천하의 청춘에서만 못하다 소리다.이것은 위하여, 것이 칼이다.</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById("a").style.display = "block";
+        var tablinks = document.getElementsByClassName("tablinks");
+        var tabcontent = document.getElementsByClassName("tabcontent");
+        tablinks[0].className += " active";
+        function tab(e, tabname){
+            var i;
+            for(i = 0; i < tabcontent.length; i++){
+                tabcontent[i].style.display = 'none';
+            }
+            for(i = 0; i < tablinks.length; i++){
+                tablinks[i].className = tablinks[i].className.replace(" active", "")
+            }
+            e.currentTarget.className += " active";
+            document.getElementById(tabname).style.display = "block";
+        }
+    </script>
+</body>
+</html>
