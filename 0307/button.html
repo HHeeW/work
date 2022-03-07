@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>연습문제</title>
+</head>
+<body id="body">
+    <button type="button" onclick="bodycolor()">바디색상</button>
+    <button type="button" onclick="winopen('button')">버튼 파일</button>
+    <button type="button" onclick="winopen('js2')">js2 파일</button>
+    <button type="button" onclick="winopen('Scope')">스코프 파일</button>
+
+<script>
+    function winopen(str){
+        var str = str + '.html';
+        window.open(str,"js2", "width=400, height=500, left=0, top=50, scrollbars=no");
+    }
+
+
+
+    function bodycolor(){
+        var arrcolor = ["#ff0", "#6c0", "#fcf", "#cf0", "39f"];
+        var num = Math.floor(Math.random()*arrcolor.length);
+        document.getElementById("body").style.backgroundColor = arrcolor[num];
+    }
+
+    function CheckTest(name, kor, eng){
+        this.userName = name;
+        this.userKor = kor;
+        this.userEng = eng;
+        this.userAvg;
+
+        this.getTestInfo = function(){
+            var str = "<br>";
+            str += "이름: " + this.userName + ", ";
+            str += "국어: " + this.userKor + ", ";
+            str += "영어: " + this.userEng + ", ";
+            str += "<br>";
+
+            return str;
+        }
+
+        this.getAvg = function(){
+            return (this.userKor + this.userEng) / 2;
+        }
+    }
+    
+        var kim = new CheckTest("김철", 10, 90);
+        var lee = new CheckTest("이써니", 60, 40);
+
+        document.write(kim.getTestInfo());
+        document.write("평균점수: " + kim.getAvg());
+        document.write(lee.getTestInfo());
+        document.write("평균점수: " + lee.getAvg());
+</script>
+</body>
+</html>

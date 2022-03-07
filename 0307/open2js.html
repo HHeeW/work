@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+</head>
+<body>
+<h1 id="ch">자식창</h1>
+<button onclick="close()">자식창 닫기</button>
+<button onclick="naver()">부모창 이동</button>
+
+<script>
+    function close(){
+        self.close();
+    }
+    function naver(){
+        opener.location.href = "http://naver.com";
+    }
+</script>
+</body>
+</html>
