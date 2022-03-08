@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>attribute</title>
+<script>
+    // function showFirstAttr(){
+    //     var firstP = document.getElementById("p1");
+    //     var resulttext = document.getElementById("result");
+    //     if(firstP.hasAttributes()){
+    //         var attrs = firstP.attributes;
+    //         var text = "";
+    //         for(var i = attrs.length -1; i >= 0; i--){
+    //             text += attrs[i].name+ " -> " + attrs[i].value;
+    //         }
+    //         resulttext.value = text;
+    //     }else{
+    //         resulttext.value = "읽을 수 있는 내용이 없어요."
+    //     }
+    // }
+</script>
+</head>
+<body>
+    <!-- <p class="p1" style="color: green;">첫 번째 문장</p>
+    <form>
+        <p>
+            <input type="button" value="첫 번쨰 버튼 입니다." onclick="showFirstAttr();">
+            <input type="text" id="result">
+        </p>
+    </form> -->
+
+    <p id="text">버튼</p>
+    <script>
+        document.getElementById("text").onclick = function(){
+            location.href= "https://naver.com"
+        }
+    </script>
+</body>
+</html>
