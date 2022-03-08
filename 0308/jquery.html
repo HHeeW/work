@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jquery</title>
+<!-- <script src="https://code.jquery.com/jquery.min.js"></script> -->
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.btn').click(function(){
+            $('#p1').fadeToggle(1000,function(){
+                alert("토글이 끝났습니다");
+            });
+        });
+        $('.hide').click(function(){
+            $('.a2').slideToggle();
+        });
+        $('.show').click(function(){
+            $('#p1').slideUp();
+        });
+    });
+</script>
+<style>
+    .box{
+        position: relative;
+    }
+    .a2{
+        position: absolute;
+        width: 50px;
+        left: 182px;
+        top: 97px;
+    }
+</style>
+</head>
+<body>
+    <div class="box">
+        <img src="images/001.jpeg" alt="001" class="a1">
+        <img src="images/002.png" alt="002" class="a2">
+    </div>
+    <button class="btn">fadeToggle</button>
+    <button class="hide">slideToggle</button>
+    <button class="show">인사말 보이기</button>
+    <p class="p1">안녕하세요?</p>
+    <p id="p1">반갑습니다.</p>
+    
+</body>
+</html>
