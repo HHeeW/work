@@ -10,15 +10,32 @@ body{
     margin: 0;
     font-size: 16px;
 }
+button.backicon,
+button.forwardicon{ 
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 300px;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+button.backicon span,
+button.forwardicon span{
+    font-size: 50px;
+    color: #818181;
+}
+button.backicon{
+    left: 1%;
+}
+button.forwardicon{
+    right: 1%;
+}
 a{
     text-decoration: none;
     color: #111;
 }
 .container  {
     width: 1360px;
-}
-.relative{
-    position: relative;
 }
 a.brand{
     display: block;
@@ -123,36 +140,12 @@ a.search{
     color:#999;
     vertical-align:top;
 }
-
-.slidein{
-    display: none;
-}
-.next,.prew{
-    position: absolute;
-    top: 40%
-}
-.prew{
-    left: -100px;
-}
-.next{
-    right: -100px;
-}
-.next span, .prew span{
-    font-size: 80px;
-    color: #666;
-}
-.next span span:hover, .prew span:hover{
-    color: #333;
-}
 /* my cafe */
 .mycafe{
     padding: 50px 0 40px;
     background-color: #f8f8f8;
     border-bottom: 1px solid #efefef;
 }
-
-
-
 @media screen and (max-width: 768px) {
     button.backicon{
         left: -3%;
