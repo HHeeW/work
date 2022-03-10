@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자동차</title>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .mycar{
+        position: absolute;
+        left: 100px;
+        text-align: center;
+        width: 60px;
+        height: auto;
+        transform: rotate(180deg);
+    }
+    .cld{
+        position: absolute;
+        bottom: -75px;
+        left: 15px;
+        display: none;
+    }
+    .park{
+        width: 70px;
+        height: 70px;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        border: 5px solid #333;
+        border-top: none;
+    }
+</style>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var px = parseInt($('.park').position().left);
+        var py = parseInt($('.park').position().top);
+
+        $(document).keydown(function(e){
+            console.log(e.keyCode);
+            //왼 27 위 28 오른 39 아래40
+            switch(e.keyCode){
+                case 37:
+                    $('.mycar').css('transform', 'rotate(270deg');
+                    $('.cld').show();
+                    $('.mycar').stop().animate({left: '-=100px'},100, function(){
+                        $('.cld').hide();
+                        cx = parseInt($(this).position().left);
+                        cy = parseInt($(this).position().top);
+                        console.log(cx, cy);
+                    });
+                    break;
+                case 38:
+                    $('.mycar').css('transform', 'rotate(0deg');
+                    $('.cld').show();
+                    $('.mycar').stop().animate({top: '-=100px'},100, function(){
+                        $('.cld').hide();
+                        cx = parseInt($(this).position().left);
+                        cy = parseInt($(this).position().top);
+                        console.log(cx, cy);
+                    });
+                    break;
+                case 39:
+                    $('.mycar').css('transform', 'rotate(90deg');
+                    $('.cld').show();
+                    $('.mycar').stop().animate({left: '+=100px'},100, function(){
+                        $('.cld').hide();
+                        cx = parseInt($(this).position().left);
+                        cy = parseInt($(this).position().top);
+                        console.log(cx, cy);
+                    });
+                    break;
+                case 40:
+                    $('.mycar').css('transform', 'rotate(180deg');
+                    $('.cld').show();
+                    $('.mycar').stop().animate({top: '+=100px'},100, function(){
+                        $('.cld').hide();
+                        cx = parseInt($(this).position().left);
+                        cy = parseInt($(this).position().top);
+                        console.log(cx, cy);
+                    });
+                    break;
+            }
+        });
+    });
+</script>
+</head>
+<body>
+<div class="mycar">
+    <img src="images/001.png" alt="방구차">
+    <img src="images/002.gif" alt="연기" class="cld">
+</div>
+<div class="park"></div>
+</body>
+</html>

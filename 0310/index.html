@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style>
+    *{box-sizing: border-box;}
+    body{
+        font-size: 20px;
+    }
+    /* ul.lnb{
+        display: none;
+    }
+    .gnb>li:jo
+     ul.lnb{
+         display: block; 
+    }*/
+    .container{
+        width: 900px;
+        height: 500px;
+        border: 1px solid #333;
+        position: relative;
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: rebeccapurple;
+        position: absolute;
+        top: 200px;
+        left:400px;
+    }
+    button{
+        width: 90px;
+        height: 90px;
+        margin: 0;
+        padding: 0;
+    }
+    .btnbox{
+        width: 300px;
+        height: 300px;
+    }
+     
+</style>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // $(".gnb>li").mouseenter(function(){
+        //     $(".lnb").fadeIn();
+        // }).mouseleave(function(){
+        //     $(".lnb").fadeOut();
+        // });
+
+        // $(".gnb>li").hover(function(){
+        //     $(".lnb").toggle();
+        // });
+        $(".center").click(function(){
+            $(".box").animate({top: "200px", left:"400px"}, "slow");
+        });
+        $(".up").click(function(){
+            $(".box").animate({top: "-=100px"}, "slow");
+        });
+        $(".down").click(function(){
+            $(".box").animate({top:"+=100px"}, "slow");
+        });
+        $(".left").click(function(){
+            $(".box").animate({left:"-=100px"}, "slow");
+        });
+        $(".right").click(function(){
+            $(".box").animate({left: "+=100px"}, "slow");
+        });
+        $(".TopRight").click(function(){
+            $(".box").animate({left: "+=100px", top:"-=100px"}, "slow");
+        });
+        $(".TopLeft").click(function(){
+            $(".box").animate({left: "-=100px", top:"-=100px"}, "slow");
+        });
+        $(".BotRight").click(function(){
+            $(".box").animate({left: "+=100px", top:"+=100px"}, "slow");
+        });
+        $(".BotLeft").click(function(){
+            $(".box").animate({left: "-=100px", top:"+=100px"}, "slow");
+        });
+    });
+</script>
+</head>
+<body>
+    <!-- <ul class="gnb">
+        <li><a href="#">메뉴1</a>
+            <ul class="lnb">
+                <li><a href="#">서브메뉴</a></li>
+            </ul>
+        </li>
+    </ul> -->
+
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <div class="btnbox">
+        <button class="TopLeft">왼위</button>
+        <button class="up">위</button>
+        <button class="TopRight">오른위</button>
+        <button class="left">왼쪽</button>
+        <button class="center">중앙</button>
+        <button class="right">오른</button>
+        <button class="BotLeft">왼밑</button>
+        <button class="down">아래</button>
+        <button class="BotRight">오른밑</button>
+    </div>
+</body>
+</html>
