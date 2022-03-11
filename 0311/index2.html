@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style>
+    .traversing * {
+        display: block;
+        border: 2px solid #ddd;
+        color: #ddd;
+        padding: 5px;
+        margin: 15px;
+    }
+    div{
+        width: 500px;
+        margin: 20px auto;
+    }
+</style>
+</head>
+<body class="traversing">
+    body
+    <div>div
+        <ul>ul
+            <li>li
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+    $(function(){
+        $('span').parent().css({'color' : 'red', 'border' : '2px solid red'});
+    });
+</script>
+</body>
+</html>
