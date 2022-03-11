@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style>
+    #myCanvas{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+    }
+</style>
+</head>
+<body onload="draw()">
+    <canvas id="myCanvas" width="150" height="150"></canvas>
+<script>
+    function draw(){
+        var c = document.getElementById("myCanvas");
+        if(c.getContext){
+            var ctx = c.getContext("2d");
+            for(var i = 0; i < 5; i++){
+                for(var j = 0; j < 5; j++){
+                    ctx.save();
+                    ctx.fillStyle = 'rgb('+(190 * i)+', '+(255 - 190 * i) + ', 255)';
+                    ctx.translate(10 + j * 50, 10 + i * 50);
+                    ctx.fillRect(0, 0, 25, 25);
+                    ctx.restore();
+                }
+            }
+            // ctx.fillRect(0, 0, 50, 50);
+
+            // ctx.translate(25, 25);
+            // ctx.fillStyle = 'rgba(200, 0, 0, 0.5)';
+            // ctx.fillRect(0, 0, 50, 50);
+
+            // ctx.translate(25, 25);
+            // ctx.fillStyle = 'rgba(0, 200, 0, 0.5)';
+            // ctx.fillRect(0,0,50,50);
+        }
+    }
+    // 선 그리기
+    // ctx.moveTo(0,0);
+    // ctx.lineTo(300,150);
+    //원 그리기
+    // ctx.beginPath();
+    // ctx.arc(95, 50, 40, 0, 2*Math.PI);
+    // ctx.stroke();
+</script>
+</body>
+</html>
