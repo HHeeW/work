@@ -312,6 +312,10 @@ a.list h3 strong{
     position: relative;
     overflow: hidden;
 }
+.support-box p{
+    color: #fff;
+    font-size: 35px;
+}
 .head{
     position: absolute;
     width: 250px;
