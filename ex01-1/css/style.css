@@ -97,6 +97,78 @@ ul{
 /* 슬라이드 */
 .main{
     height:200px;
+    padding-top:15px;
+}
+.notice{
+    width:40%;
+    float:left;
+}
+.banner,.quick{
+    width:30%;
+    float:left;
+}
+.banner{
+    padding-left:20px;
+    padding-right:20px;
+}
+.tab-nav{
+    display:flex;
+    justify-content: flex-start;
+    position:relative;
+}
+.tab-nav li{
+   border-top:1px solid #999;
+   border-left:1px solid #999;
+   border-bottom:1px solid #999;
+   position:relative;
+   top:1px;
+   z-index:0;
+}
+.tab-nav>li.act{
+    z-index:1;
+    border-bottom:1px solid #fff;
+}
+.tab-nav li:last-child{
+    border-right:1px solid #999;
+}
+.tab-nav li>a{
+    display:block;
+    padding:10px 15px;
+    background:#ddd;
+    color:#999;
+}
+.tab-nav>li.act>a{
+    background:#fff;
+    color:#222328;
+}
+.tab-content{
+    padding:10px;
+    border:1px solid #999;
+}
+.tab-content>ul{
+    display:none;
+}
+.tab-content>ul.act{
+    display:block;
+}
+ul#notice li{
+    padding-top:2px;
+    padding-bottom:2px;
+    border-bottom:1px dashed #ddd;
+}
+ul#notice li:hover{
+    background-color:#d0dbe9;
+}
+ul#gallery{
+  overflow:auto;
+}
+ul#gallery li{
+   float:left;
+   width:33.3333%;
+   padding-left:25px;
+}
+ul#gallery li img{
+    height:110px;
 }
 footer{
     height:100px;

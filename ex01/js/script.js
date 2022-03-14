@@ -21,5 +21,15 @@ $(function(){   //서브메뉴 호버
             $('.slidein').css('top', 0);//스타일 시트 위치값을 0으로 초기화 한다.
         });
     };
+    $('.tab-nav>li').click(function(e){
+        var link = $(this).find('a').attr('href');
+        $('.tab-nav>li').removeClass('act');
+        $(this).addClass('act');
+        $('.tab-content ul').removeClass('act');
+        $(link).addClass('act');
+    });
 
+    $('.close').click(function(){
+        $('.pop').addClass('remove');
+    })
 });

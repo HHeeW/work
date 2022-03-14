@@ -37,8 +37,9 @@ header{
 }
 .headerBox .headerCenter{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-grow: 8;
 }
 .headerBox .headerCenter h1{
     font-size: 21px;
@@ -49,4 +50,12 @@ header{
     margin-left: 10px;
     font-size: 17px;
     color: rgba(255, 255, 255, .5);
+}
+.headerBox .headerRight{
+    justify-content: flex-end;
+}
+.headerBox .headerRight div{
+    height: 52px;
+    border: 1px solid #333;
+    border-radius: 50%;
 }

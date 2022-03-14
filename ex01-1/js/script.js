@@ -21,4 +21,10 @@ function slide(){
    });
 }
 
+  $('.tab-nav>li').click(function(e){
+     e.preventDefault();
+     var link = $(this).find('a').attr('href');
+     alert(link);
+  });
+
 });
