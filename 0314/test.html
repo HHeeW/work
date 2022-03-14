@@ -7,20 +7,40 @@
 <script src="test.js"></script>
 <link rel="stylesheet" href="../HTML/css/bootstrap.css">
 <style>
-    
+    .col{
+        min-height: 200px;
+    }
+    .bg-dark{
+        min-height: 50px;
+    }
 </style>
 <script src="../HTML/js/jquery-1.12.4.js"></script>
 <script src="../HTML/js/popper.min.js"></script>
 <script src="../HTML/js/bootstrap.js"></script>
 </head>
 <body>
-    <div class="container-fluid bg-primary text-white text-center py-5 border bg-dark">
-        <h1>부트스트랩 페이지</h1>
+    <div class="text-center">
+        <div class="container-fluid col bg-dark">t</div>
+        <h1 class="mt-3">부트스트랩 페이지</h1>
         <p>This is some text.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col border m-2 mb-5">a</div>
+                <div class="col border m-2 mb-5">a</div>
+                <div class="col border m-2 mb-5">a</div>
+            </div>
+        </div>
         <div class="row">
             <div class="col bg-primary">a</div>
-            <div class="col">b</div>
             <div class="col bg-success">c</div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col border m-2 mt-5">a</div>
+                <div class="col border m-2 mt-5">a</div>
+                <div class="col border m-2 mt-5">a</div>
+                <div class="col border m-2 mt-5">a</div>
+            </div>
         </div>
     </div>
 </body>

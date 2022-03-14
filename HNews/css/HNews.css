@@ -35,6 +35,11 @@ header{
 .headerBox a img{
     padding: 0 10px 0 15px;
 }
+.headerBox .headerCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .headerBox .headerCenter h1{
     font-size: 21px;
     float: left;
