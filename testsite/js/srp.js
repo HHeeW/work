@@ -52,13 +52,7 @@ function lotto(){
     for(i = 1; i <= 7; i++){
         lotto.push(Math.floor(Math.random()*45 + 1) + "\u00a0");
     }
-    lotto3 = lotto2;
-    lotto2 = lotto1;
-    lotto1 = lotto;
-    
-    document.getElementById("lotto3").innerHTML = lotto3;
-    document.getElementById("lotto2").innerHTML = lotto2;
-    document.getElementById("lotto1").innerHTML = lotto1;
+
     
     document.getElementById("lotto").innerHTML = lotto;
 }

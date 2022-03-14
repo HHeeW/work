@@ -104,26 +104,9 @@ nav{
 .row{
     background-color: rgba(200, 200, 200, .3);
 }
-/* aside 왼쪽 */
-aside button{
-    width: 100px;
-    height: 50px;
-    margin-top: 10px;
-    font-size: 20px;
-    border-radius: 10px;
-    background-color: rgb(180, 180, 250);
-    box-shadow: 1px 1px 5px 1px;
-    color: #fff;
-    cursor: pointer;
-    border: 0;
-}
-aside button:hover{
-    background-color: rgb(150, 150, 250);
-}
-aside div.lotto{
-    margin: 0 auto;
-    padding: 0;
-}
+/* 죄측 */
+
+
 
 
 /* **중앙** */
@@ -181,4 +164,24 @@ button.srp{
 }
 .p{
     background-color: aqua;
+}
+/* aside 우측 */
+aside button{
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(180, 180, 250);
+    box-shadow: 1px 1px 5px 1px;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+}
+aside button:hover{
+    background-color: rgb(150, 150, 250);
+}
+aside div.lotto{
+    margin: 0 auto;
+    padding: 0;
 }
