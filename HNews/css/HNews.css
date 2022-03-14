@@ -32,30 +32,46 @@ header{
     justify-content: flex-start;
     align-items: center;
 }
+/* 좌측 */
 .headerBox a img{
     padding: 0 10px 0 15px;
 }
-.headerBox .headerCenter{
+.headerCenter{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-grow: 8;
 }
-.headerBox .headerCenter h1{
+.headerCenter h1{
     font-size: 21px;
     float: left;
 }
-.headerBox .headerCenter>a{
+.headerCenter>a{
     float: left;
     margin-left: 10px;
     font-size: 17px;
     color: rgba(255, 255, 255, .5);
 }
-.headerBox .headerRight{
+
+/* 우측 */
+.headerRight{
+    display: flex;
+    align-items: center;
     justify-content: flex-end;
 }
-.headerBox .headerRight div{
-    height: 52px;
-    border: 1px solid #333;
+.headerRight div{
+    display: block;
+    width: 10px;
     border-radius: 50%;
+    overflow: hidden;
+}
+
+.headerRight div img{
+    width: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.headerRight .pro{
+    border-radius: 50%;
+    overflow: hidden;
 }

@@ -270,6 +270,101 @@ a.list h3{
     font-size: 18px;
     font-weight: 400;
 }
+a.list h3 strong{
+    margin-right: 15px;
+}
+.cafe-notice a::before,
+.ul-notice a::before{
+    content: "[안내]";
+}
+.ul-notice{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.cafe-notice a{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    color: #666;
+}
+.ul-notice a{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 300;
+    padding: 5px 0;
+}
+.ul-notice a:hover{
+    text-decoration: underline;
+}
+.mt-4{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.support-box{
+    min-height: 250px;
+    background-color: #4260aa;
+    position: relative;
+    overflow: hidden;
+}
+.head{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 60px;
+    left: 220px;
+    border-radius: 50%;
+    border: 7px solid #333;
+    background-color: #fff;
+}
+.eye{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 150px;
+    left: 300px;
+    border-radius: 50%;
+    background-color: #000;
+}
+.eye2{
+    left: 350px;
+}
+.mouse{
+    position: absolute;
+    border-radius: 50%;
+    background-color: #A8E6FF;
+    width: 40px;
+    height: 35px;
+    top: 170px;
+    left: 315px;
+}
+.mousew{
+    position: absolute;
+    width: 20px;
+    height: 13px;
+    top: 185px;
+    left: 317px;
+    border-radius: 0 0 10px 10px;
+    border: 5px solid #000;
+    border-top: none;
+}
+.mouseww{
+    position: absolute;
+    width: 20px;
+    height: 13px;
+    top: 185px;
+    left: 332px;
+    border-radius: 0 0 10px 10px;
+    border: 5px solid #000;
+    border-top: none;
+}
+
+
 .sub-pop span{
     font-weight: 700;
     color: #ff5656;
