@@ -9,17 +9,17 @@ $(function(){
    });
 
    /* slider */
-setInterval(slide, 3000);
+   setInterval(slide, 3000);
 
-function slide(){
-   $('.slidein').animate({
-       'top': '-300px'   //-300px 위로 민다
-   }, 200, function(){
-       $('.slidein img:eq(0)').clone().appendTo('.slidein');  //-300픽셀 밀려있는 이미지를 복사해서 제일 마지막으로 붙여 넣는다. 
-       $('.slidein img:eq(0)').remove();  //이미 복사된 -300 에 있는 이미지는 삭제한다. 
-       $('.slidein').css('top', 0);  //스타일시트 위치값을 0으로 초기화 한다. 
-   });
-}
+   function slide(){
+      $('.slidein').animate({
+         'top': '-300px'   //-300px 위로 민다
+      }, 200, function(){
+         $('.slidein img:eq(0)').clone().appendTo('.slidein');  //-300픽셀 밀려있는 이미지를 복사해서 제일 마지막으로 붙여 넣는다. 
+         $('.slidein img:eq(0)').remove();  //이미 복사된 -300 에 있는 이미지는 삭제한다. 
+         $('.slidein').css('top', 0);  //스타일시트 위치값을 0으로 초기화 한다. 
+      });
+   }
 
   $('.tab-nav>li').click(function(e){
      e.preventDefault();
