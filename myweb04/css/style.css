@@ -31,17 +31,29 @@ button.backicon{
 button.forwardicon{
     right: 1%;
 }
-.ellipis{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
 a{
     text-decoration: none;
     color: #111;
 }
 .container  {
     width: 1360px;
+}
+.ellipis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.relative{
+    position: relative;
+}
+.pt{
+    padding-top: 50px;
+}
+.pd{
+    padding-bottom: 40px;
+}
+.align-item-center{
+    align-items: center;
 }
 a.brand{
     display: block;
@@ -57,11 +69,24 @@ a.brand span.material-icons{
     font-size: 35px;
     vertical-align: middle;
 }
+
 .weight{
     font-weight: 700;
 }
 .light{
     font-weight: 300;
+}
+.d-flex{
+    display: flex;
+}
+.space-bet{
+    justify-content: space-between;
+}
+.dt span{
+    font-weight: 700;
+}
+.f-right{
+    float: right;
 }
 .red{
     color: #ff5555;
@@ -147,6 +172,7 @@ a.search{
     vertical-align:top;
 }
 /* my cafe */
+/* my cafe */
 .mycafe{
     padding: 50px 0 40px;
     background-color: #f8f8f8;
@@ -169,12 +195,6 @@ a.card{
 }
 a.card:hover{
     box-shadow: 0 1px 12px rgba(0, 0, 0 , .2);
-}
-a.card:hover .img-thumb{
-    box-shadow: 0 1px 12px rgba(0, 0, 0 , .2);
-}
-a.card:hover .card-contents{
-    font-weight: 500;
 }
 .img-thumb{
     align-self: center;
@@ -209,9 +229,150 @@ span.act{
 .hash>span::before{
     content: "#";
 }
+/* list popular */
+.list-pop{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.img-thumb2 img{
+    height: 80px;
+    width: 100%;
+    object-fit: cover;
+}
+.list-pop li{
+    border-bottom: 1px solid #ececec;
+}
+.list-pop li{
+    border-bottom: 1px solid #ececec;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+a.list{
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 300;
+}
+a.list:hover{
+    background-color: #f8f8f8;
+}
+.pr15{
+    padding-right: 30px;
+}
+a.list h3{
+    font-size: 18px;
+    font-weight: 400;
+}
+a.list h3 strong{
+    margin-right: 15px;
+}
+.cafe-notice a::before,
+.ul-notice a::before{
+    content: "[안내]";
+}
+.ul-notice{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.cafe-notice a{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    color: #666;
+}
+.ul-notice a{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 300;
+    padding: 5px 0;
+}
+.ul-notice a:hover{
+    text-decoration: underline;
+}
+.mt-4{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.support-box{
+    min-height: 250px;
+    background-color: #4260aa;
+    position: relative;
+    overflow: hidden;
+}
+.support-box .text_box{
+    margin: 20px;
+}
+.support-box p{
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+}
+.head{
+    position: absolute;
+    width: 260px;
+    height: 250px;
+    top: 60px;
+    left: 220px;
+    border-radius: 50%;
+    border: 7px solid #333;
+    background-color: #fff;
+}
+.eye{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 150px;
+    left: 300px;
+    border-radius: 50%;
+    background-color: #000;
+}
+.eye2{
+    left: 350px;
+}
+.mouse{
+    position: absolute;
+    border-radius: 50%;
+    background-color: #A8E6FF;
+    width: 40px;
+    height: 35px;
+    top: 170px;
+    left: 315px;
+}
+.mousew{
+    position: absolute;
+    width: 20px;
+    height: 13px;
+    top: 185px;
+    left: 317px;
+    border-radius: 0 0 10px 10px;
+    border: 5px solid #000;
+    border-top: none;
+}
+.mouseww{
+    position: absolute;
+    width: 20px;
+    height: 13px;
+    top: 185px;
+    left: 332px;
+    border-radius: 0 0 10px 10px;
+    border: 5px solid #000;
+    border-top: none;
+}
 
 
-
+.sub-pop span{
+    font-weight: 700;
+    color: #ff5656;
+}
 @media screen and (max-width: 768px) {
     button.backicon{
         left: -3%;
@@ -289,5 +450,20 @@ span.act{
     }
     .slider>.container{
         background-size: 50%;
+    }
+
+    .mycafe>.container{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    a.card{
+        flex-direction: column;
+        height: auto;
+    }
+    .img-thumb{
+        margin-bottom: 8px;
+    }
+    .card-contents{
+        width: 100%;
     }
 }

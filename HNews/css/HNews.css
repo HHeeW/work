@@ -19,7 +19,7 @@ ul{
 }
 a, a:link{
     text-decoration: none;
-    color: #fff;
+    color: #000;
 }
 /* header */
 .headcolor{
@@ -46,9 +46,10 @@ a, a:link{
     align-items: center;
     flex-grow: 8;
 }
-.headerCenter h1{
+.headerCenter h1 a{
     font-size: 21px;
     float: left;
+    color: #fff;
 }
 .headerCenter>a{
     float: left;
@@ -85,6 +86,14 @@ a, a:link{
 }.headerRight p:hover{
     border-bottom: 1px solid #fff;
     cursor: pointer;
+}.headerRight p::after{
+    content: '';
+    display: inline-block;
+    margin: 5px 0 0 1px;
+    border-width: 4px 4px 0 4px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    vertical-align: top;
 }
 .headerRight .iconbox{
     position: relative;
@@ -169,6 +178,7 @@ main{
     width: 1080px;
     height: 26.5px;
     border-bottom: 1px solid #828691;
+    margin-bottom: 16px;
 }
 .mainheader .today{
     float: left;
@@ -199,4 +209,188 @@ main{
     font-size: 13px;
     font-weight: 500;
     color: #333;
+}
+
+
+/* 메인블럭 */
+
+.main_brick{
+    border: 1px solid #333;
+    min-height: 100px;
+}
+
+.brick{
+    width: 33.3333%;
+}
+
+.brick_main_box{
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 6%);
+    margin: 8px 12px;
+    margin-left: 0;
+}
+.main_item{
+    min-height: 100px;
+}
+.main_item_title{
+    display: flex;
+    align-items: flex-start;
+    margin: 0px 20px;
+}
+.main_item_title h3{
+    font-size: 15px;
+    padding: 12px 0;
+    width: 70%;
+    font-weight: 600;
+    line-height: 22px;
+}
+.main_item_title h3 a{
+    color: #767678;
+    font-size: 12px;
+    padding: 0 3px;
+    padding-top: 1px;
+}
+.main_item_title h3 a span:last-child{
+    margin-left: 7px;
+    position: relative;
+}
+.main_item_title h3 a span:last-child::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: -7px;
+    width: 3px;
+    height: 3px;
+    background-color: #bebebe;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+.main_item_title h3 a span:last-child::after{
+    content: '';
+    display: inline-block;
+    margin: 9px 0 0 1px;
+    border-width: 4px 4px 0 4px;
+    border-style: solid;
+    border-color: #898989 transparent transparent transparent;
+    vertical-align: top;
+}
+.main_item>.main_item_title>a{
+    display: block;
+    margin-left: auto;
+    color: #767678;
+    font-size: 14px;
+    padding: 10px 13px 11px 10px;
+    position: relative;
+}
+.main_item_title>a span{
+    color: #4978f4;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 23px;
+}.main_item_title>a span:last-child{
+    margin: -7px;
+    right: 7px;
+}
+
+
+.main_item_flash{
+    border-top: 1px solid #efeff0;
+    position: relative;
+}
+.main_item_flash span{
+    position: absolute;
+    top: 16px;
+    left: 12px;
+}
+.main_item_flash .main_item_list{
+    padding: 0 28px 0 42px;
+}
+.main_item_list{
+    height: 55px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.main_item_list h4{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #303038;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 2;
+}
+.main_item_list .cn_name{
+    color: #767678;
+    font-size: 11px;
+    font-weight: 600;
+    overflow: hidden;
+    line-height: 12px;
+    text-align: right;
+    width: 96px;
+    padding-right: 15px;
+}
+
+
+.main_item_title .cjs_cmw{
+    width: 38px;
+    height: 38px;
+    position: relative;
+    border-radius: 50%;
+    float: left;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.icon-dot{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: -7px;
+    width: 3px;
+    height: 3px;
+    background-color: #bebebe;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+.icon-more{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 6px;
+    height: 6px;
+    margin-top: 7px;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #767678;
+    transform: rotate(-135deg) translateY(-50%);
+}
+.icon-newsflash{
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    min-width: 18px;
+    padding: 1px 1px 0;
+    border: 1px solid rgba(0, 0, 0, .02);
+    font-size: 10px;
+    font-weight: 600;
+    background-color: #e84c4c;
+    line-height: 19px;
+    color: #fff;
+    text-align: center;
 }
