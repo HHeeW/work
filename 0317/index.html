@@ -65,6 +65,53 @@ class 프로토타입을 베이스로한 class 흉내를 낸 오브젝트
     }
     memberAll('철수', '민수', '명수', '상수');
 
+    //함수의 스코프
+    let globalVar = 'global';
+    function scopeMessage(){
+        let message = '안녕';
+        console.log(message); //지역변수
+        console.log(globalVar);//전역변수
+        function innMessage(){
+            console.log(message);
+            let childMessage = '반가워요';
+            console.log(childMessage);
+        }
+        // consoe.log(childMessage);
+    }
+    scopeMessage();
+
+    //리턴타입
+    function sum(a,b){
+        return a + b;
+    }
+    const result = sum(3, 2);
+    console.log(result);
+
+    function adultMember(userAge){
+        if (userAge < 19){
+            return;
+        }
+    }
+    //조건에 맞을때는 빨리 리턴을해서 함수를 종료시키는 것이 좋다.
+    //함수는 다른 변수와 마찬가지로 변수에 할당할 수 있고 파라미터로 전달되며 리턴값으로 리턴될 수 있다
+    const print = function(){
+        console.log('print');
+    }
+    print(); //지정된 변수를 출력할 떄 함수형으로 출력
+    const newPrint = print;
+    newPrint();
+
+    //화살표 함수 
+    const add = (a, b) => a + b;
+    const add2 = (a, b) =>{
+        return a * b;
+    }
+
+    //함수의 바로호출
+    (function working(){
+        console.log('내작업물');
+    })();
+
 </script>
 </body>
 </html>

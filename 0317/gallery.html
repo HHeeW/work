@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤러리</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>My Gallery</h2>
+    <div class="container">
+        <div class="mySlides">
+            <div class="number">1 /6</div>
+            <img src="images/001.jpg" alt="001">
+        </div>
+        <div class="mySlides">
+            <div class="number">2 /6</div>
+            <img src="images/002.jpg" alt="002">
+        </div>
+        <div class="mySlides">
+            <div class="number">3 /6</div>
+            <img src="images/003.jpg" alt="003">
+        </div>
+        <div class="mySlides">
+            <div class="number">4 /6</div>
+            <img src="images/004.jpg" alt="004">
+        </div>
+        <div class="mySlides">
+            <div class="number">5 /6</div>
+            <img src="images/005.jpg" alt="005">
+        </div>
+        <div class="mySlides">
+            <div class="number">6 /6</div>
+            <img src="images/006.jpg" alt="006">
+        </div>
+        <a href="javascript:void(0)" class="prev" onclick="plusSLides(-1)"> &lt; </a>
+        <a href="javascript:void(0)" class="next" onclick="plusSLides(1)"> &gt; </a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="images/001.jpg" alt="001" class="opacity cursor" onclick="currentSlide(1)">
+            </div>
+            <div class="column">
+                <img src="images/002.jpg" alt="002" class="opacity cursor" onclick="currentSlide(2)">
+            </div>
+            <div class="column">
+                <img src="images/003.jpg" alt="003" class="opacity cursor" onclick="currentSlide(3)">
+            </div>
+            <div class="column">
+                <img src="images/004.jpg" alt="004" class="opacity cursor" onclick="currentSlide(4)">
+            </div>
+            <div class="column">
+                <img src="images/005.jpg" alt="005" class="opacity cursor" onclick="currentSlide(5)"> 
+            </div>
+            <div class="column">
+                <img src="images/006.jpg" alt="006" class="opacity cursor" onclick="currentSlide(6)">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
