@@ -3,7 +3,7 @@
 let slideIndex = 1;
 showSlide(slideIndex);
 
-function plusSLides(n){
+function plusSlides(n){
     showSlide(slideIndex += n);
 }
 function currentSlide(n){
