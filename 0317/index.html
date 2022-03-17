@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+/*
+1. function이 매우 중요한 절차적언어 프로그램
+class 프로토타입을 베이스로한 class 흉내를 낸 오브젝트
+
+2. 함수이름을 보고 어떤 작업을 할 함수인지 짐작할 수 있어야 한다.
+3. 함수이름으로 어떤 값을 리턴할지 예상할 수 있어야 한다.
+4. 하나의 함수는 한 가지 일만 하도록 해야 한다.
+5. 변수이름을 지을때는 명사형, 함수이름을 지을때는 동사형
+6. 자바스크립트에서는 함수역시 오브젝트이다.
+
+*/
+
+    function printHi(){
+        console.log('Hi');
+    }
+    function log(message){
+        console.log(message);
+    }
+    printHi();
+    log('Hello');
+    log('안녕');
+    log(123456);
+    let str = "하이"
+    str = "반가워요"
+
+    function changeName(obj){
+        obj.name = '김철수';
+    }
+    const uname = {name: ' 홍길동'};
+    changeName(uname);
+    console.log(uname);
+
+
+    //default parameters
+    function sMessage(message, from = '무명씨'){
+        console.log(`${message} by ${from}`);
+    }
+    sMessage('반갑습니다');
+
+    //배열형 파라미터(...)
+    function memberAll(...args){
+        for(const arg of args){
+            console.log(arg);
+        }
+    }
+    memberAll('철수', '민수', '명수', '상수');
+
+</script>
+</body>
+</html>
