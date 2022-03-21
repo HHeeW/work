@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <style>
+        .imgbox{
+            flex: 0 0 33.3333333%;
+            max-width: 33.33333333%;
+            padding: 15px;
+        }
+        .box{
+            margin-top: 30px;
+            height: 200px;
+        }
+        .box img{
+            height: 200px;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script>
+        $(function(){
+            $('img').click(function(){
+                let src = $(this).attr('src');
+                $('.alert-success').show
+                if($(this).css('position') == 'absolute'){
+                    $(this).css('position', 'static');
+                    $(this).addClass('img-fluid');
+                }else{
+                    $(this).css({position : 'absolute', zIndex: 2});
+                    $(this).removeClass('img-fluid');
+                }
+            });
+            $('.alert-success').hide
+        });
+    </script>
+</head>
+<body>
+    <!-- 1. 모서리 둥글게 rounded
+         2. 전체를 둥글게 rounded-circle
+         3. 여백을 주는 옵션 img-thumbnail
+         4. 반응형 옵션 img-fluid-->
+         <div class="container">
+             <div class="row">
+                <div class="imgbox">
+                    <img src="images/tr01.png" class="img-fluid rounded" alt="001">
+                </div>
+                <div class="imgbox">
+                    <img src="images/tr02.jpg" class="img-fluid rounded-circle" alt="002">
+                </div>
+                <div class="imgbox">
+                    <img src="images/tr03.jpg" class="img-fluid img-thumbnail" alt="003">
+                </div>
+                <div class="imgbox">
+                    <img src="images/tr04.jpg" class="img-fluid" alt="004">
+                </div>
+                <div class="imgbox">
+                    <img src="images/tr05.jpg" class="img-fluid" alt="005">
+                </div>
+                <div class="imgbox">
+                    <img src="images/th01.jpg" class="img-fluid" alt="006">
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/001.jpg" class="float-left"alt="001">
+                되는 인간의 때까지 하였으며, 끓는 풀이 평화스러운 인생에 갑 피다. 끝에 같은 창공에 청춘이 얼마나 말이다. 두기 끓는 행복스럽고 대중을 피가 이상의 있으랴? 얼음 별과 얼음과 그들의 황금시대다. 낙원을 자신과 구할 인생에 끓는 뜨거운지라, 이것이다. 스며들어 과실이 만물은 생생하며, 위하여 풀이 갑 그들은 기관과 듣는다. 아니한 무엇을 돋고, 맺어, 능히 것이다. 청춘이 이것이야말로 눈에 피어나기 얼마나 속에서 우리는 인류의 뭇 황금시대다. 품었기 더운지라 갑 풀이 위하여서, 너의 구하지 있다. 있으며, 사는가 있는 찬미를 원질이 것은 이것이다.
+            </div>
+            <div class="box">
+                <img src="images/002.jpg" class="float-right" alt="002">
+                되는 인간의 때까지 하였으며, 끓는 풀이 평화스러운 인생에 갑 피다. 끝에 같은 창공에 청춘이 얼마나 말이다. 두기 끓는 행복스럽고 대중을 피가 이상의 있으랴? 얼음 별과 얼음과 그들의 황금시대다. 낙원을 자신과 구할 인생에 끓는 뜨거운지라, 이것이다. 스며들어 과실이 만물은 생생하며, 위하여 풀이 갑 그들은 기관과 듣는다. 아니한 무엇을 돋고, 맺어, 능히 것이다. 청춘이 이것이야말로 눈에 피어나기 얼마나 속에서 우리는 인류의 뭇 황금시대다. 품었기 더운지라 갑 풀이 위하여서, 너의 구하지 있다. 있으며, 사는가 있는 찬미를 원질이 것은 이것이다.
+            </div>
+            <div class="box">
+                <img src="images/003.jpg" class="d-block mx-auto" alt="003">
+            </div>
+         </div>
+         <div class="container">
+            <div class="jumbotron jumbotron-fluid">
+                <h1>부트스트랩 점보트론 박스</h1>
+                <p>부트스트랩은 웹에서 반응형 모바일 우선 프로젝트를 개발하기 위해 사용합니다.</p>
+            </div>
+        </div>
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>경고다~!~!</strong>
+        </div>
+        <div class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>경고다~!~!</strong>
+        </div>
+        <div class="alert alert-primary alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>경고다~!~!</strong>
+        </div>
+        <div class="alert alert-warning alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>경고다~!~!</strong>
+        </div>
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>경고다~!~!</strong>
+        </div>
+        <button type="button" class="btn btn-primary">기본타입</button>
+</body>
+</html>
