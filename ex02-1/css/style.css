@@ -112,41 +112,38 @@ nav{
     height:200px;
 }
 .notice h1{
-    margin: 0;
-    padding: 0;
-    line-height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin:0;
+    padding:0;
+    line-height:40px;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 .notice ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    list-style-type:none;
+    padding:0;
+    margin:0;
 }
 .notice ul li{
-    height: 35px;
-    display: flex;
+    height:35px;
+    display:flex;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0);
-    transition: all 0.3s;
+    background-color:rgba(0, 0, 0, 0);
+    transition: all 0.5s;
 }
 .notice ul li:hover{
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color:rgba(0,0,0,0.15);
 }
 .notice ul li a{
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
+    display:block;
+    white-space:nowrap;
+    overflow:hidden;
     text-overflow: ellipsis;
-    margin-right: 15px;
-    padding-right: 15px;
-    line-height: 35px;
+    margin-right:15px;
+    line-height:35px;
 }
 .notice ul li span{
-    line-height: 35px;
+    line-height:35px;
 }
-
-
 .gallery,.banner{
     width:30%;
     height:200px;
@@ -155,54 +152,48 @@ footer{
     height:100px;
     background-color:#434748;
     padding:30px 20px;
-    display: flex;
+    display:flex;
     justify-content: space-between;
-    align-items: center;
-    color: #fff;
+    color:#fff;
 }
 footer a{
-    color: #efefef;
-}
-footer .copy_box p{
-    margin: 0;
-    padding: 0;
-    font-size: 12px;
-    text-align: center;
-}
-.partner{
-    padding-top: 5px;
-}
-#partner{
-    font-size: 16px;
-    padding: 5px 10px;
-    border: 1px solid #999;
-    background-color: #3cb149;
-    color: #fff;
+    color:#efefef;
 }
 
+.parters{
+   padding-top:5px;
+}
+#parters{
+   font-size:16px;
+   padding:5px 10px; 
+   border:1px solid #999;
+   background:#3cb149;
+   color:#fff;
+}
 .boxnone{
-    display: none;
+    display:none;
 }
 .pop{
-    width: 500px;
-    height: 300px;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
-    position: fixed;
-    top: 200px;
-    left: calc(50% - 250px);
-    z-index: 9999;
-    padding: 30px;
+    width:500px;
+    height:300px;
+    border-radius:10px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 0 15px 0 rgba(0, 0, 0, 0.25);
+    position:fixed;
+    top:200px;
+    left:calc(50% - 250px);
+    z-index:9999;
+    padding:30px;
 }
 .btn-box{
     position: absolute;
-    bottom: 30px;
-    width: calc(100% - 60px);
-    text-align: center;
+    bottom:30px;
+    width:calc(100% - 30px);
+    text-align:center;
 }
 .close{
-    padding: 5px 15px;
-    font-size: 20px;
-    color: #922429;
+    padding:5px 15px;
+    font-size:20px;
+    color:#922424;
 }
