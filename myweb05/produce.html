@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HW SHOP</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
 </head>
 <body>
     <!-- top-nav -->
@@ -13,8 +14,8 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="top-left">
-                    <a href="#"><i class="fa-regular fa-star"></i></a>
-                    <a href="#"><i class="fa-regular fa-bookmark"></i></a>
+                    <a href="#"><i class="fa-regular fa-star"></i>즐겨찾기</a>
+                    <a href="#"><i class="fa-regular fa-bookmark"></i>바로가기</a>
                     <a href="#" class="sns"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#" class="sns"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" class="sns"><i class="fa-brands fa-youtube"></i></a>
@@ -25,7 +26,14 @@
                         <a href="#" title="+5000 P">회원가입</a>
                         <a href="#">장바구니</a>
                         <a href="#">관심상품</a>
-                        <a href="#"><strong>마이샵</strong></a>
+                        <span>
+                            <a href="#"><strong>마이샵</strong><i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="myshop">
+                                <li><a href="#">주문조회</a></li>
+                                <li><a href="#">배송조회</a></li>
+                                <li><a href="#">내게시물</a></li>
+                            </ul>
+                        </span>
                         <form>
                             <fieldset>
                                 <legend>검색</legend>
