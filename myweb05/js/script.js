@@ -8,8 +8,4 @@ window.onload = function(){
     myshop.addEventListener("mouseout", function(){
         document.getElementsByClassName("myshop")[0].style.display = 'none';
     });
-};
-
-$('#myshop').hover(function(){
-    $(this).find('.myshop').toggle();
-})
+}
