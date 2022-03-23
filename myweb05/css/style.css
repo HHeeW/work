@@ -15,7 +15,9 @@ a{
     text-decoration:none;
     color:#222;
 }
-
+.d-flex{
+    display: flex;
+}
 .justify-content-between{
     justify-content: space-between;
 }
@@ -53,6 +55,10 @@ a{
  .top-nav a:not(.sns):hover::before{
     opacity:1;
 } 
+.top-left, .top-right{
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .top-left a:first-child::after{
     content:"";
     width:1px;
@@ -83,11 +89,12 @@ a.sns:hover{
     color:#fff;
 }
 .top-right{
-    width: 40%;
+    width: 45%;
 }
 .top-right fieldset{
     margin: 0;
     padding: 0;
+    margin-right: 15px;
     border: none;
 }
 .top-nav legend{
@@ -139,6 +146,10 @@ ul.myshop li{
 ul.myshop li:hover{
     background-color: #ddd;
 }
+ul.myshop li a{
+    font-size: 12px;
+
+}
 .fa-chevron-down{
     margin-left: 5px;
 }
@@ -177,8 +188,90 @@ nav{
     height: 50px;
     border-bottom: 1px solid #ddd;
 }
-
-
+.global{
+    position: relative;
+}
+ul.gnb{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul.gnb li{
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+ul.gnb li:not(.first){
+    padding-left: 20px;
+    padding-right: 20px;
+}
+ul.gnb li.first{
+    font-size: 1.5em;
+    width: 50px;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+ul.gnb li:last-child{
+    border-right: 1px solid #ddd;
+}
+ul.all{
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 20px;
+    height: 300px;
+    overflow-y: auto;   
+    background-color: #Fff;
+    list-style-type: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    text-transform: uppercase;
+}
+ul.all li{
+    width: 14%;
+    text-align: center;
+    border-right: 1px dashed #ddd;
+    padding: 15px 0;
+}
+ul.all li:last-child{
+    border: none;
+    background-color: #eee;
+}
+li.first{
+    padding-top: 5px;
+    position: relative;
+    cursor: pointer;
+}
+li.first:hover::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.bar{
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 7px auto;
+    transition: all 0.4s;
+}
+li.first:hover .bar:first-child{
+    transform: rotate(-45deg) translate(-9px, 10px);
+}
+li.first:hover .bar:nth-child(2){
+    opacity: 0;
+}
+li.first:hover .bar:last-child{
+    transform: rotate(45deg) translate(-5px, -5px);
+}
 
 
 @keyframes brrr{

@@ -33,7 +33,7 @@ a>div{
     color: #1e1e23;
     font-size: 16px;
     font-weight: 600;
-    line-height: 1.8rem;
+    line-height: 1rem;
     letter-spacing: -0.5px;
     vertical-align: top;
 }
@@ -198,7 +198,7 @@ main{
 }
 .mainheader .today{
     float: left;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     color: #000;
 }
@@ -310,7 +310,7 @@ main{
 .main_item_flash{
     border-top: 1px solid #efeff0;
     position: relative;
-    display: none;
+    /* display: none; */
 }
 .main_item_flash span{
     position: absolute;
@@ -417,7 +417,66 @@ main{
 }
 .main_item_news .more_layer{
     position: absolute;
-    top: 0;
+    top: 12px;
+    right: 0;
+}
+.main_item_news .more_layer .cjs_btn_more{
+    position: absolute;
+    top: 12px;
+    right: 0;
+    display: block;
+}
+.main_item_news .more_layer img{
+    width: 18px;
+    height: 20px;
+    margin: 8px 10px 8px 9px;
+}
+.more_layer .cjs_ly_function{
+    position: absolute;
+    top: 43px;
+    right: 20px;
+    min-width: 133px;
+    box-shadow: 0 3px 4px 2px rgba(55, 57, 61, 4%);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #e6e6ea;
+    z-index: 200;
+}
+.more_layer .cjs_ly_function a{
+    font-size: 14px;
+    display: block;
+    padding: 0 12px 0 16px;
+    border: 0;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: -0.5px;
+}
+.more_layer .cjs_ly_function a:first-child::after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-position: -44px -63px;
+    float: right;
+    margin-top: 15px;
+    background-image: url(../images/sp_today\ \(1\).png);
+    background-size: 139px 129px;
+    background-repeat: no-repeat;
+}
+.more_layer .cjs_ly_function a:last-child{
+    border-top: 1px solid #efeff0;
+}
+.more_layer .cjs_ly_function a:last-child::after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-position: -22px -63px;
+    float: right;
+    margin-top: 15px;
+    background-image: url(../images/sp_today\ \(1\).png);
+    background-size: 139px 129px;
+    background-repeat: no-repeat;
 }
 
 
@@ -472,7 +531,7 @@ main{
 .icon-subscribe{
     position: relative;
     float: right;
-    margin: 2px 0 0 5px;
+    margin: 0px 0 0 5px;
     padding: 1px 5px 0 3px;
     font-size: 10px;
     font-weight: bold;
