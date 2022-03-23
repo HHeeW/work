@@ -31,6 +31,25 @@ button.backicon{
 button.forwardicon{
     right: 1%;
 }
+.pt-55{
+    padding: 55px;
+}
+.pt-40{
+    padding-top: 40px;
+}
+.pb-30{
+    padding-bottom: 30px;
+}
+.pb-50{
+    padding-bottom: 50px;
+}
+.px-15{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.ml-50{
+    margin-left: 50px;
+}
 a{
     text-decoration: none;
     color: #111;
@@ -383,19 +402,8 @@ a.list h3 strong{
     background-color: #f8f8f8;
     margin-top: 40px;
 }
-.pt-55{
-    padding: 55px;
-}
-.pt-40{
-    padding-top: 40px;
-}
-.pb-30{
-    padding-bottom: 30px;
-}
-.px-15{
-    padding-left: 15px;
-    padding-right: 15px;
-}
+
+
 div.icon{
     display: inline-block;
     width: 35px;
@@ -485,6 +493,90 @@ div.icon{
     background-color: #cfce63;
     top: 8px;
 }
+a.card-box{
+    display:block;
+}
+a.card-box:hover{
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2),
+                0 5px 15px 0 rgba(0, 0, 0, 0.15);
+}
+/* quick */
+.quick h2{
+    font-weight: 300;
+}
+.quick ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    font-weight: 300;
+}
+.quick li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.quick a{
+    margin-right: 20px;
+    position: relative;
+    line-height: 2.2em;
+}
+.quick a::before{
+    content: "";
+    display: block;
+    height: 4px;
+    background-color: #ff5656;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform-origin: bottom left;
+    transform: scaleX(0);
+    transition: all .5s ease;
+}
+.quick a:hover::before{
+    transform: scaleX(1);
+    transition: all .5s ease;
+    transform-origin: bottom left;
+}
+/* **********footer********** */
+footer{
+    padding-top: 70px;
+    padding-bottom: 40px;
+    background: url(../images/008.png) no-repeat right bottom ;
+    background-size: auto 150px;
+}
+footer ul{
+    font-size: 13px;
+    line-height: 19px;
+    color: #666;
+    list-style-type: none;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    padding: 0;
+}
+footer ul li{
+    margin-right: 25px;
+}
+footer ul li a{
+    position: relative;
+}
+footer ul li a:hover{
+    text-decoration: underline;
+}
+footer ul li:not(:first-child) a::before{
+    content: "";
+    width: 2px;
+    height: 2px;
+    background: #666;
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: -10px;
+}
+
+
+
+
 @media screen and (max-width: 768px) {
     button.backicon{
         left: -3%;
@@ -578,4 +670,19 @@ div.icon{
     .card-contents{
         width: 100%;
     }
+}
+#top{
+    border: 1px solid #ddd;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.025);
+    z-index: 100;
+    right: 15px;
+    bottom: 10px;
 }

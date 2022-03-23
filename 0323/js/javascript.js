@@ -19,3 +19,22 @@ function main(n){
     }
 }
 main(1);
+//3초 후에 첫 화면이 뜨게한다.
+//main은 setTImeput()의 인수로 전달된다. 3초 후에 main이 호출된다 callback
+
+// setTimeout("main(1)",3000)
+
+//실시간으로 바뀌는 지금 시간을 출력하시오.
+
+function tFunc(){
+    let dt =  new Date;
+    document.getElementById("mytime").innerHTML = `${dt.getHours()} : ${dt.getMinutes()} : ${dt.getSeconds()}`;
+}
+tFunc();
+setInterval(tFunc, 1000);
+
+//<h1 id="love"></h1>를 html에 만들고 5초 후에 I LOVE YOU!!!를 출력하시오.
+function love(){
+    document.getElementById("love").innerHTML = "I LOVE YOU!!!";
+}
+setTimeout(love,3000);

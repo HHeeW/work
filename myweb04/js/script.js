@@ -1,4 +1,16 @@
 var ind = 1;
+
+window.addEventListener('scroll',function(){
+    let nowScroll = document.scrollingElement.scrollTop;//탑 부터의 스크롤 값 확인
+    if(nowScroll > 600){
+        document.getElementById("top").style.display = 'flex';
+    }
+    if(nowScroll == 0){
+        document.getElementById("top").style.display = 'none';
+    }
+    console.log(nowScroll);
+});
+
 function gTime(){
     var dt = new Date();
     var yr = dt.getFullYear();

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1. ID로 HTML 요소를 찾는 방법 : document.getElementById('아이디')
+         2. 태그이름으로 HTML 요소를 찾는 방법 : document.getElementsByTagName("태그") - 배열
+         3. 클래스 이름으로 HTML 요소를 찾는 법 : document.getElementsByClassName("클래스") - 배열
+         4. css선택기로 HTML요소를 찾는 법 : document.querySelectorAll("태그.클래스") - 배열
+         5. HTML 개체 컬렉션으로 HTML요소를 찾는 법
+    -->
+    <!-- <h2>자바스크립트</h2>
+    <p class="intro pa">태그로 html 요소 찾기</p>
+    <p class="intro pb">두번쨰 html의 p요소 찾기</p>
+    <p id="demo"></p>
+    <script>
+        //getElement - getElements <= 배열로 받는다
+        const el = document.getElementsByClasName("pb");
+        document.getElementById("demo").innerHTML = '받은 내용 출력' + el[1].innerHTML;
+    </script> -->
+
+    <h2>자바스크립트</h2>
+    <h2>회원로그인</h2>
+    <p>회원이시면 로그인 해주세요</p>
+
+    
+    
+    <form id="login" action="action.html">
+        <label for="userid">아이디</label>
+        <input type="text" name=" username" id="userid" value="myname">
+        <br>
+        <label for="userpass">비밀번호</label>
+        <input type="text" name="userpass" id="userpass" value="12345678">
+        <br>
+        <input type="submit" value=" 로그인 "/>
+    </form>
+
+    <p> 폼 안에 입력된 정보</p>
+    <p id="demo"></p>
+
+    <script>
+        const x = document.forms['login'];
+        let text = "";
+        for (let i = 0; i< x.length; i++){
+            text += x.elemnts[i].value + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>
