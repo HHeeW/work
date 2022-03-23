@@ -231,14 +231,15 @@ ul.all{
     left: 0;
     width: 100%;
     text-transform: uppercase;
+    display: none;
 }
-ul.all li{
+ul.all>li{
     width: 14%;
     text-align: center;
     border-right: 1px dashed #ddd;
     padding: 15px 0;
 }
-ul.all li:last-child{
+ul.all>li:last-child{
     border: none;
     background-color: #eee;
 }
@@ -256,24 +257,52 @@ li.first:hover::after{
     left: 0;
     bottom: 0;
 }
-.bar{
+.bar, .barover{
     width: 30px;
     height: 3px;
     background-color: #333;
     margin: 7px auto;
     transition: all 0.4s;
 }
-li.first:hover .bar:first-child{
+.barover:first-child{
     transform: rotate(-45deg) translate(-9px, 10px);
 }
-li.first:hover .bar:nth-child(2){
+
+.barover:nth-child(2){
     opacity: 0;
 }
-li.first:hover .bar:last-child{
+.barover:last-child{
     transform: rotate(45deg) translate(-5px, -5px);
 }
 
-
+ul.sub{
+    list-style-type: none;
+    padding: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+ul.sub li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #eee;
+}
+ul.sub li:hover{
+    background-color: #ddd;
+}
+.fadeIn{
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+.fadeOut{
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+.first-over{
+    display: block;
+}
 @keyframes brrr{
     0%{left: -5px;}
     5%{left: 10px;}
@@ -284,4 +313,13 @@ li.first:hover .bar:last-child{
     30%{left: -5px;}
     35%{left: 10px;}
     40%{left: -5px;}
+}
+
+@keyframes fadeIn{
+    from {opacity: 0;}
+    to { opacity :1;}
+}
+@keyframes fadeOut{
+    from{ opacity: 1;}
+    to { opacity: 0;}
 }

@@ -32,7 +32,7 @@ button.forwardicon{
     right: 1%;
 }
 .pt-55{
-    padding: 55px;
+    padding-top: 55px;
 }
 .pt-40{
     padding-top: 40px;
@@ -159,7 +159,6 @@ a.search{
 .benner{display: none;}
 .slider>.container{
     background: url(../images/002.png) no-repeat right bottom;
-    margin-bottom: -13px;
     background-size: 350px;
     padding-bottom: 100px;
 }
@@ -518,7 +517,6 @@ a.card-box:hover{
 .quick a{
     margin-right: 20px;
     position: relative;
-    line-height: 2.2em;
 }
 .quick a::before{
     content: "";
@@ -644,6 +642,7 @@ footer ul li:not(:first-child) a::before{
     .slider>.container{
         padding-left: 30px;
         padding-right: 30px;
+        position: relative;
     }
     .slider ul{
         font-size: 18px;
