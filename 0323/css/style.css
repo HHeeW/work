@@ -1,0 +1,11 @@
+ol{
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+}
+p{
+    width: 600px;
+    margin-left: 280px;
+    margin-top: 40px;
+    font-size: 20px;
+}
