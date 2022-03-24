@@ -152,12 +152,23 @@
             <div class="col-40">
                 <div class="imgview">
                     <div class="bimg">
-                        <img src="images/001.jpg" alt="001">
+                        <a href="#" class="left" onclick="bimg(-1)">
+                            <div class="Lbar"></div>
+                            <div class="Lbar"></div>
+                        </a>
+                        <a href="#" class="right"onclick="bimg(1)">
+                            <div class="Rbar"></div>
+                            <div class="Rbar"></div>
+                        </a>
+                        <img src="images/001.jpg" id="img1" alt="001" onclick="bview(1)">
+                        <img src="images/001.jpg" id="img2" alt="001" onclick="bview(0)">
                     </div>
                     <div class="simg">
-                        <img src="images/001.jpg" alt="001">
-                        <img src="images/002.jpg" alt="002">
-                        <img src="images/003.jpg" alt="003">
+                        <img src="images/001.jpg" alt="001" onmouseover="vimg('001')">
+                        <img src="images/002.jpg" alt="002" onmouseover="vimg('002')">
+                        <img src="images/003.jpg" alt="003" onmouseover="vimg('003')">
+                        <img src="images/004.jpg" alt="004" onmouseover="vimg('004')">
+                        <img src="images/005.jpg" alt="005" onmouseover="vimg('005')">
                     </div>
                 </div>
             </div>

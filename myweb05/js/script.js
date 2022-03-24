@@ -14,7 +14,7 @@ window.onload = function(){
             allshop.children[i].classList.remove('bar');
             allshop.children[i].classList.add('barover');
         }
-            fadeInOut(elem, 'flex');
+        fadeInOut(elem, 'flex');
     });
 
     elem.addEventListener("mouseleave", function(){
@@ -28,7 +28,24 @@ window.onload = function(){
            fadeInOut(elem, 'none');
         }   
     });
+
+    
+
 }
+let img1= document.getElementById('img1')
+let img2= document.getElementById('img2')
+function vimg(str){
+    img1.src = 'images/' +str+ '.jpg';
+    img2.src = 'images/' +str+ '.jpg';
+}
+function bview(n){
+    if(n){
+        img2.style.display = 'block';
+    }else{
+        img2.style.display = 'none';
+    }
+}
+
 
 function fadeInOut(elem, disp) {
     if(! elem) return;

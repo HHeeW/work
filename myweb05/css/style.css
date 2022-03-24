@@ -34,6 +34,7 @@ a{
     top:0;
     left:0;
     border-bottom:1px solid #ddd;
+    background-color: #fff;
 }
 .top-nav a{
     line-height:40px;
@@ -233,6 +234,7 @@ ul.all{
     width: 100%;
     text-transform: uppercase;
     display: none;
+    z-index: 20;
 }
 ul.all>li{
     width: 14%;
@@ -349,10 +351,65 @@ ul.sub li:hover{
     padding: 10px;
     margin-bottom: 15px;
     cursor: pointer;
+    position: relative;
+}
+.bimg:hover a{
+    display: block;
+    transition: all 1s;
+}
+.bimg a{
+    position: absolute;
+    top: 190px;
+    width: 70px;
+    height: 70px;
+    display: none;
+}
+.bimg .left{
+    left: 50px;
+}
+.bimg .right{
+    right: 50px;
+}
+.bimg .left .Lbar:first-child{
+    font-size: 100px;
+    width: 40px;
+    height: 1px;
+    background-color: #000;
+    transform: rotate(-45deg) translate(-10px, 20px);
+}
+.bimg .left .Lbar:last-child{
+    font-size: 100px;
+    width: 40px;
+    height: 1px;
+    background-color: #000;
+    transform: rotate(45deg) translate(40px, 29px);
+}
+.bimg .right .Rbar:first-child{
+    font-size: 100px;
+    width: 40px;
+    height: 1px;
+    background-color: #000;
+    transform: rotate(-45deg) translate(-20px, 50px);
+}
+.bimg .right .Rbar:last-child{
+    font-size: 100px;
+    width: 40px;
+    height: 1px;
+    background-color: #000;
+    transform: rotate(45deg) translate(29px, 0px);
+}
+
+
+#img2{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+    display: none;
 }
 .simg img{
     height: 100px;
-    margin-right: 10px;
+    margin-right: 0px;
 }
 .col-50{
     flex: 0 0 50%;
