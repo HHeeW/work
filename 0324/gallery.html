@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{max-width: 100%;}
+        .imgbox{
+            width: 300px;
+            height: 500px;
+            border: 1px solid #ddd;
+            margin: 30px auto;
+        }
+        .imgbigbox{
+            height: 400px;
+            overflow: hidden;
+        }
+        .imgsmallbox{
+            height: 100px;
+            width: 100px;
+            float: left;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="imgbox">
+        <div class="imgbigbox">
+            <img src="images/th01.jpg" id="img" alt="01">
+        </div>
+        
+        <div class="imgsmallbox">
+            <img src="images/th01.jpg" alt="01" onclick="vimg('th01')">
+        </div>
+        <div class="imgsmallbox">
+            <img src="images/th02.jpg" alt="02" onclick="vimg('th02')">
+        </div>
+        <div class="imgsmallbox">
+            <img src="images/th03.jpg" alt="03" onclick="vimg('th03')">
+        </div>
+    </div>
+    <form name="searchForm" action="smaple.html" onsubmit="validateForm()">
+        <input type="text" name="search" placeholder="검색">
+        <button type="submit"> 검색 </button>
+    </form>
+    <form name="searchForm" action="smaple.html" onsubmit="toggleText()">
+        <label>성</label><input type="text" name="firstname" id="firstname">
+        <label>이름</label><input type="text" name="lastname" id="lastname" disabled>
+        <button type="submit"> 검색 </button>
+    </form>
+    <script>
+        function validateForm(){
+            let searchtext = document.forms['searchForm']['search'].value;
+            if(searchtext == ''){
+                alert('내용을 입력하세요');
+                return false;
+            }
+
+        }
+        function toggleText(){
+            let firstname = document.getElementById('fisrtname').value;
+            if(firstname != ""){
+                document.getElementById('lastname'). disabled = false;
+            }else{
+                document.getElementById('lastname'). disabled = true;
+            }
+        }
+        function vimg(str){
+            document.getElementById('img').src = 'images/' +str+ '.jpg';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+//함수가 다른 함수의 값을 리턴할 수 있다.
+//함수가 다른 함수의 입력 값이 될 수도 있다.
+//콜백함수 : 다른 함수의 입ㄺ 값으로 그 함수에 의해 나중에 호출되는 함수
+
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+// const result = words.filter(element => element.length > 6);
+// console.log(result);
+
+// //1.
+// function callback(words){
+//     if(words.length > 6){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
+
+// //2.
+// function callback(words){
+//     return words.length > 6;
+// }
+
+// //3.
+// const result = words.filter(function(words){return words.length > 6});
+
+// //4.
+// const result = words.filter(element => element.length > 6);
+
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+// function myfilter(str, callback){;
+//     let result = [];
+//     let current;
+//     for(let i = 0; i< str.length; i++){
+//         current = str[i];
+//         if(callback(current)){
+//             result.push(current)
+//         }
+//     }
+//     return result;
+// }
+// let result = myfilter(words, element => element.length > 6);
+// console.log(result);
+
+function disaplay(some){
+    document.write(some);
+}
+function cal(num1, num2, mycallback){
+    let sum = num1 + num2;
+    mycallback(sum);
+}
+cal(5, 5, disaplay);
+//동기적으로 출력, 직렬화
+console.log('a');
+console.log('b');
+console.log('d');
+
+
+</script>
+</body>
+</html>

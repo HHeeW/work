@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
 @import url('grid.css');
 *{ margin-block-start: 0; margin-block-end: 0;}
+
 body{
     font-family: 'Noto Sans KR', sans-serif;
     font-size:16px;
@@ -303,6 +304,62 @@ ul.sub li:hover{
 .first-over{
     display: block;
 }
+/* ******************************************************** */
+/* ********************PRODUCT DETAIL********************** */
+/* ******************************************************** */
+.breadcrumb{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-size: 13px;
+    line-height: 25px;
+}
+.top-line{
+    border-top: 2px solid #000;
+}
+.breadcrumb li:not(:last-child)::after{
+    content: "";
+    line-height: 25px;
+    height: 5px;
+    padding: 0 0 0 12px;
+    margin: 0 0 0 10px;
+    color: #333;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url("data:images/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'><path d='M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z'/></svg>") no-repeat 0 10px;
+}
+.col-10{
+    flex: 0 0 10%;
+    max-width: 10%;
+}
+.col-40{
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+.col-40 img{
+ max-width: 100%;   
+}
+.bimg{
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.simg img{
+    height: 100px;
+    margin-right: 10px;
+}
+.col-50{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+
 @keyframes brrr{
     0%{left: -5px;}
     5%{left: 10px;}
@@ -323,3 +380,4 @@ ul.sub li:hover{
     from{ opacity: 1;}
     to { opacity: 0;}
 }
+@fun
