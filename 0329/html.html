@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">DOM 요소</h1>
+    <p id="text01">저의 부모는 body입니다.</p>
+    <p1 id="text02"></p1>
+
+    <form>
+        <input type="file" name="fifle[]">
+        <br>
+        <button>파일추가</button> <button>추가취소</button>
+    </form>
+
+    <div id="div">
+        <p id="p1">문장태그 1입니다.</p>
+        <p id="p2">문장태그 2입니다.</p>
+    </div>
+
+    <button onclick="delele()">삭제</button>
+
+    <script>
+        let myTitle = document.getElementById("title").innerHTML;
+        console.log(myTitle);
+        document.getElementById("text02").innerHTML = myTitle;
+
+        //1. 새요소를 만듬
+        
+        document.getElementsByTagName("p").innerHTML = document.getElementById("title").innerHTML;
+
+        const para = document.createElement("p");
+        const node = document.createTextNode("문장태그 3입니다.");
+        console.log(para);
+        para.appendChild(node);
+        console.log(para);    
+        
+        document.getElementById("div").appendChild(para);
+
+        function delele(){
+            const parent = document.getElementById("div");
+            const child = document.getElementsByTagName("p");
+            parent.removeChild(child[0]);
+        }
+    </script>
+</body>
+</html>
