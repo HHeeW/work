@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakao 지도 시작하기</title>
+</head>
+<body>
+    <div id="map" style="width: 1000px; height: 700px;"></div>
+    
+    <button onclick="getLocation()">위치정보 확인</button>
+    <p id="geolocation"></p>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=689c44352602e9058c4532e7d9c47b34"></script>
+<script>
+
+    const geo = document.getElementById("geolocation");    
+    var container = document.getElementById('map');
+	
+    function getLocation(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showposition);
+        }else{
+            geo.innerHTML = "당신의; 웹브라우저는 위치기반 서비스를 허용하지 않네요";
+        }
+    }
+    function showposition(posiiton){
+        let lat = posiiton.coords.latitude;
+        let lon = posiiton.coords.longitude;
+        let txt = `당신의 현재 위치는 위도 : ${lat}, 경도 : ${lon}입니다`;
+        
+        console.log(txt)
+        geo.innerHTML = txt;
+// ******************************************
+        var options = {
+        center: new kakao.maps.LatLng(lat, lon),
+        level: 3
+	};
+        var map = new kakao.maps.Map(container, options);
+
+        var markerPosition  = new kakao.maps.LatLng(lat, lon); 
+        var marker = new kakao.maps.Marker({ position: markerPosition});
+        marker.setMap(map);
+    }
+    
+</script>
+</body>
+</html>
