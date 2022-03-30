@@ -7,6 +7,7 @@ function myweather(){
     .then(data => {
         drawWeather(data);
     });
+    console.log(url);
 }
 function drawWeather(d){
     let temp = Number(d.main.temp)-273.15;
@@ -15,7 +16,7 @@ function drawWeather(d){
     document.getElementById("description").innerHTML = d.weather[0].description;
     document.getElementById("temp").innerHTML = temp + '&deg;';
     document.getElementById("location").innerHTML = d.name; 
-    document.getElementById("img").innerHTML = "https://openweathermap.org/img/wn/"+d.weather[0].icon+"@2x.png"
+    document.getElementById("img").src = "https://openweathermap.org/img/wn/"+d.weather[0].icon+"@2x.png"
 }
 
 window.onload = () => myweather();
