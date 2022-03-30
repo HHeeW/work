@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><a href="index.html">WEB</a></h1>
+
+    <input class="night_day" type="button" value="night" onclick="day()">
+    <ol>
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaScript</a></li>
+    </ol>
+
+    <h2>JavaScript</h2>
+    <p>Each of the many JavaScript engines represent a different 
+    implementation of JavaScript, </p>
+    <p>all based on the ECMAScript specification, </p>
+    <p>with some engines not supporting the spec fully, </p>
+    <p>and with many engines supporting additional features beyond ECMA. </p>
+    <input class="night_day" type="button" value="night" onclick="day()">
+
+    <script>
+        
+        function day(){
+            var target = document.querySelector('body');
+            var btn = document.getElementsByClassName("night_day");
+            if(btn[0].value === 'dark'){
+                target.style.backgroundColor = 'black'; 
+                target.style.color = 'white'; 
+                btn[0].value = 'bright'; 
+                btn[1].value = 'bright'; 
+            } else { 
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black'; 
+                btn[0].value = 'dark'; 
+                btn[1].value = 'dark'; 
+            } 
+        }
+    </script>
+</body>
+</html>

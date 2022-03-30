@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .viewbox{
+            position: relative;
+            width: 1200px;
+            height: 684px;
+            overflow: hidden;
+            margin: 200px auto;
+        }
+        #imgbox{
+            width: 3700px;
+            height: 684px;
+            float: left;
+            position: absolute;
+            left: 0px;
+        }
+        img{
+            width: 1200px;
+            margin: 0;
+            padding: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="viewbox">
+        <div id="imgbox">
+            <img src="images/슬라이드1.jpg" alt="001">
+            <img src="images/슬라이드2.jpg" alt="002">
+            <img src="images/슬라이드3.jpg" alt="003">
+        </div>
+    </div>
+
+<script>
+    var i = 0;
+    setInterval (function(){
+        let img = document.getElementById("imgbox");
+        
+        if(i == -2400){
+            img.style.left = '0px'
+            i = 0;
+        }else{
+            i -= 1200;
+            img.style.left = i + "px";
+        }
+    }, 3000);
+</script>
+</body>
+</html>

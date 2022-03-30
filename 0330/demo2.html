@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Q : div요소 안의 첫 번째 문단을 찾아 노란색으로 배경을 바꾸시요.</h1>
+    <div>
+        <p>가치를 물방아 반짝이는 우리의 길을 사막이다. 무한한 두손을 설레는 사막이다.</p>
+        <p>얼마나 같이 바이며, 황금시대다. 이상은 위하여 동산에는 봄날의 약동하다. 얼음 튼튼하며, 대한 그들의 보라.</p>
+        <p>스며들어 하는 천고에 아니다. 들어 구하지 청춘은 살 무엇이 갑 것이다.</p>
+    </div>
+    <div>
+        <p>인간이 너의 몸이 보는 봄바람이다. 곧 발휘하기 인류의 사람은 목숨이 생명을 옷을 끓는 황금시대다.</p>
+
+        <p>그들을 부패를 소리다.이것은 운다. 피는 트고, 기쁘며, 같은 맺어, 것이다. 구할 들어 그들의 위하여 청춘 이상 것이다.</p>
+    </div>
+    <div>
+        <ul>
+            <li>목록태그</li>
+            <li>목록태그</li>
+            <li>목록태그</li>
+        </ul>
+        <p>바로 아니한 우리 없는 열락의 것이다. 어디 아니더면, 몸이 그것은 것이다.</p>
+
+        <p>유소년에게서 얼마나 이상은 있다. 찬미를 방지하는 살았으며, 우리의 피는 힘있다.</p>
+
+        <p>힘차게 온갖 이것은 그들은 내는 그러므로 봄바람이다. 열매를 석가는 타오르고 못할 기쁘며, 광야에서 말이다.</p>
+    </div>
+    <script>
+        /*
+            first-child는 대상부모의 자식 중 첫 번째
+            first-of-type은 대상부모의 타입이 같은 자식 중 첫 번째
+        */
+        let paras = document.querySelectorAll("div p:first-of-type");
+        for(var i = 0; i < paras.length; i++){
+            paras[i].setAttribute("style", "background-color:yellow");
+        }
+    </script>
+</body>
+</html>
