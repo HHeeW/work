@@ -54,6 +54,10 @@ a{
     text-decoration: none;
     color: #111;
 }
+div.bgb{
+    background-color: #ddd;
+    color: #ddd;
+}
 .container  {
     width: 1360px;
 }

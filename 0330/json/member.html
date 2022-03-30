@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="text-center">우리 회원 명단</h1>
+    <div class="text-center">
+        <table>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>도시</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let mytd = '';
+        fetch('member.json')
+        .then(resolve => resolve.json())
+        .then(rs => {
+            //console.log(rs);
+            for(let r of rs.memberlist){
+            mytd += `<tr>
+                        <td>${r.name}</td>
+                        <td>${r.age}</td>
+                        <td>${r.city}</td>
+                    </tr>`;
+            }
+            document.getElementById("tbody").innerHTML = mytd;
+        })
+    </script>
+</body>
+</html>

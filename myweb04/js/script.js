@@ -8,7 +8,7 @@ window.addEventListener('scroll',function(){
     if(nowScroll == 0){
         document.getElementById("top").style.display = 'none';
     }
-    console.log(nowScroll);
+    //console.log(nowScroll);
 });
 
 function gTime(){
@@ -46,3 +46,41 @@ function autoSlide(){
     if(ind == 6){ind = 1;}
         document.getElementById("slide"+ind).style.display = "block";
 }
+
+//json - bestCafe
+const bestCafe = document.getElementById("bestCafe");
+fetch('./json/cafe.json')
+.then(resolve => resolve.json())
+.then(rs =>{
+    //console.log(rs);
+    let cnode = "";
+    
+    for(let r of rs.list){
+        let hashArr = r.hash.split(",");
+        let csnode = "";
+        for(let i in hashArr){
+            csnode += (i == 0)?`<span class = "act">${hashArr[i]}</span>`:`<span>${hashArr[i]}</span>`;
+        }
+        cnode += `
+            <div class="col-4 col-tb-6 py-15">
+                <a href="#" class="card">
+                    <div class="img-thumb" style="background-image: url(images/${r.img});"></div>
+                    <div class="card-contents">
+                        <h3>${r.title}</h3>
+                        <p class="title-info ellipis">${r.desc}</p>
+                        <p class="hash ellipis">
+                            ${csnode}
+                        </p>
+                    </div>
+                </a>
+            </div>
+        `;
+    }
+    bestCafe.innerHTML = cnode;
+})
+//json - mainlist
+const mainlist = document.getElementById("mainlist");
+fetch('./json/mainlist')
+.then()
+
+.catch(error=> console.log(error))
