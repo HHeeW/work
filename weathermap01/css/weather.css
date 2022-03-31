@@ -1,8 +1,20 @@
 @import url(all.min.css);
-
+@import url(fonts.css);
 *{box-sizing: border-box;}
 
-
+body{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+i{
+    color: #fff;
+}
+a, a:link{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
 .container{
     width: 340px;
     height: 570px;
@@ -10,41 +22,50 @@
     margin: 0 auto;
     border: 1px solid #333;
     overflow: auto;
-    background-color: rgb(210, 241, 98);
+    background-color: rgb(100, 180, 255);
 }
 header{
     width: 100%;
     height: 5%;
-    border: 1px solid #333;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: right;
+    margin-top: 3%;
 }
 .navbar{
     height: 100%;
     width: 10%;
-    border: 1px solid #333;
-}
-.navbar a{
-    width: 100%;
-    height: 100%;
-}
-.navbar a .bar{
-    width: 50%;
-    height: 10%;
-    background-color: #fff;
-    margin: 10% auto;
+    padding-right: 3%;
 }
 .share{
     height: 100%;
     width: 80%;
     padding-right: 3%;
-    border: 1px solid #333;
 }
 .pluse{
     height: 100%;
     width: 10%;
     padding-right: 3%;
-    border: 1px solid #333;
+}
+
+.weatherbox{
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+}
+.weatherbox div:first-child{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.weatherbox img{
+    width: 40%;
+}
+.weatherbox h1{
+    margin: 0;
+    font-size: 3em;
+    font-weight: 500;
+}
+.weatherbox h4{
+    display: inline-block;
 }
