@@ -1,0 +1,51 @@
+@import url(fonts.css);
+@import url(all.min.css);
+
+*{box-sizing: border-box;}
+
+
+.container{
+    width: 340px;
+    height: 570px;
+    padding: 0;
+    margin: 0 auto;
+    border: 1px solid #333;
+    overflow: auto;
+    background-color: rgb(210, 241, 98);
+}
+header{
+    width: 100%;
+    height: 5%;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+}
+.navbar{
+    height: 100%;
+    width: 10%;
+    border: 1px solid #333;
+}
+.navbar a{
+    width: 100%;
+    height: 100%;
+}
+.navbar a .bar{
+    width: 50%;
+    height: 10%;
+    background-color: #fff;
+    margin: 10% auto;
+}
+.share{
+    height: 100%;
+    width: 80%;
+    padding-right: 3%;
+    border: 1px solid #333;
+}
+.pluse{
+    height: 100%;
+    width: 10%;
+    padding-right: 3%;
+    border: 1px solid #333;
+}
