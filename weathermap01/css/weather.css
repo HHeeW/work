@@ -15,6 +15,9 @@ a, a:link{
     text-decoration: none;
     color: #fff;
 }
+i{
+    font-size: 1.3em;
+}
 .container{
     width: 340px;
     height: 570px;

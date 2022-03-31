@@ -48,9 +48,15 @@ function timeWeather(all){
     let all_time = document.getElementsByClassName("all_time");
     let time_weather = document.getElementsByClassName("time_weather");
     let time_temp = document.getElementsByClassName("time_temp");
-    all_time[0].innerHTML = all.hourly.temp[0];
+
+
+    all_time[0].innerHTML = all.hourly[0].dt;
     time_weather[0].src = "https://openweathermap.org/img/wn/"+all.hourly[0].weather[0].icon+"@2x.png";
-    time_temp[0].innerHTML = "123";
+    time_temp[0].innerHTML = Math.round(all.hourly[0].temp) + '&deg;';
 }
-window.onload = () => getLocation();
+
+
+
+
 window.onload = () => myweather();
+window. addEventListener= ('load', getLocation());
