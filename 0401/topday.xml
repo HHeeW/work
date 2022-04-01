@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<catalog>
+    <cd>
+        <title>너의 하루 끝에</title>
+        <artist>휘인</artist>
+        <album>서른,아홉</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>드라마</title>
+        <artist>아이유</artist>
+        <album>조각집</album>
+        <price>300원</price>
+        <year>2021년</year>
+    </cd>
+    <cd>
+        <title>호랑수월가</title>
+        <artist>탑현</artist>
+        <album>호랑수월가</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>벚꽂이 피면 우리 그만 헤어져</title>
+        <artist>벤</artist>
+        <album>벚꽂이 피면 우리 그만 헤어져</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>고백</title>
+        <artist>10CM</artist>
+        <album>두 번째 '고백'</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>추적이는 여름 비가 되어</title>
+        <artist>장범준</artist>
+        <album>장범준 싱글</album>
+        <price>300원</price>
+        <year>2021년</year>
+    </cd>
+    <cd>
+        <title>가을 우체국 앞에서</title>
+        <artist>김대명</artist>
+        <album>슬기로운 의사생활</album>
+        <price>300원</price>
+        <year>2021년</year>
+    </cd>
+    <cd>
+        <title>슈퍼스타</title>
+        <artist>미도와 파라솔</artist>
+        <album>슬기로운 의사생활</album>
+        <price>300원</price>
+        <year>2021년</year>
+    </cd>
+    <cd>
+        <title>정거장</title>
+        <artist>아이유</artist>
+        <album>조각집</album>
+        <price>300원</price>
+        <year>2021년</year>
+    </cd>
+    <cd>
+        <title>신호등</title>
+        <artist>이무진</artist>
+        <album>싱글</album>
+        <price>300원</price>
+        <year>2021년</year>
+    </cd>
+</catalog>

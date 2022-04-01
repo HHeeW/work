@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<catalog>
+    <cd>
+        <title>Rain</title>
+        <artist>xodus</artist>
+        <album>Rain-TAEYEON</album>
+        <price>300원</price>
+        <year>2016년</year>
+    </cd>
+    <cd>
+        <title>늦은 밤 너의 집 앞 골목길에서</title>
+        <artist>노을</artist>
+        <album>싱글</album>
+        <price>300원</price>
+        <year>2019년</year>
+    </cd>
+    <cd>
+        <title>이 밤을 빌려 말해요</title>
+        <artist>10CM</artist>
+        <album>바른연애 길잡이</album>
+        <price>300원</price>
+        <year>2021년</year>
+    </cd>
+    <cd>
+        <title>취기를 빌려</title>
+        <artist>산들</artist>
+        <album>취향저격 그녀</album>
+        <price>300원</price>
+        <year>2020년</year>
+    </cd>
+    <cd>
+        <title>Love poem</title>
+        <artist>아이유</artist>
+        <album>사랑 시</album>
+        <price>300원</price>
+        <year>2019년</year>
+    </cd>
+    <cd>
+        <title>팔레트(feat. G-DRAGON)</title>
+        <artist>아이유</artist>
+        <album>소주 한 잔</album>
+        <price>300원</price>
+        <year>2017년</year>
+    </cd>
+    <cd>
+        <title>비와 당신</title>
+        <artist>이무진</artist>
+        <album>슬기로운 의사생활</album>
+        <price>300원</price>
+        <year>2021년</year>
+    </cd>
+    <cd>
+        <title>내 손을 잡아</title>
+        <artist>아이유</artist>
+        <album>초고의 사랑</album>
+        <price>300원</price>
+        <year>2011년</year>
+    </cd>
+    <cd>
+        <title>겨울잠</title>
+        <artist>아이유</artist>
+        <album>조각집</album>
+        <price>300원</price>
+        <year>2021년</year>
+    </cd>
+    <cd>
+        <title>이런 엔딩</title>
+        <artist>아이유</artist>
+        <album>Palette</album>
+        <price>300원</price>
+        <year>2017년</year>
+    </cd>
+</catalog>

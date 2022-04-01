@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<catalog>
+    <cd>
+        <title>러브레터</title>
+        <artist>아이유</artist>
+        <album>조각집</album>
+        <price>300원</price>
+        <year>2021년</year>
+    </cd>
+    <cd>
+        <title>강변북로</title>
+        <artist>황인욱</artist>
+        <album>강변북로</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>눈이 오잖아(feat.헤이즈)</title>
+        <artist>이무진</artist>
+        <album>싱글</album>
+        <price>300원</price>
+        <year>2021년</year>
+    </cd>
+    <cd>
+        <title>행복하게 해줄게</title>
+        <artist>장범준</artist>
+        <album>그 해 우리는</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>고백</title>
+        <artist>멜로망스</artist>
+        <album>세 번째 '고백'</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>소주 한 잔</title>
+        <artist>양다일</artist>
+        <album>소주 한 잔</album>
+        <price>300원</price>
+        <year>2022년</year>
+    </cd>
+    <cd>
+        <title>밤편지</title>
+        <artist>아이유</artist>
+        <album>정규 4집 첫 번째</album>
+        <price>300원</price>
+        <year>2017년</year>
+    </cd>
+    <cd>
+        <title>그때 그 아인</title>
+        <artist>김필</artist>
+        <album>이태원 클라쓰</album>
+        <price>300원</price>
+        <year>2020년</year>
+    </cd>
+    <cd>
+        <title>나의 어깨에 기대어요</title>
+        <artist>10CM</artist>
+        <album>호텔 델루나</album>
+        <price>300원</price>
+        <year>2019년</year>
+    </cd>
+    <cd>
+        <title>나의 사춘기에게</title>
+        <artist>볼빨간사춘기</artist>
+        <album>Red Diary</album>
+        <price>300원</price>
+        <year>2017년</year>
+    </cd>
+</catalog>
