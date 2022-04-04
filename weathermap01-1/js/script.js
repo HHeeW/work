@@ -57,21 +57,42 @@ function getWeather(lat, lon, city){
       10.습도 11.구름 12.체감온도
       */
 
+   let sunriseTime = new Date(rs.city.sunrise*1000);
+   let sunsetTime = new Date(rs.city.sunset*1000);
+   let sunrise = `${sunriseTime.getHours()}:${sunriseTime.getMinutes()}`;
+   let sunset = `${sunsetTime.getHours()}:${sunsetTime.getMinutes()}`;
+   let nowTime = new Date(rs.list[0].dt*1000);  //<-- 유닉스타임을 시간으로 변환하는 방법
+   let nowDate = nowTime.getFullYear() + "년 " + (parseInt(nowTime.getMonth()) + 1) +"월 " + nowTime.getDate() + "일 " + nowTime.getHours() + "시";
+
+
     console.log("도시명", county(rs.city.name));
-     //console.log("시간")
+    console.log("시간", nowDate);
     console.log("아이콘", rs.list[0].weather[0].icon);
     console.log("현재온도", rs.list[0].main.temp);
     console.log("최저온도", rs.list[0].main.temp_min);
     console.log("최고온도", rs.list[0].main.temp_max);
     console.log("설명", rs.list[0].weather[0].description);
-    console.log("해뜨는 시간", new Date(rs.city.sunrise*1000));
-    console.log("해지는 시간", new Date(rs.city.sunset*1000));
+    console.log("해뜨는 시간", sunrise);
+    console.log("해지는 시간", sunset);
     console.log("바람세기", rs.list[0].wind.speed);
     console.log("바람방향", rs.list[0].wind.deg);
     console.log("습도", rs.list[0].main.humidity);
     console.log("구름", rs.list[0].clouds.all);
     console.log("체감온도", rs.list[0].main.feels_like);
     
+    document.getElementById("city").innerHTML = county(rs.city.name);
+    document.getElementById("now_Time").innerHTML = nowDate;
+    document.getElementById("icon").src =  "images/design/"+ rs.list[0].weather[0].icon +".svg";
+    document.getElementById("nowtemp").innerHTML = Math.round(rs.list[0].main.temp) + "&deg;";
+    document.getElementById("maxtemp").innerHTML = Math.round(rs.list[0].main.temp_max) + "&deg;";
+    document.getElementById("mintemp").innerHTML = Math.round(rs.list[0].main.temp_min) + "&deg;";
+    document.getElementById("desc").innerHTML = rs.list[0].weather[0].description;
+    document.getElementById("sunrise").innerHTML = sunrise;
+    document.getElementById("sunset").innerHTML = sunset;
+    document.getElementById("wind").innerHTML = rs.list[0].wind.speed + "m/s";
+    document.getElementById("humidity").innerHTML = rs.list[0].main.humidity + "%";
+    document.getElementById("clouds").innerHTML = rs.list[0].clouds.all;
+    document.getElementById("feels_like").innerHTML = rs.list[0].main.feels_like  + "&deg;";
 
    //   const myClass = document.getElementsByClassName;
    //   const myId = document.getElementById;
