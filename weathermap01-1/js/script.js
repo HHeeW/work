@@ -56,7 +56,8 @@ function getWeather(lat, lon, city){
       7.해뜨는 시간 8.해지는 시간 9.바람 
       10.습도 11.구름 12.체감온도
       */
-    console.log("도시명", rs.city.name);
+
+    console.log("도시명", county(rs.city.name));
      //console.log("시간")
     console.log("아이콘", rs.list[0].weather[0].icon);
     console.log("현재온도", rs.list[0].main.temp);
@@ -72,9 +73,9 @@ function getWeather(lat, lon, city){
     console.log("체감온도", rs.list[0].main.feels_like);
     
 
-     const myClass = document.getElementsByClassName;
-     const myId = document.getElementById;
+   //   const myClass = document.getElementsByClassName;
+   //   const myId = document.getElementById;
 
-     myClass('city-title')[0].innerHTML = `${rs.city.name}`;
+   //   myClass('city-title')[0].innerHTML = `${rs.city.name}`;
    });
 }
