@@ -10,3 +10,9 @@ document.getElementById('day').innerHTML = week[day];
 
 var info = month[m] + "월 " + day + "일 " + now.getHours() + ":" + now.getMinutes();
 document.getElementById('info').innerHTML = info;
+
+$(document).ready(function(){
+    $('.cjs_btn_more').click(function(){
+        $('.cjs_ly_function').fadeToggle(0);
+    })
+})

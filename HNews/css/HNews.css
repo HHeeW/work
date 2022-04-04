@@ -13,6 +13,8 @@ body{
 ul{
     text-decoration: none;
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 .container{
     font-size: 14px;
@@ -310,7 +312,7 @@ main{
 .main_item_flash{
     border-top: 1px solid #efeff0;
     position: relative;
-    /* display: none; */
+    display: none;
 }
 .main_item_flash span{
     position: absolute;
@@ -441,6 +443,7 @@ main{
     background-color: #fff;
     border: 1px solid #e6e6ea;
     z-index: 200;
+    display: none;
 }
 .more_layer .cjs_ly_function a{
     font-size: 14px;
@@ -478,6 +481,48 @@ main{
     background-size: 139px 129px;
     background-repeat: no-repeat;
 }
+
+.cjs_tab_wrap{
+    width: 100%;
+}
+
+.cjs_tab_list{
+    margin: 0 20px;
+}
+.cjs_tab_item{
+    float: left;
+    width: 50%;
+}
+.cjs_tab_item a{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #303038;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom-color: #303038;
+}
+.cc_text_list{
+    padding: 0 20px 6px;
+    padding-top: 5px;
+}
+.cc_text_a{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 11px 6px 10px 2px;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+}
+
+
+
+
 
 
 
