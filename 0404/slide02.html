@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slide{
+            width: 1200px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .act{
+            z-index: 3;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+</head>
+<body>
+    <div class="slidecontainer">
+        <img src="images/slide01.jpg" alt="01">
+        <img src="images/slide02.jpg" alt="02">
+        <img src="images/slide03.jpg" alt="03">
+    </div>
+
+    <script>
+        $(function(){
+            setInterval(slideFade, 3000);
+            function slideFade(){
+                $('.slidecontainer img:eq(0)').fadeOut(1000).next().fadeIn(1000).end().appendTo('.slidecontainer');
+            }
+            
+            // function slideFade(){
+            //     let eq0 = $('.slidecontainer img:eq(0)');
+            //     let eq1 = $('.slidecontainer img:eq(1)');
+            //     eq1.addClass('act').css('opacity', 0).animate({
+            //         opacity:1
+            //     }, 1000, function(){
+            //         $('.slidecontainer').append(eq0);
+            //         eq0.removeClass('act');
+            //     })
+            // }
+        })
+    </script>
+</body>
+</html>

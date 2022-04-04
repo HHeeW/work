@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slidecontainer{
+            height: 300px;
+            width: 1200px;
+            position: relative;
+            margin: 50px auto;
+        }
+        img{
+            display: none;
+        }
+
+        .fadein{
+            animation: fadein 1.5s;
+        }
+        @keyframes fadein {
+            from { opacity: 0.3; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeout {
+            from { opacity: 1; }
+            to { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slidecontainer">
+        <img src="images/slide01.jpg" alt="01" class="fadein">
+        <img src="images/slide02.jpg" alt="02" class="fadein">
+        <img src="images/slide03.jpg" alt="03" class="fadein">
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlide();
+        function showSlide(){
+            let i;
+            slideIndex = slideIndex % 3;
+            let slideImg = document.getElementsByTagName('img');
+            for(i = 0; i < slideImg.length; i++){
+                slideImg[i].style.display = 'none';
+            }
+            slideImg[slideIndex].style.display = 'block';
+            slideIndex++;
+            setTimeout(showSlide,3000)
+        }
+    </script>
+</body>
+</html>
