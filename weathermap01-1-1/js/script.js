@@ -68,9 +68,52 @@ function getWeather(lat, lon, city){
        document.getElementById("nowtemp").innerHTML = rs.list[0].main.temp.toFixed(0) + "&deg; ";
        let temp_minmax = rs.list[0].main.temp_min.toFixed(1) + "&deg; / " + rs.list[0].main.temp_max.toFixed(1) + "&deg;";
        document.getElementById('minmaxtemp').innerHTML = temp_minmax;
+       document.getElementById('desc').innerHTML = rs.list[0].weather[0].description;
        /* 시간 */
        console.log("아이콘", rs.list[0].weather[0].icon);
+       /* 해뜨는 시각 */
+       let sunriseTime = new Date(rs.city.sunrise*1000);
+       let sunsetTime = new Date(rs.city.sunset*1000);
+       
+       let sunrise = `${sunriseTime.getHours()}: ${sunriseTime.getMinutes()}`;
+       let sunset = `${sunsetTime.getHours()}: ${sunsetTime.getMinutes()}`;
+       document.getElementById('sunrise').innerHTML = sunrise;
+       document.getElementById('sunset').innerHTML = sunset;
+       document.getElementById('wind').innerHTML = rs.list[0].wind.speed + 'm/s';
+       document.getElementById('cloud').innerHTML = rs.list[0].clouds.all + '%';
+       document.getElementById('humidity').innerHTML = rs.list[0].main.humidity + '%';
+       document.getElementById('feelslike').innerHTML = rs.list[0].main.feels_like + "&deg;";
+       let html = "";
+       for(let i in rs.list){
+         let dayTime = new Date(rs.list[i].dt*1000);  //<-- 유닉스타임을 시간으로 변환하는 방법
+         let dayHours = formmatAMPM(dayTime.getHours());
+         //let dayHours = dayTime.toLocaleDateString('ko-KR', { hour: "numeric", hour12: true});
+         //(dayTime.getHours() > 12) ? `PM ${dayTime.getHours()-12}`:`AM ${dayTime.getHours()}`; 
+         let dayDate = dayTime.getDate() + "일 " + dayHours+ "시";
+
+         let day_minmax = rs.list[i].main.temp_min.toFixed(1) + "&deg; / " + rs.list[i].main.temp_max.toFixed(1) + "&deg;";
+         let st='';
+         st = rs.list[i].weather[0].icon.includes('n')? `style="background-color:rgba(0,0,0,0.1);"`:"";
+           html += `
+           <li>
+           <div class="dayWeather" ${st}>
+              <p class="daydate">${dayDate}</p> 
+              <img src="images/${rs.list[i].weather[0].icon}.svg" alt="01d" />
+              <p class="daytemp">${day_minmax}</p>
+              <p class="daydesc">${rs.list[i].weather[0].description}</p>
+           </div>
+           </li>           
+           `;
+       }
+       document.getElementById('swipper').innerHTML = html;
    });
+}
+
+function formmatAMPM(hours) {
+   let ampm = hours >= 12 ? 'PM':'AM';
+   hours = hours % 12;
+   hours = hours ? hours : 12;  //12로 나누어 떨어지면 12를 넣어준다. (0 이면 false)
+   return "("+ampm+")" + hours; 
 }
 
 /*
