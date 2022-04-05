@@ -18,6 +18,21 @@ nav{
     display: flex;
     justify-content: flex-end;
 }
+.img-Box{
+    position: relative;
+}
+.img-Box img{
+    position: absolute;
+    height: 200%;
+    top: -45%;
+    left: 20%;
+}
+.dis-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 .searchBox{
     border: 1px solid rgba(255, 255, 255, 0);
     border-radius: 1.5em;
@@ -69,8 +84,8 @@ h1.city-title{
 }
 #iconbox img{
     position: absolute;
-    top: -50%;
-    left: -40%;
+    top: -57%;
+    left: -53%;
     height: 200%;
 }
 #nowtemp{
@@ -79,6 +94,7 @@ h1.city-title{
     text-align: left;
     font-weight: 700;
     color: #fff;
+    padding: 0;
 }
 #minmaxtmep{
     margin-bottom: 10px;
@@ -97,4 +113,44 @@ h1.city-title{
 }
 .light-blue span.material-icons{
     width: auto;
+}
+
+
+
+/* dayweather */
+#wrapper{
+    overflow: hidden;
+    height: 150px;
+}
+#swipper{
+    flex-wrap: nowrap;
+    position: relative;
+}
+#swipper li{
+    padding: 10px 10px;
+}
+.dayweather{
+    width: 120px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0 rgba(246, 239, 35, 0.15), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+.dayweather p{
+    margin: 5px;
+}
+.daydate{
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.dayweather .img-Box{
+    height: 30px;
+}
+
+.daytemp{
+    margin-top: 5px;
+    margin-bottom: 10px;
 }

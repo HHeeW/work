@@ -22,16 +22,19 @@
             <span id="city"></span>
         </h1>
         <p class="ntime text-center"><span id="now_Time"></span></p>
-        <div class="row col-9 margin-auto">
-            <div class="col-6" id="iconbox">
-                <img src="" alt="01d" id="icon">
-            </div> 
-            <div class="col-6" id="nowtemp"></div>
-            <div class="col-12 text-center">
-                <p id="minmaxtemp"><span id="maxtemp"></span>/ <span id="mintemp"></span></p>
-                <p id="desc"></p>
+        <div class="row col-8 margin-auto">
+            <div class="dis-flex">
+                <div class="col-6" id="iconbox">
+                    <img src="" alt="01d" id="icon">
+                </div> 
+                <div class="col-6" id="nowtemp"></div>
             </div>
         </div>
+        <div class="col-12 text-center">
+            <p id="minmaxtemp"><span id="maxtemp"></span>/ <span id="mintemp"></span></p>
+            <p id="desc"></p>
+        </div>
+        
         <div class="row light-blue py-20">
             <div class="offset-1 col-5">
                 <ul>
@@ -49,7 +52,20 @@
             </div>
         </div>
     </div>
-
+    <div id="wrapper" class="container">
+        <ul id="swipper" class="row">
+            <li>
+                <div class="dayweather">
+                    <p class="daydate">00일 00시 00분</p>
+                    <div class="img-Box">
+                        <img src="images/design/01d.svg" alt="01d">
+                    </div>
+                    <p class="daytemp">2323</p>
+                    <p class="daydesc">좋은 날씨</p>
+                </div>
+            </li>
+        </ul>
+    </div>
 
     <script src="js/city.js"></script>
     <script src="js/script.js"></script>

@@ -94,6 +94,29 @@ function getWeather(lat, lon, city){
     document.getElementById("clouds").innerHTML = rs.list[0].clouds.all;
     document.getElementById("feels_like").innerHTML = rs.list[0].main.feels_like  + "&deg;";
 
+   
+    
+
+   let html = "";
+   for(let i in rs.list){
+      let getTime = new Date(rs.list[i].dt*1000);  //<-- 유닉스타임을 시간으로 변환하는 방법
+      let dayHours = (getTime.getHours() >12) ? `PM ${getTime.getHours()-12}`:`AM ${getTime.getHours()}`;
+      let getDate = getTime.getDate() + "일 " + dayHours + "시";
+         html += `
+            <li>
+               <div class="dayweather">
+                  <p class="daydate">${getDate}</p>
+                  <div class="img-Box">
+                     <img src="images/design/${rs.list[i].weather[0].icon}.svg" alt="01d">
+                  </div>
+                  <p class="daytemp">${Math.round(rs.list[i].main.temp_max)}&deg;/${Math.round(rs.list[i].main.temp_min)}&deg;</p>
+                  <p class="daydesc">${rs.list[i].weather[0].description}</p>
+               </div>
+            </li>
+            `;
+   }
+   document.getElementById("swipper").innerHTML = html;
+      
    //   const myClass = document.getElementsByClassName;
    //   const myId = document.getElementById;
 
