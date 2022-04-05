@@ -85,7 +85,7 @@ h1.city-title{
 #iconbox img{
     position: absolute;
     top: -57%;
-    left: -53%;
+    right: -20%;
     height: 200%;
 }
 #nowtemp{
