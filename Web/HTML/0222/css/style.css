@@ -1,0 +1,73 @@
+body{
+    background: 
+    url(../images/KakaoTalk_20220222_103614741.png) no-repeat 50px 30px,
+    url(../images/KakaoTalk_20200717_120929127.jpg) no-repeat top center;
+    background-size: auto, cover;
+}
+div{
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+.box{
+    border-radius: 15px;
+}
+.box2{
+    border-radius: 50%;
+    overflow: hidden;
+}
+.box3{
+    border-radius: 50%;
+    background: url('https://picsum.photos/id/400/200/200') no-repeat;
+}
+.box4, .box5, .box6{
+    box-sizing: border-box;
+    padding: 30px;
+    border: 10px dotted #dadada;
+    background-color: yellowgreen;
+}
+.box4{
+    background-clip :border-box;
+}
+.box5{
+    background-clip: padding-box;
+}
+.box6{
+    background-clip: content-box;
+}
+.box7{
+    width: 200px;
+    height: 400px;
+    margin-bottom: 500px;
+    border: 1px solid #333;
+    background-image: url(../images/KakaoTalk_20200717_120928660.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.box8{
+    width: 400px;
+    height: 200px;
+    margin-bottom: 500px;
+    border: 1px solid #333;
+    background-image: url(../images/KakaoTalk_20200717_120928660.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.box9{
+    width: 400px;
+    height: 200px;
+    margin-bottom: 500px;
+    border: 1px solid #333;
+    background-image: url(../images/KakaoTalk_20200717_120928660.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.box10{
+    width: 200px;
+    height: 400px;
+    margin-bottom: 500px;
+    border: 1px solid #333;
+    background-image: url(../images/KakaoTalk_20200717_120928660.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}

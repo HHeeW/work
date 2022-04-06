@@ -1,0 +1,58 @@
+div p:first-of-type{
+    background-color: red;
+}
+
+q:lang(no){
+    quotes: "*","*";
+}
+
+li:first-child{
+    background-color: pink;
+}
+li:last-child{
+    background-color: plum;
+}
+li:nth-child(even){
+    background-color: aqua;
+}
+a:hover{
+    color: purple;
+    font-size: 30px;
+    font-weight: bold;   
+}
+a.hover{
+    color: purple;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+div.box{
+    width: 300px;
+    padding: 30px;
+    margin-top: 30px;
+    background-color: #ddd;
+    border: 1px solid #000;
+    display: none;
+}
+a.hover:hover + div.box{
+    display: block;
+}
+div.help:hover div.box{
+    display: block;
+}
+
+ul{
+    padding: 5px;
+}
+li{
+    display: none;
+}
+ul:hover li{
+    display: block;
+}
+li:hover{
+    color: aqua;
+    font-size: 20px;
+    background-color: #ddd;
+    cursor: pointer;
+}

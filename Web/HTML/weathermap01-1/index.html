@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Weather</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <nav>
+            <form name="searchForm" id="searchForm">
+                <div class="searchBox">
+                    <input type="search" id="search" placeholder="검색">
+                    <span class="material-icons search">search</span>
+                </div>
+            </form>
+        </nav>
+        <h1 class="city-title">
+            <span class="material-icons-outlined">location_on</span>
+            <span id="city"></span>
+        </h1>
+        <p class="ntime text-center"><span id="now_Time"></span></p>
+        <div class="row col-8 margin-auto">
+            <div class="dis-flex">
+                <div class="col-6" id="iconbox">
+                    <img src="" alt="01d" id="icon">
+                </div> 
+                <div class="col-6" id="nowtemp"></div>
+            </div>
+        </div>
+        <div class="col-12 text-center">
+            <p id="minmaxtemp"><span id="maxtemp"></span>/ <span id="mintemp"></span></p>
+            <p id="desc"></p>
+        </div>
+        
+        <div class="row light-blue py-20">
+            <div class="offset-1 col-5">
+                <ul>
+                    <li><i class="wi wi-sunrise"></i>일출: <span id="sunrise"></span></li>
+                    <li><i class="wi wi-sunset"></i>일몰: <span id="sunset"></span></li>
+                    <li><i class="wi wi-strong-wind"></i>바람: <span id="wind"></span></li>
+                </ul>
+            </div>
+            <div class="col-5">
+                <ul>
+                    <li><i class="wi wi-humidity"></i>습도: <span id="humidity"></span></li>
+                    <li><i class="wi wi-cloudy"></i>구름: <span id="clouds"></span></li>
+                    <li><i class="fa-solid fa-temperature-high"></i>체감: <span id="feels_like"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper" class="container">
+        <ul id="swipper" class="row">
+            <li>
+                <div class="dayweather">
+                    <p class="daydate">00일 00시 00분</p>
+                    <div class="img-Box">
+                        <img src="images/design/01d.svg" alt="01d">
+                    </div>
+                    <p class="daytemp">2323</p>
+                    <p class="daydesc">좋은 날씨</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/city.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
