@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Weather</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -52,8 +53,8 @@
             </div>
         </div>
     </div>
-    <div id="wrapper" class="container">
-        <ul id="swipper" class="row">
+    <div id="wrapper" class="container swiper mySwiper">
+        <ul id="swipper" class="row swiper-wrapper">
             <li>
                 <div class="dayweather">
                     <p class="daydate">00일 00시 00분</p>
@@ -67,6 +68,9 @@
         </ul>
     </div>
 
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>var swiper = new Swiper(".mySwiper", {});</script>
     <script src="js/city.js"></script>
     <script src="js/script.js"></script>
 </body>

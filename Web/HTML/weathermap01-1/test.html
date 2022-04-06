@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <style>
         *{margin: 0; padding: 0; box-sizing: border-box;}
         html, body{
@@ -48,19 +52,24 @@
     </style>
 </head>
 <body>
-    <div id="wrapper">
-        <ul id="swiper">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
+    <div id="wrapper" class="swiper mySwiper">
+        <ul id="swiper" class="swiper-wrapper">
+            <li class="swiper-slide">1</li>
+            <li class="swiper-slide">2</li>
+            <li class="swiper-slide">3</li>
+            <li class="swiper-slide">4</li>
+            <li class="swiper-slide">5</li>
+            <li class="swiper-slide">6</li>
+            <li class="swiper-slide">7</li>
+            <li class="swiper-slide">8</li>
         </ul>
     </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {});
+    </script>
 
 
     <script>
@@ -96,10 +105,9 @@
                 pos.ul -= per;
             }
             console.log(pos.ul);
-
         }
         function moveSlider(){
-            swiper.style.transform = `translateX${pos.ul}px`
+            swiper.style.transform = `translateX(${pos.ul}px)`;
         }
 
         function adSlider(){

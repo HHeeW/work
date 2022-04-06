@@ -103,7 +103,7 @@ function getWeather(lat, lon, city){
       let dayHours = (getTime.getHours() >12) ? `PM ${getTime.getHours()-12}`:`AM ${getTime.getHours()}`;
       let getDate = getTime.getDate() + "일 " + dayHours + "시";
          html += `
-            <li>
+            <li class="swiper-slide">
                <div class="dayweather">
                   <p class="daydate">${getDate}</p>
                   <div class="img-Box">
