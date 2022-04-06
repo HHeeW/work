@@ -31,13 +31,15 @@ body{
     float: left;
     width: 150px;
     height: 150px;
-    margin-left: 50px;
+    margin-left: 30px;
+    margin-right: 20px;
 }
 .com{
     float: right;
     width: 150px;
     height: 150px;
-    margin-right: 50px;
+    margin-right: 30px;
+    margin-left: 20px;
 }
 .me p, .com p{
     margin: 0;

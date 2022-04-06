@@ -6,7 +6,6 @@ let lose = 0;
 let sumWin, sumLose;
 function srp(e){
     let str, img, img1;
-    let me = ['가위', '바위', '보'];
     let c = Math.floor(Math.random()*3);
     
     rsp(e, c);
@@ -32,7 +31,7 @@ function srp(e){
 
    
     let h1 = document.getElementsByClassName("toph1");
-    if(win == 50){
+    if(win == 10){
         h1[0].innerHTML = "게임을 이겼습니다~!!";
         h1[0].style.color= "white";
         h1[0].classList.add("animate__flip");
