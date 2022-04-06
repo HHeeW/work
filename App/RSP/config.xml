@@ -1,11 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.HeeWon.RSP" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>RSP</name>
-    <description>Sample Apache Cordova App</description>
-    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
+    <description>가위 바위 보 게임</description>
+    <author email="HeeWon@GitHub" href="https://github.com/HHeeW/work.git">
+        HwangHeeWon
     </author>
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+
+    <platform name="android">
+        <icon foreground="res/android/mipmap-hdpi/ic_launcher.png" background="res/android/,mipmap-hdpi/ic_back.png" density="hdpi" />
+        <icon foreground="res/android/mipmap-mdpi/ic_launcher.png" background="res/android/,mipmap-mdpi/ic_back.png" density="mdpi" />
+        <icon foreground="res/android/mipmap-xhdpi/ic_launcher.png" background="res/android/,mipmap-xhdpi/ic_back.png" density="xhdpi" />
+        <icon foreground="res/android/mipmap-xxhdpi/ic_launcher.png" background="res/android/,mipmap-xxhdpi/ic_back.png" density="xxhdpi" />
+        <icon foreground="res/android/mipmap-xxxhdpi/ic_launcher.png" background="res/android/,mipmap-xxxhdpi/ic_back.png" density="xxxhdpi" />
 </widget>
