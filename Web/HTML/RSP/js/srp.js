@@ -26,13 +26,13 @@ function srp(e){
     document.getElementById("total-Num").innerHTML = total + "회";
     document.getElementById("win-Num").innerHTML = win + "회";
     document.getElementById("lose-Num").innerHTML = lose + "회";
-    document.getElementById("totalWin").innerHTML = "승률 :"+sumWin.toFixed(2) + "%";
-    document.getElementById("totallose").innerHTML = "패률 :"+sumLose.toFixed(2) + "%";
+    document.getElementById("totalWin").innerHTML = "승률 : "+sumWin.toFixed(2) + "%";
+    document.getElementById("totallose").innerHTML = "패률 : "+sumLose.toFixed(2) + "%";
 
    
     let h1 = document.getElementsByClassName("toph1");
     if(win == 10){
-        h1[0].innerHTML = "게임을 이겼습니다~!!";
+        h1[0].innerHTML = total + "회 만에 게임을 이겼습니다~!!";
         h1[0].style.color= "white";
         h1[0].classList.add("animate__flip");
         for(i = 0;i < h1.length; i++){
@@ -40,3 +40,4 @@ function srp(e){
         }
     }
 }
+function reload(){  document.getElementById("reload").load;}

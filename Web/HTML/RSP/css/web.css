@@ -50,6 +50,9 @@ body{
     height: 130px;
     background-repeat: no-repeat;
 }
+#com{
+    transform: rotateY(180deg);
+}
 .btn-box{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -61,21 +64,20 @@ button.srp{
     margin: 10px;
     font-family: 'Dongle', sans-serif;
     border-radius: 20%;
+    box-shadow:0 10px 15px -7px #276873;
+    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
     cursor: pointer;
     color: #fff;
-    background-color: rgb(80, 130, 170);
 }
-#com{
-    transform: rotateY(180deg);
-}
+
 .s:hover{
-    background-color: rgb(201, 120, 190);
+    background: linear-gradient(to bottom, rgb(201, 120, 190) 5%, rgb(201, 120, 190) 100%);
 }
 .r:hover{
-    background-color: rgb(100, 100, 200);
+    background: linear-gradient(to bottom, rgb(100, 100, 200) 5%, rgb(100, 100, 200) 100%);
 }
 .p:hover{
-    background-color: rgb(80, 170, 121);
+    background: linear-gradient(to bottom, rgb(80, 170, 121) 5%, rgb(80, 170, 121) 100%);
 }
 .totalbox{
     flex-direction: column;
@@ -90,5 +92,4 @@ button.srp{
     height: 50px;
     text-align: center;
     padding-top: 15px;
-    
 }
