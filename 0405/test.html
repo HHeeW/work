@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id='body'>
+    <button onclick="mycol()">배경바꾸기</button>
+
+<script>
+    const mycol = ()=>{ 
+        let arrColor = ['red', 'blue', 'green', 'yellow', 'pink'];
+        let arrNum = Math.floor(Math.random()*arrColor.length);
+        let bodyTeg = document.getElementById('body');
+
+        console.log(arrNum);
+        bodyTeg.style.background = arrColor[arrNum];
+    }
+    myFunc = (name) => `이름은 ${name}입니다.`;
+    console.log(myFunc('‘길동’'));
+</script>
+</body>
+</html>
