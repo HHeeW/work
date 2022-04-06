@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/web.css">
+</head>
+<body>
+    <div class="srpbox">
+        <h1 class="toph1 animate__animated animate__slow text-center">가위, 바위, 보 게임</h1>
+        <div class="result-box text-center">
+            <p id="result">가위, 바위, 보중 하나를 선택하세요.</p>
+        </div>
+        <div class="result-img">
+            <div class="me">
+                <div id="me" style="background-image: url(images/sc.png);"> </div>
+                <p class="text-center">나</p>
+            </div>
+            <div class="com">
+                <div id="com" style="background-image: url(images/ro.png);"></div>
+                <p class="text-center">컴퓨터</p>
+            </div>
+        </div>
+        <div class="btn-box">
+            <button class="srp s" onclick="srp(0)">가위</button>
+            <button class="srp r" onclick="srp(1)">바위</button>
+            <button class="srp p" onclick="srp(2)">보</button>
+        </div>
+    </div>
+    <div class="col-12 totalbox flex-Box">
+        <div class="col-12 totalName flex-Box">
+            <div class="col-4 win">
+                승리
+            </div>
+            <div class="col-4 total">
+                총회수
+            </div>
+            <div class="col-4 lose">
+                패배
+            </div>
+        </div>
+        <div class="col-12 totalNum flex-Box">
+            <div id="win-Num" class="col-4">
+                0회
+            </div>
+            <div id="total-Num" class="col-4">
+                0회
+            </div>
+            <div id="lose-Num" class="col-4">
+                0회
+            </div>
+        </div>
+        <div class="col-12 totalSum">
+            <div id="totalWin" class="col-6">
+                승률 : 00%
+            </div>
+            <div id="totallose" class="col-6">
+                패률 : 00%
+            </div>
+        </div>
+    </div> 
+    <script src="js/rsp.js"></script>
+    <script src="js/srp.js"></script>
+</body>
+</html>

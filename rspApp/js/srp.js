@@ -30,34 +30,14 @@ function srp(e){
     document.getElementById("totalWin").innerHTML = "승률 :"+sumWin.toFixed(2) + "%";
     document.getElementById("totallose").innerHTML = "패률 :"+sumLose.toFixed(2) + "%";
 
-    let video = document.getElementById("backVideo");
+   
     let h1 = document.getElementsByClassName("toph1");
     if(win == 50){
-        video.removeAttribute("src");
-        video.setAttribute('src', './video/fireworks.mp4');
-        video.load;
-        video.play;
-
         h1[0].innerHTML = "게임을 이겼습니다~!!";
         h1[0].style.color= "white";
         h1[0].classList.add("animate__flip");
-        h1[1].classList.add("animate__shakeY");
         for(i = 0;i < h1.length; i++){
             h1[i].load;
         }
     }
-}
-
-
-function lunch(){
-    let menu = ["짜장면", "돈까스", "된장국", "김치찌개", "회덮밥", "라면", "햄버거","볶음밥", "국수", "국밥"];
-    let menuNum = Math.floor(Math.random()*menu.length);
-    document.getElementById("lunch").innerHTML = menu[menuNum]+" 먹자!";
-}
-function lotto(){
-    let lotto =[];
-    for(i = 1; i <= 7; i++){
-        lotto.push(Math.floor(Math.random()*45 + 1) + "\u00a0");
-    }
-    document.getElementById("lotto").innerHTML = lotto;
 }

@@ -1,0 +1,83 @@
+@import url(grid.css);
+@import url(animate.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+*{box-sizing: border-box;}
+.text-center{
+    text-align: center;
+}
+body{
+    background-color: rgb(150, 150, 250);
+    font-size: 16px;
+    color: #fff;
+}
+.srpbox{
+    width: 100%;
+}
+.srpbox span{
+    font-size: 50px;
+    vertical-align: middle;
+}
+.result-img{
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+.me{
+    float: left;
+    width: 150px;
+    height: 170px;
+    margin-left: 50px;
+}
+.com{
+    float: right;
+    width: 150px;
+    height: 170px;
+    margin-right: 50px;
+}
+.me p, .com p{
+    margin: 0;
+    text-align: center;
+}
+.me div, .com div{
+    background-size: contain;
+    height: 150px;
+    background-repeat: no-repeat;
+}
+.btn-box{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+button.srp{
+    padding: 10px 20px;
+    font-size: 30px;
+    margin: 10px;
+    font-family: 'Dongle', sans-serif;
+    border-radius: 20%;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(80, 130, 170);
+}
+.s:hover{
+    background-color: rgb(150, 150, 250);
+}
+.r:hover{
+    background-color: rgb(80, 170, 121);
+}
+.p:hover{
+    background-color: rgb(201, 120, 190);
+}
+.totalbox{
+    flex-direction: column;
+    border-top: 1px solid #fff;
+    padding: 10px;
+}
+.totalbox>div>div{
+    border: 1px solid #fff;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+    
+}
