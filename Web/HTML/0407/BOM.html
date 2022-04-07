@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>윈도우 객체 모델</h1>
+    <p id="bom"></p>
+    <button class="btn" onclick="open()">새창 열기</button>
+    <script>
+        let w = `이 객체의 내부 윈도우 너비는 ${window.innerWidth}px입니다.`;
+        let h = `이 객체의 내부 윈도우 높이는 ${window.innerHeight}px입니다.`;
+        document.getElementById("bom").innerHTML = w + ", " + h;
+        function open(){
+            window.open(
+                'bom2.html',
+                '_blank',
+                'width=300, height=250, toolbar = yes, scrollbars = no, resizable=no, top=100, left=300');
+            /*옵션값
+            width, height, location (주소 입력창 유무), menubar(메뉴바 유무), resizable(화면 크기조절 가능 유무), status(상태 표시줄 유무), toolbar(툴바 유무), left(가로 좌표 값 px), top(세로 좌표값 px), scrollbars(스크롤 바 유무),fullscreen(풀스크린) ==> yes, no || 1, 0으로 입력 가능
+            */
+        }
+    </script>
+</body>
+</html>

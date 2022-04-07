@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이 컴퓨터의 스크린 정보</h1>
+    <div id="info"></div>
+    <a href="https://naver.com">네이버 이동</a>
+    <button onclick="history.back()">이전</button>
+    <button onclick="history.forward()">다음.</button>
+    
+    <button onclick="history.go(-1)">이전</button>
+    <button onclick="history.go(1)">다음.</button>
+
+    <script>
+        if(document.cookie){
+            alert(document.cookie);
+        }
+        let txt = "";
+        txt += `<p>width: ${screen.width}</p>`;
+        txt += `<p>height: ${screen.height}</p>`;
+        txt += `<p>작업표시줄을 제외한 너비: ${screen.availWidth}</p>`;
+        txt += `<p>작업표시줄을 제외한 shvdl: ${screen.availHeight}</p>`;
+        txt += `<p>컬러비트수: ${screen.colorDepth}</p>`;
+        txt += `<p>픽셀비트수: ${screen.pixelDepth}</p>`;
+        txt += `<p>현재 페이지의 url: ${location.href}</p>`;
+        txt += `<p>웹 호스트의 도메인 이름: ${location.hostname}</p>`;
+        txt += `<p>현재 페이지의 경로와 파일 이름: ${location.pathname}</p>`;
+        txt += `<p>웹 페이지의 프로토콜(http, htpps): ${location.protocol}</p>`;
+        document.getElementById("info").innerHTML = txt;
+        console.log(history);
+
+        document.cookie = "username = James"
+    </script>
+</body>
+</html>
