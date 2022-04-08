@@ -127,6 +127,10 @@ function select1(e){
         {key: '18.5cm+2.5cm||49900||18K 화이트 골드', val: '15.5cm+2.5cm (+49,900원)'},
         {key: '19.5cm+2.5cm||53900||18K 화이트 골드', val: '15.5cm+2.5cm (+53,900원)'},
     ];
+    let none = [
+        {key: '',val: '- [필수]옵션을 선택해 주세요 -'},
+        {key: '',val: '------------------------------------------'},
+    ]
     if(select1[0] == "14K"){
         switch(select1[1]){
             case '옐로우':
@@ -182,6 +186,13 @@ function select1(e){
                 }
             break;
         }
+    }else{
+        for(let i in none){
+            let opt = document.createElement('option');
+            opt.setAttribute('value', none[i].key);
+            opt.innerText = none[i].val;
+            pr2.appendChild(opt);
+        }
     }
 }
 function select2(e){
@@ -189,29 +200,39 @@ function select2(e){
     let vals = val.split("||");
     let prTitle = document.getElementsByClassName("item_title")[0].innerHTML;
     let pprice = document.getElementById("pprice").value;
+    if(vals != ''){
+        prTitle = `
+            <div class = "vvbox">
+                <div class="vbox">
+                    <p class="product-title">${prTitle}</p>
+                    <span>${vals[2]} / ${vals[0]}</span>
+                </div>
+                <div class="addbox">
+                    
+                </div>
+                <div class="prbox">
+                    ${priceToString(Number(pprice) + Number(vals[1]))} 원 
+                    <p class="point">( <span>P</span> 500원 )</p>
+                </div>
+            </div>
+        `;
+        document.getElementById('total').classList.add('total-inner');
+        document.getElementById('total').innerHTML += prTitle;
+        let ttt;
+        for(let j in vals){
+            ttt +=  priceToString(Number(pprice) + Number(vals[j]));
+        }
+        document.getElementById('total-price').innerHTML = ttt + '원';
 
-    prTitle = `
-         <div class="vbox">
-             <p class="product-title">${prTitle}</p>
-             <span>${vals[2]} / ${vals[0]}</span>
-         </div>
-         <div class="addbox">
-            
-         </div>
-         <div class="prbox">
-             ${priceToString(Number(pprice) + Number(vals[1]))} 원 
-             <p class="point">( <span>P</span> 500원 )</p>
-         </div>
-    `;
-    document.getElementById('total').classList.add('total-inner');
-    document.getElementById('total').innerHTML = prTitle;
-    document.getElementById('total-price').innerHTML = priceToString(Number(pprice) + Number(vals[1])) + '원';
-
-    // console.log('사이즈'+val[0]);
-    // console.log('가격'+val[1]);
-    // console.log('종류'+val[2]);
-    // let divinn = "<div class='total-inner'></div>";
-    // document.getElementById("total").innerHTML = divinn;
+        // console.log('사이즈'+val[0]);
+        // console.log('가격'+val[1]);
+        // console.log('종류'+val[2]);
+        // let divinn = "<div class='total-inner'></div>";
+        // document.getElementById("total").innerHTML = divinn;
+    }else{
+    document.getElementById('total').innerHTML = '';
+    document.getElementById('total-price').innerHTML = 0;
+    }
 }
 
 function priceToString(price) {
