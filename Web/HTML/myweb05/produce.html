@@ -174,6 +174,7 @@
             </div>
             <div class="col-50 top-line">
                 <form name="prForm" id="prForm" method="post">
+                    <input type="hidden" name="price" id="pprice" value="99900">
                     <h2 class="item_title"> 14K/18K 비쥬팝 폴레르 양면 팔찌 [특가판매]</h2>
                     <ul class="item_info">
                         <li><label>할인가</label><p>99,900원</p></li>
@@ -181,23 +182,26 @@
                         <li><label>적립금</label><p>19,900원</p></li>
                         <li><label>중량</label><p>1.3g</p></li>
                         <li><label>골드선택</label>
-                            <select name="pr1" id="pr1" class="pr" onchange="select()">
+                            <select name="pr1" id="pr1" class="pr" onchange="select1(this)">
                                 <option value=""> - [필수]옵션을 선택해 주세요 - </option>
+                                <option value=""> ------------------------------------------ </option>
                                 <option value="14K 옐로우 골드"> 14K 옐로우 골드</option>
                                 <option value="14K 핑크 골드"> 14K 핑크 골드</option>
                                 <option value="14K 화이트 골드"> 14K 화이트 골드</option>
                                 <option value="18K 옐로우 골드"> 18K 옐로우 골드</option>
                                 <option value="18K 핑크 골드"> 18K 핑크 골드</option>
+                                <option value="18K 화이트 골드"> 18K 화이트 골드</option>
                             </select>
                         </li>
                         <li><label>사이즈</label>
-                            <select name="pr2" id="pr2" class="pr">
+                            <select name="pr2" id="pr2" class="pr" onchange="select2(this)">
                                 <option value=""> - [필수]옵션을 선택해 주세요 - </option>
+                                <option value=""> ------------------------------------------ </option>
                             </select>
                         </li>
                         <li><p class="atten">위 옵션 선택 박스를 선택하시면 아래에 상품이 추가됩니다.</p></li>
                     </ul>
-                    <div class="total">
+                    <div id="total">
                         <label>총 상품금액</label>
                         <p id="total-price">0</p>
                     </div>

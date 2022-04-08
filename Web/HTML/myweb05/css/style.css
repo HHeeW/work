@@ -489,10 +489,36 @@ del{
     display: inline-block;
     margin-right: 5px;
 }
-
-
-
-
+.total-inner{
+    padding: 10 px 5px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+.total-inner span{
+    background-color: #c193cc;
+    color: #fff;
+    font-size: 12px;
+    margin: 2px 0 0 ;
+    display: inline-block;
+    padding: 3px 7px;
+    border-radius: 3px;
+}
+.prbox{
+    font-size: 20px;
+    text-align: right;
+}
+.point{
+    font-size: 12px;
+}
+.probox span{
+    background-color: #c193cc;
+    color: #fff;
+    padding: 2px 4px;
+    line-height: 1;
+    font-size: 10px;
+}
 
 
 
@@ -516,4 +542,3 @@ del{
     from{ opacity: 1;}
     to { opacity: 0;}
 }
-@fun
