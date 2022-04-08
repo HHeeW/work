@@ -60,4 +60,19 @@ function fadeInOut(elem, disp) {
        elem.classList.add('fadeIn');
     }   
 }
+function select(){
+    let pr1 = document.getElementById("pr1");
+    console.log(pr1.options[pr1.selectedIndex].value);
+    // let pr1_select =pr1.options[pr1.selectedIndex].value;
+    // let select1 = pr1_select.split(' ');
+    let select1 = pr1.options[pr1.selectedIndex].value.split(' ');
+    console.log(select1[0])
+    if(select1[0] == "14K"){
 
+
+    }else if(select1[0] == "18K"){
+
+
+    }
+    
+}

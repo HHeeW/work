@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .box{
+            width: 150px;
+            height: 250px;
+        }
+        .imgbox{
+            width: 150px;
+            height: 200px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .basket{
+            border: 1px solid black;
+            width: 500px;
+            height: 200px;
+            margin: auto;
+            margin-top: 30px;
+            display: flex;
+        }
+        .delete{
+            border: 1px solid black;
+            width: 20px;
+            height: 25px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            z-index: 50;
+        }
+        .delete a{
+            text-align: center;
+            margin-left: 5px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="box">
+            <div class="imgbox">
+                <img src="./images/001.jpg" width="150" height="200">
+                <div class="delete" onclick="deleteCookie('client1')"><a href="#">x</a></div>
+            </div>
+            <div><button onclick="checkCookie('client1')" id="client1">장바구니 추가</button></div>
+        </div>
+
+        <div class="box">
+            <div class="imgbox">
+                <img src="./images/002.jpg" width="150" height="200">
+            </div>
+            <div><button onclick="checkCookie('client2')" id="client2">장바구니 추가</button></div>
+        </div>
+
+        <div class="box">
+            <div class="imgbox">
+                <img src="./images/003.jpg" width="150" height="200">
+            </div>
+            <div><button onclick="checkCookie('client3')" id="client3">장바구니 추가</button></div>
+        </div>
+
+        
+        
+
+    </div>
+    <div class="basket" id="basket"></div>
+    
+    <script>
+
+        
+        const aaa=()=>{
+            // 기존 cookie값이 있으면 cookie값에 맞는 사진이 basket에 남아있다.
+            let hoon = '';
+            for(let i=1; i<4; i++){
+                hoon += getCookie(`client${i}`);
+            }    
+                basket.innerHTML = hoon;
+        }
+
+        const setCookie = (cname, cvalue, exdays) => {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            let expires = "expires="+ d.toUTCString();
+            cvalue =`<div class="imgbox"><img src="./images/00${cvalue}.jpg" width="150" height="200"><div class="delete"><a href="#">x</a></div></div>`;
+            document.cookie = cname + "=" + cvalue + ";" + expires;
+
+            basket.innerHTML += cvalue;
+        }
+
+        const getCookie = (cname) => {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+            }
+            return "";
+        }
+        
+        const checkCookie = (username) => {
+            let user = getCookie(username);
+            if (user !== "") {
+            } else {
+                user = username.charAt(username.length-1);
+                if (user != "" && user != null) {
+                    setCookie(username, user, 30);
+                }
+            }
+        }
+
+        const deleteCookie = (username) => {
+            document.cookie = username + '=; expires=Thu, 01 Jan 1999 00:00:10 GMT;';
+        }
+
+        aaa();
+
+    </script>
+    
+</body>
+</html>

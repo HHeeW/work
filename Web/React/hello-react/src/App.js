@@ -8,9 +8,13 @@ import './App.css';
 //function App() {
 class App extends Component {
    constructor(props){
+      // 컴포넌트가 실행될 때 render()보다 먼저 생성자 함수 (constructor())가 실행된다.
+      //컴포넌트를 초기화 시켜주고 싶을 때는 constructor()안에다가 실행시키면 된다.
+      //앱이 내부적으로 사용할 함수는 state로 만든다.
       super(props);
       this.state = {
-         header: { title: '검색사이트 목록', desc: '우리가 주로 애용하는 검색사이트 목록'},
+         mode: 'main',
+         header: { toptitle: '검색사이트 목록', title: '우리가 주로 애용하는 검색사이트 목록'},
          contents:[
             {id:1, title: '네이버', cont: '우리나라 사람들이 가장 애용하는 포탈, 존경한다.'},
             {id:2, title: '다음', cont:'카카오에 인수되면서 다음보다는 카카오로 유명해진 포탈. 결국 다음도 대단.'},
@@ -21,11 +25,41 @@ class App extends Component {
       }
    }
   render() {  
+     let _title, _cont = null;
+   switch(this.state.mode){
+      case 'main':
+         _title = this.state.header.title;
+         _cont = this.state.header.cont;
+         break;
+      case 'naver':
+         _title = this.state.contents[0].title;
+         _cont = this.state.contents[0].title;
+         break;
+      case 'daum':
+         _title = this.state.contents[1].title;
+         _cont = this.state.contents[1].title;
+         break;
+      case 'google':
+         _title = this.state.contents[2].title;
+         _cont = this.state.contents[2].title;
+         break;
+      case 'nate':
+         _title = this.state.contents[3].title;
+         _cont = this.state.contents[3].title;
+         break;
+      case 'yahoo':
+         _title = this.state.contents[4].title;
+         _cont = this.state.contents[4].title;
+         break;
+      default:
+         _title = this.state.header.title;
+         _cont = this.state.header.cont;
+   }
    return (
       <div className="App">
-         <Header title={this.state.header.title} desc={this.state.header.desc} />
+         <Header title={this.state.header.toptitle}/>
          <Aside data={this.state.contents} />
-         <Section title="네이버" desc="우리나라 사람들이 가장 애용하는 포탈, 그러나 재미는 없다." />
+         <Section title= {_title} cont={_cont}/>
          <Footer copy="Copyright 홍길동 all right reserved"/>
       </div>
    );

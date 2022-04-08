@@ -6,7 +6,7 @@ class Section extends Component{
         return(
             <section>
                 <h2>{this.props.title}</h2>
-                <p>{this.props.desc}</p>
+                <p>{this.props.cont}</p>
             </section>
         )
     };

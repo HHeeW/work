@@ -5,8 +5,7 @@ class Header extends Component {
     render(){
        return (
         <header>
-            <h1>{this.props.title}</h1>
-            <p>{this.props.desc}</p>
+            <h1><a herf="/">{this.props.toptitle}</a></h1>
         </header>
        );
     }
