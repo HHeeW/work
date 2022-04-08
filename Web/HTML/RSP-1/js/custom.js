@@ -23,7 +23,7 @@ function rps(e) {
        case 2:
          if(d == 2) {
             str = "비겼습니다.";
-         }else if(d == 1) {
+         }else if(d == 3) {
             str = "졌네요. 안됐습니다. 쯧!!"
             ct++;
             lt++;
@@ -36,7 +36,7 @@ function rps(e) {
        case 3:
          if(d == 3) {
             str = "비겼습니다.";
-         }else if(d == 2) {
+         }else if(d == 1) {
             str = "졌네요. 안됐습니다. 쯧!!"
             ct++;
             lt++;

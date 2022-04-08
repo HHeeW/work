@@ -195,11 +195,13 @@ function select1(e){
         }
     }
 }
+let sumsum = 0;
 function select2(e){
     let val = e.value;
     let vals = val.split("||");
     let prTitle = document.getElementsByClassName("item_title")[0].innerHTML;
     let pprice = document.getElementById("pprice").value;
+    let toPrice = document.getElementById('total-price');
     if(vals != ''){
         prTitle = `
             <div class = "vvbox">
@@ -218,11 +220,9 @@ function select2(e){
         `;
         document.getElementById('total').classList.add('total-inner');
         document.getElementById('total').innerHTML += prTitle;
-        let ttt;
-        for(let j in vals){
-            ttt +=  priceToString(Number(pprice) + Number(vals[j]));
-        }
-        document.getElementById('total-price').innerHTML = ttt + '원';
+        
+        sumsum += Number(pprice) + Number(vals[1]);
+        toPrice.innerHTML = priceToString(sumsum) + '원';
 
         // console.log('사이즈'+val[0]);
         // console.log('가격'+val[1]);
@@ -230,8 +230,8 @@ function select2(e){
         // let divinn = "<div class='total-inner'></div>";
         // document.getElementById("total").innerHTML = divinn;
     }else{
-    document.getElementById('total').innerHTML = '';
-    document.getElementById('total-price').innerHTML = 0;
+        document.getElementById('total').innerHTML = '';
+        toPrice.innerHTML = 0;
     }
 }
 

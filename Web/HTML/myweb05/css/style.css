@@ -508,6 +508,38 @@ del{
 .vvbox:not(:first-child){
     border-top: 1px solid #ddd;
 }
+.addbutton{
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addBtnBox{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #666;
+}
+.addsum{
+    width: 30px;
+    height: 20px;
+    text-align: center;
+}
+.addbtn{
+    display: flex;
+    flex-direction: column;
+}
+.addbtn button{
+    height: 10px;
+    border-radius: 0;
+    border: none;
+    border-left: 1px solid #999;
+    cursor: pointer;
+}
+.addbtn button:last-child{
+    border-top: 1px solid #999;
+}
+
 .total-inner span{
     background-color: #c193cc;
     color: #fff;
