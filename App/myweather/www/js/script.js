@@ -43,6 +43,7 @@ function getWeather(lat, lon, city){
      }
    }
    
+   
    let params = Object.keys(mydata).map(key => key + '=' + mydata[key]).join('&');
    console.log(params);
 
@@ -59,8 +60,8 @@ function getWeather(lat, lon, city){
 
    let sunriseTime = new Date(rs.city.sunrise*1000);
    let sunsetTime = new Date(rs.city.sunset*1000);
-   let sunrise = `${sunriseTime.getHours()}:${sunriseTime.getMinutes()}`;
-   let sunset = `${sunsetTime.getHours()}:${sunsetTime.getMinutes()}`;
+   let sunrise = `${sunriseTime.getHours()}시${sunriseTime.getMinutes()}분`;
+   let sunset = `${sunsetTime.getHours()}시${sunsetTime.getMinutes()}분`;
    let nowTime = new Date(rs.list[0].dt*1000);  //<-- 유닉스타임을 시간으로 변환하는 방법
    let nowDate = nowTime.getFullYear() + "년 " + (parseInt(nowTime.getMonth()) + 1) +"월 " + nowTime.getDate() + "일 " + nowTime.getHours() + "시";
 
@@ -96,14 +97,14 @@ function getWeather(lat, lon, city){
 
    
     
-
+   
    let html = "";
    for(let i in rs.list){
       let getTime = new Date(rs.list[i].dt*1000);  //<-- 유닉스타임을 시간으로 변환하는 방법
       let dayHours = (getTime.getHours() >12) ? `PM ${getTime.getHours()-12}`:`AM ${getTime.getHours()}`;
       let getDate = getTime.getDate() + "일 " + dayHours + "시";
          html += `
-            <li>
+            <li class="swiper-slide">
                <div class="dayweather">
                   <p class="daydate">${getDate}</p>
                   <div class="img-Box">
@@ -115,7 +116,7 @@ function getWeather(lat, lon, city){
             </li>
             `;
    }
-   document.getElementById("swipper").innerHTML = html;
+   document.getElementById("swiper").innerHTML = html;
       
    //   const myClass = document.getElementsByClassName;
    //   const myId = document.getElementById;

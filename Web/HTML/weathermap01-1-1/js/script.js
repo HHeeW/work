@@ -68,7 +68,6 @@ function getWeather(lat, lon, city){
        document.getElementById("nowtemp").innerHTML = rs.list[0].main.temp.toFixed(0) + "&deg; ";
        let temp_minmax = rs.list[0].main.temp_min.toFixed(1) + "&deg; / " + rs.list[0].main.temp_max.toFixed(1) + "&deg;";
        document.getElementById('minmaxtemp').innerHTML = temp_minmax;
-       document.getElementById('desc').innerHTML = rs.list[0].weather[0].description;
        /* 시간 */
        console.log("아이콘", rs.list[0].weather[0].icon);
        /* 해뜨는 시각 */
@@ -83,38 +82,76 @@ function getWeather(lat, lon, city){
        document.getElementById('cloud').innerHTML = rs.list[0].clouds.all + '%';
        document.getElementById('humidity').innerHTML = rs.list[0].main.humidity + '%';
        document.getElementById('feelslike').innerHTML = rs.list[0].main.feels_like + "&deg;";
-       let html = "";
-       for(let i in rs.list){
-         let dayTime = new Date(rs.list[i].dt*1000);  //<-- 유닉스타임을 시간으로 변환하는 방법
-         let dayHours = formmatAMPM(dayTime.getHours());
-         //let dayHours = dayTime.toLocaleDateString('ko-KR', { hour: "numeric", hour12: true});
-         //(dayTime.getHours() > 12) ? `PM ${dayTime.getHours()-12}`:`AM ${dayTime.getHours()}`; 
-         let dayDate = dayTime.getDate() + "일 " + dayHours+ "시";
-
-         let day_minmax = rs.list[i].main.temp_min.toFixed(1) + "&deg; / " + rs.list[i].main.temp_max.toFixed(1) + "&deg;";
-         let st='';
-         st = rs.list[i].weather[0].icon.includes('n')? `style="background-color:rgba(0,0,0,0.1);"`:"";
-           html += `
-           <li>
-           <div class="dayWeather" ${st}>
-              <p class="daydate">${dayDate}</p> 
-              <img src="images/${rs.list[i].weather[0].icon}.svg" alt="01d" />
-              <p class="daytemp">${day_minmax}</p>
-              <p class="daydesc">${rs.list[i].weather[0].description}</p>
-           </div>
-           </li>           
-           `;
-       }
-       document.getElementById('swipper').innerHTML = html;
+	   
+	   
+	               let html = "";
+            for(let i in rs.list){
+                let dateTime = new Date(rs.list[i].dt*1000);
+                let dayHours = formatAMPM(dateTime.getHours());
+                let dayDate = `${nowTime.getMonth() +1}월 ${nowTime.getDate()}일 ${dayHours}시`;
+                let day_temp = `${rs.list[i].main.temp_max.toFixed(1)}&deg;/ ${rs.list[i].main.temp_min.toFixed(1)}&deg;`;
+                let day_desc = rs.list[i].weather[0].description;
+                html += `
+                <li>
+                    <div class="dayWeather swiper-slide">
+                        <p class="daydate">${dayDate}</p>
+                        <img src="images/${rs.list[i].weather[0].icon}.svg" alt="01d">
+                        <p class="daytemp">${day_temp}</p>
+                        <p class="daydesc">${day_desc}</p>
+                    </div>
+                </li>
+                `;
+            }
+            document.getElementById('swiper').innerHTML = html;
    });
 }
 
-function formmatAMPM(hours) {
-   let ampm = hours >= 12 ? 'PM':'AM';
-   hours = hours % 12;
-   hours = hours ? hours : 12;  //12로 나누어 떨어지면 12를 넣어준다. (0 이면 false)
-   return "("+ampm+")" + hours; 
+function formatAMPM(hours){
+    let ampm = hours > 12 ? hours - 12 : hours;
+    return hours >= 12 ? `PM ${ampm}` : `AM ${ampm}`;
 }
+
+
+const wrapper = document.getElementById("wrapper");
+const swiper = document.getElementById("swiper");
+let left_w = wrapper.getBoundingClientRect().left;  //전체페이지에서 wrapper의 왼쪽 위치
+let hei_w = wrapper.offsetHeight; //wrapper 의 높이  200px
+let wei_w = wrapper.offsetWidth; //wrapper의 넓이 
+let len_s = swiper.children.length; 
+
+//swiper의 넓이
+console.log(len_s);
+let ul=0; //ul태그 위치 
+let now=0; //정지했을 때의 위치 
+let prev=0; //이동 방향
+let left_s = 0;
+let order;
+wrapper.addEventListener('touchmove', startSlider, false);
+wrapper.addEventListener('touchend', endSlider, false);
+
+
+function startSlider(e){  
+   prev = e.touches[0].clientX - left_w;
+   if(prev > now) {
+       ul += 10;
+   }else{
+       ul -= 10;
+   }
+   moveSlider();
+   now = prev;
+
+}
+function endSlider(){
+   let width_w = swiper.offsetWidth - wei_w;
+   console.log(width_w);
+   if(ul > 0) { ul = 0; }
+   if(ul < -width_w) { ul = -width_w; }
+   moveSlider();
+}
+function moveSlider() {
+    swiper.style.transform = `translateX(${ul}px)`;
+}
+
 
 /*
 function wicon(icon){

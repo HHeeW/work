@@ -85,7 +85,7 @@ h1.city-title{
 #iconbox img{
     position: absolute;
     top: -57%;
-    left: -53%;
+    right: -20%;
     height: 200%;
 }
 #nowtemp{
@@ -122,11 +122,11 @@ h1.city-title{
     overflow: hidden;
     height: 150px;
 }
-#swipper{
+#swiper{
     flex-wrap: nowrap;
     position: relative;
 }
-#swipper li{
+#swiper li{
     padding: 10px 10px;
 }
 .dayweather{
