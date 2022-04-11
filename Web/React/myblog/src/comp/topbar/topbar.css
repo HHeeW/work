@@ -29,6 +29,9 @@
 .topRight{
     justify-content: flex-end;
 }
+.topRight i{
+    margin-left: 10px;
+}
 .topCenter{
     flex: 6;
 }
