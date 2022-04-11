@@ -116,7 +116,7 @@ function getWeather(lat, lon, city){
             </li>
             `;
    }
-   document.getElementById("swipper").innerHTML = html;
+   document.getElementById("swiper").innerHTML = html;
       
    //   const myClass = document.getElementsByClassName;
    //   const myId = document.getElementById;

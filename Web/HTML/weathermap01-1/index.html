@@ -54,7 +54,8 @@
         </div>
     </div>
     <div id="wrapper" class="container swiper mySwiper">
-        <ul id="swipper" class="row swiper-wrapper">
+        <ul id="swiper" class="row swiper-wrapper">
+            <!-- loop -->
             <li>
                 <div class="dayweather">
                     <p class="daydate">00일 00시 00분</p>
@@ -65,6 +66,7 @@
                     <p class="daydesc">좋은 날씨</p>
                 </div>
             </li>
+            <!-- loop -->
         </ul>
     </div>
 
@@ -78,10 +80,13 @@
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+          type: "fraction",
+          preventClicksPropagation: true
         },
       });
     </script>
     <script src="js/city.js"></script>
     <script src="js/script.js"></script>
+
 </body>
 </html>

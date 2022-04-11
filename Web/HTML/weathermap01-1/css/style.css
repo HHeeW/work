@@ -122,11 +122,11 @@ h1.city-title{
     overflow: hidden;
     height: 150px;
 }
-#swipper{
+#swiper{
     flex-wrap: nowrap;
     position: relative;
 }
-#swipper li{
+#swiper li{
     padding: 10px 10px;
 }
 .dayweather{
