@@ -1,6 +1,6 @@
 {
-  "name": "com.heewon.myweather",
-  "displayName": "myWeather",
+  "name": "com.heewon.weather",
+  "displayName": "weather",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
@@ -13,9 +13,13 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "devDependencies": {
-    "cordova-android": "^10.1.1"
+    "cordova-android": "^10.1.1",
+    "cordova-plugin-geolocation": "^4.1.0"
   },
   "cordova": {
+    "plugins": {
+      "cordova-plugin-geolocation": {}
+    },
     "platforms": [
       "android"
     ]
