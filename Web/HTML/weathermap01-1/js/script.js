@@ -9,9 +9,17 @@ search.addEventListener("click", function(){
    document.getElementById("search").focus();
 });
 
-document.getElementById("search").addEventListener("blur", function(){
-   searchBox.classList.remove("active");
-});
+// 검색
+document.searchForm.addEventListener("keydown", (e) =>{
+   let searchtext='';
+   if(e.code ==="Enter"){
+      e.preventDefault();
+      searchtext = document.getElementById("search").value;
+      searchBox.classList.remove("active");
+      document.getElementById("search").value ='';
+   }
+   getWeather('','',searchCity(searchtext));
+})
 
 //위치값 받아오기
 if(navigator.geolocation) {

@@ -9,9 +9,16 @@ search.addEventListener("click", function(){
    document.getElementById("search").focus();
 });
 
-document.getElementById("search").addEventListener("blur", function(){
-   searchBox.classList.remove("active");
-});
+document.searchForm.addEventListener("keydown", (e) =>{
+   let searchtext='';
+   if(e.code ==="Enter"){
+      e.preventDefault();
+      searchtext = document.getElementById("search").value;
+      searchBox.classList.remove("active");
+      document.getElementById("search").value ='';
+   }
+   getWeather('','',searchCity(searchtext));
+})
 
 //위치값 받아오기
 if(navigator.geolocation) {
@@ -117,10 +124,25 @@ function getWeather(lat, lon, city){
             `;
    }
    document.getElementById("swiper").innerHTML = html;
-      
-   //   const myClass = document.getElementsByClassName;
-   //   const myId = document.getElementById;
-
-   //   myClass('city-title')[0].innerHTML = `${rs.city.name}`;
+   
+   // let htmldaily = '';
+   // for(let i in rs.daily){
+   //    let getTime = new Date(rs.daily[i].dt*1000);  //<-- 유닉스타임을 시간으로 변환하는 방법
+   //    let dayHours = (getTime.getHours() >12) ? `PM ${getTime.getHours()-12}`:`AM ${getTime.getHours()}`;
+   //    let getDate = getTime.getDate() + "일 " + dayHours + "시";
+   //    htmldaily += `
+   //          <li class="swiper-slide">
+   //             <div class="dayweather">
+   //                <p class="daydate">${getDate}</p>
+   //                <div class="img-Box">
+   //                   <img src="images/design/${rs.hourly[i].weather[0].icon}.svg" alt="01d">
+   //                </div>
+   //                <p class="daytemp">${Math.round(rs.hourly[i].temp)}&deg;</p>
+   //                <p class="daydesc">${rs.hourly[i].weather[0].description}</p>
+   //             </div>
+   //          </li>
+   //          `;
+   // }
+   // document.getElementById("daily").innerHTML = htmldaily;
    });
 }

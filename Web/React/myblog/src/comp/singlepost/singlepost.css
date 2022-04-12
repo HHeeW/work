@@ -39,3 +39,7 @@
     font-style: italic;
     color: #666;
 }
+.singlePostInfo>p:first-of-type::first-letter{
+    font-size: 35px;
+    font-weight: bold;
+}
