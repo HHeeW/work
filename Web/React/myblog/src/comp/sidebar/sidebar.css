@@ -30,3 +30,47 @@
     object-position: bottom;
     margin-top: 15px;
 }
+.sidebar p{
+    font-size: 13px;
+    padding-top: 10px 0 30px;
+}
+.sidebarList{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+}
+.slidebarListItem{
+    width: 50%;
+    padding-left: 50px;
+    line-height: 35px;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+.tagList{
+    margin: 10px 25px 30px;
+}
+.tagListItem::before{
+    content: '#';
+}
+.tagListItem{
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.socialList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 315px;
+}
+.socialItem{
+    font-size: 17px;
+    margin: 10px 15px;
+    cursor: pointer;
+}

@@ -1,3 +1,36 @@
 .posts{
-    flex: 9;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 15px;
+    margin-top: 20px;
+}
+.postImg{
+    width: 100%;
+    border-radius: 10px;
+    height: 550px;
+    object-fit: cover;
+}
+.postInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.postCat{
+    font-size: 12px;
+    color: rgb(255, 188, 249);
+    line-height: 20px;
+    margin-top: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.postTitle{
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 20px;
+    line-height: 1.1;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.postDate{
+    align-self: flex-end;
+    margin-right: 10px;
 }

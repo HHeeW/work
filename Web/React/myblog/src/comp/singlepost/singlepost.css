@@ -1,0 +1,41 @@
+.single{
+    flex: 9;
+}
+.singlePostWrapper{
+    padding: 20px;
+    padding-left: 0;
+}
+.singlePostImg{
+    border-radius: 10px;
+}
+.singlePostTitle{
+    font-size: 35px;
+    font-family: 'Nanum Myeongjo', serif;
+}
+.singlePostEdit{
+    font-size: 16px;
+    float: right;
+}
+.singlePostIcon{
+    margin-left: 15px;
+    cursor: pointer;
+}
+.singlePostIcon:first-child{
+    color: rgb(98, 128, 194);
+}
+.singlePostIcon:last-child{
+    color: rgb(236, 159, 252);
+}
+.singlePostInfo{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    line-height: 1.3;
+}
+.singlePostDate{
+    display: block;
+    text-align: right;
+    font-style: italic;
+    color: #666;
+}
