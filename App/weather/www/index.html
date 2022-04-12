@@ -69,19 +69,23 @@
             <!-- loop -->
         </ul>
     </div>
+    <h2 class="text-center">Hwang Hee Won</h2>
 
 
     <script src="js/swiper-bundle.js"></script>
     <script>
-    var swiper = new Swiper(".mySwiper", {
+    const swiper = new Swiper(".mySwiper", {
         slidesPerView: 2,
         spaceBetween: 0,
         freeMode: true,
+        observer: true,
+        observeParents: true,
+        passiveListeners: true,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
           type: "fraction",
-          preventClicksPropagation: true
+          initialSlide: 1
         },
       });
     </script>
