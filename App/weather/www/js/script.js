@@ -23,7 +23,7 @@ if(navigator.geolocation) {
 }
 
 function getWeather(lat, lon, city){
-   const url = "https://api.openweathermap.org/data/2.5/forecast";
+   const url = "https://api.openweathermap.org/data/2.5/onecall";
    const apikey = "edce18bc1a8f5513adb9a29f90946276";
    let mydata;
    if(city == '') {
@@ -58,49 +58,44 @@ function getWeather(lat, lon, city){
       10.습도 11.구름 12.체감온도
       */
 
-   let sunriseTime = new Date(rs.city.sunrise*1000);
-   let sunsetTime = new Date(rs.city.sunset*1000);
+   let sunriseTime = new Date(rs.current.sunrise*1000);
+   let sunsetTime = new Date(rs.current.sunset*1000);
    let sunrise = `${sunriseTime.getHours()}시${sunriseTime.getMinutes()}분`;
    let sunset = `${sunsetTime.getHours()}시${sunsetTime.getMinutes()}분`;
-   let nowTime = new Date(rs.list[0].dt*1000);  //<-- 유닉스타임을 시간으로 변환하는 방법
+   let nowTime = new Date(rs.hourly[0].dt*1000);  //<-- 유닉스타임을 시간으로 변환하는 방법
    let nowDate = nowTime.getFullYear() + "년 " + (parseInt(nowTime.getMonth()) + 1) +"월 " + nowTime.getDate() + "일 " + nowTime.getHours() + "시";
 
-
-    console.log("도시명", county(rs.city.name));
+    console.log("도시명", county(rs.timezone.split("/")[1]));
     console.log("시간", nowDate);
-    console.log("아이콘", rs.list[0].weather[0].icon);
-    console.log("현재온도", rs.list[0].main.temp);
-    console.log("최저온도", rs.list[0].main.temp_min);
-    console.log("최고온도", rs.list[0].main.temp_max);
-    console.log("설명", rs.list[0].weather[0].description);
+    console.log("아이콘", rs.current.weather[0].icon);
+    console.log("현재온도", rs.current.temp);
+    console.log("설명", rs.current.weather[0].description);
     console.log("해뜨는 시간", sunrise);
     console.log("해지는 시간", sunset);
-    console.log("바람세기", rs.list[0].wind.speed);
-    console.log("바람방향", rs.list[0].wind.deg);
-    console.log("습도", rs.list[0].main.humidity);
-    console.log("구름", rs.list[0].clouds.all);
-    console.log("체감온도", rs.list[0].main.feels_like);
+    console.log("바람세기", rs.current.wind_speed);
+    console.log("바람방향", rs.current.wind_deg);
+    console.log("습도", rs.current.humidity);
+    console.log("구름", rs.current.clouds);
+    console.log("체감온도", rs.current.feels_like);
     
-    document.getElementById("city").innerHTML = county(rs.city.name);
+    document.getElementById("city").innerHTML =  county(rs.timezone.split("/")[1]);
     document.getElementById("now_Time").innerHTML = nowDate;
-    document.getElementById("icon").src =  "images/design/"+ rs.list[0].weather[0].icon +".svg";
-    document.getElementById("nowtemp").innerHTML = Math.round(rs.list[0].main.temp) + "&deg;";
-    document.getElementById("maxtemp").innerHTML = Math.round(rs.list[0].main.temp_max) + "&deg;";
-    document.getElementById("mintemp").innerHTML = Math.round(rs.list[0].main.temp_min) + "&deg;";
-    document.getElementById("desc").innerHTML = rs.list[0].weather[0].description;
+    document.getElementById("icon").src =  "images/design/"+ rs.current.weather[0].icon +".svg";
+    document.getElementById("nowtemp").innerHTML = Math.round(rs.current.temp) + "&deg;";
+    document.getElementById("desc").innerHTML = rs.current.weather[0].description;
     document.getElementById("sunrise").innerHTML = sunrise;
     document.getElementById("sunset").innerHTML = sunset;
-    document.getElementById("wind").innerHTML = rs.list[0].wind.speed + "m/s";
-    document.getElementById("humidity").innerHTML = rs.list[0].main.humidity + "%";
-    document.getElementById("clouds").innerHTML = rs.list[0].clouds.all;
-    document.getElementById("feels_like").innerHTML = rs.list[0].main.feels_like  + "&deg;";
+    document.getElementById("wind").innerHTML = rs.current.wind_speed + "m/s";
+    document.getElementById("humidity").innerHTML = rs.current.humidity + "%";
+    document.getElementById("clouds").innerHTML = rs.current.clouds;
+    document.getElementById("feels_like").innerHTML = rs.current.feels_like  + "&deg;";
 
    
     
    
    let html = "";
-   for(let i in rs.list){
-      let getTime = new Date(rs.list[i].dt*1000);  //<-- 유닉스타임을 시간으로 변환하는 방법
+   for(let i in rs.hourly){
+      let getTime = new Date(rs.hourly[i].dt*1000);  //<-- 유닉스타임을 시간으로 변환하는 방법
       let dayHours = (getTime.getHours() >12) ? `PM ${getTime.getHours()-12}`:`AM ${getTime.getHours()}`;
       let getDate = getTime.getDate() + "일 " + dayHours + "시";
          html += `
@@ -108,10 +103,10 @@ function getWeather(lat, lon, city){
                <div class="dayweather">
                   <p class="daydate">${getDate}</p>
                   <div class="img-Box">
-                     <img src="images/design/${rs.list[i].weather[0].icon}.svg" alt="01d">
+                     <img src="images/design/${rs.hourly[i].weather[0].icon}.svg" alt="01d">
                   </div>
-                  <p class="daytemp">${Math.round(rs.list[i].main.temp_max)}&deg;/${Math.round(rs.list[i].main.temp_min)}&deg;</p>
-                  <p class="daydesc">${rs.list[i].weather[0].description}</p>
+                  <p class="daytemp">${Math.round(rs.hourly[i].temp)}&deg;</p>
+                  <p class="daydesc">${rs.hourly[i].weather[0].description}</p>
                </div>
             </li>
             `;

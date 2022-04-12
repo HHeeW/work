@@ -56,7 +56,7 @@
     <div id="wrapper" class="container swiper mySwiper">
         <ul id="swiper" class="row swiper-wrapper">
             <!-- loop -->
-            <li>
+            <li id="hourly">
                 <div class="dayweather">
                     <p class="daydate">00일 00시 00분</p>
                     <div class="img-Box">
@@ -76,10 +76,12 @@
     <script>
     const swiper = new Swiper(".mySwiper", {
         slidesPerView: 2,
-        spaceBetween: -50,
+        spaceBetween: 10,
         freeMode: true,
         observer: true,
         observeParents: true,
+        width: 300,
+        centeredSlides: false,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -89,7 +91,7 @@
       });
     </script>
     <script src="js/city.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/scriptall.js"></script>
 
 </body>
 </html>
