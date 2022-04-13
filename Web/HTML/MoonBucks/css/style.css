@@ -1,17 +1,169 @@
-@import url(all.min.css);
-@import url(fonts.css);
-*{box-sizing: border-box;}
+*{ margin-block-start: 0; margin-block-end: 0;}
 body{
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 16px;
-    color: #000;
-    margin: 0;
+    font-size:16px;
+    color:#333;
+    margin:0;
+    padding:0;
+}
+/** 네비게이션 **/
+.nav-bg{
+   background:#e5e5e5;
+   padding-top:5px;
+   border-top:2px solid #333;
+   position:fixed;
+   z-index:100;
+   top:0;
+   left:0;
+   width:100%;
+   position: relative;
+}
+.navin{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+.topnavbox{
+    display: flex;
+    padding-right: 50px;
+}
+.gnb, .topnav{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    width: 100%;
+}
+.topnav li:not(:last-child)::after{
+    content:"";
+    display:inline-block;
+    height:10px;
+    width:1px;
+    background:#999;
+}
+.navin a{
+    color: #333;
+    white-space: nowrap;
+    font-family:'Avenir Next LT Pro', sans-serif;
+}
+.topnav a{
+    width:calc(100% - 1px);
+    display:inline-block;
+    padding:0 15px;
+    font-size:13px;
+    color:#333;
+    font-weight:300;
+}
+.input-search {
+    width:0;
+    border:none;
+    outline: none;
+    background:transparent;
+    transition:all .25s;
+}
+.searchForm{
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+}
+.searchForm.act {
+    border:1px solid #999;
+    background:#fff;
+    border-radius:5px;
+    position: relative;
+    padding: 5px 10px;
+}
+.input-search.act{
+    width:150px;
+}
+.input-search::placeholder{
+    font-size-adjust: 13px;
+    color: #999;
+}
+.search-btn{
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 0px 5px;
+    color: #333;
+}
+.searchForm.act a.search-btn{
+    border: none;
+    padding: 0 5px;
+    position: absolute;
+    right: 5px;
+}
+a.search-btn span.material-icons{
+    font-size: 28px;
+}
+.gnb{
+    margin-top: 10px;
+    justify-content: space-between;
+}
+.gnb li{
+    text-align: center;
+}
+.gnb li:hover{
+    background: #333;
+}
+.gnb li:hover a{
+    color:#239e73;
+}
+.gnb>li>a{
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 300;
+    padding:15px 15px 30px;
+}
+.lnb{
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 20px 0;
+    left: 0;
+    top: 120px;
+    background: #333;
+}
+.lnb ul{
+    list-style-type: none;
     padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
-a{
-    text-decoration: none;
-    color: #222;
+.lnb li{
+    width: 20%;
 }
-.container{
-    width: 1360px;
+.gnb li:hover .lnb,
+.gnb li:hover .lnb a{
+    display: block;
+    color: #fff;
+    font-size: 13px;
+    line-height: 22px;
+    text-align: left;
+}
+
+.gnb li:hover .lnb a:not(.lnb-title){
+    color: #999;
+    font-weight: 300;
+}
+.lnb a.lnb-title{
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    text-align: left;
+}
+.lnb a:last-child{
+    margin-bottom: 40px;
+}
+
+
+@media screen and (min-width: 780px){
+    .navin{
+        width: 70%;
+    }
 }

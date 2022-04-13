@@ -62,7 +62,13 @@
     font-style: normal;
     font-display: swap;
 }
-/* Avenir Fonts */
+
+
+/* ******************************************************************************** */
+/******************************* Avenir Fonts ***************************************/
+/* ******************************************************************************** */
+
+
 @font-face {
     font-family: 'Avenir Next LT Pro';
     src: url('../webfonts/AvenirNextLTPro-Demi.eot');
@@ -71,7 +77,7 @@
         url('../webfonts/AvenirNextLTPro-Demi.woff') format('woff'),
         url('../webfonts/AvenirNextLTPro-Demi.ttf') format('truetype'),
         url('../webfonts/AvenirNextLTPro-Demi.svg#AvenirNextLTPro-Demi') format('svg');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -84,20 +90,7 @@
         url('../webfonts/AvenirNextLTPro-Bold.woff') format('woff'),
         url('../webfonts/AvenirNextLTPro-Bold.ttf') format('truetype'),
         url('../webfonts/AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../webfonts/AvenirNextLTPro-BoldCn.eot');
-    src: url('../webfonts/AvenirNextLTPro-BoldCn.eot?#iefix') format('embedded-opentype'),
-        url('../webfonts/AvenirNextLTPro-BoldCn.woff2') format('woff2'),
-        url('../webfonts/AvenirNextLTPro-BoldCn.woff') format('woff'),
-        url('../webfonts/AvenirNextLTPro-BoldCn.ttf') format('truetype'),
-        url('../webfonts/AvenirNextLTPro-BoldCn.svg#AvenirNextLTPro-BoldCn') format('svg');
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
@@ -110,20 +103,7 @@
         url('../webfonts/AvenirNextLTPro-Regular.woff') format('woff'),
         url('../webfonts/AvenirNextLTPro-Regular.ttf') format('truetype'),
         url('../webfonts/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Avenir Next LT Pro';
-    src: url('../webfonts/AvenirNextLTPro-DemiCn.eot');
-    src: url('../webfonts/AvenirNextLTPro-DemiCn.eot?#iefix') format('embedded-opentype'),
-        url('../webfonts/AvenirNextLTPro-DemiCn.woff2') format('woff2'),
-        url('../webfonts/AvenirNextLTPro-DemiCn.woff') format('woff'),
-        url('../webfonts/AvenirNextLTPro-DemiCn.ttf') format('truetype'),
-        url('../webfonts/AvenirNextLTPro-DemiCn.svg#AvenirNextLTPro-DemiCn') format('svg');
-    font-weight: normal;
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
@@ -136,7 +116,7 @@
         url('../webfonts/AvenirNextLTPro-It.woff') format('woff'),
         url('../webfonts/AvenirNextLTPro-It.ttf') format('truetype'),
         url('../webfonts/AvenirNextLTPro-It.svg#AvenirNextLTPro-It') format('svg');
-    font-weight: normal;
+    font-weight: 300;
     font-style: italic;
     font-display: swap;
 }
