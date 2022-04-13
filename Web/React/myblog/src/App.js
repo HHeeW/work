@@ -1,13 +1,15 @@
 import TopBar from "./comp/topbar/TopBar";
-import Home from "./comp/home/Home";
-import Detail from './detailPost/Detail'
+// import Home from "./comp/home/Home";
+// import Detail from './detailPost/Detail';
+import Write from './form/Write';
 function App() {
   return (
-    <div className="App">
+    <>
       <TopBar />
-      {/* <Home />   */}
-      <Detail />
-    </div>
+      {/* <Home /> */}
+      {/* <Detail /> */}
+      <Write />
+    </>
   );
 }
 
