@@ -1,156 +1,137 @@
 @import url("reset.css");
 @import url("webfonts.css");
-@import url("fonts.css");
-@import url("all.min.css");
 @import url("weather-icons.css");
 @import url("weather-icons-wind.css");
 @import url("bootstrap-grid.min.css");
-
 body{
-    background-color: rgb(90, 170, 240);
-    font-size: 16px;
-    font-family: NotoSansKR, sans-serif;
-    color: #fff;
-    font-weight: 400;
+    background-color:rgb(90, 173, 237);
+    font-size:16px;
+    font-family:notoSansKr, sans-serif;
+    color:#fff;
+    font-weight:400;
 }
 nav{
-    padding: 20px;
-    display: flex;
+    padding:20px;
+    display:flex;
     justify-content: flex-end;
 }
-.img-Box{
-    position: relative;
-}
-.img-Box img{
-    position: absolute;
-    height: 200%;
-    top: -45%;
-    left: 20%;
-}
-.dis-flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
 .searchBox{
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 1.5em;
-    padding: 3px;
+    border:1px solid rgba(255,255,255,0);
+    border-radius:1.5em;
+    padding:3px;
 }
-.searchBox input[type = search]{
-    width: 1px;
-    transition: all 0.3;
+.searchBox input[type=search]{
+    width:1px;
+    transition: all 0.3s;
 }
 .searchBox.active{
-    border: 1px solid rgba(255,255,255,1);
+    border:1px solid rgba(255,255,255,1);
 }
 .searchBox.active input[type=search]{
-    width: 150px;
+    width:150px;
 }
 .search{
-    margin-right: 5px;
+    margin-right:5px;
 }
 #search{
-    border: none;
-    background: transparent;
+    border:none;
+    background:transparent;
 }
-#search:focus{outline:none;}
-
+#search:focus{ outline: none;}
 
 h1.city-title{
-    font-size: 1.7em;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
+    font-size:1.7em;
+    font-weight:700;
+    text-align:center;
+    margin-top:2em;
+    margin-bottom:0.5em;
+
 }
 .ntime{
-    margin-bottom: 1.2em;
+    margin-bottom:1.2em;
 }
 .margin-auto{
-    margin-left: auto;
-    margin-right: auto;
+    margin-left:auto;
+    margin-right:auto;
 }
 .text-center{
-    text-align: center;
+    text-align:center;
 }
 #iconbox,#nowtemp{
-    height: 100px;
+    height:100px;
 }
 #iconbox{
-    text-align: right;
-    position: relative;
+    text-align:right;
+    padding-right:5px;
 }
 #iconbox img{
-    position: absolute;
-    top: -57%;
-    right: -20%;
-    height: 200%;
+    max-width:80px;
 }
 #nowtemp{
-    font-size: 4em;
-    line-height: 1.2em;
-    text-align: left;
-    font-weight: 700;
-    color: #fff;
-    padding: 0;
+    font-size:4em;
+    line-height:1.1em;
+    text-align:left;
+    font-weight:500;
+    letter-spacing: -3px;
 }
-#minmaxtmep{
-    margin-bottom: 10px;
+#minmaxtemp{
+    margin-bottom:10px;
 }
 .py-20{
-    padding-top: 1em;
-    padding-bottom: 1em;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    padding-top:1em;
+    padding-bottom:1em;
+    margin-top:2em;
+    margin-bottom:2em;
 }
 .light-blue{
-    background-color: rgba(255,255,255,0.3);
+    background-color:rgba(255,255,255,0.2);
 }
 .light-blue li{
-    line-height: 1.8em;
-}
-.light-blue span.material-icons{
-    width: auto;
+    line-height:24px;
+    letter-spacing: -1px;
 }
 
+i.material-icons{
+    font-size:20px;
+    line-height:20px;
+}
+.pd-15{
+    margin-left:20px;
+}
 
-
-/* dayweather */
+/** dayweather **/
 #wrapper{
     overflow: hidden;
-    height: 150px;
+    height: 200px;
+    position:relative;
 }
 #swiper{
     flex-wrap: nowrap;
-    position: relative;
+    position: absolute;
 }
 #swiper li{
-    padding: 10px 10px;
+    padding: 10px 15px;
 }
-.dayweather{
+.dayWeather{
     width: 120px;
+	min-height:170px;
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.5);
     color: #333;
     font-size: 12px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 0 15px 0 rgba(246, 239, 35, 0.15), 0 0 5px 0 rgba(0, 0, 0, 0.2);
-}
-.dayweather p{
-    margin: 5px;
+    box-shadow: 0 0 15px 0 rgba(246, 239, 35, 0.15), 
+                0 0 15px 0 rgba(0, 0, 0, 0.2);
 }
 .daydate{
     font-weight: 700;
-    margin-bottom: 15px;
-}
-.dayweather .img-Box{
-    height: 30px;
-}
-
-.daytemp{
-    margin-top: 5px;
     margin-bottom: 10px;
+}
+.dayWeather img{
+    height: 60px;
+}
+.daytemp{
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
