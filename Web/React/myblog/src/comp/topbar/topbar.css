@@ -6,6 +6,11 @@
     top: 0;
     z-index: 100;
 }
+.topListItem .home{
+    font-weight: 400;
+    color: #444;
+    color: rgb(88, 147, 236);
+}
 .topIn{
     display: flex;
     align-items: center;
