@@ -23,17 +23,26 @@
 .settingsForm {
     display:flex;
     flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
 }
 .settingsPP {
     display: flex;
     align-items: center;
     margin:10px 0;
 }
+.settingsPP .imgbox{
+    width: 30%;
+    text-align: center;
+}
 .settingsPP img {
     width:70px;
     height:70px;
     border-radius:20px;
     object-fit: cover;
+}
+.settingsPP label{
+    width: 60%;
 }
 .settingsPPIcon {
    width:25px;

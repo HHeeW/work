@@ -22,7 +22,7 @@ export default function TopBar() {
                     <li className="topListItem">
                         {
                             user? ("LOGOUT") : 
-                                (<span>
+                                (<span className='loginout'>
                                     <Link to={"/Login"}> LOGIN </Link>
                                     <Link to={"/Setting"}>회원가입</Link>
                                 </span>)

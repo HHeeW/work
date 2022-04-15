@@ -22,7 +22,7 @@ function App() {
         <Route path="/detail/*" element={<Detail />} />
         <Route path="/write/*" element={<Write />} />
         <Route path="/write/*" element ={(user == 'HeeWon')?<Write /> : <Home />} />
-        <Route path="/setting" element={user ? <Home /> : <Setting />} />
+        {/* <Route path="/setting" element={user ? <Home /> : <Setting />} /> */}
         <Route path="/login" element={ user ? <Home /> : <Login />} />
       </Routes>
 

@@ -12,7 +12,9 @@ export default function Settings() {
             <form action="./" className="settingsForm">
                  <label>Profile Picture</label>
                  <div className="settingsPP">
-                     <img src="images/n2.jpg" alt="me" />
+                     <div className="imgbox">
+                        <img src="images/n2.jpg" alt="me" />
+                     </div>
                      <label htmlFor="fileInput">
                          <i className="settingsPPIcon far fa-user-circle"></i>
                          <input type="file" id="fileInput" style={{display:"none"}} />

@@ -16,6 +16,9 @@ $(function(){
         }
         $(this).find('.mobile-lnb').slideToggle();
     });
+
+
+    
     $('.btn-box>.fa-bars').click(function(){
         $('.fadeblack').css('right', '0%');
         $('.box').css('left', '-70%');
