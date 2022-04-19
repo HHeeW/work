@@ -48,33 +48,25 @@ $(function(){
        arrows: false
     });
   
-    $('.imgSliderClass').slick({
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 3
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
+    $('.summer-bg').mouseover(function(){
+      $(this).find('.sLeftIn, .sRightIn').css('animation-play-state', 'running');
+    })
 
+
+    setInterval(mySlider, 1000);
 
 
 });
 
+function mySlider(){
+  $('.imgSlidein').animate({
+    left: '50%'
+  }, 500, function(){
+    $('.imgSLidein>div').removeClass('opacity-1');
+    $('.imgSlidein>div:first-child').clone().appendTo('.imgSlidein');
+    $('.imgSlidein>div:first-child').remove();
+    $('.imgSlideIn').css('left', 0);
+    
+    $('.imgSLidein div:eq(1)').addClass('opacity-1');
+  });
+}

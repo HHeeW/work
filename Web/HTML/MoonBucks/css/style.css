@@ -53,6 +53,9 @@ a.radius-white-line:hover{
 a.radius-white-line:hover >.material-icons {
     color:#eee;
 }
+.container-fluid{
+    padding: 0;
+}
 /** 네비게이션 **/
 .nav-bg{
    background:#f1f1f1;
@@ -403,18 +406,33 @@ a.imgs{
     text-decoration:none;
 }
 .imgSlider{
-    height:200px;
-    background:#ddd;
-    margin-left:-15px;
-    margin-right:-15px;
+    height:600px;
+    width: 100%;
+    background-color: #f6f6ee;
+    overflow: hidden;
+    position: relative;
+}
+.imgSlidein{
+    width: auto;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.imgSlidein>div{
+    padding-right: 15px;
+    padding-left: 15px;
+    opacity: 0.5;
+    transition: all 1s;
+}
+.imgSlidein>div.opacity-1{
+    opacity: 1;
 }
 
-
-/******* summber-bg ******/
-.summber-bg{
+/******* summer-bg ******/
+.summer-bg{
     position: relative;
     height: 572px;
     background: url(../images/bean_bg2.jpg) center;
@@ -447,9 +465,11 @@ a.imgs{
 }
 .sLeftIn{
     animation: slideLeftIn 2s ease;
+    animation-play-state: paused;
 }
 .sRightIn{
     animation: slideRightIn 2.5s ease;
+    animation-play-state: paused;
 }
 
 /******* indonesia-bg ******/
