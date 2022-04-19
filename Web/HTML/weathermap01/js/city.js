@@ -23,6 +23,8 @@ function county(c){
             return "용산";
         case "Sindaebang-dong":
             return "신대방 1동";
+        case "Haenam":
+            return "해남";
         default:
             return c;
     }
@@ -55,6 +57,8 @@ function searchCity(s){
             return "Sindaebang-dong";
         case "신대방 1동":
             return "Sindaebang-dong";
+        case "해남":
+            return "Haenam";
         default:
             return s;
     }

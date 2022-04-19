@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="col-12 text-center">
-            <p id="minmaxtemp"><span id="maxtemp"></span>/ <span id="mintemp"></span></p>
+            <p id="minmaxtemp"><span id="maxtemp"></span>/<span id="mintemp"></span></p>
             <p id="desc"></p>
         </div>
         
@@ -69,18 +69,19 @@
             <!-- loop -->
         </ul>
     </div>
-    <h2 class="text-center">Hwang Hee Won</h2>
-
+    <h2 class="text-center" onclick="GPS()">Hwang Hee Won</h2>
+    <div class="img_box" id="Simg1">
+        <img src="images/h4.jpg" alt="h4" >
+    </div>
 
     <script src="js/swiper-bundle.js"></script>
     <script>
     const swiper = new Swiper(".mySwiper", {
         slidesPerView: 2,
-        spaceBetween: 0,
+        spaceBetween: -50,
         freeMode: true,
         observer: true,
         observeParents: true,
-        passiveListeners: true,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,

@@ -12,13 +12,22 @@ search.addEventListener("click", function(){
 // 검색
 document.searchForm.addEventListener("keydown", (e) =>{
    let searchtext='';
-   if(e.code ==="Enter"){
+   if(e.keyCode == 13){
       e.preventDefault();
       searchtext = document.getElementById("search").value;
       searchBox.classList.remove("active");
       document.getElementById("search").value ='';
+      console.log("검색어 : " + searchtext)
+
+      const Simg = document.getElementById("Simg1");
+      if(searchtext == "사진"){
+         Simg.style.display = 'block';
+      }
+      else{
+         getWeather('','',searchCity(searchtext));
+         Simg.style.display = 'none';
+      }
    }
-   getWeather('','',searchCity(searchtext));
 })
 
 //위치값 받아오기
@@ -29,7 +38,15 @@ if(navigator.geolocation) {
        getWeather(myLat, myLng, '');
    });
 }
-
+function GPS(){
+   if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position){
+          myLat = position.coords.latitude;
+          myLng = position.coords.longitude;
+          getWeather(myLat, myLng, '');
+      });
+   }
+}
 function getWeather(lat, lon, city){
    const url = "https://api.openweathermap.org/data/2.5/forecast";
    const apikey = "edce18bc1a8f5513adb9a29f90946276";
