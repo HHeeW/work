@@ -407,18 +407,129 @@ a.imgs{
     background:#ddd;
     margin-left:-15px;
     margin-right:-15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
+/******* summber-bg ******/
+.summber-bg{
+    position: relative;
+    height: 572px;
+    background: url(../images/bean_bg2.jpg) center;
+    background-size: cover;
+    overflow: hidden;
+}
+.tl{
+    position: absolute;
+    top: -100px;
+    left: 0;
+}
+.br{
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+}
+.bean{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+.bean-text-box{
+    position: absolute;
+    top: 30%;
+    right: 30%;
+}
+.bean-text-box>img{
+    display: block;
+    margin-bottom: 30px;
+}
+.sLeftIn{
+    animation: slideLeftIn 2s ease;
+}
+.sRightIn{
+    animation: slideRightIn 2.5s ease;
+}
 
-
-
-
-
-
-
-
-
+/******* indonesia-bg ******/
+.indonesia-bg{
+    position: relative;
+    height: 400px;
+    background: url(../images/visual_bg.jpg) center;
+    background-size: cover;
+    overflow: hidden;
+}
+.inbl{
+    position: absolute;
+    bottom: 0;
+    left: -120px;
+}
+.inbr{
+    position: absolute;
+    bottom: 0;
+    right: -0;
+    z-index: 1;
+}
+.inbean{
+    position: absolute;
+    bottom: 0;
+    right: 25%;
+}
+.inbean-text-box{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    text-align: center;
+}
+.inbean-text-box>img{
+    display: block;
+    margin: 30px;
+}
+.inbean-text-box>button{
+    color: rgb(177, 129, 40);
+    border: 2px solid rgb(177, 129, 40);
+    margin-left: 150px;
+}
+.inbean-text-box>button:hover{
+    color: #fff;
+    background-color: rgb(177, 129, 40);
+    text-decoration: underline;
+}
+/******** prod-bg ********/
+.prod-bg{
+    position: relative;
+    height: 800px;
+    background: url(../images/prod_bg_new.jpg) fixed center;
+    background-size: cover;
+    overflow: hidden;
+}
+.prodbean{
+    position: absolute;
+    top: 12%;
+    right: -28%;
+}
+.prodbean-text-box{
+    position: absolute;
+    top: 13%;
+    right: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.prodbean-text-box>img{
+    margin-bottom: 50px;
+}
+.prodbean-text-box>button{
+    color: #fff;
+    border: 2px solid #fff;
+}
+.prodbean-text-box>button:hover{
+    color: #000;
+    background-color: #fff;
+    text-decoration: underline;
+}
 
 
 
@@ -476,3 +587,35 @@ a.imgs{
         right: -80px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+@keyframes slideLeftIn{
+    from{
+        left: -30%;
+        opacity: 0;
+    }
+    to{
+        left: 10%;
+        opacity: 1;
+    }
+}
+@keyframes slideRightIn{
+    from{
+        right: -30%;
+        opacity: 0;
+    }
+    to{
+        right: 30%;
+        opacity: 1;
+    }
+}
+
+
