@@ -21,10 +21,10 @@ $(function(){
     
     $('.btn-box>.fa-bars').click(function(){
         $('.fadeblack').css('right', '0%');
-        $('.box').css('left', '-70%');
+        $('.wrapperbox').css('left', '-70%');
     });
     $('.xclose').click(function(){
-        $('.box').css('left', '0%');
+        $('.wrapperbox').css('left', '0%');
         $('.fadeblack').css('right', '-100%');
     });
 });

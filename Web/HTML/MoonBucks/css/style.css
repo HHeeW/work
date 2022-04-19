@@ -9,6 +9,16 @@ body{
 a{
     display: block;
 }
+.cardbox{
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    width: 30%;
+}
+.cardbox img, picture img{
+    max-width: 100%;
+    max-height: 100%;
+}
 /** 네비게이션 **/
 .nav-bg{
    background:#f1f1f1;
@@ -20,10 +30,14 @@ a{
    left:0;
    width:100%;
    position: relative;
+   height: 2000px;
 }
 .nav-bg .row{
     padding-top: 8px;
     padding-bottom: 15px;
+}
+.logo{
+    width: 70%;
 }
 .topnavbox{
     display: flex;
@@ -42,7 +56,7 @@ a{
     display:inline-block;
     height:10px;
     width:1px;
-    background:#999;
+    background:#ccc;
 }
 .navin a{
     color: #333;
@@ -268,31 +282,86 @@ ul.mobile-lnb li{
     position: relative;
     z-index: -1;
 }
-.box{
+.wrapperbox{
     position: absolute;
     width: 100%;
     top: 0px;
     left: 0%;
     transition: all .5s;
 }
-.box img{
-    width: 100%;
-}
 /********** main banner **********/
 .mainbanner{
-    height: 80vh;
     background: url(../images/mobile/m_main_bg.jpg) no-repeat top;
+    background-size: cover;
+}
+.mainbanner>.container{
+    padding-top: 45px;
+    flex-wrap: wrap;
+    padding-left: 30px;
+}
+.main-text{
+    width: 50%;
+}
+.cont img{
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+.mainbanner .col-3{
+    height: 80vh;
+}
+.punch{
+    position: static;
+    display: block;
+    margin-top: 20px;
+    width: 90%;
+}
+.rollinmint{
+    position: static;
+    display: block;
+    margin-top: -50px;
+}
+.pomeloflow{
+    position: static;
+    display: block;
+    margin-top: -30px;
+    margin-bottom: 50px;
 }
 
-@media screen and (min-width: 750px){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 950px){
     .navin{
         width: 70%;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
     }
+    .logo{
+        width: 100%;
+    }
     .mobile{
         display: none;
+    }
+    .cardbox{
+        position: fixed;
+        top: 150px;
+        left: calc(50% + 560px);
+        z-index: 130;
     }
     .nav-bg .row{
         padding-top: 0;
@@ -302,5 +371,28 @@ ul.mobile-lnb li{
         height: 646px;
         background: url(../images/main_bg.jpg) no-repeat center;
         background-size: cover;
+    }
+    .mainbanner .col-3{
+        height: 646px;
+    }
+    .main-text{
+        width: 100%;
+    }
+    .punch{
+        position: absolute;
+        bottom: -260px;
+        left: -90px;
+        width: 1000px;
+    }
+    .rollinmint{
+        position: absolute;
+        bottom: -210px;
+        left: -180px;
+        width: 1000px;
+    }
+    .pomeloflow{
+        position: absolute;
+        bottom: -340px;
+        right: -80px;
     }
 }
