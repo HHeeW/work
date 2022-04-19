@@ -8,6 +8,19 @@ body{
 }
 a{
     display: block;
+}.bg-black{
+    background-color:#000;
+}
+.marging-left-important{
+    margin-left: -15px !important;
+}
+.background-moon-color{
+    background-color:#1e3932;
+    color:#fff;
+}
+.wrapper{
+    width:100%;
+    position:relative;
 }
 .cardbox{
     position: fixed;
@@ -327,7 +340,53 @@ ul.mobile-lnb li{
     margin-bottom: 50px;
 }
 
-
+.noticebox{
+    position:absolute;
+    display:flex;
+    right: 0px;
+    width:600px;
+}
+.noticebox strong{
+    display:block;
+    width:100px;
+}
+.notice-text{
+    width:calc(100% - 170px);
+}
+/** SECTION REWARDS **/
+section.rewards p{
+    margin-bottom:0;
+}
+section.rewards .fs-14{
+    font-size:.95em;
+}
+.imgs{
+    display:flex;
+    width:100%;
+    padding-left:100px;
+    margin-top:20px;
+}
+.imgs span{
+    margin-left:100px;
+    display:flex;
+    width:30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+a.imgs{
+    color:#333;
+    font-size:20px;
+    text-decoration:none;
+}
+.imgSlider{
+    height:200px;
+    background:#ddd;
+    margin-left:-15px;
+    margin-right:-15px;
+}
 
 
 
