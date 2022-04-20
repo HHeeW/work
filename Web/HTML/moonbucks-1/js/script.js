@@ -1,4 +1,25 @@
 $(function(){
+   let ct = 1;  //카운트
+
+   const imgLength = $('.imgSlideIn').children().length - 2;
+   let li = '';
+   for( let i=0; i < imgLength; i++ ) {
+        if(i == 1) {
+            li += '<li class="act"></li>';
+        }else{
+           li += '<li></li>';
+        }
+   }
+   $('.page').html(li);
+
+   //imgSlideIn 의 크기 
+   const imgSlideInWidth = $('.imgSlideIn').width();
+   //화면의 크기 
+   const scrWidth = $(window).width();
+   //(imgSlideIn - 화면의크기)2
+   const gap = (imgSlideInWidth - scrWidth)/2;
+   $('.imgSlideIn').css('left', -gap+"px");
+   console.log(gap);
     $('.imgSlider').hide();
     $('.search-btn').click(function(e){
         e.preventDefault();
@@ -67,5 +88,67 @@ $(function(){
      vertical: true,
      arrows: false
   });
+
+  $('.summer-bg').mouseover(function(){
+     $(this).find('.sLeftIn, .sRightIn').css('animation-play-state', 'running');
+  }); 
+
+//    let otop=0;
+//   $(window).scroll(function(){
+//      otop = $('.summer-bg').position().top;
+//      console.log(otop);
+//      if(otop < 50 ) {
+//          $('.sLeftIn, .sRightIn').css('animation-play-state', 'running');
+//       }
+//   });
+
+  $('.next').click(function(e){
+      e.preventDefault();
+      mySlider(-1);
+  });
+
+  $('.prev').click(function(e){
+     e.preventDefault();
+      mySlider(1);
+  });
+
+
+   setInterval(mySlider, 3000); 
+
+   function mySlider(idx=-1){
+      const imgW = $('.opacity-1').width();
+
+      if(idx == 1){
+        aniGap = (imgW+15)-gap;
+      }else {
+        aniGap = -(gap+imgW+15);
+      }
+
+      $('.imgSlideIn').animate({
+         left: aniGap + "px"
+      }, 500, function(){
+          myCallback(); 
+      });
+   }
+   
+   function myCallback(){
+      $('.imgSlideIn div').removeClass('opacity-1');
+      $('.imgSlideIn div:eq(0)').clone().appendTo('.imgSlideIn');
+      $('.imgSlideIn div:eq(0)').remove();
+      $('.imgSlideIn div:eq(2)').addClass('opacity-1');
+      $('.imgSlideIn').css('left', -(gap)+"px");
+
+      ct++;
+      if(ct == 3)  ct = 0;
+      li = '';
+      for( i =0; i<imgLength; i++) {
+         if(i == ct) {
+            li += '<li class="act"></li>';
+         }else{
+            li += '<li></li>';
+         }
+    }
+    $('.page').html(li);    
+   }
 
 });

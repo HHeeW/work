@@ -1,4 +1,25 @@
 $(function(){
+    let ct = 1; //카운트
+
+    const imgLength = $('.imgSlidein').children().length;
+    let li = '';
+    for(let i = 0; i < imgLength; i++){
+        if(i == 1){
+            li +='<li class="act"></li>';
+        }else{
+            li += '<li></li>';
+        }
+    }
+
+
+    //imgSlideInWidth의 크기
+    const imgSlideInWidth = $('.imgSlideIn').width();
+    //화면의 크기
+    const scrWidth = $(window).width();
+    //(imgSlideIn - 화면의 크기)2
+    const gap = 
+
+
     $('.imgSlider').hide();
     $('.search-btn').click(function(e){
         e.preventDefault();
@@ -52,21 +73,61 @@ $(function(){
       $(this).find('.sLeftIn, .sRightIn').css('animation-play-state', 'running');
     })
 
+    let otop = 0, stop = 0;
+    $(window).scroll(function(){
+        stop = $(window).scrollTop();
+        otop = $('.summer-bg').offset().top;
+        if(stop > 100 ){
+            $('.sLeftIn, .sRightIn').css('animation-play-state', 'running');
+        }
+        
+    })
+    $('.next').click(function(e){
+        e.preventDefault();
+        mySlider(-1)
+    });
+    $('.prev').click(function(e){
+        e.preventDefault();
+        mySlider(1)
+    })
 
-    setInterval(mySlider, 1000);
+    setInterval(mySlider, 3000);
+
+    function mySlider(idx=-1){
+        let SlideLeft = '50%';
+        if(idx ==1){
+            SlideLeft = '50%';
+        }else{
+            SlideLeft = '0';
+        }
+        $('.imgSlidein').animate({
+            left: '50%'
+          }, 0, function(){
+            myCallBack();
+            });
 
 
+      function myCallBack(){
+        
+              $('.imgSlidein div').removeClass('opacity-1');
+              $('.imgSlidein div:eq(0)').clone().appendTo('.imgSlidein');
+              $('.imgSlidein div:eq(0)').remove();
+              $('.imgSlidein div:eq(1)').addClass('opacity-1');
+              $('.imgSlideIn').css('left', 0);
+              
+  
+              ct++;
+              if(ct == 3) ct = 0;
+              li = '';
+              for(i=0;i<imgLength;i++){
+                  if(i == ct){
+                      li +='<li class="act"></li>';
+                  }else{
+                      li += '<li></li>';
+                  }
+              }
+              $('.page').html(li);
+          };
+      }
 });
 
-function mySlider(){
-  $('.imgSlidein').animate({
-    left: '50%'
-  }, 500, function(){
-    $('.imgSLidein>div').removeClass('opacity-1');
-    $('.imgSlidein>div:first-child').clone().appendTo('.imgSlidein');
-    $('.imgSlidein>div:first-child').remove();
-    $('.imgSlideIn').css('left', 0);
-    
-    $('.imgSLidein div:eq(1)').addClass('opacity-1');
-  });
-}

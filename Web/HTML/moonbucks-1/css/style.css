@@ -5,6 +5,9 @@ body{
     margin:0;
     padding:0;
 }
+a, a:hover{
+    text-decoration:none;
+}
 .bg-black{
     background-color:#000;
 }
@@ -377,10 +380,202 @@ a.imgs{
     text-decoration:none;
 }
 .imgSlider{
-    height:200px;
-    background:#ddd;
-    margin-left:-15px;
-    margin-right:-15px;
+    width:100%;
+    height:650px;
+    background:#f6f6ee;
+    overflow:hidden;
+    position:relative;
+}
+.imgSlideIn{
+    width:auto;
+    display:flex;
+    flex-wrap:nowrap;
+    position: absolute;
+    top:40px;
+    left:0;
+}
+.imgSlideIn>div{
+    padding-left:15px;
+    padding-right:15px;
+    opacity:0.5;
+    transition: all 0.2s;
+}
+.imgSlideIn>div.opacity-1{
+    opacity:1;
+}
+.page{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content: center;
+    position: absolute;
+    z-index:10;
+    bottom:30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.page li{
+    width:10px;
+    height:10px;
+    background:#999;
+    border-radius:50%;
+    margin-left:5px;
+    margin-right:5px;
+}
+.page li.act{
+    background:#000;
+}
+.prev,.next{
+    position:absolute;
+    top: 250px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:60px;
+    height:60px;
+    border:1px solid #999;
+    background-color:rgba(255,255,255,0);
+    border-radius: 50%;
+    color:#999;
+    font-size:30px;
+    z-index:11;
+}
+.prev{
+    left : calc(50% - 550px);
+}
+.next{
+    right: calc(50% - 550px);
+}
+.prev:hover,.next:hover{
+    background-color:rgba(255,255,255,.8);
+    border-color:#333;
+    color:#333;
+}
+
+/** section **/
+.indonesia{
+    background:url(../images/reserve_2022_indonesia_visual_bg.jpg) center top;
+    background-size:cover;
+    overflow:hidden;
+    height:400px;
+    position:relative;
+}
+.pick{
+    background:url(../images/fav_prod_bg_new.jpg) center fixed no-repeat #615b65;
+    background-size: auto 100%;
+    height:800px;
+    padding:0;
+    position:relative;
+}
+.magazine{
+    background:url(../images/reserve_bg_pc.png) no-repeat 50% 100%;
+    background-size: auto 353px;
+    height:400px;
+    overflow:hidden;
+    position:relative;
+}
+.graybox{
+    background: url(../images/store_bg.jpg);
+    background-size:100% auto;
+    height:400px;
+    position:relative;
+    overflow: hidden;
+}
+footer{
+    padding:35px 0;
+    background-color:#373438;
+    position:relative;
+}
+/*** summer-bg ****/
+.summer-bg{
+    position:relative;
+    background: url(../images/Summer_bg2.jpg) center;
+    background-size: cover;
+    height:572px;
+}
+.tl,.br{
+    position:absolute;
+}
+.tl{
+    top:0;
+    left:0;
+}
+.br{
+    bottom:0;
+    right:0;
+}
+.bean{
+    position:absolute;
+    top:30px;
+    left:100px;
+    opacity:0;
+}
+.sLeftIn{
+    animation: slideLeftIn 1s ease 0.2s forwards;
+    animation-play-state: paused;
+}
+.sRightIn{
+    animation: slideRightIn 1s ease 0.2s forwards;
+    animation-play-state: paused;
+}
+
+.bean-text-box{
+    position:absolute;
+    width:28.7%;
+    max-width:321px;
+    top: 100px;
+    right:150px;
+    font-size:1.2em;
+    opacity:0;
+}
+.bean-text-box p:not(.top-title){
+    margin-bottom:0;
+    letter-spacing:-2.1px;
+}
+.top-title{
+    font-size:1.2em;
+}
+.bean-text-box p:last-of-type{
+    margin-bottom:15px;
+}
+
+
+footer h4{
+   text-transform: uppercase;
+   color:#fff;
+   font-size: 16px;
+   font-weight: 400;
+   margin-bottom:15px;
+}
+.footer-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.foot-list a{
+    font-size:14px;
+    color:#fefefe;
+}
+
+.footer-nav li:not(:last-child){
+    border-right:1px solid #eee;
+    height:13px;
+    position:relative;
+}
+
+.footer-nav a{
+    font-size: 13px;
+    color:#fff;
+    line-height:13px;
+    padding:0 10px;
+    position:relative;
+    top:-6px;
+}
+
+footer p{
+    color:#eee;
+    font-size:14px;
 }
 
 @media screen and (min-width: 1000px) {
@@ -436,4 +631,25 @@ a.imgs{
         top: 100px;
     }
     
+}
+
+@keyframes slideLeftIn{
+   from{
+       left: -311px;
+       opacity:0;
+   }
+   to{
+       left: 100px;
+       opacity:1;
+   }
+}
+@keyframes slideRightIn{
+    from{
+        right: -330px;
+        opacity:0;
+    }
+    to{
+        right: 150px;
+        opacity:1;
+    }
 }

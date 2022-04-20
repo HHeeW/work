@@ -6,9 +6,10 @@ body{
     margin:0;
     padding:0;
 }
-a{
-    display: block;
-}.bg-black{
+a, a:hover{
+    text-decoration: none;
+}
+.bg-black{
     background-color:#000;
 }
 .marging-left-important{
@@ -152,6 +153,10 @@ a.search-btn span.material-icons{
 .gnb{
     margin-top: 10px;
     justify-content: space-between;
+}
+.gnb a{
+    
+    display: block;
 }
 .gnb li{
     text-align: center;
@@ -314,6 +319,11 @@ ul.mobile-lnb{
 ul.mobile-lnb li{
     padding-left: 40px;
 }
+
+
+
+
+
 /*************************** mobile slide ***************************/
 .wrapper{
     position: relative;
@@ -430,6 +440,58 @@ a.imgs{
 .imgSlidein>div.opacity-1{
     opacity: 1;
 }
+.page{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.page li{
+    width: 10px;
+    height: 10px;
+    background-color: #999;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.page li.act{
+    background-color: #000;
+}
+.prev, .next{
+    position: absolute;
+    top: 250px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #333;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0);
+    color: #666;
+    font-size: 30px;
+    transition: all 0.3s;
+    z-index: 11;
+}
+.prev{
+    left: calc(50% - 550px);
+}
+.next{
+    right: calc(50% - 550px);
+}
+.prev:hover, .next:hover{
+    background-color: rgba(255, 255, 255, .8);
+    border-color: #333;
+    color: #333;
+}
+
+
 
 /******* summer-bg ******/
 .summer-bg{
@@ -550,9 +612,84 @@ a.imgs{
     background-color: #fff;
     text-decoration: underline;
 }
-
-
-
+/********** magazine ***********/
+.magazine-bg{
+    position: relative;
+    height: 400px;
+    background: url(../images/reserve_bg.png) center no-repeat;
+    background-position-y: bottom;
+    background-color: #fff;
+}
+.magazinebean{
+    position: absolute;
+    top: 0;
+    right: 0%;
+}
+.magazinebean-text-box{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.magazinebean-text-box>button{
+    margin-top: 30px;
+    margin-left: 150px;
+    color: #000;
+    border: 2px solid #000;
+}
+.magazinebean-text-box>button:hover{
+    color: #fff;
+    background-color: #000;
+    text-decoration: underline;
+}
+/********** store ***********/
+.store-bg{
+    height: 400px;
+    background: url(../images/store_bg.jpg) center;
+    overflow: hidden;
+}
+.storebean img{
+    position: absolute;
+}
+.storebean img:nth-child(1){
+    top: 30%;
+    left: 40%;
+    z-index: 5;
+}
+.storebean img:nth-child(2){
+    top: 0;
+    left: 30%;
+}
+.storebean img:nth-child(3){
+    top: -60px;
+    left: 45%;
+}
+.storebean img:nth-child(4){
+    bottom: 0;
+    right: 25%;
+}
+.storebean-text-box{
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.storebean-text-box>img{
+    margin-bottom: 20px;
+}
+.storebean-text-box>button{
+    color: #000;
+    border: 2px solid #000;
+}
+.storebean-text-box>button:hover{
+    color: #fff;
+    background-color: #000;
+    text-decoration: underline;
+}
 
 
 @media screen and (min-width: 950px){
