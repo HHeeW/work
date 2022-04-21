@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit=" numvalidate()">
+        <label>이메일</label>
+        <input type="text" id="email" placeholder="이메일을 입력하세요" />
+        <br>
+        <button type="submit">입력</button>
+    </form>
+</body>
+<script>
+    let re =/^[a-zA-Z0-9][a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]{2,3}(\.[a-zA-Z0-9]{2,3})?/;
+    function numvalidate(){
+        let email = document.getElementById('email');
+        if(!check(re, email)){
+            return false;
+        }
+        alert("이메일 조건에 충족하였습니다")
+    }
+    function check(re, email){
+        if(re.test(email.value)){
+            return true;
+        }
+        alert('입력하신 내용은 이메일 형식이 아닙니다.');
+        email.value = "";
+        email.focus();
+    }
+</script>
+</html>

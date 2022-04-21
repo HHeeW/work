@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <style>
+        *{box-sizing: border-box;}
+        .container{
+            width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+        ul{
+            list-style-type: none;
+            width: 560px;
+            margin: 50px auto;
+            padding: 0;
+            border: 1px solid #999;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        li:not(:last-child){
+            border-bottom: 1px solid #999;
+        }
+        ul a{
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <iframe width="1000" height="560" id="youtube" src="https://www.youtube.com/embed/LcAbI7-6T6E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=BRtDS6NDLJw" onclick="ychange(event,0)">♬ 리무진 (Feat. MINO) - 비오</a></li>
+            <li><a href="https://www.youtube.com/watch?v=tXV7dfvSefo" onclick="ychange(event,1)">버스커 버스커 (Busker Busker) - 벚꽃 엔딩</a></li>
+            <li><a href="https://www.youtube.com/watch?v=zdyebEnWzTM" onclick="ychange(event,2)">【임창정 M/V】 16집 '소확행'</a></li>
+            <li><a href="https://www.youtube.com/watch?v=v65QJkW1wM4" onclick="ychange(event,3)">황인욱 - 강변북로</a></li>
+            <li><a href="https://www.youtube.com/watch?v=3iM_06QeZi8" onclick="ychange(event,4)">[IU] '내 손을 잡아(Hold My Hand)' </a></li>
+        </ul>
+    </div>
+
+    <script>
+        const regExp = /^.*((youtu.be\/)(v\/)(\/u\/w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+
+        function yidParser(url){
+            let match = url.match(regExp);
+            console.log(match);
+            return (match&&match[7].length == 11)? match[7]:false;
+        }
+
+        function ychange(e, i){
+            e.preventDefault();
+            let links = document.getElementsByTagName('a')[i].href;
+            console.log(links);
+            const m = yidParser(links);
+            console.log(m);
+            if(m) {
+                document.getElementById('youtube').src = `https://www.youtube.com/embed/${m}?autoplay=1&mute=1`;
+            }
+        }
+    </script>
+</body>
+</html>
