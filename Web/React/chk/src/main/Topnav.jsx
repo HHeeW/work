@@ -1,9 +1,5 @@
 import styled from 'styled-components'
-import {Login, Logout} from '@styled-icons/material'
-
-const Login = styled(Login)`
-  font-size: 16px;
-`
+import { Login, PersonAdd, Search } from '@styled-icons/material'
 
 // CSS
 const Header = styled.div`
@@ -22,6 +18,7 @@ const TopNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;
 `  
 const LogoBox = styled.div`
   width: 20%;
@@ -38,7 +35,7 @@ const Logo = styled.a`
 `
 const MenuBox = styled.div`
   height: 100%;
-  width:50%;
+  width:55%;
   border: 1px solid #333;
 `
 const Menu = styled.ul`
@@ -48,7 +45,7 @@ const Menu = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 20px;
+  font-size: 25px;
 `
 const MovieBox = styled.li``
 const TicketBox = styled.li``
@@ -58,13 +55,26 @@ const Movie = styled.a``
 const Ticket = styled.a``
 const Store = styled.a``
 const Event = styled.a``
+
 const Member = styled.div`
   height: 100%;
-  width:30%;
+  width:25%;
   border: 1px solid #333;
+  display:flex;
+  justify-content:flex-end;
+  align-items: center;
+  padding-right: 30px
 `
+const LoginBox = styled.div`
+  display:flex;
+  justify-content:column;
+  align-items: center;
+`
+const SignUpBox = styled.div`
+`
+const SerchBox = styled.div`
 
-
+`
 
 
 
@@ -85,9 +95,18 @@ function Topnav() {
             </Menu>
           </MenuBox>
           <Member>
-            <span class="material-icons">login</span>
-            <Login />
-            <Logout />
+            <LoginBox>
+              <Login size={40} />
+              로그인
+            </LoginBox>
+            <SignUpBox>
+              <PersonAdd size={40} />
+              회원가입
+            </SignUpBox>
+            <SerchBox>
+              <Search size={40} />
+              검색
+            </SerchBox>
           </Member>
         </TopNav>
       </FixBox>
