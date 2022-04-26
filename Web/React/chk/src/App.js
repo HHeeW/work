@@ -1,12 +1,11 @@
 import Topnav from './main/Topnav'
 import Movie from './movie/Movie'
-import Movie_Detail from './movie_detail/Movie_Detail'
+import Movie_Detail_List from './movie_detail/Movie_Detail_List'
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
-
 
 function App() {
   return (
@@ -14,7 +13,8 @@ function App() {
       <Topnav />
       <Routes>
         <Route path='/' element={<Movie />} />
-        <Route path='/movie_detail' element ={<Movie_Detail />} />
+        <Route path='/movie_Detail_List1' element ={<Movie_Detail_List />} />
+        <Route path='/movie_Detail_List2' element ={<Movie_Detail_List />} />
       </Routes>
     </BrowserRouter>
   )

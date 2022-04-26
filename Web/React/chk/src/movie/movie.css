@@ -1,6 +1,6 @@
 .H_container{
-    width: 1200px;
-    height: 3000px;
+    max-width: 1200px;
+    height: 2000px;
     margin: 0 auto;
 }
 .H_all{
@@ -46,13 +46,12 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    width: 1240px;
+    max-width: 1240px;
     margin-left: -20px;
 }
 .H_movie{
     width: 20%;
-    height: 500px;
-    margin: 20px;
+    margin: 30px 20px;
 }
 .H_poster_box{
     position: relative;
@@ -74,7 +73,11 @@
 }
 .H_poster_text{
     margin: 20px;
+    height: 51%;
     color: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: wrap;
 }
 .H_poster_text_box:hover{
     transition: all 0.5s;
@@ -119,7 +122,7 @@
 }
 .H_ticketing{
     text-align: center;
-    width: 150px;
+    width: 70%;
     height: 30px;
     line-height: 30px;
     font-size: 16px;
