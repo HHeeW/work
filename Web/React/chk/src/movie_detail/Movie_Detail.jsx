@@ -28,7 +28,7 @@ const Movie_Detail = () => {
                     
                 </div>
             </div>
-            <div className="H_detail_nav">
+            {/* <div className="H_detail_nav">
                 <ul className="H_nav_gnb">
                     <li className="H_information">
                         영화 정보
@@ -37,7 +37,7 @@ const Movie_Detail = () => {
                         관람평
                     </li>
                 </ul>
-            </div>
+            </div> */}
         </div>
     </div>
   )

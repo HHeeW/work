@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react'
-
+import Timer from './components/Timer'
 const App = () => {
+
+  const [showTimer, setShowTimer]=useState(false);
+
   const [count, setCount] = useState(1);
   const [data, setData]= useState();
   const countUpdate =()=>{
@@ -21,6 +24,9 @@ const App = () => {
       <br />
       <input type='text' value={data} onChange={inputChange} />
       <span>데이터 : {data} </span>
+
+      {showTimer &&<Timer />}
+      <button onClick={()=>setShowTimer(!showTimer)}> Toggle Timer </button>
     </div>
   )
 }

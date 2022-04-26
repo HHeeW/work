@@ -10,6 +10,8 @@ const FixBox = styled.div`
   left: 50%;
   transform: translateX(-50%);
   z-index: 10000;
+  width:100%;
+  background-color: #fff;
 `
 const TopNav = styled.div`
   margin: 0 auto;
@@ -19,7 +21,6 @@ const TopNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
 `  
 const LogoBox = styled.div`
   width: 20%;
