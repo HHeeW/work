@@ -4,6 +4,7 @@ import './movie_detail.css'
 const Movie_Detail = (props) => {
   return (
     <div className="H_background_poster">
+        <img src={props.poster} alt="poster" />
         <div className='H_container H_background_black'>
             <div className="H_movie_top">
                 <div className="H_black"></div>
@@ -15,11 +16,11 @@ const Movie_Detail = (props) => {
                 <img className='H_detail_poster' src={props.poster} alt="" />
                 <div className="H_movie_detail_text_box">
                     <h1>{props.title}</h1>
-                    <h4>Doctor Strange in the Multiverse of Madness</h4>
-                    <p>감독 : 샘 레이미</p> 
-                    <p>배우 : 베네딕트 컴버배치 ,  엘리자베스 올슨 ,  베네딕트 웡 ,  레이첼 맥아담스 ,  치웨텔 에지오포 ,  소치틀 고메즈</p>
-                    <p>장르 : 액션, 어드벤처, 환타지 / 기본 : 12세 , 126분, 미국</p>
-                    <p>개봉 : 2022.05.04</p>
+                    <h4>{props.entitle}</h4>
+                    <p>감독 : {props.dir}</p> 
+                    <p>배우 : {props.act}</p>
+                    <p>장르 : {props.gen} / 기본 : {props.bas}</p>
+                    <p>개봉 : {props.open}</p>
                     <div className="H_ticketing_box">
                         <button className="H_ticketing">예매</button>
                     </div>

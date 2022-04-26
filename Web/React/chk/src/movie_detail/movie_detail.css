@@ -1,10 +1,11 @@
-.H_background_poster{
-    background: url(../../public/images/85715_320.jpg) no-repeat center;
-    background-size: cover;
+.H_background_poster>img{
+    position: absolute;
+    z-index: -100;
+    width: 100%;
 }
 
 .H_background_black{
-    background-color: #000;
+    background-color: rgba(0,0,0,0.7);
     color: #fff;
 }
 .H_movie_top{
@@ -19,7 +20,8 @@
     transform: translateX(-50%);
     background-image: radial-gradient( rgba(255,255,255,0), rgba(0,0,0,1) 75%);
     z-index: 1;
-}.H_movie_detail{
+}
+.H_movie_detail{
     text-align: center;
     margin: 0 auto;
     background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(255,255,255,0) 50%, rgba(0,0,0,1) 90%);
