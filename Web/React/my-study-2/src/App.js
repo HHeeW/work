@@ -108,7 +108,7 @@ const App = () => {
   return (
     <div className="container border border-secondary mb-3">
        <Section />
-       <footer /> 
+       <Footer /> 
     </div>
   )
 }

@@ -9,6 +9,7 @@ const FixBox = styled.div`
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10000;
 `
 const TopNav = styled.div`
   margin: 0 auto;

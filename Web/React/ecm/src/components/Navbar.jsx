@@ -5,33 +5,42 @@ import Search from '@mui/icons-material/Search';
 import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
 
 const Container = styled.div`
-    height: 60px;
+   width:100%;
     border:1px solid #ededed;
 `
 
 const Wrapper = styled.div`
+   width:1300px;
+   max-width: 100%;
+   margin-left: auto;
+   margin-right:auto;
    padding: 10px 20px;
    display:flex;
    align-items: center;
    justify-content: space-between;
 `
 const Left =styled.div`
-   flex:1;
+   flex: 0 0 20%;
+   max-width: 20%;
    display:flex;
    align-items: center;
+   padding-right: 15px;
 `
 const Center =styled.div`
-   flex: 1;
+   flex: 0 0 60%;
+   max-width: 60%;
    display:flex;
    align-items:center;
    justify-content:center;
 `
 const Right =styled.div`
-   flex: 1;
+   flex: 0 0 20%;
+   max-width: 20%;
    display:flex;
    align-items: center;
    justify-content: flex-end;
    margin-left:25px;
+   padding-left: 15px;
 `
 const Language = styled.span`
    font-size:14px;
