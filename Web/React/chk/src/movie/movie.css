@@ -2,13 +2,12 @@
     width: 1200px;
     height: 3000px;
     margin: 0 auto;
-    border: 1px solid #333;
 }
 .H_all{
     width: 25px;
     height: 25px;
     background: url(../../public/images/age-all.png) no-repeat center;
-    background-size: cover;
+    background-size: auto;
     padding: 10px;
     margin-right: 10px !important;
 }
@@ -16,7 +15,7 @@
     width: 25px;
     height: 25px;
     background: url(../../public/images/age-12.png) no-repeat center;
-    background-size: cover;
+    background-size: auto;
     padding: 10px;
     margin-right: 10px !important;
 }
@@ -24,7 +23,7 @@
     width: 25px;
     height: 25px;
     background: url(../../public/images/age-15.png) no-repeat center;
-    background-size: cover;
+    background-size: auto;
     padding: 10px;
     margin-right: 10px !important;
 }
@@ -32,7 +31,7 @@
     width: 25px;
     height: 25px;
     background: url(../../public/images/age-19.png) no-repeat center;
-    background-size: cover;
+    background-size: auto;
     padding: 10px;
     margin-right: 10px !important;
 }
@@ -40,9 +39,20 @@
     border-bottom: 3px solid #00c9c7;
     margin-bottom: 50px;
 }
+
+
+.H_movieChart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1240px;
+    margin-left: -20px;
+}
 .H_movie{
     width: 20%;
     height: 500px;
+    margin: 20px;
 }
 .H_poster_box{
     position: relative;
