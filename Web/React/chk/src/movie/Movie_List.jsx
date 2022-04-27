@@ -8,8 +8,8 @@ const Movie_List = () => {
     let movielist = [];
     for(let i in movies){
       movielist[i] = <Detail 
-      key={movies[i].id} 
-      id={movies[i].id} 
+      key={parseInt(i)+1} 
+      id={parseInt(i)+1} 
       title={movies[i].title} 
       poster={movies[i].poster} 
       age={movies[i].age} 

@@ -1,14 +1,7 @@
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let a = 3;
-let answer= [];
+let arr = [3,2,6]	;
+let a = 10;
 
-function solution(b, a){
-    for(i of b){
-        if((i % a) == 0){
-            answer.push(i);
-        }
-    }
-    console.log(answer);
-}
-
-solution(arr, a);
+function solution(arr, divisor) {
+    let a = arr.filter(x=> x%divisor===0).sort((a, b)=> a - b);
+    return (a.length === 0) ? [-1] : a}
+console.log(solution(arr, a));

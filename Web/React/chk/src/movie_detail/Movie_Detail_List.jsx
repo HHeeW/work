@@ -9,8 +9,8 @@ const Movie_Detail_List = () => {
   for(let i in movies_detail){
     if(moive-1 == i){
         movie_detail_List = <Movie_Detail 
-        key={movies_detail[i].id}
-        id={movies_detail[i].id} 
+        key={parseInt(i)+1}
+        id={parseInt(i)+1} 
         poster={movies_detail[i].poster}
         link={movies_detail[i].link}
         title={movies_detail[i].title}
