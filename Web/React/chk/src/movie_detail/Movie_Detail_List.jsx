@@ -1,14 +1,17 @@
 import React from 'react'
 import Movie_Detail from './Movie_Detail';
-
   
   const Movie_Detail_List = () => {
+    console.log(window.location);
+      let moive = window.location.pathname.substr(-1)
       let movie_detail_List = [];
       for(let i in movies_detail){
-        movie_detail_List[i] = <Movie_Detail 
+        if(moive-1 == i){
+            movie_detail_List = <Movie_Detail 
             key={movies_detail[i].id}
             id={movies_detail[i].id} 
             poster={movies_detail[i].poster}
+            link={movies_detail[i].link}
             title={movies_detail[i].title}
             entitle={movies_detail[i].entitle}
             dir={movies_detail[i].dir}
@@ -18,22 +21,38 @@ import Movie_Detail from './Movie_Detail';
             age={movies_detail[i].age} 
             ticketing={movies_detail[i].ticketing} 
             open={movies_detail[i].open} 
+            detail_title={movies_detail[i].detail_title}
             detail={movies_detail[i].detail}/>
+          }
       }
       
-      return movie_detail_List[5];
+      return movie_detail_List;
   }
 export default Movie_Detail_List
 
 
 const movies_detail = [
-  {id:1, poster:"images/85715_320.jpg" , title:"닥터 스트레인지: 대혼돈의 멀티버스", entitle: "Doctor Strange in the Multiverse of Madness", dir:"샘 레이미", act:"베네딕트 컴버배치 ,  엘리자베스 올슨 ,  베네딕트 웡 ,  레이첼 맥아담스 ,  치웨텔 에지오포 ,  소치틀 고메즈", grn: " 액션, 어드벤처, 환타지", bas:"126분, 미국",
-  age:"H_12", ticketing:"9.3%", open:"2022.05.04",
-  detail:"지금껏 본 적 없는 마블의 극한 상상력! 5월, 광기의 멀티버스가 깨어난다! 끝없이 균열되는 차원과 뒤엉킨 시공간의 멀티버스가 열리며  오랜 동료들, 그리고 차원을 넘어 들어온 새로운 존재들을 맞닥뜨리게 된 ‘닥터 스트레인지’. 대혼돈 속, 그는 예상치 못한 극한의 적과 맞서 싸워야만 하는데…."},
+  {id:1, poster:"images/85715_320.jpg" , title:"닥터 스트레인지: 대혼돈의 멀티버스", entitle: "Doctor Strange in the Multiverse of Madness", dir:"샘 레이미", act:"베네딕트 컴버배치 ,  엘리자베스 올슨 ,  베네딕트 웡 ,  레이첼 맥아담스 ,  치웨텔 에지오포 ,  소치틀 고메즈", grn: " 액션, 어드벤처, 환타지", bas:"126분, 미국", age:"H_12", ticketing:"9.3%", open:"2022.05.04", link:"Rt_UqUm38BI",
+  detail_title:`지금껏 본 적 없는 마블의 극한 상상력!`,
+  detail:`5월, 광기의 멀티버스가 깨어난다!
+    
+  끝없이 균열되는 차원과 뒤엉킨 시공간의 멀티버스가 열리며
+  오랜 동료들, 그리고 차원을 넘어 들어온 새로운 존재들을 맞닥뜨리게 된 ‘닥터 스트레인지’.
+  대혼돈 속, 그는 예상치 못한 극한의 적과 맞서 싸워야만 하는데….`},
 
- {id:2, poster:"images/39614_1000.jpg" , title:"해리포터와 죽음의 성물 2", entitle: "Harry Potter And The Deathly Hallows: Part2",  dir:"데이빗 예이츠", act:"다니엘 래드클리프 ,  엠마 왓슨 ,  루퍼트 그린트", gen:"환타지, 어드벤처", bas:" 131분, 미국, 영국",
-  age:"H_all", ticketing:"9.1%", open:"2011.07. 14",
-  detail: "덤블도어 교장이 남긴 <죽음의 성물>의 단서를 쫓던 해리 포터는 볼드모트가 그토록 찾아 다닌 절대적인 힘을 가진 지팡이의 비밀을 통해 드디어 마지막 퍼즐을 완성한다. 볼드모트의 영혼이 담긴 다섯 번째 <호크룩스>를 찾기 위해 마법학교 호그와트로 돌아온 해리와 친구들은 그들을 잡으려는 보안마법에 걸려 위기를 맞지만 덤블도어의 동생인 에버포스의 도움으로 벗어난다. 그리고 그에게서 덤블도어와 어둠의 마법사 그린델왈드에 관한 놀라운 과거에 대해 알게 된다. 한편, 볼드모트는 해리에 의해 호크룩스들이 파괴되었음을 느끼고 호그와트로 향한다. 해리를 주축으로 한 불사조 기사단과 죽음을 먹는 자들 간의 마법전투가 벌어지고 여기에 거대거미 아크로맨투라와 거인족 등 마법 생물들이 볼드모트 편으로 가세하면서 호그와트는 거대한 전쟁터로 변한다. 전쟁의 틈에서 해리는 덤블도어를 죽인 스네이프의 엄청난 비밀과 볼드모트를 죽일 마지막 호크룩스에 대한 단서를 알게 되는데..."}, 
+ {id:2, poster:"images/39614_1000.jpg" , title:"해리포터와 죽음의 성물 2", entitle: "Harry Potter And The Deathly Hallows: Part2",  dir:"데이빗 예이츠", act:"다니엘 래드클리프 ,  엠마 왓슨 ,  루퍼트 그린트", gen:"환타지, 어드벤처", bas:" 131분, 미국, 영국", age:"H_all", ticketing:"9.1%", open:"2011.07. 14", link:"DGhq0Kx8dzQ",
+ detail_title:`가장 위험한 마법에 맞선, 세상을 구할 전쟁이 시작된다!`,
+ detail: `1930년대, 제2차 세계대전에 마법사들이 개입하게 되면서
+  강력한 어둠의 마법사 그린델왈드의 힘이 급속도로 커진다.
+
+  덤블도어는 뉴트 스캐맨더에게 위대한 마법사 가문 후손,
+  마법학교의 유능한 교사, 머글 등으로 이루어진 팀에게 임무를 맡긴다.
+
+  이에 뉴트와 친구들은 머글과의 전쟁을 선포한
+  그린델왈드와 추종자들, 그의 위험한 신비한 동물들에 맞서 세상을 구할 거대한 전쟁에 나선다.
+
+  한편 전쟁의 위기가 최고조로 달한 상황 속에서 덤블도어는
+  더 이상 방관자로 머물 수 없는 순간을 맞이하고, 서서히 숨겨진 비밀이 드러나는데…`}, 
 
  {id:3, poster:"images/85712_320.jpg" , title:"신비한 동물들과 덤블도어의 비밀", entitle:"Fantastic Beasts: The Secrets of Dumbledore", dir:"데이빗 예이츠", act:"에디 레드메인 ,  주드 로 ,  매즈 미켈슨 ,  댄 포글러 ,  앨리슨 수돌 ,  에즈라 밀러 ,  칼럼 터너 ,  제시카 윌리엄스 ,  빅토리아 예이츠 ,  윌리엄 나딜람 ,  리처드 코일", gen:"어드벤처, 가족, 환타지", bas:"142분, 미국",
    age:"H_12", ticketing:"9.0%", open:"2022.04.14",
@@ -41,7 +60,7 @@ const movies_detail = [
  
  {id:4, poster:"images/85641_1000.jpg" , title:"해리 포터와 불사조 기사단", entitle:"Harry Potter And The Order Of The Phoenix", dir:"데이빗 예이츠", act:"다니엘 래드클리프 ,  엠마 왓슨 ,  루퍼트 그린트", gen:"환타지, 액션, 어드벤처", bas:"137분, 미국, 영국",
  age:"H_all", ticketing:"9.0%", open:"2007.7.12",
- detail: `호그와트 최대 위기! 볼드모트 그가 돌아왔다!
+ detail: ` 호그와트 최대 위기! 볼드모트 그가 돌아왔다!
  어둠의 세력에 빠진 호그와트를 구하기 위해 해리포터와 불사조 기사단, 그들이 손을 잡았다!
  
  호그와트 마법학교에서 5번째 해를 맞이하게 된 해리포터(다니엘 래드클리프). 헤르미온느(엠마 왓슨)와 론(루퍼트 그린트)과의 관계도 소원하고 예언자 일보는 해리에 대해 악의적인 소문을 퍼뜨려 해리를 곤경에 빠뜨린다. 초챙(케이티 렁)과의 로맨스도 힘에 겹다. 게다가 마법부는 볼드모트(랄프 파인즈)가 돌아왔다는 이야기를 애써 모른 체 하려 하고 오히려 호그와트 교장 덤블도어가 헛소문을 퍼트려 마법부의 권위를 실추시킨다며 비난한다. 여기에 마법부 장관 코넬리우스 퍼지는 새로운 어둠의 방어술 교수 자리에 자신의 심복 돌로레스 엄브리지를 임명해 덤블도어와 학생들을 감시하게 한다. 형편없는 그의 수업은 어둠의 마법에 대한 학생들의 방어능력을 한심한 수준으로 격하시킨다.

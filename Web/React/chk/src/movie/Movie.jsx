@@ -2,7 +2,6 @@ import './movie.css';
 import Movie_List from './Movie_List';
 
 const Movie = () => {
-  console.log(Movie_List);
   return (
     <div className="H_container">
         <div className="H_title">

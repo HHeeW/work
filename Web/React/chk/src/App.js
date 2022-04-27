@@ -7,14 +7,15 @@ import {
   Route,
 } from "react-router-dom";
 
+
 function App() {
   return (
     <BrowserRouter>
       <Topnav />
       <Routes>
         <Route path='/' element={<Movie />} />
-        <Route path='/movie_Detail_List1' element ={<Movie_Detail_List />} />
-        <Route path='/movie_Detail_List2' element ={<Movie_Detail_List />} />
+        <Route path='/movie_detail_List1' element ={<Movie_Detail_List />} />
+        <Route path='/movie_detail_List2' element ={<Movie_Detail_List />} />
       </Routes>
     </BrowserRouter>
   )

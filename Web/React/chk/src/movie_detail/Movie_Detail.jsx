@@ -9,7 +9,7 @@ const Movie_Detail = (props) => {
             <div className="H_movie_top">
                 <div className="H_black"></div>
                 <div className="H_movie_detail">
-                    <iframe className='H_movie_play' width="1200" height="550"  src="https://www.youtube.com/embed/Rt_UqUm38BI?controls=0&loop=1&playlist=Rt_UqUm38BI&start=30&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe className='H_movie_play' width="1200" height="550"  src={`https://www.youtube.com/embed/${props.link}?controls=0&loop=1&playlist=${props.link}&start=30&autoplay=1&mute=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             <div className="H_detail">
@@ -19,27 +19,24 @@ const Movie_Detail = (props) => {
                     <h4>{props.entitle}</h4>
                     <p>감독 : {props.dir}</p> 
                     <p>배우 : {props.act}</p>
-                    <p>장르 : {props.gen} / 기본 : {props.bas}</p>
+                    <p>장르 : {props.gen} / 기본 : <span className={props.age}></span> {props.bas}</p>
                     <p>개봉 : {props.open}</p>
                     <div className="H_ticketing_box">
                         <button className="H_ticketing">예매</button>
                     </div>
-                    <div className="ticket">
-                        
-                    </div>
-                    
                 </div>
             </div>
-            {/* <div className="H_detail_nav">
+            <div className="H_detail_nav">
                 <ul className="H_nav_gnb">
                     <li className="H_information">
-                        영화 정보
+                        <h1>{props.detail_title}</h1>
+                        <h4>{props.detail}</h4>
                     </li>
                     <li className='H_review'>
                         관람평
                     </li>
                 </ul>
-            </div> */}
+            </div>
         </div>
     </div>
   )
