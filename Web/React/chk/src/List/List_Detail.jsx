@@ -79,44 +79,67 @@ const List_Detail = () => {
        “12월 24일, 우리는 백귀야행을 결행한다”
        주술사만의 낙원을 만들려는 게토는 비술사를 섬멸하겠다면서, 신주쿠와 교토에 천의 저주를 내리는데…과연 옷코츠는 게토를 막을 수 있을까? 그리고리카의 저주를 풀 수 있을까?` },
        
-       {id:8, poster:"images/85780_320.jpg" , title:"공기살인", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",                         age:"H_12", ticketing:"1.7%", open:"2022.04.22",
-       detail: " " },
+       {id:8, poster:"images/85780_320.jpg" , title:"공기살인", entitle:"Murder in the Air", dir:"조용선", act:"김상경 ,  이선빈 ,  윤경호 ,  서영희", gen:"드라마", bas:"108분, 한국", age:"H_12", ticketing:"1.7%", open:"2022.04.22", link: "GZx8vBNEU4M",
+       detail_title: `“알고 있었죠, 사람이 죽을 수도 있다는 거”`,
+       detail: `봄이 되면 나타났다 여름이 되면 사라지는 죽음의 병.
+       공기를 타고 대한민국에 죽음을 몰고 온 살인무기의 실체를 밝히기 위한 그들의 사투.
+       증발된 범인, 피해자는 증발되지 않았다!` },
        
-       {id:9, poster:"images/85772_320.jpg" , title:"앵커", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",                            age:"H_15", ticketing:"1.1%", open:"2022.04.20",
-       detail: " " },
+       {id:9, poster:"images/85772_320.jpg" , title:"앵커", entitle:"Anchor", dir:"정지연", act:"천우희, 신하균, 이혜영, 박지현", gen:"스릴러", bas:"111분, 한국", age:"H_15", ticketing:"1.1%", open:"2022.04.20", link:"TWaxKOd3vo4",
+       detail_title:`“제 죽음이 정세라 앵커의 입을 통해 보도되면 너무 기쁠 것 같아요”`,
+       detail: `생방송 5분 전, 방송국 간판 앵커 ‘세라’(천우희)에게
+       자신이 살해될 것이라며 죽음을 예고하는 제보전화가 걸려온다.
+
+       장난전화로 치부하기에는 찝찝한 마음을 감출 수 없는 ‘세라’.
+       진짜 앵커가 될 기회라는 엄마 ‘소정’(이혜영)의 말에
+       ‘세라’는 제보자의 집으로 향하고 제보자인 ‘미소’와 그녀의 딸의 시체를 목격한다.
        
-       {id:10, poster:"images/85781_320.jpg" , title:"극장판 귀멸의 칼날-무한열차편 ", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",   age:"H_15", ticketing:"0.8%", open:"2022.04.21",
-       detail: " " },
+       그날 이후, ‘세라’의 눈앞에 죽은 ‘미소’의 모습이 자꾸만 떠오르기 시작한다.
+       사건 현장에서 미소의 주치의였던 정신과 의사 ‘인호’(신하균)를 마주하게 되며
+       그에 대한 ‘세라’의 의심 또한 깊어지는데…
        
-       {id:11, poster:"images/85728_320.jpg" , title:"수퍼 소닉2", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",                      age:"H_all", ticketing:"0.5%", open:"2022.04.06",
-       detail: " " },
+       완벽했던 앵커를 뒤흔들 충격적인 진실을 확인하라! ` },
        
-       {id:12, poster:"images/85779_320.jpg" , title:"몬스터 아카데미", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",                 age:"H_all", ticketing:"0.1%", open:"2022.04.14",
-       detail: " " },
+       {id:10, poster:"images/85781_320.jpg" , title:"극장판 귀멸의 칼날-무한열차편 ", entitle:"Demon Slayer: Kimetsu no Yaiba the Movie - Mugen Train", dir:"소토자키 하루오", act:"이경태 ,  김연우 ,  김지율 ,  이호산 ,  장민혁 ,  김현욱 ,  전태열", gen:"애니메이션", bas:"117분, 일본", age:"H_15", ticketing:"0.8%", open:"2022.04.21",
+       detail_title:`혈귀로 변한 여동생 ‘네즈코’를 되돌리기 위해 귀살대가 된 ‘탄지로’!`,
+       detail: `어둠속을 달리는 무한열차에서 승객들이 흔적 없이 사라진다는 소식에
+       ‘젠이츠’, ‘이노스케’와 함께 임무 수행을 위해 무한열차에 탑승한다.
+       그리고 그 곳에서 만난 귀살대 최강 검사 염주 ‘렌고쿠’!
        
-       {id:13, poster:"images/18540_201_1.jpg" , title:"모비우스", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",                      age:"H_15", ticketing:"0.1%", open:"2022.03.30",
-       detail: " " },
+       이들은 무한열차에 숨어 있는 혈귀의 존재를 직감하고
+       모두를 구하기 위해 목숨을 건 혈전을 시작하는데…
        
-       {id:14, poster:"images/18635_103_1.jpg" , title:"다녀와요, 다녀왔습니다", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",          age:"H_all", ticketing:"0.1%", open:"2022.04.21",
-       detail: " " },
+       그 칼로 악몽을 끊어라!` },
        
-       {id:15, poster:"images/85799_340.jpg" , title:"토르: 마법 검의 전설", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",            age:"H_all", ticketing:"0.1%", open:"2022.05.04",
-       detail: " " },
+       {id:11, poster:"images/85728_320.jpg" , title:"수퍼 소닉2", entitle:"", dir:"", act:"", gen:"", bas:"",                      age:"H_all", ticketing:"0.5%", open:"2022.04.06",
+       detail: `` },
        
-       {id:16, poster:"images/18406_103_1.jpg" , title:"더 배트맨", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",                     age:"H_15", ticketing:"0.1%", open:"2022.03.01",
-       detail: " " },
+       {id:12, poster:"images/85779_320.jpg" , title:"몬스터 아카데미", entitle:"", dir:"", act:"", gen:"", bas:"",                 age:"H_all", ticketing:"0.1%", open:"2022.04.14",
+       detail: `` },
        
-       {id:17, poster:"images/85826_320.jpg" , title:"서울괴담", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",                         age:"H_15", ticketing:"0.1%", open:"2022.04.27",
-       detail: " " },
+       {id:13, poster:"images/18540_201_1.jpg" , title:"모비우스", entitle:"", dir:"", act:"", gen:"", bas:"",                      age:"H_15", ticketing:"0.1%", open:"2022.03.30",
+       detail: `` },
        
-       {id:18, poster:"images/18546_103_1.jpg" , title:"말임씨를 부탁해", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",                age:"H_all", ticketing:"0.1%", open:"2022.04.13",
-       detail: " " },
+       {id:14, poster:"images/18635_103_1.jpg" , title:"다녀와요, 다녀왔습니다", entitle:"", dir:"", act:"", gen:"", bas:"",          age:"H_all", ticketing:"0.1%", open:"2022.04.21",
+       detail: `` },
        
-       {id:19, poster:"images/18406_123.jpg" , title:"부기나이트", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",                      age:"H_15", ticketing:"0.1%", open:"2022.04.28",
-       detail: " " },
+       {id:15, poster:"images/85799_340.jpg" , title:"토르: 마법 검의 전설", entitle:"", dir:"", act:"", gen:"", bas:"",            age:"H_all", ticketing:"0.1%", open:"2022.05.04",
+       detail: `` },
        
-       {id:20, poster:"images/86826_320.jpg" , title:"쓰리: 아직 끝나지 않았다", entitle:" ", dir:" ", act:"", gen:" ", bas:" ",        age:"H_15", ticketing:"0.1%", open:"2022.04.21",
-       detail: " " }
+       {id:16, poster:"images/18406_103_1.jpg" , title:"더 배트맨", entitle:"", dir:"", act:"", gen:"", bas:"",                     age:"H_15", ticketing:"0.1%", open:"2022.03.01",
+       detail: `` },
+       
+       {id:17, poster:"images/85826_320.jpg" , title:"서울괴담", entitle:"", dir:"", act:"", gen:"", bas:"",                         age:"H_15", ticketing:"0.1%", open:"2022.04.27",
+       detail: `` },
+       
+       {id:18, poster:"images/18546_103_1.jpg" , title:"말임씨를 부탁해", entitle:"", dir:"", act:"", gen:"", bas:"",                age:"H_all", ticketing:"0.1%", open:"2022.04.13",
+       detail: `` },
+       
+       {id:19, poster:"images/18406_123.jpg" , title:"부기나이트", entitle:"", dir:"", act:"", gen:"", bas:"",                      age:"H_15", ticketing:"0.1%", open:"2022.04.28",
+       detail: `` },
+       
+       {id:20, poster:"images/86826_320.jpg" , title:"쓰리: 아직 끝나지 않았다", entitle:"", dir:"", act:"", gen:"", bas:"",        age:"H_15", ticketing:"0.1%", open:"2022.04.21",
+       detail: `` }
         ]
   return movies_detail
 }
