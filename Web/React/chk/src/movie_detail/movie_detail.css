@@ -18,13 +18,12 @@
     width: 100%;
     height: 550px;
     transform: translateX(-50%);
-    background-image: radial-gradient( rgba(255,255,255,0), rgba(0,0,0,1) 75%);
+    background-image: radial-gradient( rgba(255,255,255,0), rgba(0,0,0,1) 90%);
     z-index: 1;
 }
 .H_movie_detail{
     text-align: center;
     margin: 0 auto;
-    background-image: linear-gradient(to right, rgba(0,0,0,1), rgba(255,255,255,0) 50%, rgba(0,0,0,1) 90%);
 }
 .H_detail{
     position: relative;
