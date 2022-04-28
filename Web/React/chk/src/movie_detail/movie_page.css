@@ -71,6 +71,9 @@
     background-color: rgba(0,0,0,0);
     border-bottom: 2px solid rgba(0,200,200,0.5);
 }
+li>button:hover{
+    border:1px solid rgba(0,200,200,0.5)
+}
 li>button.active{
     box-shadow: 0px 0px 10px rgba(0,200,200,1);
 }
@@ -93,4 +96,46 @@ li>button.active{
 .H_information>h4{
     word-spacing: 1px;
     line-height: 20px;
+}
+
+/* Movie_Page_Slider */
+.H_Movie_Page_Poster_Box{
+    width: 50%;
+    height: 600px;
+    margin: 50px auto;
+    position: relative;
+}
+.H_Movie_Page_Poster_View_Box{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.H_Movie_Page_Poster{
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    position: absolute;
+    right: 100%;
+}
+.H_Movie_Page_Poster>img{
+    width: 100%;
+}
+.H_Movie_Back_Btn,
+.H_Movie_Forward_Btn{
+    cursor: pointer;
+    border: none;
+    background-color: rgba(0,0,0,0);
+    color: #fff;
+    width: 15%;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+.H_Movie_Back_Btn{
+    left: -30%;
+}
+.H_Movie_Forward_Btn{
+    right: -30%;
 }
