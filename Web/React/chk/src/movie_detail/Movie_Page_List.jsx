@@ -1,14 +1,14 @@
 import React from 'react'
-import Movie_Detail from './Movie_Detail';
-import List_Detail from '../List/List_Detail';
+import Movie_Page from './Movie_Page';
+import List_Detail from '../List/List_Page';
 
-const Movie_Detail_List = () => {
+const Movie_Page_List = () => {
   let movies_detail = List_Detail();
-  let moive = window.location.pathname.substr(18, );
-  let movie_detail_List = [];
+  let moive = window.location.pathname.substr(16, );
+  let movie_Page_List = [];
   for(let i in movies_detail){
     if(moive-1 == i){
-        movie_detail_List = <Movie_Detail 
+      movie_Page_List = <Movie_Page 
         key={parseInt(i)+1}
         id={parseInt(i)+1} 
         poster={movies_detail[i].poster}
@@ -27,6 +27,6 @@ const Movie_Detail_List = () => {
       }
   }
     
-    return movie_detail_List;
+    return movie_Page_List;
 }
-export default Movie_Detail_List
+export default Movie_Page_List

@@ -1,10 +1,10 @@
 import React from 'react'
 import Detail from './Movie_Detail'
-import List_Detail from '../List/List_Detail';
+import List_Page from '../List/List_Page';
 
 const Movie_List = () => {
   
-  let movies = List_Detail();
+  let movies = List_Page();
     let movielist = [];
     for(let i in movies){
       movielist[i] = <Detail 
@@ -16,6 +16,7 @@ const Movie_List = () => {
       ticketing={movies[i].ticketing} 
       open={movies[i].open} 
       detail={movies[i].detail}/>
+      console.log(movies[i].title)
     }
     return movielist;
 }

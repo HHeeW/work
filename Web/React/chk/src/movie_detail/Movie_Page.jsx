@@ -1,7 +1,27 @@
-import './movie_detail.css'
+import React, {useState} from 'react';
+import './movie_page.css'
+import Movie_Page_Slider from './Movie_Page_Slider';
 
 
-const Movie_Detail = (props) => {
+const Movie_Page = (props) => {
+    const [fview, setFview] = useState(true);
+    const [sview, setSview] = useState(false);
+    const [tview, setTview] = useState(false);
+    const Fview = () =>{
+        setFview(true)
+        setSview(0)
+        setTview(0)
+    }
+    const Sview = () =>{
+        setFview(0)
+        setSview(true)
+        setTview(0)
+    }
+    const Tview = () =>{
+        setFview(0)
+        setSview(0)
+        setTview(true)
+    }
   return (
     <div className="H_background_poster">
         <img src={props.poster} alt="poster" />
@@ -28,17 +48,30 @@ const Movie_Detail = (props) => {
             </div>
             <div className="H_detail_nav">
                 <ul className="H_nav_gnb">
-                    <li><button>주요 정보</button>
+                    <li><button onClick={Fview} className={`${fview === true ? 'active' : ''}`}>영화 정보</button>
                         <ul className="H_nav_lnb">
-                            <li className="H_information">
-                                {/* <h1>{props.detail_title}</h1>
-                                <h4>{props.detail}</h4> */}
-                            </li>
+                            {(fview?
+                                <li className="H_information">
+                                    <h1>{props.detail_title}</h1>
+                                    <h4>{props.detail}</h4>
+                                </li>:<></>
+                            )}
                         </ul>
                     </li>
-                    <li className='H_review'><button>관람평</button>
+                    <li><button onClick={Sview} className={`${sview === true ? 'active' : ''}`}>관람평</button>
                         <ul className="H_nav_lnb">
-                            <li> </li>
+                        {(sview?
+                                <li> 관람평 적는 공간 만들기 </li>
+                                :
+                                <></>
+                            )}
+                        </ul>
+                    </li>
+                    <li><button onClick={Tview} className={`${tview === true ? 'active' : ''}`}>포스터</button>
+                        <ul className="H_nav_lnb">
+                        {(tview?
+                                <li><Movie_Page_Slider /></li>:<></>
+                            )}
                         </ul>
                     </li>
                 </ul>
@@ -48,4 +81,4 @@ const Movie_Detail = (props) => {
   )
 }
 
-export default Movie_Detail
+export default Movie_Page
