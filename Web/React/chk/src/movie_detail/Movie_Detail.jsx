@@ -28,12 +28,18 @@ const Movie_Detail = (props) => {
             </div>
             <div className="H_detail_nav">
                 <ul className="H_nav_gnb">
-                    <li className="H_information">
-                        <h1>{props.detail_title}</h1>
-                        <h4>{props.detail}</h4>
+                    <li><button>주요 정보</button>
+                        <ul className="H_nav_lnb">
+                            <li className="H_information">
+                                {/* <h1>{props.detail_title}</h1>
+                                <h4>{props.detail}</h4> */}
+                            </li>
+                        </ul>
                     </li>
-                    <li className='H_review'>
-                        관람평
+                    <li className='H_review'><button>관람평</button>
+                        <ul className="H_nav_lnb">
+                            <li> </li>
+                        </ul>
                     </li>
                 </ul>
             </div>

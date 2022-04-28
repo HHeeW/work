@@ -1,0 +1,45 @@
+$dark-color:#333;
+$light-color: #eee;
+$button-color: #2ecc71;
+$button-dark:darken($button-color,10%);
+$button-darker:darken($button-dark, 10%);
+
+body{
+    background-color: $dark-color;
+    color: $light-color;
+}
+.container{
+    width: 1200px;
+    margin: auto;
+    border: 1px solid $dark-color;
+}
+article{
+    float: left;
+    width: 600px / 960px * 100%;
+    border: 1px solid $dark-color;
+}
+aside{
+    float: right;
+    background-color: $dark-color;
+    color: $light-color;
+    width: 300px / 960px * 100%;
+}
+button{
+    background: $button-color;
+    border-radius: 4px;
+    box-shadow: 0px 5px 0px $button-dark;
+    border: 0;
+    color: #fff;
+    font-size: 17px;
+    padding: 10px 30px;
+    outline: 0;
+
+    &:hover{
+        background-color: $button-darker;
+        box-shadow: 0px 5px 0px $button-darker;
+    }
+    &:active{
+        box-shadow: none;
+        margin-top: 5px;
+    }
+}

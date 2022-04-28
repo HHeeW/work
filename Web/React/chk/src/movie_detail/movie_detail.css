@@ -49,7 +49,28 @@
     margin-right: 150px;
 }
 .H_nav_gnb{
-    margin: 200px;
+    width: 50%;
+    margin: 150px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.H_nav_gnb>li{
+    width: 100%;
+}
+.H_nav_gnb>li>button{
+    font-family: 'HoengSeong',sans-serif;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    border-left: none;
+    background-color: rgba(0,0,0,0);
+}
+.H_nav_gnb>li:first-child{
+    border-left: 1px solid #fff;
 }
 .H_information{
     white-space: pre-line;
