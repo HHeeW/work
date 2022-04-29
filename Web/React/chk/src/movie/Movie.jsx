@@ -10,6 +10,7 @@ const Movie = () => {
         <ul className="H_movieChart">
           <Movie_List />
         </ul>
+        
     </div>
 
   )

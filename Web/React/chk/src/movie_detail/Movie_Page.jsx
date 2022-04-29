@@ -77,6 +77,7 @@ const Movie_Page = (props) => {
                 </ul>
             </div>
         </div>
+        
     </div>
   )
 }

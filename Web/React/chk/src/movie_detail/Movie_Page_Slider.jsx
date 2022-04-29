@@ -1,5 +1,5 @@
 import { ArrowBackIos, ArrowForwardIos } from '@styled-icons/material'
-import React from 'react'
+import './movie_slider.css'
 
 const Movie_Page_Slider = () => {
   return (
