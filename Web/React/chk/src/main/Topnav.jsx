@@ -25,7 +25,6 @@ const TopNav = styled.div`
 const LogoBox = styled.div`
   width: 20%;
   height 100%;
-  border: 1px solid #333;
 `
 const Logo = styled.a`
   margin-left: 0;
@@ -38,7 +37,6 @@ const Logo = styled.a`
 const MenuBox = styled.div`
   height: 100%;
   width:55%;
-  border: 1px solid #333;
 `
 const Menu = styled.ul`
   margin: 0;
@@ -61,11 +59,11 @@ const Event = styled.a``
 const Member = styled.div`
   height: 100%;
   width:25%;
-  border: 1px solid #333;
   display:flex;
   justify-content:flex-end;
   align-items: center;
-  padding-right: 30px
+  padding-right: 30px;
+  cursor: pointer;
 `
 const LoginBox = styled.div`
   display:flex;

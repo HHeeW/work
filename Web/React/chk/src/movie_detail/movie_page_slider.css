@@ -20,7 +20,6 @@
 }
 .H_Movie_Page_Poster>img{
     width: 100%;
-    margin-right: 10%;
 }
 .H_Movie_Back_Btn,
 .H_Movie_Forward_Btn{
@@ -39,4 +38,12 @@
 }
 .H_Movie_Forward_Btn{
     right: -30%;
+}
+
+
+
+
+.H_Slider>img{
+    width: 50%;
+    margin: 0 auto;
 }
