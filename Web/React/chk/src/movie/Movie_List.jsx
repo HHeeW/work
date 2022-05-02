@@ -16,9 +16,9 @@ const Movie_List = () => {
       ticketing={movies[i].ticketing} 
       open={movies[i].open} 
       detail={movies[i].detail}/>
-      console.log(movies[i].title)
     }
     return movielist;
 }
 
 export default Movie_List
+

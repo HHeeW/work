@@ -6,9 +6,12 @@ const List_Detail = () => {
         5월, 광기의 멀티버스가 깨어난다!`,
         detail:`끝없이 균열되는 차원과 뒤엉킨 시공간의 멀티버스가 열리며
         오랜 동료들, 그리고 차원을 넘어 들어온 새로운 존재들을 맞닥뜨리게 된 ‘닥터 스트레인지’.
-        대혼돈 속, 그는 예상치 못한 극한의 적과 맞서 싸워야만 하는데….`},
+        대혼돈 속, 그는 예상치 못한 극한의 적과 맞서 싸워야만 하는데….`,
+        slider1:"d-1", slider2:"d-2", slider3:"d-3", slider4:"d-4", slider5:"d-5"},
+        
       
-       {poster:"images/39614_1000.jpg" , title:"해리포터와 죽음의 성물 2", entitle: "Harry Potter And The Deathly Hallows: Part2",  dir:"데이빗 예이츠", act:"다니엘 래드클리프 ,  엠마 왓슨 ,  루퍼트 그린트", gen:"환타지, 어드벤처", bas:" 131분, 미국, 영국", age:"H_all", ticketing:"9.1%", open:"2011.07. 14", link:"_31zwi0U8NE",
+       {poster:"images/39614_1000.jpg" , title:"해리포터와 죽음의 성물 2", entitle: "Harry Potter And The Deathly Hallows: Part2",  dir:"데이빗 예이츠", act:"다니엘 래드클리프 ,  엠마 왓슨 ,  루퍼트 그린트", gen:"환타지, 어드벤처", bas:" 131분, 미국, 영국", age:"H_all", ticketing:"9.0%", open:"2011.07. 14", link:"_31zwi0U8NE",
+       slider:"h-1", slider:"h-2", slider:"h-3", slider:"h-4", slider:"h-5", slider:"h-6",
        detail_title:`가장 위험한 마법에 맞선, 세상을 구할 전쟁이 시작된다!`,
        detail: `1930년대, 제2차 세계대전에 마법사들이 개입하게 되면서
         강력한 어둠의 마법사 그린델왈드의 힘이 급속도로 커진다.
@@ -22,7 +25,7 @@ const List_Detail = () => {
         한편 전쟁의 위기가 최고조로 달한 상황 속에서 덤블도어는
         더 이상 방관자로 머물 수 없는 순간을 맞이하고, 서서히 숨겨진 비밀이 드러나는데…`}, 
       
-       {poster:"images/85712_320.jpg" , title:"신비한 동물들과 덤블도어의 비밀", entitle:"Fantastic Beasts: The Secrets of Dumbledore", dir:"데이빗 예이츠", act:"에디 레드메인 ,  주드 로 ,  매즈 미켈슨 ,  댄 포글러 ,  앨리슨 수돌 ,  에즈라 밀러 ,  칼럼 터너 ,  제시카 윌리엄스 ,  빅토리아 예이츠 ,  윌리엄 나딜람 ,  리처드 코일", gen:"어드벤처, 가족, 환타지", bas:"142분, 미국", age:"H_12", ticketing:"9.0%", open:"2022.04.14", link:"DGhq0Kx8dzQ",
+       {poster:"images/85712_320.jpg" , title:"신비한 동물들과 덤블도어의 비밀", entitle:"Fantastic Beasts: The Secrets of Dumbledore", dir:"데이빗 예이츠", act:"에디 레드메인 ,  주드 로 ,  매즈 미켈슨 ,  댄 포글러 ,  앨리슨 수돌 ,  에즈라 밀러 ,  칼럼 터너 ,  제시카 윌리엄스 ,  빅토리아 예이츠 ,  윌리엄 나딜람 ,  리처드 코일", gen:"어드벤처, 가족, 환타지", bas:"142분, 미국", age:"H_12", ticketing:"8.5%", open:"2022.04.14", link:"DGhq0Kx8dzQ",
         detail_title:`가장 위험한 마법에 맞선, 세상을 구할 전쟁이 시작된다!`,
         detail: `1930년대, 제2차 세계대전에 마법사들이 개입하게 되면서
         강력한 어둠의 마법사 그린델왈드의 힘이 급속도로 커진다.
@@ -36,7 +39,7 @@ const List_Detail = () => {
         한편 전쟁의 위기가 최고조로 달한 상황 속에서 덤블도어는
         더 이상 방관자로 머물 수 없는 순간을 맞이하고, 서서히 숨겨진 비밀이 드러나는데…`},
        
-       {poster:"images/85641_1000.jpg" , title:"해리 포터와 불사조 기사단", entitle:"Harry Potter And The Order Of The Phoenix", dir:"데이빗 예이츠", act:"다니엘 래드클리프 ,  엠마 왓슨 ,  루퍼트 그린트", gen:"환타지, 액션, 어드벤처", bas:"137분, 미국, 영국", age:"H_all", ticketing:"9.0%", open:"2007.7.12", link:"y6ZW7KXaXYk",
+       {poster:"images/85641_1000.jpg" , title:"해리 포터와 불사조 기사단", entitle:"Harry Potter And The Order Of The Phoenix", dir:"데이빗 예이츠", act:"다니엘 래드클리프 ,  엠마 왓슨 ,  루퍼트 그린트", gen:"환타지, 액션, 어드벤처", bas:"137분, 미국, 영국", age:"H_all", ticketing:"7.6%", open:"2007.7.12", link:"y6ZW7KXaXYk",
        detail_title: `호그와트 최대 위기! 볼드모트 그가 돌아왔다!
        
        어둠의 세력에 빠진 호그와트를 구하기 위해 
@@ -53,7 +56,7 @@ const List_Detail = () => {
        위기에 빠진 호그와트!
        해리포터와 불사조 기사단, 모든 것이 그들 손에 달렸다!!` },
        
-       {poster:"images/76791_1000.jpg" , title:"신세계", entitle:"New World", dir:"박훈정", act:"이정재 ,  황정민 ,  최민식 ,  박성웅 ,  송지효", gen:"범죄, 액션", bas:"134분, 한국",  age:"H_19", ticketing:"8.7%", open:"2013.2.21", link: "rvLMVcRkRfY",
+       {poster:"images/76791_1000.jpg" , title:"신세계", entitle:"New World", dir:"박훈정", act:"이정재 ,  황정민 ,  최민식 ,  박성웅 ,  송지효", gen:"범죄, 액션", bas:"134분, 한국",  age:"H_19", ticketing:"7.1%", open:"2013.2.21", link: "rvLMVcRkRfY",
        detail_title:`너, 나하고 일 하나 같이 하자`,
        detail: ` 경찰청 수사 기획과 강과장(최민식)은 국내 최대 범죄 조직인 '골드문'이 기업형 조직으로 그 세력이 점점 확장되자 신입경찰 이자성(이정재)에게 잠입 수사를 명한다. 그리고 8년, 자성은 골드문의 2인자이자 그룹 실세인 정청(황정민)의 오른팔이 되기에 이른다.
        
@@ -65,17 +68,17 @@ const List_Detail = () => {
        
        한편, 작전의 성공만 생각하는 강과장(최민식)은 계속해서 자성(이정재)의 목을 조여만 간다. 시시각각 신분이 노출될 위기에 처한 자성(이정재)은 언제 자신을 배신할 지 모르는 경찰과, 형제의 의리로 대하는 정청(황정민) 사이에서 갈등하게 되는데…` },
        
-       {poster:"images/80810_1000.jpg" , title:"신과함께 인과연", entitle:"Along with the Gods: The Last 49 Days", dir:"김용화", act:"하정우 ,  주지훈 ,  김향기 ,  마동석 ,  김동욱 ,  이정재", gen:"환타지, 드라마", bas:"141분, 한국",  age:"H_12", ticketing:"8.6%", open:"2018.08.01", link:"amXcMw8cJZk",
+       {poster:"images/80810_1000.jpg" , title:"신과함께 인과연", entitle:"Along with the Gods: The Last 49 Days", dir:"김용화", act:"하정우 ,  주지훈 ,  김향기 ,  마동석 ,  김동욱 ,  이정재", gen:"환타지, 드라마", bas:"141분, 한국",  age:"H_12", ticketing:"7.0%", open:"2018.08.01", link:"amXcMw8cJZk",
        detail_title:`환생이 약속된 마지막 49번째 재판을 앞둔 저승 삼차사`,
        detail: `그들의 천 년 전 과거를 기억하는 성주신을 만나이승과 저승,
        과거를 넘나들며 잃어버린 비밀의 연을 찾아가는 이야기.` },
        
-       {poster:"images/12375_1000.jpg" , title:"타짜", entitle:"The War Of Flower", dir:"최동훈", act:"조승우 ,  백윤식 ,  김혜수 ,  유해진", gen:"드라마", bas:"139분, 한국", age:"H_19", ticketing:"8.7%", open:"2006.09.28", link:"vLHyh8F-vQo",
+       {poster:"images/12375_1000.jpg" , title:"타짜", entitle:"The War Of Flower", dir:"최동훈", act:"조승우 ,  백윤식 ,  김혜수 ,  유해진", gen:"드라마", bas:"139분, 한국", age:"H_19", ticketing:"6.9%", open:"2006.09.28", link:"vLHyh8F-vQo",
        detail_title: `인생을 예술로 살기 위해 화투판에 모든 것을 건 도박꾼들의 욕망을 아는가.` },
        
        
        
-       {poster:"images/83001_1000.jpg" , title:"겨울왕국", entitle:"Frozen", dir:"크리스 벅 ,  제니퍼 리", act:"크리스틴 벨 ,  이디나 멘젤", gen:"가족, 애니메이션, 어드벤처", bas:"108분, 미국", age:"H_all", ticketing:"7.9%", open:"2014.01.16", link:"bbh1NIpDo-c",
+       {poster:"images/83001_1000.jpg" , title:"겨울왕국", entitle:"Frozen", dir:"크리스 벅 ,  제니퍼 리", act:"크리스틴 벨 ,  이디나 멘젤", gen:"가족, 애니메이션, 어드벤처", bas:"108분, 미국", age:"H_all", ticketing:"6.6%", open:"2014.01.16", link:"bbh1NIpDo-c",
        detail_title: `얼어붙은 세상을 녹일 자매가 온다!`,
        detail: `서로가 최고의 친구였던 자매 ‘엘사’와 ‘안나’. 하지만 언니 ‘엘사’에게는 하나뿐인 동생에게조차 말 못할 비밀이 있다.
 
@@ -83,7 +86,7 @@ const List_Detail = () => {
        
        ‘엘사’는 통제할 수 없는 자신의 힘이 두려워 왕국을 떠나고, 얼어버린 왕국의 저주를 풀기 위해 ‘안나’는 언니를 찾아 환상적인 여정을 떠나는데…` },
        
-       {poster:"images/78529_1000.jpg" , title:"내부자들", entitle:"Inside Men", dir:"우민호", act:"조승우 ,  이병헌 ,  백윤식", gen:"범죄, 드라마", bas:"130분, 한국", age:"H_19", ticketing:"7.8%", open:"2015.12.31", link:"miXzN6spmFQ",
+       {poster:"images/78529_1000.jpg" , title:"내부자들", entitle:"Inside Men", dir:"우민호", act:"조승우 ,  이병헌 ,  백윤식", gen:"범죄, 드라마", bas:"130분, 한국", age:"H_19", ticketing:"6.5%", open:"2015.12.31", link:"miXzN6spmFQ",
        detail_title:`“복수극으로 가자고, 화끈하게”`,
        detail: `유력한 대통령 후보와 재벌 회장, 그들을 돕는 정치깡패 안상구(이병헌).
        
@@ -95,7 +98,7 @@ const List_Detail = () => {
        
        과연 살아남는 자는 누가 될 것인가?` },
 
-       { poster:"images/81907_1000.jpg" , title:"토이 스토리 4", entitle:"Toy Story 4", dir:"조시 쿨리", act:"톰 행크스 ,  키아누 리브스 ,  팀 알렌 ,  애니 파츠 ,  조안 쿠삭 ,  토니 헤일", gen:"", bas:"애니메이션", age:"H_all", ticketing:"7.5%", open:"2019.06.20", link:"yO7RbAq9uV4",
+       { poster:"images/81907_1000.jpg" , title:"토이 스토리 4", entitle:"Toy Story 4", dir:"조시 쿨리", act:"톰 행크스 ,  키아누 리브스 ,  팀 알렌 ,  애니 파츠 ,  조안 쿠삭 ,  토니 헤일", gen:"", bas:"애니메이션", age:"H_all", ticketing:"5.6%", open:"2019.06.20", link:"yO7RbAq9uV4",
        detail_title:`우리의 여행은 아직 끝나지 않았다!`,
        detail: `장난감의 운명을 거부하고 떠난 새 친구 ‘포키’를 찾기 위해 길 위에 나선 ‘우디’는
        우연히 오랜 친구 ‘보핍’을 만나고 그녀를 통해 새로운 세상에 눈을 뜨게 된다.
@@ -104,7 +107,7 @@ const List_Detail = () => {
        
        당신이 기다려온 그들의 진짜 이야기가 공개된다!` },
        
-       { poster:"images/79139_1620.jpg" , title:"심슨가족더무비", entitle:"The Simpsons Movie", dir:"데이빗 실버맨", act:"줄리 카브너 ,  댄 카스텔라네타", gen:"애니메이션", bas:"86분, 미국", age:"H_12", ticketing:"6.5%", open:"2007.08.22",link:"XPG0MqIcby8",
+       { poster:"images/79139_1620.jpg" , title:"심슨가족더무비", entitle:"The Simpsons Movie", dir:"데이빗 실버맨", act:"줄리 카브너 ,  댄 카스텔라네타", gen:"애니메이션", bas:"86분, 미국", age:"H_12", ticketing:"5.2%", open:"2007.08.22",link:"XPG0MqIcby8",
        detail_title:`싹수 노란(?!) 심슨 가족의 초절정 코믹 본색!`,
        detail: ` 어눌하고 엉뚱하고 어수룩한 행동으로 언제나 사고를 일으키고 다니는 심슨 가족의 가장 호머,
 
@@ -118,7 +121,7 @@ const List_Detail = () => {
        
        어디 한곳 제대로 된 구석이 없지만, 이들의 좌충우돌 라이프스토리는 전세계 수십억 인구를 사로잡았다.` },
        
-       { poster:"images/79139_1000.jpg" , title:"아수라", entitle:"Asura : The City of Madness", dir:"김성수", act:"정우성 ,  황정민 ,  주지훈 ,  곽도원 ,  정만식 ,  차래형", gen:"액션, 범죄", bas:"132분, 한국", age:"H_19", ticketing:"6.4%", open:"2016.09.28", link:"CuJriB-ZvQQ",
+       { poster:"images/79139_1000.jpg" , title:"아수라", entitle:"Asura : The City of Madness", dir:"김성수", act:"정우성 ,  황정민 ,  주지훈 ,  곽도원 ,  정만식 ,  차래형", gen:"액션, 범죄", bas:"132분, 한국", age:"H_19", ticketing:"5.2%", open:"2016.09.28", link:"CuJriB-ZvQQ",
        detail_title:`지옥 같은 세상, 살아남기 위해 싸우는 악인들의 전쟁
        <아수라>`,
        detail: `강력계 형사 한도경(정우성)은 이권과 성공을 위해 각종 범죄를 저지르는 악덕시장 박성배(황정민)의 뒷일을 처리해주는 대가로 돈을 받는다.
@@ -133,7 +136,7 @@ const List_Detail = () => {
        
        살아남기 위해 혈안이 된 나쁜 놈들 사이에서 서로 물지 않으면 물리는 지옥도가 펼쳐진다.` },
        
-       { poster:"images/81561_1000.jpg" , title:"뺑반", entitle:"Hit-and-Run Squad", dir:"한준희", act:"공효진 ,  류준열 ,  조정석 ,  차래형", gen:"액션, 범죄", bas:"133분, 한국", age:"H_15", ticketing:"5.3%", open:"2019.01.30",link:"1-o3P-IqYBo",
+       { poster:"images/81561_1000.jpg" , title:"뺑반", entitle:"Hit-and-Run Squad", dir:"한준희", act:"공효진 ,  류준열 ,  조정석 ,  차래형", gen:"액션, 범죄", bas:"133분, 한국", age:"H_15", ticketing:"5.0%", open:"2019.01.30",link:"1-o3P-IqYBo",
        detail_title:`Hit and Run 상황 발생,
        순마 출동합니다!`,
        detail: `경찰 내 최고 엘리트 조직 내사과 소속 경위 ‘은시연’(공효진). 
