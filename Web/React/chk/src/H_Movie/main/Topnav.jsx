@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Login, PersonAdd, Search } from '@styled-icons/material'
+import { Link } from 'react-router-dom';
 
 // CSS
 const Header = styled.div`
@@ -26,13 +27,13 @@ const LogoBox = styled.div`
   width: 20%;
   height 100%;
 `
-const Logo = styled.a`
+const Logo = styled.img`
   margin-left: 0;
-  display: block;
   width:70%;
   height:100px;
-  background: url(images/logo.png) no-repeat center;
+  background: url(H_images/logo.png) no-repeat center;
   background-size: contain;
+  border: none;
 `
 const MenuBox = styled.div`
   height: 100%;
@@ -84,24 +85,27 @@ function Topnav() {
       <FixBox>
         <TopNav>  
           <LogoBox>
-            <Logo href='#' /> 
+          <Link to={"/"}><Logo/></Link>
           </LogoBox>
           <MenuBox>
             <Menu>
-              <MovieBox><Movie href='#'>영화</Movie></MovieBox>
+              <MovieBox>
+                <Link to={"/"}> 영화</Link>
+              </MovieBox>
               <TicketBox><Ticket href='#'>예매</Ticket></TicketBox>
               <StoreBox><Store href='#'>스토어</Store></StoreBox>
-              <EventBox><Event href='#'>이벤트</Event></EventBox>
+              <EventBox><Link to={'/preview'}> 이벤트</Link></EventBox>
             </Menu>
           </MenuBox>
           <Member>
-            <LoginBox>
+            <LoginBox><Link to="login">
               <Login size={40} />
               로그인
+              </Link>
             </LoginBox>
             <SignUpBox>
               <PersonAdd size={40} />
-              회원가입
+              <Link to="/join" > 회원가입</Link>
             </SignUpBox>
             <SerchBox>
               <Search size={40} />

@@ -6,7 +6,7 @@
 .H_all{
     width: 25px;
     height: 25px;
-    background: url(../../public/images/age-all.png) no-repeat center;
+    background: url(../../../public/H_images/age-all.png) no-repeat center;
     background-size: contain;
     padding: 10px;
     margin-right: 10px !important;
@@ -14,7 +14,7 @@
 .H_12{
     width: 25px;
     height: 25px;
-    background: url(../../public/images/age-12.png) no-repeat center;
+    background: url(../../../public/H_images/age-12.png) no-repeat center;
     background-size: contain;
     padding: 10px;
     margin-right: 10px !important;
@@ -22,7 +22,7 @@
 .H_15{
     width: 25px;
     height: 25px;
-    background: url(../../public/images/age-15.png) no-repeat center;
+    background: url(../../../public/H_images/age-15.png) no-repeat center;
     background-size: contain;
     padding: 10px;
     margin-right: 10px !important;
@@ -30,7 +30,7 @@
 .H_19{
     width: 25px;
     height: 25px;
-    background: url(../../public/images/age-19.png) no-repeat center;
+    background: url(../../../public/H_images/age-19.png) no-repeat center;
     background-size: contain;
     padding: 10px;
     margin-right: 10px !important;

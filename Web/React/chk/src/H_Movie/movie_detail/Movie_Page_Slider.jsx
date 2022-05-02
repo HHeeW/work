@@ -27,11 +27,11 @@ const Movie_Page_Slider = () => {
     modules={[Autoplay, EffectCoverflow, Pagination, Navigation]}
     className="mySwiper"
     >
-      <SwiperSlide><img className='H_Movie_Page_Slider' src="images/slider/d1.jpg" alt="" /></SwiperSlide>
-      <SwiperSlide><img className='H_Movie_Page_Slider' src="images/slider/d2.jpg" alt="" /></SwiperSlide>
-      <SwiperSlide><img className='H_Movie_Page_Slider' src="images/slider/d3.jpg" alt="" /></SwiperSlide>
-      <SwiperSlide><img className='H_Movie_Page_Slider' src="images/slider/d4.jpg" alt="" /></SwiperSlide>
-      <SwiperSlide><img className='H_Movie_Page_Slider' src="images/slider/d5.jpg" alt="" /></SwiperSlide>
+      <SwiperSlide><img className='H_Movie_Page_Slider' src="H_images/slider/d1.jpg" alt="" /></SwiperSlide>
+      <SwiperSlide><img className='H_Movie_Page_Slider' src="H_images/slider/d2.jpg" alt="" /></SwiperSlide>
+      <SwiperSlide><img className='H_Movie_Page_Slider' src="H_images/slider/d3.jpg" alt="" /></SwiperSlide>
+      <SwiperSlide><img className='H_Movie_Page_Slider' src="H_images/slider/d4.jpg" alt="" /></SwiperSlide>
+      <SwiperSlide><img className='H_Movie_Page_Slider' src="H_images/slider/d5.jpg" alt="" /></SwiperSlide>
     </Swiper>
   )
 }
