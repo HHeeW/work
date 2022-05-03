@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.bulbs{
+  width: 400px;
+  height: 400px;
+}
+.bulbs div{
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+.bulb-on{
+  background: url("../public/images/bulb_on.png") no-repeat center;
+}
+.bulb-off{
+  background: url("../public/images/bulb_off.png") no-repeat center;
+}
