@@ -52,16 +52,33 @@ const Member = styled.div`
   justify-content:space-between;
   align-items: center;
   padding-right: 30px;
+  position:relative;
+`
+const LoginBox = styled.div`
   cursor: pointer;
 `
-const LoginBox = styled.div``
 const SignUpBox = styled.div`
-
+  cursor: pointer;
   text-align:center;
 `
-const SerchBox = styled.div``
+const SearchBox = styled.div`
+  cursor: pointer;
+`
+const SearchText = styled.input`
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  position:absolute;
+  top:100px;
+  left: 10px;
+  color:#fff;
+  border:1px solid #00c8c8;
+  border-radius: 10px;
+  background-color: rgba(0,180,180,1);
+`
+function search(){
 
-
+}
 
 function Topnav() {
   return (
@@ -95,10 +112,11 @@ function Topnav() {
                 회원가입
               </Link>
             </SignUpBox>
-            <SerchBox>
+            <SearchBox onClick={search()}>
               <p><Search size={30} /></p>
               검색
-            </SerchBox>
+            </SearchBox>
+            <SearchText></SearchText>
           </Member>
         </TopNav>
       </FixBox>
