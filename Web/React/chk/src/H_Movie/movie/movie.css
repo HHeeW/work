@@ -47,6 +47,7 @@
     flex-wrap: wrap;
     max-width: 1240px;
     margin-left: -20px;
+    margin-right: -20px;
 }
 .H_movie{
     width: 20%;
@@ -135,7 +136,7 @@
     box-shadow: 5px 5px 3px rgba(0, 200, 200, 0.4);
 }
 .H_ticketing:hover{
-    
     background-color: #00aaaa;
     box-shadow: 5px 5px 3px rgba(0, 200, 200, 0.6);
+    
 }

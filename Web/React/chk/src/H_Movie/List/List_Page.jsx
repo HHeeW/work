@@ -39,7 +39,7 @@ const List_Detail = () => {
         더 이상 방관자로 머물 수 없는 순간을 맞이하고, 서서히 숨겨진 비밀이 드러나는데…`,
         slider1:"f1", slider2:"f2", slider3:"f3", slider4:"f4", slider5:"f5", slider6:"f6"},
        
-       {poster:"H_images/85641_1000.jpg" , title:"해리 포터와 불사조 기사단", entitle:"Harry Potter And The Order Of The Phoenix", dir:"데이빗 예이츠", act:"다니엘 래드클리프 ,  엠마 왓슨 ,  루퍼트 그린트", gen:"환타지, 액션, 어드벤처", bas:"137분, 미국, 영국", age:"H_all", ticketing:"7.6%", open:"2007.7.12", link:"y6ZW7KXaXYk",
+       {poster:"H_images/85641_1000.jpg" , title:"해리포터와 불사조 기사단", entitle:"Harry Potter And The Order Of The Phoenix", dir:"데이빗 예이츠", act:"다니엘 래드클리프 ,  엠마 왓슨 ,  루퍼트 그린트", gen:"환타지, 액션, 어드벤처", bas:"137분, 미국, 영국", age:"H_all", ticketing:"7.6%", open:"2007.7.12", link:"y6ZW7KXaXYk",
        detail_title: `호그와트 최대 위기! 볼드모트 그가 돌아왔다!
        
        어둠의 세력에 빠진 호그와트를 구하기 위해 
