@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 const CatContainer = styled.div`
@@ -22,15 +23,17 @@ const Wrapper = styled.div`
    text-align:center;
 `
 const Category = (props) => {
-    //console.log(props);
     const cat = props.category.map((m)=>(
-        <li><a href={'/'+m.alink+'/'} key={m.id} className='main-nav'>{m.title}</a>
+        <li key={m.id}><Link to={`/${m.alink}/${m.alink}`} 
+                className='main-nav'
+                onClick={()=>{props.setShowCategory(false)}}   
+             >{m.title}</Link>
             {
                 m.subarray && <ul>
                     {
                         m.subarray.map((n) => {
                             return(
-                                <li><a href={'/'+n.alink+'/'} key={n.id} className='sub-nav'>{n.title}</a></li>
+                                <li key={n.id}><a href={'/'+n.alink+'/'} key={n.id} className='sub-nav'>{n.title}</a></li>
                             )
                         })
                     }
