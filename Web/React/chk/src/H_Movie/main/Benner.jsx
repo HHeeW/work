@@ -5,19 +5,18 @@ const Benner = (props) => {
     <div className='H_Benner'>
         <div className='H_Benner_Slide'>
             <div className='H_Benner_main_poster'>
-                <img src="/H_images/85715_320.jpg" alt="poster" />
+                <img src={props.poster} alt="poster" />
             </div>
             <div className='H_Benner_Text_box'>
-                <p>제목: {props.title}</p>
-                <p>장르: {props.gen}</p>
-                <p>감독: {props.dir}</p>
-                <p>배우: {props.act}</p>
-                <p>줄거리{props.detail_title}</p>
-                <p>{props.detail}</p>
+                <h2>{props.title}</h2>
+                <p>장르 : {props.gen}</p>
+                <p>감독 : {props.dir}</p>
+                <p>배우 : {props.act}</p>
+                <h3>{props.detail_title}</h3>
             </div>
             <ul className='H_Benner_slides'>
-                <li><img src="/H_images/slider/d1.jpg" alt="subPoster" /></li>
-                <li><img src="/H_images/slider/d2.jpg" alt="subPoster" /></li>
+                <li><img src={props.slider1} alt="subPoster" /></li>
+                <li><img src={props.slider2} alt="subPoster" /></li>
             </ul>
         </div>
     </div>
