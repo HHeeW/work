@@ -7,7 +7,6 @@ const arr = [
     {id: 3, title: '3조', name:'ccc'},
     {id: 4, title: '4조', name:'ddd'},
 ]
-
 const List = (props) =>{
     let title = [];
     for(let i in props.arr){
