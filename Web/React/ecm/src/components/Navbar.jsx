@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import Badge from '@mui/material/Badge';
 import { Search, ShoppingCartOutlined, 
@@ -151,8 +152,8 @@ const Navbar = () => {
     <Container>
         <Wrapper style={{padding:'15px 0'}}>
             <Left>
-            <Logo/>
-                <LogoText>My SHOP</LogoText>
+            <Link to="/"><Logo/></Link>
+               <Link to="/"><LogoText>My SHOP</LogoText></Link>
             </Left>
             <Center>
                 <SearchContainer>
@@ -186,7 +187,7 @@ const Navbar = () => {
              </NavLeft>
              <NavCenter>
                  <NavList navigation={navigation} />
-                 { showCategory && <Category category={navigation[1].category} /> }
+                 { showCategory && <Category category={navigation[1].category} setShowCategory={setShowCategory} /> }
              </NavCenter>
              <NavRight>
                  <MenuItem2> 회원가입 </MenuItem2>
