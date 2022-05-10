@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const detail = (props) => {
   return (
     <li className="H_movie">
-      <Link to={`/Movie_Page_List${props.id}`}>
+      <Link to={`/Movie_Page_List/${props.id}`}>
         <div className="H_poster_box">
           <img className="H_poster" src={props.poster} alt={props.poster} />
           <div className="H_poster_text_box">
