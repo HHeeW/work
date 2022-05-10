@@ -75,7 +75,7 @@
 }
 .H_poster_text{
     margin: 20px;
-    height: 51%;
+    height: 50%;
     color: #fff;
     text-overflow: ellipsis;
     overflow: hidden;
