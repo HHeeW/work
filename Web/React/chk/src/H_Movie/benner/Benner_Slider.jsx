@@ -1,10 +1,15 @@
+import { Autoplay, EffectCoverflow, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from 'react-router-dom';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import { Autoplay, EffectCoverflow, Pagination, Navigation } from "swiper";
 import List_Page from '../List/List_Page';
+import './benner.css';
+
+
+
 const Benner_Slider = () => {
     let movies = List_Page();
     let Slide = [];
@@ -13,7 +18,9 @@ const Benner_Slider = () => {
         Slide[i] = 
             <div className='H_Benner_Slide'>
                 <div className='H_Benner_main_poster'>
-                    <img src={movies[i].poster} alt="poster" />
+                    <Link to={`/Movie_Page_List/${[parseInt(i)+1]}`}>
+                        <img src={movies[i].poster} alt="poster" />
+                    </Link>
                 </div>
                 <div className='H_Benner_Text_box'>
                     <h2>{movies[i].title}</h2>
@@ -37,7 +44,7 @@ const Benner_Slider = () => {
                 type: "fraction",
             }}
             autoplay={{
-                delay: 3000
+                delay: 5000
             }}
             coverflowEffect={{
                 rotate: 100,
