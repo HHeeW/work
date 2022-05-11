@@ -22,9 +22,6 @@ const Movie_Page_Slider = () => {
         pagination={{
           type: "fraction",
         }}
-        autoplay={{
-          delay: 5000
-        }}
         coverflowEffect={{
           rotate: 100,
           stretch: 0,
