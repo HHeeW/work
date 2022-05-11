@@ -2,16 +2,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import List from '../pages/List'
 import Write from '../pages/Write'
 import Read from '../pages/Read'
+import Logo from '../component/left/Logo'
+import Loginform from '../component/left/Loginform'
+import Logoutform from '../component/left/Logoutform'
 
 const Layout = () => {
   return (
-        <div className='container'>
-            <div className="row">
-                <div className="col-lg-3 col-12">
-                    로고<br />
-                    로그인 <br />
+            <>
+                <div className="left">
+                    <Logo />
+                    <Logoutform />
                 </div>
-                <div className="col-lg-9 col-12">
+                <div className="contents">
                     <BrowserRouter>
                         <Routes>
                             <Route path='/' element={<List />} />
@@ -21,8 +23,7 @@ const Layout = () => {
                         </Routes>
                     </BrowserRouter>
                 </div>
-            </div>
-        </div>
+            </>
     )
 }
 
