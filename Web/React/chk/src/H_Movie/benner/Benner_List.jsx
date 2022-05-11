@@ -1,12 +1,13 @@
 import { SwiperSlide } from "swiper/react";
 import List_Page from '../List/List_Page';
+import Benner_Slider from "./Benner_Slider";
 
 const Benner_List = () => {
   let movies = List_Page();
   let Swiper_Slides = [];
   for(let i in movies){
+      
       Swiper_Slides[i] = 
-        <SwiperSlide>
           <div className='H_Benner_Slide'>
               <div className='H_Benner_main_poster'>
                   <img src={movies[i].poster} alt="poster" />
@@ -23,9 +24,12 @@ const Benner_List = () => {
                   <li><img src={movies[i].slider2} alt="subPoster" /></li>
               </ul>
           </div>
-        </SwiperSlide>
   }
-  return Swiper_Slides[0];
+  return (
+    <>
+        {Swiper_Slides[0]}
+    </>
+    )
 }
 
 export default Benner_List
