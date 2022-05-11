@@ -48,10 +48,6 @@
 .H_Benner_slides{
     width: 35%;
 }
-.H_Benner_slides .swiper-slide{
-    display: flex;
-    justify-content: space-between;
-}
 .H_Benner_slides img{
-    width: 40%;
+    width: 100%;
 }

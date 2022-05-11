@@ -1,4 +1,4 @@
-import { Autoplay, EffectCoverflow, Pagination, Navigation } from "swiper";
+import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from 'react-router-dom';
 import "swiper/css";
@@ -37,20 +37,9 @@ const Benner_Slider = () => {
     }
     Swiper_Slides =
         <Swiper
-            effect={"coverflow"}
-            // grabCursor={true}
+            cssMode={true}
             navigation={true}
-            // autoplay={{
-            //     delay: 5000
-            // }}
-            coverflowEffect={{
-                rotate: 100,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-            }}
-            modules={[Autoplay, EffectCoverflow, Pagination, Navigation]}
+            modules={[Navigation]}
             className="mySwiper"
             >
             <SwiperSlide>{Slide[0]}</SwiperSlide>
