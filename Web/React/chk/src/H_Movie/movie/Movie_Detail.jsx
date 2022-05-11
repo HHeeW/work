@@ -19,18 +19,18 @@ const detail = (props) => {
         </div>
       </Link>
       <div className='H_detail'>
-          <div className="H_name">
+        <div className="H_name">
           <p className={props.age}></p>
           <p className='H_movie_title'>{props.title}</p>
-          </div>
-          <div className="H_second_name">
+        </div>
+        <div className="H_second_name">
           <p>예매율 {props.ticketing}</p>
           <p>개봉일 {props.open}</p>
-          </div>
-          <div className="H_ticketing_box">
-          <Link to={'/ticket'}><button className="H_ticketing">예매</button></Link>
-          </div>
         </div>
+        <div className="H_ticketing_box">
+          <Link to={'/ticket'}><button className="H_ticketing">예매</button></Link>
+        </div>
+      </div>
     </li>
   )
 }

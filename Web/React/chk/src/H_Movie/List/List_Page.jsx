@@ -2,7 +2,6 @@ const List_Detail = () => {
     const movies_detail = [
         {poster:"/H_images/85715_320.jpg" , title:"닥터 스트레인지: 대혼돈의 멀티버스", entitle: "Doctor Strange in the Multiverse of Madness", dir:"샘 레이미", act:"베네딕트 컴버배치 ,  엘리자베스 올슨 ,  베네딕트 웡 ,  레이첼 맥아담스 ,  치웨텔 에지오포 ,  소치틀 고메즈", gen: " 액션, 어드벤처, 환타지", bas:"126분, 미국", age:"H_12", ticketing:"9.3%", open:"2022.05.04", link:"Rt_UqUm38BI",
         detail_title:`지금껏 본 적 없는 마블의 극한 상상력!
-        
         5월, 광기의 멀티버스가 깨어난다!`,
         detail:`끝없이 균열되는 차원과 뒤엉킨 시공간의 멀티버스가 열리며
         오랜 동료들, 그리고 차원을 넘어 들어온 새로운 존재들을 맞닥뜨리게 된 ‘닥터 스트레인지’.
@@ -10,7 +9,8 @@ const List_Detail = () => {
         slider1:"/H_images/slider/d1.jpg", slider2:"/H_images/slider/d2.jpg", slider3:"/H_images/slider/d3.jpg", slider4:"/H_images/slider/d4.jpg", slider5:"/H_images/slider/d5.jpg", slider6:"/H_images/slider/d6.jpg"},
       
        {poster:"/H_images/39614_1000.jpg" , title:"해리포터와 죽음의 성물 2", entitle: "Harry Potter And The Deathly Hallows: Part2",  dir:"데이빗 예이츠", act:"다니엘 래드클리프 ,  엠마 왓슨 ,  루퍼트 그린트", gen:"환타지, 어드벤처", bas:" 131분, 미국, 영국", age:"H_all", ticketing:"9.0%", open:"2011.07. 14", link:"_31zwi0U8NE",
-       detail_title:`가장 위험한 마법에 맞선, 세상을 구할 전쟁이 시작된다!`,
+       detail_title:`모든 것을 끝낼 최후의 전투!
+        판타지의 아름다운 역사가 드디어 마침표를 찍는다!`,
        detail: `1930년대, 제2차 세계대전에 마법사들이 개입하게 되면서
         강력한 어둠의 마법사 그린델왈드의 힘이 급속도로 커진다.
       
@@ -89,7 +89,7 @@ const List_Detail = () => {
        모든 것을 얼려버리는 신비로운 힘이 바로 그것.
        
        ‘엘사’는 통제할 수 없는 자신의 힘이 두려워 왕국을 떠나고, 얼어버린 왕국의 저주를 풀기 위해 ‘안나’는 언니를 찾아 환상적인 여정을 떠나는데…`,
-       slider1:"/H_images/slider/fz1.jpg", slider2:"/H_images/slider/fz2.jpg", slider3:"/H_images/slider/fz3.jpg", slider4:"/H_images/slider/fz4.jpg", slider5:"/H_images/slider/fz5.jpg", slider6:"/H_images/slider/fz6" },
+       slider1:"/H_images/slider/fz1.jpg", slider2:"/H_images/slider/fz2.jpg", slider3:"/H_images/slider/fz3.jpg", slider4:"/H_images/slider/fz4.jpg", slider5:"/H_images/slider/fz5.jpg", slider6:"/H_images/slider/fz6.jpg" },
        
        {poster:"/H_images/78529_1000.jpg" , title:"내부자들", entitle:"Inside Men", dir:"우민호", act:"조승우 ,  이병헌 ,  백윤식", gen:"범죄, 드라마", bas:"130분, 한국", age:"H_19", ticketing:"6.5%", open:"2015.12.31", link:"miXzN6spmFQ",
        detail_title:`“복수극으로 가자고, 화끈하게”`,
@@ -130,8 +130,7 @@ const List_Detail = () => {
        slider1:"/H_images/slider/sm1.jpg", slider2:"/H_images/slider/sm2.jpg", slider3:"/H_images/slider/sm3.jpg", slider4:"/H_images/slider/sm4.jpg", slider5:"/H_images/slider/sm5.jpg", slider6:"/H_images/slider/sm6.jpg"},
        
        { poster:"/H_images/79139_1000.jpg" , title:"아수라", entitle:"Asura : The City of Madness", dir:"김성수", act:"정우성 ,  황정민 ,  주지훈 ,  곽도원 ,  정만식 ,  차래형", gen:"액션, 범죄", bas:"132분, 한국", age:"H_19", ticketing:"5.2%", open:"2016.09.28", link:"CuJriB-ZvQQ",
-       detail_title:`지옥 같은 세상, 살아남기 위해 싸우는 악인들의 전쟁
-       <아수라>`,
+       detail_title:`지옥 같은 세상, 살아남기 위해 싸우는 악인들의 전쟁`,
        detail: `강력계 형사 한도경(정우성)은 이권과 성공을 위해 각종 범죄를 저지르는 악덕시장 박성배(황정민)의 뒷일을 처리해주는 대가로 돈을 받는다.
 
        악에 계속 노출되는 사이, 말기 암 환자인 아내의 병원비를 핑계로 돈 되는 건 뭐든 하는 악인의 길로 들어서게 된 한도경.
