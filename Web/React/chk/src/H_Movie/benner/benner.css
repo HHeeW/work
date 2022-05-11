@@ -45,17 +45,13 @@
 
 
 
-
 .H_Benner_slides{
     width: 35%;
+}
+.H_Benner_slides .swiper-slide{
     display: flex;
     justify-content: space-between;
 }
-.H_Benner_slides>li{
-    flex: 0 0 45%;
-    width: 25%;
-    height: 45%;
-}
-.H_Benner_slides>li>img{
-    width: 100%;
+.H_Benner_slides img{
+    width: 40%;
 }

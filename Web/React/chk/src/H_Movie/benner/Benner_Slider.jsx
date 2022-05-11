@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import List_Page from '../List/List_Page';
+import Benner_List from './Benner_List';
 import './benner.css';
 
 
@@ -29,23 +30,19 @@ const Benner_Slider = () => {
                     <p>배우 : {movies[i].act}</p>
                     <h3>{movies[i].detail_title}</h3>
                 </div>
-                <ul className='H_Benner_slides'>
-                    <li><img src={movies[i].slider1} alt="subPoster" /></li>
-                    <li><img src={movies[i].slider2} alt="subPoster" /></li>
-                </ul>
+                <div className='H_Benner_slides'>
+                    <Benner_List number = {[i]}/>
+                </div>
             </div>
     }
     Swiper_Slides =
         <Swiper
             effect={"coverflow"}
-            grabCursor={true}
+            // grabCursor={true}
             navigation={true}
-            pagination={{
-                type: "fraction",
-            }}
-            autoplay={{
-                delay: 5000
-            }}
+            // autoplay={{
+            //     delay: 5000
+            // }}
             coverflowEffect={{
                 rotate: 100,
                 stretch: 0,

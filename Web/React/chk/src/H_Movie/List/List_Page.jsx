@@ -89,7 +89,7 @@ const List_Detail = () => {
        모든 것을 얼려버리는 신비로운 힘이 바로 그것.
        
        ‘엘사’는 통제할 수 없는 자신의 힘이 두려워 왕국을 떠나고, 얼어버린 왕국의 저주를 풀기 위해 ‘안나’는 언니를 찾아 환상적인 여정을 떠나는데…`,
-       slider1:"/H_images/slider/fz1.jpg", slider2:"/H_images/slider/fz2.jpg", slider3:"/H_images/slider/fz3.jpg", slider4:"/H_images/slider/fz4.jpg", slider5:"/H_images/slider/fz5.jpg", slider6:"/H_images/slider/fz6" },
+       slider1:"/H_images/slider/fz1.jpg", slider2:"/H_images/slider/fz2.jpg", slider3:"/H_images/slider/fz3.jpg", slider4:"/H_images/slider/fz4.jpg", slider5:"/H_images/slider/fz5.jpg", slider6:"/H_images/slider/fz6.jpg" },
        
        {poster:"/H_images/78529_1000.jpg" , title:"내부자들", entitle:"Inside Men", dir:"우민호", act:"조승우 ,  이병헌 ,  백윤식", gen:"범죄, 드라마", bas:"130분, 한국", age:"H_19", ticketing:"6.5%", open:"2015.12.31", link:"miXzN6spmFQ",
        detail_title:`“복수극으로 가자고, 화끈하게”`,
