@@ -5,13 +5,15 @@ import Read from '../pages/Read'
 import Logo from '../component/left/Logo'
 import Loginform from '../component/left/Loginform'
 import Logoutform from '../component/left/Logoutform'
+import { useState } from 'react'
 
 const Layout = () => {
+    const[isLoggedIn, setIsLoggedIn] = useState(false)
   return (
             <>
                 <div className="left">
                     <Logo />
-                    <Logoutform />
+                    {isLoggedIn ? <Logoutform setIsLoggedIn = {setIsLoggedIn} /> : <Loginform setIsLoggedIn = {setIsLoggedIn}/>}
                 </div>
                 <div className="contents">
                     <BrowserRouter>
