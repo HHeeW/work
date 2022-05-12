@@ -20,7 +20,7 @@ a:hover{
 .left{
   height: 100%;
   border-right: 1px solid #999;
-  width: 250px;
+  width: 300px;
   position: fixed;
   top: 0;
   left: 0;
@@ -39,10 +39,39 @@ a:hover{
 .card-body div{
   margin-top: 5px;
 }
+.btn-facebook{
+  background-color: #405D9D;
+  color: #fff
+}
+.btn-twitter{
+  background-color: #42aeec;
+  color: #fff
+}
 
+// 회원가입
 
-
-
+.RWrapper{
+  width: 800px;
+  max-width: 100%;
+  margin: 30px auto;
+  border-radius: 8px;
+  border:1px solid #ddd;
+  background-color: #efefef;
+  padding: 30px 50px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15)
+}
+#popupDom{
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 50px;
+}
+#popupDomIn{
+  background-color: #fff;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2)
+}
 
 
 
@@ -53,7 +82,7 @@ a:hover{
 
 }
 @include tablet{
-  
+
 }
 @include desktop{
   

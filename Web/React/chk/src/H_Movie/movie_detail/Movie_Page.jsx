@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './movie_page.css'
+import Movie_Page_Review from './Movie_Page_Review';
 import Movie_Page_Slider from './Movie_Page_Slider';
 
 
@@ -61,7 +62,7 @@ const Movie_Page = (props) => {
                     <li><button onClick={Sview} className={`${sview === true ? 'active' : ''}`}>관람평</button>
                         <ul className="H_nav_lnb">
                         {(sview?
-                                <li> 관람평 적는 공간 만들기 </li>
+                                <li> <Movie_Page_Review /> </li>
                                 :
                                 <></>
                             )}
