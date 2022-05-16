@@ -132,12 +132,15 @@ li>button.active{
     text-align: center;
 }
 .H_point i{
+    float: left;
+}
+.H_point i{
     font-size: 20px;
     color: #fff;
 }
-.H_point i:hover::before{
-    font-weight: 900;
+i.H_Heart_active i, i.H_Heart_active{
     color: #f00;
+    font-weight: 900;
 }
 .H_Review_Text{
     width: 70%;
