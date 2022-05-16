@@ -11,8 +11,9 @@ const Benner_List = ({number}) => {
   let Swiper_Slides = [];
       Swiper_Slides = 
       <Swiper
-      effect={"creative"}
+        effect={"creative"}
         grabCursor={true}
+        pagination={true}
         loop={true}
         slidesPerView={2}
         spaceBetween={30}

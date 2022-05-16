@@ -2,11 +2,6 @@ import React, {useState} from 'react'
 import List_Page from '../List/List_Page';
 import { Search } from '@styled-icons/material'
 import './main.css'
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
-import Movie_Page_List from '../movie_detail/Movie_Page_List';
 
 const Movie_Search = () => {
   let [movie_name, setMovie_name] = useState("")
@@ -31,7 +26,7 @@ const Movie_Search = () => {
       }
     }
   }
-
+  
   return (
     <>
       <input className='H_SearchText' type={"text"}
