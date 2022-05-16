@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: 'GmarketSans-Medium', sans-serif;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+}
+a,a:hover{
+  color: #000;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+ul,li{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+button{
+  font-family: 'GmarketSans-Medium',sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'GmarketSans-Medium';
+  src: url('/public/GmarketSansTTFMedium.ttf');
+}
+@font-face {
+  font-family: 'GmarketSans-Light';
+  src: url('/public/GmarketSansTTFLight.ttf');
+}
+@font-face {
+  font-family: 'GmarketSans-Bold';
+  src: url('/public/GmarketSansTTFBold.ttf');
+}
