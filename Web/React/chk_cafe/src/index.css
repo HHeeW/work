@@ -21,7 +21,6 @@ button{
   font-size: 16px;
   font-weight: 600;
 }
-
 @font-face {
   font-family: 'GmarketSans-Medium';
   src: url('/public/GmarketSansTTFMedium.ttf');
