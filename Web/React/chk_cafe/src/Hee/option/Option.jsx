@@ -1,6 +1,12 @@
-import React from 'react'
-import './Hee.css'
+import React, { useState } from 'react'
+import '../Hee.css'
+import OptionKinds from './OptionKinds';
+import * as Click from './OptionClick.js';
+import OptionBasic from './OptionBasic';
+
 const Option = () => {
+  const[kinds, setKinds] = useState('icecoffee');
+  
   return (
     <div className='H_Container'>
       <div className="H_Menu_Box">
@@ -17,21 +23,12 @@ const Option = () => {
         </div>
       </div>
       <div className="H_Option_Box">
-        <div className="H_Option_Coffee">
-          옵션1
-        </div>
-        <div className="H_Option_Coffee">
-          옵션2
-        </div>
-        <div className="H_Option_Coffee">
-          옵션3
-        </div>
-        <div className="H_Option_Coffee">
-          옵션4
-        </div>
+        <OptionBasic />
+        <OptionKinds kinds={kinds} />
       </div>
       <div className='H_Option_Shopping_Basket'>
-        <button>장바구니 담기 버튼</button> 
+        <button onClick={Click.menuSum}> 장바구니 버튼 </button> 
+        <button onClick={Click.menuSum}> 바로구매 버튼</button> 
       </div>
     </div>
   )

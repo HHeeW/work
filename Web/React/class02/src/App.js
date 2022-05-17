@@ -1,11 +1,9 @@
 import React from 'react'
-import Option from './Hee/option/Option'
+import ForEach from './component/ForEach'
 
 const App = () => {
   return (
-    <div>
-      <Option/>
-    </div>
+    <ForEach />
   )
 }
 
