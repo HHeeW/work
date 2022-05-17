@@ -26,8 +26,7 @@ const Option = (props) => {
           <OptionKinds kinds={kinds} />
         </div>
         <div className='H_Option_Shopping_Basket'>
-          <button onClick={()=>{Click.menuSum(props.menu, props.setMenu)}}> 장바구니 버튼 </button> 
-          <button onClick={Click.menuSum}> 바로구매 버튼</button> 
+          <button onClick={()=>{Click.menuSum(props.setMenu)}}> 장바구니 버튼 </button>
         </div>
       </div>
   )

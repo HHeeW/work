@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import '../Hee.css';
 
 const BasketSub = ({menu}) => {
@@ -9,6 +8,7 @@ const BasketSub = ({menu}) => {
                 장바구니
                 <p>{menu}</p>
             </div>
+          <button> 바로구매 버튼</button> 
         </div>
     )
 }

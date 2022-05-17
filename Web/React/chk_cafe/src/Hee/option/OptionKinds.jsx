@@ -1,4 +1,5 @@
 import * as Click from './OptionClick.js';
+
 const OptionKinds = ({kinds}) => {
     switch(kinds){
         case 'icecoffee':
@@ -35,9 +36,9 @@ const OptionKinds = ({kinds}) => {
                     </div>
                 </div>
                 <div className="H_Option_Cafe H_Flex_Around">
-                    <div><h2>샷추가</h2> <button>-</button> 0 <button>+</button></div>
-                    <div><h2>헤이즐넛시럽</h2> <button>-</button> 0 <button>+</button></div>
-                    <div><h2>바닐라시럽</h2> <button>-</button> 0 <button>+</button></div>
+                    <div><h2>샷추가</h2> <button id='H_count'>-</button> <span>0</span> <button>+</button></div>
+                    <div><h2>헤이즐넛시럽</h2> <button>-</button> <span>0</span> <button>+</button></div>
+                    <div><h2>바닐라시럽</h2> <button>-</button> <span>0</span> <button>+</button></div>
                 </div>
             </>)
         case 'hotcoffee':

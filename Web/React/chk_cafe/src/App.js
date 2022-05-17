@@ -6,8 +6,8 @@ const App = () => {
   let [menu, setMenu] = useState([]);
   return (
     <div className='H_Flex_Center'>
-        <Option menu={menu} setMenu={setMenu}/>
-        <BasketSub menu={menu} setMenu={setMenu}/>
+        <Option setMenu={setMenu}/>
+        <BasketSub menu={menu}/>
     </div>
   )
 }

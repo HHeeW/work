@@ -2,6 +2,18 @@ import $ from 'jquery';
 
 let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵', '각얼음', '보통', 'NO'];
 //기본 옵션
+var count = 0;
+$('#H_count').bind('click', function fncSearch(){
+  //변수 증가
+  count++;
+  //조건문
+  if(count < 5 ){
+      alert("카운트 : "+count);
+  }else {
+      alert("제한수치까지 올려봤습니다!");
+  }              
+});            
+
 export const Size =(e)=>{
   console.log(e)
   menuoption[1] = e; // =========================================================== 1
@@ -49,25 +61,6 @@ export const Deca =(e)=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export const menuSum=(menu, setMenu)=>{
-    console.log(menuoption);
-    menu = [];
-    menu.push([menuoption])
-    setMenu(menu)
+export const menuSum=(setMenu)=>{
+    setMenu([...menuoption]);
   }
