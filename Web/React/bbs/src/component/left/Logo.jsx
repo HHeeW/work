@@ -1,11 +1,9 @@
 import React from 'react'
 
-const Logo = () => {
+const logo = () => {
   return (
-    <h1 className='text-center font-weight-bold pd-5'>
-        Logo
-    </h1>
+    <h1 className="text-center font-weight-bold pb-5">logo</h1>
   )
 }
 
-export default Logo
+export default logo
