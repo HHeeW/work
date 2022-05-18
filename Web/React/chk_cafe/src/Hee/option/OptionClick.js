@@ -61,6 +61,7 @@ export const Deca =(e)=>{
 
 
 
-export const menuSum=(setMenu)=>{
+export const menuSum=(name,setMenu)=>{
+  menuoption[0] = name;
     setMenu([...menuoption]);
   }
