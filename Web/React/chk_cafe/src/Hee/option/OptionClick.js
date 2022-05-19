@@ -2,11 +2,23 @@ import $ from 'jquery';
 
 //기본 옵션
 let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵', '각얼음', '보통', 'NO'];
-
+let num=0;
 export const Count =(sum, count, setCount, id)=>{
-  console.log(count[id])
-  if(sum === true)  return count[id] < 10 ? setCount(count[id]+1) : count[id];
-  else                return count[id] >  0 ? setCount(count[id]-1) : count[id];
+  console.log(count)
+  num = count[id];
+  num++;
+  const arr = count.join('');
+  
+  console.log(arr);
+  console.log(`arr.length : ${arr.length}`);
+  const arr2 = arr.replace(id, id+121+-, num);
+  console.log(`arr2.length : ${arr2.length}`);
+  console.log(arr2);
+  arr.split('')
+
+  if(sum === true) return count[id] < 10 ? setCount([...arr2]) : count;
+  else             return count[id] >  0 ? (setCount(count[id]), console.log(count)) : count;
+  
 } 
 
 export const Size =(e)=>{
