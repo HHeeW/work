@@ -1,18 +1,13 @@
 import $ from 'jquery';
 
-let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵', '각얼음', '보통', 'NO'];
 //기본 옵션
-var count = 0;
-$('#H_count').bind('click', function fncSearch(){
-  //변수 증가
-  count++;
-  //조건문
-  if(count < 5 ){
-      alert("카운트 : "+count);
-  }else {
-      alert("제한수치까지 올려봤습니다!");
-  }              
-});            
+let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵', '각얼음', '보통', 'NO'];
+
+export const Count =(sum, count, setCount, id)=>{
+  console.log(count[id])
+  if(sum === true)  return count[id] < 10 ? setCount(count[id]+1) : count[id];
+  else                return count[id] >  0 ? setCount(count[id]-1) : count[id];
+} 
 
 export const Size =(e)=>{
   console.log(e)

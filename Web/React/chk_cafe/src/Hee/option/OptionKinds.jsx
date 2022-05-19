@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import * as Click from './OptionClick.js';
 
 const OptionKinds = ({kinds}) => {
+    const [count, setCount] = useState([0,0,0]);
     switch(kinds){
         case 'icecoffee':
             return(
@@ -36,9 +38,24 @@ const OptionKinds = ({kinds}) => {
                     </div>
                 </div>
                 <div className="H_Option_Cafe H_Flex_Around">
-                    <div><h2>샷추가</h2> <button id='H_count'>-</button> <span>0</span> <button>+</button></div>
-                    <div><h2>헤이즐넛시럽</h2> <button>-</button> <span>0</span> <button>+</button></div>
-                    <div><h2>바닐라시럽</h2> <button>-</button> <span>0</span> <button>+</button></div>
+                    <div>
+                        <h2>샷추가</h2> 
+                        <button onClick={()=>Click.Count(false, count, setCount, 0)}>-</button> 
+                        <span>{count[0]}</span> 
+                        <button onClick={()=>Click.Count(true, count, setCount, 0)}>+</button>
+                    </div>
+                    <div>
+                        <h2>헤이즐넛시럽</h2> 
+                        <button onClick={()=>Click.Count(false, count, setCount, 1)}>-</button> 
+                        <span>{count[1]}</span> 
+                        <button onClick={()=>Click.Count(true, count, setCount, 1)}>+</button>
+                    </div>
+                    <div>
+                        <h2>바닐라시럽</h2> 
+                        <button onClick={()=>Click.Count(false, count, setCount, 2)}>-</button> 
+                        <span>{count[2]}</span> 
+                        <button onClick={()=>Click.Count(true, count, setCount, 2)}>+</button>
+                    </div>
                 </div>
             </>)
         case 'hotcoffee':
