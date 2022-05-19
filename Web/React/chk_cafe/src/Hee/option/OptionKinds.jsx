@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as Click from './OptionClick.js';
 
 const OptionKinds = ({kinds}) => {
-    const [count, setCount] = useState([0,0,0]);
+    const [count, setCount] = useState([0,1,2]);
     switch(kinds){
         case 'icecoffee':
             return(
