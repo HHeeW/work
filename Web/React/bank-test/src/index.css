@@ -1,0 +1,21 @@
+body{
+    color:#333;
+    background-color: #fff;
+}
+a{
+    text-decoration: none;
+    color: #666;
+}
+a:hover{
+    color: #222328;
+}
+.text-center{
+    text-align: center;
+}
+
+.container{
+    width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+    border: 1px solid #333;
+}
