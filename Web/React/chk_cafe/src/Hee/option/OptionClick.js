@@ -11,7 +11,7 @@ export const Count =(sum, count, setCount, id)=>{
   
   console.log(arr);
   console.log(`arr.length : ${arr.length}`);
-  const arr2 = arr.replace(id, id+121+-, num);
+  const arr2 = arr.replace(id, id+1, num);
   console.log(`arr2.length : ${arr2.length}`);
   console.log(arr2);
   arr.split('')
