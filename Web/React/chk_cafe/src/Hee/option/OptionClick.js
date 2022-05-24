@@ -2,22 +2,12 @@ import $ from 'jquery';
 
 //기본 옵션
 let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵', '각얼음', '보통', 'NO'];
-let num=0;
-export const Count =(sum, count, setCount, id)=>{
-  console.log(count)
-  num = count[id];
-  num++;
-  const arr = count.join('');
-  
-  console.log(arr);
-  console.log(`arr.length : ${arr.length}`);
-  const arr2 = arr.replace(id, id+1, num);
-  console.log(`arr2.length : ${arr2.length}`);
-  console.log(arr2);
-  arr.split('')
 
-  if(sum === true) return count[id] < 10 ? setCount([...arr2]) : count;
-  else             return count[id] >  0 ? (setCount(count[id]), console.log(count)) : count;
+export const Count =(sum, count, setCount)=>{
+  console.log(count)
+
+  if(sum === true) return count < 10 ? (setCount(count+1)) : count;
+  else             return count >  0 ? (setCount(count-1)) : count;
   
 } 
 
@@ -68,7 +58,16 @@ export const Deca =(e)=>{
 
 
 
-export const menuSum=(name,setMenu)=>{
+export const menuSum=(name,setMenu, count0,count1,count2)=>{
+  if(count0 !== 0){
+    menuoption[5] = `샷추가 ${count0}번`;
+  }
+  if(count1 !== 0){
+    menuoption[6] = `헤이즐넛시럽 ${count1}번`;
+  }
+  if(count2 !== 0){
+    menuoption[7] = `바닐라시럽 ${count2}번`;
+  }
   menuoption[0] = name;
     setMenu([...menuoption]);
   }

@@ -1,18 +1,15 @@
-import { useState } from 'react';
+
 import * as Click from './OptionClick.js';
 
-const OptionKinds = ({kinds}) => {
-    const [count, setCount] = useState(['0','0','0']);
-    const [count0, setCount0] = useState(0);
-    const [count1, setCount1] = useState(0);
-    const [count2, setCount2] = useState(0);
-    switch(kinds){
+const OptionKinds = (props) => {
+    
+    switch(props.kinds){
         case 'icecoffee':
         case 'hotcoffee':
             return(
             <>
                 <div className="H_Option_Cafe H_Flex_Around">
-                    {kinds === 'icecoffee' ? 
+                    {props.kinds === 'icecoffee' ? 
                         <div>
                             <h1>얼음</h1>
                             <button id='H_Ice_Size' className='H_active' onClick={()=>Click.IceSize('각얼음')}> 
@@ -46,21 +43,21 @@ const OptionKinds = ({kinds}) => {
                 <div className="H_Option_Cafe H_Flex_Around">
                     <div>
                         <h2>샷추가</h2> 
-                        <button onClick={()=>Click.Count(false, count, setCount, 0)}>-</button> 
-                        <span>{count[0]}</span> 
-                        <button onClick={()=>Click.Count(true, count, setCount, 0)}>+</button>
+                        <button onClick={()=>Click.Count(false, props.count0, props.setCount0)}>-</button> 
+                        <span>{props.count0}</span> 
+                        <button onClick={()=>Click.Count(true, props.count0, props.setCount0)}>+</button>
                     </div>
                     <div>
                         <h2>헤이즐넛시럽</h2> 
-                        <button onClick={()=>Click.Count(false, count1, setCount1)}>-</button> 
-                        <span>{count1}</span> 
-                        <button onClick={()=>Click.Count(true, count1, setCount1)}>+</button>
+                        <button onClick={()=>Click.Count(false, props.count1, props.setCount1)}>-</button> 
+                        <span>{props.count1}</span> 
+                        <button onClick={()=>Click.Count(true, props.count1, props.setCount1)}>+</button>
                     </div>
                     <div>
                         <h2>바닐라시럽</h2> 
-                        <button onClick={()=>Click.Count(false, count2, setCount2)}>-</button> 
-                        <span>{count2}</span> 
-                        <button onClick={()=>Click.Count(true, count2, setCount2)}>+</button>
+                        <button onClick={()=>Click.Count(false, props.count2, props.setCount2)}>-</button> 
+                        <span>{props.count2}</span> 
+                        <button onClick={()=>Click.Count(true, props.count2, props.setCount2)}>+</button>
                     </div>
                 </div>
             </>)

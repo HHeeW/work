@@ -1,4 +1,4 @@
-// import React, { useState } from 'react'
+import React, { useState } from 'react'
 import '../Hee.css'
 import OptionKinds from './OptionKinds';
 import * as Click from './OptionClick.js';
@@ -8,9 +8,13 @@ import Swal from 'sweetalert2'
 const Option = (props) => {
   // const[kinds, setKinds] = useState('icecoffee');
   const kinds = 'icecoffee';
+
+  const [count0, setCount0] = useState(0);
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
   
   const viewALert = (positionflag, e)=>{
-    Click.menuSum('props.name' , props.setMenu)
+    Click.menuSum('props.name' , props.setMenu, count0,count1,count2)
     Swal.fire({
         position: positionflag,
         icon: 'success',
@@ -37,7 +41,9 @@ const Option = (props) => {
         </div>
         <div className="H_Option_Box">
           <OptionBasic />
-          <OptionKinds kinds={kinds} />
+          <OptionKinds kinds={kinds} 
+            count0 = {count0} count1={count1} count2={count2} 
+            setCount0 = {setCount0} setCount1={setCount1} setCount2={setCount2}/>
         </div>
         <div className='H_Option_Shopping_Basket'>
           <button onClick={(e)=>{viewALert('bottom-right')}}> 장바구니 버튼 </button>
