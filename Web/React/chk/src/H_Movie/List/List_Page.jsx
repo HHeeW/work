@@ -286,7 +286,7 @@ const List_Detail = () => {
         },
        
         {
-            poster: "/H_images/79139_1620.jpg" , 
+          poster: "/H_images/79139_1620.jpg" , 
           title: "심슨가족더무비", 
           entitle: "The Simpsons Movie", 
           dir: "데이빗 실버맨", 
@@ -318,7 +318,7 @@ const List_Detail = () => {
         },
        
         {
-            poster: "/H_images/79139_1000.jpg" , 
+          poster: "/H_images/79139_1000.jpg" , 
           title: "아수라", 
           entitle: "Asura : The City of Madness", 
           dir: "김성수", 
@@ -350,7 +350,7 @@ const List_Detail = () => {
         },
        
         {
-            poster: "/H_images/81561_1000.jpg" , 
+          poster: "/H_images/81561_1000.jpg" , 
           title: "뺑반", 
           entitle: "Hit-andRun Squad", 
           dir: "한준희", 
@@ -386,7 +386,7 @@ const List_Detail = () => {
         },
        
         {
-            poster: "/H_images/80843_1000.jpg" , 
+          poster: "/H_images/80843_1000.jpg" , 
           title: "극장판 짱구는 못말려-격돌! 낙서왕국과 얼추 네 명의 용사들", 
           entitle: "Crayon Shin-chan: Crash! Scribble Kingdom and Almost Four Heroes", 
           dir: "쿄고쿠 타카히코", 
@@ -417,7 +417,7 @@ const List_Detail = () => {
         },
        
         {
-            poster: "/H_images/85603_320.jpg" , 
+          poster: "/H_images/85603_320.jpg" , 
           title: "극장판 주술회전 0", 
           entitle: "Jujutsu Kaisen: Zero", 
           dir: "박성후", 
@@ -504,7 +504,7 @@ const List_Detail = () => {
         },
        
         {
-            poster: "/H_images/85781_320.jpg" , 
+          poster: "/H_images/85781_320.jpg" , 
           title: "극장판 귀멸의 칼날-무한열차편 ", 
           entitle: "Demon Slayer: Kimetsu no Yaiba the Movie - Mugen Train", 
           dir: "소토자키 하루오", 
@@ -533,7 +533,7 @@ const List_Detail = () => {
         },
        
         {
-            poster: "/H_images/85728_320.jpg" , 
+          poster: "/H_images/85728_320.jpg" , 
           title: "수퍼 소닉2", 
           entitle: "Sonic the Hedgehog 2", 
           dir: "제프 파울러", 
@@ -561,7 +561,7 @@ const List_Detail = () => {
         },
 
         {
-            poster: "/H_images/18540_201_1.jpg" , 
+          poster: "/H_images/18540_201_1.jpg" , 
           title: "모비우스", 
           entitle: "Morbius", 
           dir: "다니엘 에스피노사", 
