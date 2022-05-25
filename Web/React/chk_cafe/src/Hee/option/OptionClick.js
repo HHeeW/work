@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 //기본 옵션
-let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵', '각얼음', '보통', 'NO'];
+let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵'];
 
 export const Count =(sum, count, setCount)=>{
   console.log(count)
@@ -27,8 +27,7 @@ export const Cup =(e)=>{
     $(this).addClass("H_active");
   })
 }
-//커피
-// 아이스커피
+
 export const IceSize =(e)=>{
   console.log(e);
   menuoption[3] = e;// =========================================================== 3
@@ -54,14 +53,27 @@ export const Deca =(e)=>{
     $(this).addClass("H_active");
   })
 }
+export const Suger =(e)=>{
+  console.log(e);
+  menuoption[7] = `당도 ${e}`;// =========================================================== 7
+  $("button#H_Suger").click(function(){
+    $("button#H_Suger").removeClass("H_active");
+    $(this).addClass("H_active");
+  })
+}
 
 
 
 
-export const menuSum=(name,setMenu, count0,count1,count2)=>{
+export const menuSum=(name,setMenu, count0,count1,count2, count3)=>{
+  // 커피
   if(count0 !== 0){
-    menuoption[5] = `샷추가 ${count0}번`;
+    menuoption[4] = `샷추가 ${count0}번`;
   }
+  if(count3 !== 0){
+    menuoption[5] = `펄 추가 ${count3}번`;
+  }
+  
   if(count1 !== 0){
     menuoption[6] = `헤이즐넛시럽 ${count1}번`;
   }
@@ -69,5 +81,7 @@ export const menuSum=(name,setMenu, count0,count1,count2)=>{
     menuoption[7] = `바닐라시럽 ${count2}번`;
   }
   menuoption[0] = name;
+    console.log([...menuoption])
     setMenu([...menuoption]);
+    
   }
