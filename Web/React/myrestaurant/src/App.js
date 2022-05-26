@@ -1,9 +1,10 @@
 import React from 'react'
-import RestList from './component/RestList'
+import RestList from './component/RestList';
 const App = () => {
+
   return (
     <div>
-      <RestList />
+      <RestList/>
     </div>
   )
 }
