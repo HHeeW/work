@@ -19,8 +19,8 @@ const RestListItem = (props) => {
               <Roadview // 로드뷰를 표시할 Container
                 position={{
                   // 지도의 중심좌표
-                  lat: props.longitude,
-                  lng: props.longitude,
+                  lat: lat,
+                  lng: lng,
                   radius: radius,
                 }}
                 style={{
@@ -47,8 +47,8 @@ const RestListItem = (props) => {
             <Col xs='4'>
               <Map
                 center={{ 
-                  lat: 37.6820421, 
-                  lng: 126.7535498 
+                  lat: lat, 
+                  lng: lng 
                 }}
                 style={{ 
                   width: "100%", 

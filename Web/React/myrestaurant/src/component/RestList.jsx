@@ -8,8 +8,8 @@ const RestList = () => {
   const[rest, setRest] = useState([]);
 
   useEffect(()=>{
-    axios.get('./json/rest.json')
-    .then(rs=> setRest(...rest,rs.data))
+    axios.get('/json/rest.json')
+    .then(rs=> setRest([...rest],rs.data))
     // .then(rs=>console.log(rs.data))      
   },[])
   return (
