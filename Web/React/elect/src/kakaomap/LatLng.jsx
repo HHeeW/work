@@ -11,6 +11,8 @@ const LatLng = () => {
     name={Api.response.body.items.item[i].statNm} 
     addr={Api.response.body.items.item[i].addr} 
     useTime={Api.response.body.items.item[i].useTime} 
+    stat={Api.response.body.items.item[i].stat} 
+    chgerType={Api.response.body.items.item[i].chgerType} 
     />
   }
   return map;

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { CustomOverlayMap, MapMarker } from 'react-kakao-maps-sdk'
-
 const Marker = (props) => {
     const [isOpen, setIsOpen] = useState(false)
   return (
@@ -24,44 +23,25 @@ const Marker = (props) => {
               }, // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
             },
           }}
-      >
-        {isOpen && (
+      >{isOpen && (
         <CustomOverlayMap position={{lat: props.lat, lng: props.lng,}}>
-            <div className="wrap">
+            <div className="wrap bg-white p-3 my-3">
               <div className="info">
-                <div className="title">
-                  카카오 스페이스닷원
-                  <div
-                    className="close"
+                <div className="title h4 text-primary">
+                    {props.name}
+                  <span
+                    className="close text-danger"
                     onClick={() => setIsOpen(false)}
                     title="닫기"
-                  ></div>
+                  >X</span>
                 </div>
                 <div className="body">
-                  <div className="img">
-                    <img
-                      src="//t1.daumcdn.net/thumb/C84x76/?fname=http://t1.daumcdn.net/cfile/2170353A51B82DE005"
-                      width="73"
-                      height="70"
-                      alt="카카오 스페이스닷원"
-                    />
-                  </div>
                   <div className="desc">
                     <div className="ellipsis">
-                      제주특별자치도 제주시 첨단로 242
+                      {props.addr}
                     </div>
                     <div className="jibun ellipsis">
-                      (우) 63309 (지번) 영평동 2181
-                    </div>
-                    <div>
-                      <a
-                        href="https://www.kakaocorp.com/main"
-                        target="_blank"
-                        className="link"
-                        rel="noreferrer"
-                      >
-                        홈페이지
-                      </a>
+                      (사용시간) {props.useTime}<br/> (종류) {props.chgerType}
                     </div>
                   </div>
                 </div>

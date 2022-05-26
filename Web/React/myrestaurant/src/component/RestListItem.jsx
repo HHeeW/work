@@ -1,74 +1,42 @@
-import React, { useEffect, useState } from 'react'
-import { Map, MapMarker, Roadview, RoadviewMarker } from 'react-kakao-maps-sdk'
-import { Col, ListGroupItem, Row } from 'reactstrap'
+import React, { useState, useEffect } from 'react'
+import { Container, ListGroup } from 'reactstrap'
+import RestListItem from './RestListItem'
+import axios from 'axios'
 
-const RestListItem = (props) => {
-    const[lat, setLat] = useState('');
-    const[lng, setLng]=useState('');
-    const[radius, setRadius]=useState('');
+const RestList = () => {
+  const [rest, setRest] = useState([]);
 
-    useEffect(()=>{
-      setLat(props.Latitude);
-      setLng(props.longitude);
-      setRadius(props.radius);
-    },[])
+  useEffect(()=>{
+      axios.get('./json/rest.json')
+      .then(rs => setRest(...rest, rs.data))
+      //.then(rs=>console.log(rs.data))
+  }, []);
+    
   return (
-    <ListGroupItem className='py-4 px-4'>
-          <Row>
-            <Col xs='4'>
-              <Roadview // 로드뷰를 표시할 Container
-                position={{
-                  // 지도의 중심좌표
-                  lat: props.longitude,
-                  lng: props.longitude,
-                  radius: radius,
-                }}
-                style={{
-                  // 지도의 크기
-                  width: "100%",
-                  height: "250px",
-                  borderRadius:'15px',
-                  border:'2px solid #333'
-                }}
-                
-              >
-                <RoadviewMarker position={{lat: 37.6820421, lng: 126.7535498,}}>
-                  <div style={{ color: "#000" }}>{props.title}</div>
-                </RoadviewMarker>
-              </Roadview>
-            </Col>
-            <Col xs='4'>
-              <h2>{props.title}</h2>
-              <p>{props.sigun}</p>
-              <p>{props.tel}</p>
-              <p>{props.title_food}</p>
-              <p>({props.zip}) {props.address}<br /> {props.address_old}</p>
-            </Col>
-            <Col xs='4'>
-              <Map
-                center={{ 
-                  lat: 37.6820421, 
-                  lng: 126.7535498 
-                }}
-                style={{ 
-                  width: "100%", 
-                  height: "250px",
-                  borderRadius:'15px',
-                  border:'2px solid #333'
-                }} 
-                level={4}
-              >
-                <MapMarker position={{ lat: 37.6820421, lng: 126.7535498 }}>
-                  <div style={{
-                    width:'100%',
-                    borderRadius: '10px'
-                    }}>{props.title}</div>
-                </MapMarker>
-              </Map>
-            </Col>
-          </Row>
-        </ListGroupItem>
+    <Container>
+        <h1 className="text-center my-5"> 경기도 맛집 리스트 </h1>
+        <ListGroup>
+            {
+               rest.map( c => (
+                <RestListItem 
+                id={c.id}
+                sigun={c.sigun}
+                title={c.title}
+                tel={c.tel}
+                title_food={c.title_food}    
+                zip={c.zip}
+                address={c.address}
+                address_old={c.address_old}
+                latitude={c.latitude}
+                longitude={c.longitude}
+                radius={c.radius}
+                />   
+               ))    
+            }
+      
+        </ListGroup>
+    </Container>
   )
 }
 
-export default RestListItem
+export default RestList
