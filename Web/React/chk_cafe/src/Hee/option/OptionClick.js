@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
 //기본 옵션
+<<<<<<< HEAD
 let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵', '각얼음', '보통', 'NO'];
 let num=0;
 export const Count =(sum, count, setCount, id)=>{
@@ -9,9 +10,15 @@ export const Count =(sum, count, setCount, id)=>{
   const arr = count.join('');
   const arr2 = arr.replace(id, id+1, num);
   arr.split('')
+=======
+let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵'];
+>>>>>>> d76ca1f5f45007354d0fad90c375222134a999bc
 
-  if(sum === true) return count[id] < 10 ? setCount([...arr2]) : count;
-  else             return count[id] >  0 ? (setCount(count[id]), console.log(count)) : count;
+export const Count =(sum, count, setCount)=>{
+  console.log(count)
+
+  if(sum === true) return count < 10 ? (setCount(count+1)) : count;
+  else             return count >  0 ? (setCount(count-1)) : count;
   
 } 
 
@@ -31,8 +38,7 @@ export const Cup =(e)=>{
     $(this).addClass("H_active");
   })
 }
-//커피
-// 아이스커피
+
 export const IceSize =(e)=>{
   console.log(e);
   menuoption[3] = e;// =========================================================== 3
@@ -58,11 +64,35 @@ export const Deca =(e)=>{
     $(this).addClass("H_active");
   })
 }
+export const Suger =(e)=>{
+  console.log(e);
+  menuoption[7] = `당도 ${e}`;// =========================================================== 7
+  $("button#H_Suger").click(function(){
+    $("button#H_Suger").removeClass("H_active");
+    $(this).addClass("H_active");
+  })
+}
 
 
 
 
-export const menuSum=(name,setMenu)=>{
+export const menuSum=(name,setMenu, count0,count1,count2, count3)=>{
+  // 커피
+  if(count0 !== 0){
+    menuoption[4] = `샷추가 ${count0}번`;
+  }
+  if(count3 !== 0){
+    menuoption[5] = `펄 추가 ${count3}번`;
+  }
+  
+  if(count1 !== 0){
+    menuoption[6] = `헤이즐넛시럽 ${count1}번`;
+  }
+  if(count2 !== 0){
+    menuoption[7] = `바닐라시럽 ${count2}번`;
+  }
   menuoption[0] = name;
+    console.log([...menuoption])
     setMenu([...menuoption]);
+    
   }
