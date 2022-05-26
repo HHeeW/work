@@ -1,17 +1,18 @@
 import { Map, MapMarker } from 'react-kakao-maps-sdk'
 import LatLng from './LatLng'
-
+import './map.css'
 
 const Maps = (props) => {
-
   return (
     <>
       <Map // 지도를 표시할 Container
+        className='Map'
         center={{
           // 지도의 중심좌표
           lat: props.lat,
           lng: props.lng,
         }}
+        
         style={{
           // 지도의 크기
           float: "right",
