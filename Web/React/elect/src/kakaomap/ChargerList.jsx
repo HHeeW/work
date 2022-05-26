@@ -7,7 +7,7 @@ const ChargerList = (props) => {
     }
   return (
     <ListGroupItem>
-        <a onClick={Click}>
+        <a onClick={Click} style={{cursor:"pointer"}}>
             <p className='mx-3'>{props.title}<br/>
             {props.addr}<br/>
             {props.useTime}<br/>

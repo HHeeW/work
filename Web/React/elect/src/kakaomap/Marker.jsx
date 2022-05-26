@@ -30,7 +30,7 @@ const Marker = (props) => {
                 <div className="title h4 text-primary">
                     {props.name}
                   <span
-                    className="close text-danger"
+                    className="close text-danger mx-3"
                     onClick={() => setIsOpen(false)}
                     title="닫기"
                   >X</span>
