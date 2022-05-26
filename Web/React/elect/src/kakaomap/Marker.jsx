@@ -25,7 +25,7 @@ const Marker = (props) => {
           }}
       >{isOpen && (
         <CustomOverlayMap position={{lat: props.lat, lng: props.lng,}}>
-            <div className="wrap bg-white p-3 my-3">
+            <div className="wrap bg-white p-3">
               <div className="info">
                 <div className="title h4 text-primary">
                     {props.name}

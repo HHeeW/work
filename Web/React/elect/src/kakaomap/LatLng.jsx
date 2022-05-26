@@ -6,6 +6,7 @@ const LatLng = () => {
     let map = [];
   for(let i in Api.response.body.items.item){
     map[i] = <Marker 
+    key={i}
     lat={Api.response.body.items.item[i].lat} 
     lng={Api.response.body.items.item[i].lng}
     name={Api.response.body.items.item[i].statNm} 

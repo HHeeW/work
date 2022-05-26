@@ -1,16 +1,22 @@
-import React from 'react'
-// import Api from './Apit.json'
+import React, { useEffect, useState } from 'react'
 import Maps from './kakaomap/Maps'
-
+import Lists from './kakaomap/Lists'
 const App = () => {
-  // console.log(Api.response.body.items.item[0])
-  // for(let i in Api.response.body.items.item){
-  //   console.log(Api.response.body.items.item[i].addr)
-  // }
+useEffect(()=>{
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position){
+        setLat(position.coords.latitude);
+        setLng(position.coords.longitude);
+    });
+  }
+}, [])
+  const [lat, setLat] = useState(37.571076);
+  const [lng, setLng] = useState(126.99588);
+  console.log(lat, lng)
   return (
     <div>
-      <h1> 전기차 충선소 위치</h1>
-      <Maps/>
+      <Maps lat={lat} lng={lng}/>
+      <Lists setLat={setLat} setLng={setLng} />
     </div>
   )
 }
