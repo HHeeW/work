@@ -22,16 +22,6 @@
     display: inline-block;
     border: 1px solid #333;
 }
-.H_Sub_Basket_Box{
-    width: 280px;
-    position: relative;
-    top: 0;
-    margin: 0;
-    margin-left: 20px;
-    display: inline-block;
-    border: 1px solid #333;
-}
-
 /* ---------------------------------------------------------------- */
 .H_Menu_Box{
     width: 100%;
@@ -102,6 +92,15 @@
 
 
 /* ---------------------------------------------------------------- */
+.H_Sub_Basket_Box{
+    width: 280px;
+    position: relative;
+    top: 0;
+    margin: 0;
+    margin-left: 20px;
+    display: inline-block;
+    border: 1px solid #333;
+}
 .H_Sub_Basket{
     width: 280px;
     min-height: 300px;

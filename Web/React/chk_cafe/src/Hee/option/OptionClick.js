@@ -1,8 +1,9 @@
+import $ from 'jquery';
+
+//기본 옵션
 let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵'];
 
 export const Count =(sum, count, setCount)=>{
-  console.log(count)
-
   if(sum === true) return count < 10 ? (setCount(count+1)) : count;
   else             return count >  0 ? (setCount(count-1)) : count;
   
@@ -16,6 +17,7 @@ export const Size =(e)=>{
     $(this).addClass("H_active");
   })
   }
+  
 export const Cup =(e)=>{
   console.log(e);
   menuoption[2] = e;// =========================================================== 2
@@ -65,17 +67,17 @@ export const Suger =(e)=>{
 export const menuSum=(name,setMenu, count0,count1,count2, count3)=>{
   // 커피
   if(count0 !== 0){
-    menuoption[4] = `샷추가 ${count0}번`;
+    menuoption[6] = `샷추가 ${count0}번`;
   }
   if(count3 !== 0){
     menuoption[5] = `펄 추가 ${count3}번`;
   }
   
   if(count1 !== 0){
-    menuoption[6] = `헤이즐넛시럽 ${count1}번`;
+    menuoption[7] = `헤이즐넛시럽 ${count1}번`;
   }
   if(count2 !== 0){
-    menuoption[7] = `바닐라시럽 ${count2}번`;
+    menuoption[8] = `바닐라시럽 ${count2}번`;
   }
   menuoption[0] = name;
     console.log([...menuoption])

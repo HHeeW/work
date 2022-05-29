@@ -1,6 +1,6 @@
 import * as Click from './OptionClick.js';
 
-const OptionBasic  = () => {
+const OptionBasic  = (props) => {
   return (
     <>
       <div className="H_Option_Cafe  H_Flex_Around">
@@ -25,20 +25,6 @@ const OptionBasic  = () => {
             일회용컵 
           </button>
         </div>
-      </div>
-      <div className="H_Option_Cafe H_Flex_Around">
-          <div>
-            <h2>샷 추가</h2> 
-            <button onClick={()=>Click.Count(false, props.count0, props.setCount0)}>-</button> 
-            <span>{props.count0}</span> 
-            <button onClick={()=>Click.Count(true, props.count0, props.setCount0)}>+</button>
-          </div>
-          <div>
-            <h2>펄 추가</h2> 
-            <button onClick={()=>Click.Count(false, props.count3, props.setCount3)}>-</button> 
-            <span>{props.count3}</span> 
-            <button onClick={()=>Click.Count(true, props.count3, props.setCount3)}>+</button>
-          </div>
       </div>
     </>
   )

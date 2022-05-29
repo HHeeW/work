@@ -4,10 +4,11 @@ import OptionKinds from './OptionKinds';
 import * as Click from './OptionClick.js';
 import OptionBasic from './OptionBasic';
 import Swal from 'sweetalert2'
+import BasketSub from './BasketSub';
 
 const Option = (props) => {
   // const[kinds, setKinds] = useState('icecoffee');
-  const kinds = 'tea';
+  const kinds = 'icecoffee';
 
   const [count0, setCount0] = useState(0);
   const [count1, setCount1] = useState(0);
@@ -26,6 +27,7 @@ const Option = (props) => {
   }
 
   return (
+    <>
       <div className="H_Container">
         <div className="H_Menu_Box">
           <div className="H_Menu_Img">
@@ -50,6 +52,8 @@ const Option = (props) => {
           <button onClick={(e)=>{viewALert('bottom-right')}}> 장바구니 버튼 </button>
         </div>
       </div>
+        <BasketSub menu={props.menu}/>
+        </>
   )
 }
 
