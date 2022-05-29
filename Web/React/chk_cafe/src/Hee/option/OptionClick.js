@@ -1,18 +1,4 @@
-import $ from 'jquery';
-
-//기본 옵션
-<<<<<<< HEAD
-let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵', '각얼음', '보통', 'NO'];
-let num=0;
-export const Count =(sum, count, setCount, id)=>{
-  num = count[id];
-  num++;
-  const arr = count.join('');
-  const arr2 = arr.replace(id, id+1, num);
-  arr.split('')
-=======
 let menuoption=['name', 'Grande(473ml, 16oz)', '일회용컵'];
->>>>>>> d76ca1f5f45007354d0fad90c375222134a999bc
 
 export const Count =(sum, count, setCount)=>{
   console.log(count)
