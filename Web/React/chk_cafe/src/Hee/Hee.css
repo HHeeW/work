@@ -10,7 +10,7 @@
     margin-top: 300px;
 }
 .H_active{
-    background-color: aqua;
+    background-color: rgb(250, 100, 100);
 }
 /* ---------------------------------------------------------------- */
 .H_Container{
@@ -21,6 +21,12 @@
     text-align: center;
     display: inline-block;
     border: 1px solid #333;
+}
+.H_Container button{
+    padding: 5px 10px;
+    margin: 0px 10px;
+    border-radius: 15px;
+    cursor: pointer;
 }
 /* ---------------------------------------------------------------- */
 .H_Menu_Box{
@@ -51,6 +57,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(250, 100, 100);
     border: 1px solid #333;
 }
 .H_Menu_Name>h1{
@@ -66,6 +73,7 @@
 /* ---------------------------------------------------------------- */
 .H_Option_Box{
     width: 100%;
+    background-color: rgb(250, 250, 100);
     border: 1px solid #333;
 }
 .H_Option_Cafe{
@@ -80,6 +88,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(250, 250, 100);
     border: 1px solid #333;
 }
 
@@ -101,6 +110,15 @@
     display: inline-block;
     border: 1px solid #333;
 }
+.H_Sub_Basket_Box button{
+    padding: 5px 10px;
+    margin: 0px;
+    border-radius: 15px;
+}
+.H_Sub_Basket_Box button:hover{
+    cursor: pointer;
+    background-color: rgb(250, 100, 100);
+}
 .H_Sub_Basket{
     width: 280px;
     min-height: 300px;
@@ -108,6 +126,12 @@
     position: -webkit-sticky;
     top: 20px;
     border: 1px solid #333;
+}
+.H_Sub_basket_Text{
+    padding: 15px;
+}
+.H_Sub_basket_Text>h2{
+    margin-bottom: 0;
 }
 
 /* ---------------------------------------------------------------- */

@@ -1,6 +1,16 @@
 import React from 'react'
 import './basket.css'
+
+let menu = [];
 const ShoppingBasket = (props) => {
+  for(let i of props.menu){
+    if(i !== undefined){
+      console.log(i);
+      menu.push(i + " | ");
+    }
+  }
+  menu.push(<br/>)
+
   return (
     <div className="H_full_Container">
         <div className="H_basket_Box">
@@ -12,13 +22,11 @@ const ShoppingBasket = (props) => {
               <h1>{props.menu[0]}</h1>
             </div>
             <div className="H_Menu_Detail">
-              <p>음료 사이즈 : {props.menu[1]}</p>
-              <p>컵 종류 : {props.menu[2]}</p>
-              <p>얼음 종류 : {props.menu[3]}</p>
-              <p>얼음 량 : {props.menu[4]}</p>
+              <p>{menu}</p>
             </div>
           </div>
         </div>
+        <button>결재하기</button>
     </div>
   )
 }
