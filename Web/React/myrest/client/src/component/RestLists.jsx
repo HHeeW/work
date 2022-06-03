@@ -1,5 +1,8 @@
+
 import styled from '@emotion/styled'
+import {Roadview} from 'react-kakao-maps-sdk'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import { useEffect, useState } from 'react';
 
 const ABlock = styled.div`
     margin:15px 20px 10px;
@@ -23,14 +26,26 @@ const AreaBox = styled.div`
     padding-right:40px
 `
 
-const RestLists = () => {
+const RestLists = ({id, sigun, title, tel, title_food, zip, address, adress_old, lati, long, radius}) => {
+    const [lat, setLat]=useState('');
+    const [lon, setLon]=useState('')
+    const [rad, setRad]=useState('');
+
+    useEffect(()=>{
+        setLat(lati);
+        setLon(long);
+        setRad(radius);
+    },[])
+    
   return (
     <ABlock>
-        <ImgItem><img src="https://picsum.photos/id/237/220/180" alt="" /></ImgItem>
+        <ImgItem>
+            <Roadview position={{lat: lat, lng: lon, radius: rad}} styled={{width:"100%", height: "156px", borderRadius:"15px", }}/>
+        </ImgItem>
         <TypeBox>
-            <h2>에노크 샌드위치 맛집</h2>
-            <p>신선한재료, 푸짐한 혼합</p>
-            <p>우수상점</p>
+            <h2>{title}</h2>
+            <p>{title_food}</p>
+            <p>{sigun}</p>
         </TypeBox>
         <AreaBox>
             <LocationOnOutlinedIcon sx={{fontSize:40}}/>

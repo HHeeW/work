@@ -1,6 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = reauire('cors');
 const app = express();
+
+let corsOptions = {
+    origin: "http://localhost:4000"
+}
+
+app.use(cors(corsOptions));
 const port = process.env.PORT || 4000;
 
 app.use(bodyParser.json());

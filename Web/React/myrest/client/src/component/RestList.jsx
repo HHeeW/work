@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import styled from 'styled-components'
 import RestLists from './RestLists'
 import { Grid } from '@mui/material'
+import RestMap from './RestMap'
 
 const Item = styled.div`
    background:#fff;
@@ -31,6 +33,13 @@ const TopList = styled.div`
 `
 
 const RestList = () => {
+  const [rest, setRest] = useState([]);
+
+  useEffect(()=>{
+    axios.get('./json/rest.json')
+    .then(rs=> setRest(...rest, rs.data))
+  }, [])
+
   return (
     <>  
           <Grid container spacing={2}>
@@ -39,11 +48,40 @@ const RestList = () => {
                     <TopList>
                       옵션
                     </TopList>
-                    <RestLists />
+                    {
+                      rest.map(c=>(
+                        <RestLists 
+                        key={c.id}
+                        id={c.id}
+                        sigun={c.sigun}
+                        title={c.title}
+                        tel={c.tel}
+                        title_food={c.title_food}
+                        zip={c.zip}
+                        adderss={c.adderss}
+                        address_old={c.address_old}
+                        lati={c.lat}
+                        long={c.lon}
+                        radius={c.radius}
+                        />
+                      ))
+                      
+                    }
+                    
                  </ListItem>
              </Grid>
              <Grid item xs={4}>
-                 <Item>테스트</Item>
+                 <Item>
+                    {
+                      rest.map(c=>(
+                        <RestMap
+                          key={"map"+c.id}
+                          lati={c.lat}
+                          long={c.lon}
+                        />
+                      ))
+                    }
+                  </Item>
              </Grid>  
         </Grid>  
     </>
