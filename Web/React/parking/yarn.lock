@@ -2516,7 +2516,7 @@ asap@~2.0.6:
   resolved "https://registry.npmjs.org/asap/-/asap-2.0.6.tgz"
   integrity sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==
 
-asn1@~0.2.3:
+asn1@^0.2.6, asn1@~0.2.3:
   version "0.2.6"
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.6.tgz#0d3a7bb6e64e02a90c0303b31f292868ea09a08d"
   integrity sha512-ix/FxPn0MDjeyJ7i/yoHGFt/EX6LyNbxSEhPPXODPL+KB0VPk86UYfL0lMdy+KCnv+fmvIzySwaK5COwqVbWTQ==
@@ -5949,6 +5949,11 @@ json5@^2.1.2, json5@^2.2.0, json5@^2.2.1:
   resolved "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz"
   integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
 
+json@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/json/-/json-11.0.0.tgz#2e84493134e2f42c131165aa22a124df38b3a3ee"
+  integrity sha512-N/ITv3Yw9Za8cGxuQqSqrq6RHnlaHWZkAFavcfpH/R52522c26EbihMxnY7A1chxfXJ4d+cEFIsyTgfi9GihrA==
+
 jsonfile@^6.0.1:
   version "6.1.0"
   resolved "https://registry.npmjs.org/jsonfile/-/jsonfile-6.1.0.tgz"
@@ -5981,10 +5986,10 @@ jsprim@^1.2.2:
     array-includes "^3.1.4"
     object.assign "^4.1.2"
 
-kakao.maps.d.ts@^0.1.31:
-  version "0.1.31"
-  resolved "https://registry.yarnpkg.com/kakao.maps.d.ts/-/kakao.maps.d.ts-0.1.31.tgz#da1d352c9bd63b5cc5d08c19d62996fefb3eaca5"
-  integrity sha512-+fLv3yecc+XR3IKgJSqnYwkAz9ai7M5QMV6wz2J0FDyww9asF9ZA7GE28cx6SURQgauPGcwk0/DyNYXqmuLDgg==
+kakao.maps.d.ts@^0.1.32:
+  version "0.1.32"
+  resolved "https://registry.yarnpkg.com/kakao.maps.d.ts/-/kakao.maps.d.ts-0.1.32.tgz#064880506706feb39eb641b0a7a71e5907f67cf9"
+  integrity sha512-xQULJE5XDOjfeK4Ba04AH4l/raTvHEoX72cbBhCUp6nS9rpJ7tEQgJP2A68kwTesnK5ug0Pa9LVEp+HfYHBsrg==
 
 kind-of@^6.0.2:
   version "6.0.3"
@@ -7535,12 +7540,12 @@ react-is@^18.0.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-18.1.0.tgz"
   integrity sha512-Fl7FuabXsJnV5Q1qIOQwx/sagGF18kogb4gpfcG4gjLBWO0WDiiz1ko/ExayuxE7InyQkBLkxRFG5oxY6Uu3Kg==
 
-react-kakao-maps-sdk@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-kakao-maps-sdk/-/react-kakao-maps-sdk-1.1.0.tgz#970f822df99f43c01a13151b930f68296932ebdf"
-  integrity sha512-96m4ipap2KToy1OImy2SXI0OWLAfZuXydbaazDD66d4SKybghVSoEqHW7afYdOe5ptOP023KHvZl+9eETHx3og==
+react-kakao-maps-sdk@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-kakao-maps-sdk/-/react-kakao-maps-sdk-1.1.1.tgz#1839853ccf184a579561edf65e6f5381f0d1dece"
+  integrity sha512-x7UEBC0qedBZOBJvCXUoxT4p6iH4t4lj8MKgo2QwGPJUsTi4njbhWDY2HYlNty7a42q1kL8gzeYouJjbg1ylAA==
   dependencies:
-    kakao.maps.d.ts "^0.1.31"
+    kakao.maps.d.ts "^0.1.32"
 
 react-popper@^2.2.4:
   version "2.3.0"
@@ -7640,10 +7645,10 @@ react@^18.1.0:
   dependencies:
     loose-envify "^1.1.0"
 
-reactstrap@^9.0.2:
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-9.0.2.tgz#64bb034c2a92574e6ccd41bec0b428125ff0504e"
-  integrity sha512-vvSy/dX7UL5fsfu4WMLnPYfrBS/G2YQM37nff1caeAlMVqzg6NV8G7RRd8PWu8RqtCSeEjDn5ILF0ZmE2ZrHuw==
+reactstrap@^9.0.3:
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-9.0.3.tgz#c5086576f466e23c59f534a0ec0eba9d179c0b8c"
+  integrity sha512-PoczGgSvx8a1X5vsdz92OgEuGnnFmcHOv1KwD/ELTC86vzBBnvhDOfU5t8eS4NSv1uFGeG1ERev2obpAZvsW8Q==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@popperjs/core" "^2.6.0"
@@ -9438,6 +9443,11 @@ xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/xml-name-validator/-/xml-name-validator-3.0.0.tgz"
   integrity sha512-A5CUptxDsvxKJEU3yO6DuWBSJz/qizqzJKOMIfUJHETbBw/sFaDxgd6fxm1ewUaM0jZ444Fc5vC5ROYurg/4Pw==
+
+xml@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/xml/-/xml-1.0.1.tgz#78ba72020029c5bc87b8a81a3cfcd74b4a2fc1e5"
+  integrity sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=
 
 xmlchars@^2.2.0:
   version "2.2.0"

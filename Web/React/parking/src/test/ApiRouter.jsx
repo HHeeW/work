@@ -1,7 +1,5 @@
 /* NodeJs 12 샘플 코드 */
 
-const express = request("express");
-const router = express.Router();
 var request = require('request');
 
 var url = 'http://apis.data.go.kr/B552584/EvCharger/getChargerStatus';
@@ -11,7 +9,7 @@ queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent(
 queryParams += '&' + encodeURIComponent('period') + '=' + encodeURIComponent('5'); /* */
 queryParams += '&' + encodeURIComponent('zcode') + '=' + encodeURIComponent('11'); /* */
 
-router.get("/", (req, res)=>{
+
     request({
         url: url + queryParams,
         method: 'GET'
@@ -20,7 +18,6 @@ router.get("/", (req, res)=>{
         console.log('Headers', JSON.stringify(response.headers));
         console.log('Reponse received', body);
     });
-})
 
 
 
