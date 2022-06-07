@@ -5,7 +5,7 @@ const timeStampFormat = ()=>{
     return moment().format('YYYY-MM-DD HH:mm:ss.SSS ZZ')
 }
 
-let logger = winston.createLogger({
+const logger = winston.createLogger({
     transports: [
         new (winstonDaily)({
             name: 'info-file',
