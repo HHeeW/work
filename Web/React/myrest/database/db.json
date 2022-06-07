@@ -1,0 +1,7 @@
+{
+    "host" : "localhost",
+    "user" : "root",
+    "password" : "3223",
+    "port" : 3306,
+    "database" : "smapleDB"
+}
