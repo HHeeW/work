@@ -18,7 +18,7 @@ useEffect(()=>{
     });
   }
 }, [])
-console.log(myLng, myLng)
+console.log(myLat, myLng)
   return (
     <div>
       <Maps lat={lat} lng={lng} MyLat = {myLat} MyLng={myLng} />

@@ -21,7 +21,8 @@ const Maps = (props) => {
         }}
         level={4} // 지도의 확대 레벨
       >
-        <LatLng/>
+        <LatLng MyLat = {props.MyLat} MyLng={props.MyLng} />
+        
         <MapMarker // 마커를 생성합니다
           position={{ lat: props.MyLat, lng: props.MyLng }}
           image={{
