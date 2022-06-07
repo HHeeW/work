@@ -1,22 +1,19 @@
-const participant = ["mislav", "stanko", "mislav", "ana"];
-const completion = ["stanko", "ana", "mislav"];
+const participant = ["marina", "josipa", "nikola", "vinko", "filipa"];
+const completion = ["josipa", "filipa", "marina", "nikola"];
 
 
 
 function solution(participant, completion) {
-    var answer = '';
-    participant.map((number, index, source)=> {
-        console.log(number);
-        console.log(index);
-        // console.log(source);
+    completion.map((number, index)=> {
+        console.log(number)
+        for(let i = 0; i < participant.length; i++){
+            if(participant[i] === number){
+                console.log(participant[i])
+                participant[i] = ''
+                break;
+            }
+        }
     })
-
-
-    // for(let i of participant){
-    //     for(let j of participant)
-    //     console.log(i)
-    //     console.log(completion.includes(i))
-    // }
-    return answer;
+    return participant.filter((e)=> e !== '').toString();
 }
 console.log(solution(participant, completion))
