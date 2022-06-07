@@ -58,9 +58,9 @@ const RestLists = ({
         <ImgItem>
           <Roadview 
               position={{
-                 lat: myloc.lat,
-                 lng: myloc.lon,
-                 radius: myloc.rad
+                 lat: loc.lat,
+                 lng: loc.lon,
+                 radius: loc.rad
               }}
               style={{
                  width:"100%",
