@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
-import Option from './Hee/option/Option'
-import ShoppingBasket from './Hee/basket/ShoppingBasket'
-
+import HPay from './Hee/HPay'
+import Test from './Hee/Test'
 import './Hee/Hee.css'
 import {
   BrowserRouter,
@@ -10,13 +8,12 @@ import {
 } from "react-router-dom";
 
 const App = () => {
-  let [menu, setMenu] = useState([]);
   return (
     <div className='H_Flex_Center'>
       <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Option setMenu={setMenu} menu={menu}/>}/>
-            <Route path='/basket' element={<ShoppingBasket menu={menu}/>}/>
+            <Route path='/' element={<HPay />}/>
+            <Route path='/test' element={<Test />}/>
           </Routes>
       </BrowserRouter>
     </div>
