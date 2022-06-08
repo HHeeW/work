@@ -7,6 +7,16 @@ const Login = () => {
     const onSubmit = () => {
         console.log('아이디 : ' + userId)
         console.log('비밀번호 : ' + userPass)
+        axios.post('/user_inform/onLogin', null,{
+            params: {
+                'user_id' : userId,
+                'user_pw' : userPass
+            }
+        })
+        .then(res => {
+            console.log(res);
+        })
+        .catch()
     }
 
     const handleId = (e)=>{
