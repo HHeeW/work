@@ -9,6 +9,7 @@ const H_Pay = () => {
         <div className='H_Product_Title'> 상 품 이 름 </div>
         <div className='H_Product_Num'> 상 품 수 량 </div>
         <div className='H_Product_Price'> 상 품 가 격 </div>
+        <div className='H_Product_Cancel'></div>
       </div>
       <HList/>
       <div>주문 가격</div>
