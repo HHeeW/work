@@ -1,23 +1,31 @@
 const express = require('express');
 const http = require('http');
-const static = require('static');
+const static = require('serve-static');
 const path = require('path')
 const { nextTick } = require('process');
 const { Router } = require('express');
 const app = express();
+const bodyParser = require('body-parser')
+const router = express.Router();
+
+
 //request(요청) response(응답)
 app.set('port', process.env.PORT || 4000);
-app.use(static(path))
+app.use(static(path.join(__dirname, 'public')))
 
-app.use((req,res, next)=>{
-    console.log('첫 번쨰 미들웨어에서 요청을 처리합니다.');
-    console.log(static(path.join(__dirname, 'public')))
-    Router.route('/porcess/login').get((req, res)=>{
-        let userId = req.query.id;
-        let userName = req.query.name;
+app.use (bodyParser.url.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+// app.use((req,res, next)=>{
+//     console.log('첫 번쨰 미들웨어에서 요청을 처리합니다.');
+//     console.log(static(path.join(__dirname, 'public')))
+    router.route('/porcess/login').get((req, res)=>{
+        let userId = req.body.id || req.query.id;
+        let userName = req.body.name || req.query.name;
+        let level = req.params.level;
         res.writeHead('200', {'Content-Type': 'text/html;charset=utf8'});
         res.write(`<h1>첫 번째 미들웨어가 보내준 정보 </h1>`);
-        res.end(`<p>이름: ${userName} 아이디: ${userId}`);
+        res.end(`<p>이름: ${userName} 아이디: ${userId} 권한: ${level}`);
     });
     app.use('/').path();
 
@@ -28,7 +36,7 @@ app.use((req,res, next)=>{
     //     char: '포악함'
     // }
     // next();
-});
+// });
 
 // app.use((req, res)=>{
 //     console.log('두 번째 미들웨어에서 요청을 처리합니다.');

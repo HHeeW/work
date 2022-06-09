@@ -5,8 +5,8 @@ import Marker from './Marker';
 const LatLng = (props) => {
   let map = [];
   for(let i in Api.item){
-    if(((props.MyLat + 0.2) > Api.item[i].lat && Api.item[i].lat > (props.MyLat - 0.2)) && 
-        ((props.MyLng + 0.2) > Api.item[i].lng && Api.item[i].lng > (props.MyLng - 0.2))){
+    if(((props.MyLat + 0.1) > Api.item[i].lat && Api.item[i].lat > (props.MyLat - 0.1)) && 
+        ((props.MyLng + 0.1) > Api.item[i].lng && Api.item[i].lng > (props.MyLng - 0.1))){
       console.log("개")
       map[i] = <Marker 
       key={i}

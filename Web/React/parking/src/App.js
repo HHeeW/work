@@ -17,12 +17,12 @@ useEffect(()=>{
       setLng(position.coords.longitude);
     });
   }
-}, [])
+}, [myLat, myLng])
 // console.log(myLat, myLng)
   return (
     <div>
       <Maps lat={lat} lng={lng} MyLat = {myLat} MyLng={myLng} />
-      <Lists setLat={setLat} setLng={setLng} />
+      <Lists setLat={setLat} setLng={setLng} MyLat = {myLat} MyLng={myLng} />
     </div>
   )
 }

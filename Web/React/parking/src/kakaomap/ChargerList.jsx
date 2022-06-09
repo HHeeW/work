@@ -7,14 +7,14 @@ const ChargerList = (props) => {
     }
   return (
     <ListGroupItem>
-        <a onClick={Click} style={{cursor:"pointer"}}>
+        <p href='#' onClick={Click} style={{cursor:"pointer", margin: "20px auto", borderBottom: "1px solid #333"}}>
             <p className='mx-3'>
-              {props.title}<br/>
-              {props.addr}<br/>
-              {props.useTime}<br/>
-              {props.chgerType}
+            <h3>{props.title}</h3>
+            {props.addr}<br/>
+              이용 시간 : {props.useTime}<br/>
+              충전 종류 : {props.chgerType}
             </p>
-        </a>
+        </p>
     </ListGroupItem>
   )
 }
