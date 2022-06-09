@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HList from './HList'
 
 const H_Pay = () => {
+  const [totalPay, setTotalPay] = useState(0);
+  console.log(totalPay)
   return (
     <div className='H_Pay'>
       <div className='H_Product_Box'>
@@ -11,8 +13,8 @@ const H_Pay = () => {
         <div className='H_Product_Price'> 상 품 가 격 </div>
         <div className='H_Product_Cancel'></div>
       </div>
-      <HList/>
-      <div>주문 가격</div>
+      <HList totalPay={totalPay} setTotalPay={setTotalPay} />
+      <div>{totalPay}원</div>
     </div>
   )
 }

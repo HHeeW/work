@@ -1,6 +1,6 @@
 {
          "coffeeList" : [
-            {"id":1, "url":"image/coffee/에소프레소.png" ,"title": "에소프레소","desc":"CHK만의 특별한 원두로스팅으로 고소하고 부드러운 맛을 느낄 수 있는 에스프레소"},
+            {"id":1, "url":"image/coffee/에소프레소.png" ,"title": "에소프레소","desc":"CHK만의 특별한 원두로스팅으로 고소하고 부드러운 맛을 느낄 수 있는 에스프레소", "price": 5000},
             {"id":2, "url":"image/coffee/(hot)아메리카노.png" ,"title": "아메리카노 (HOT)","desc":"고소하고 부드러운 에스프레소에 따뜻한 물을 넣어 깔끔한 맛을 느낄 수 있는 커피"},
             {"id":3, "url":"image/coffee/(hot)라떼.png" ,"title": "카페라떼 (HOT)","desc" : "에스프레소와 신선한 스팀 밀크가 만나 부드러워진 커피 위에 우유 거품을 살짝 얹은 대표적인 커피 라떼"},
             {"id":4, "url":"image/coffee/(hot)바닐라.png" ,"title": "바닐라라떼 (HOT)","desc" : "부드러운 우유와 달콤한 바닐라가 조화를 이루어 달콤한 커피 라떼"},
@@ -16,7 +16,7 @@
             {"id":14, "url":"image/coffee/콜드브루.png" ,"title": "콜드브루","desc" : "20시간 저온 침출 방식의 CHK만의 노하우가 담긴 스페셜 콜드브루"}
         ],
         "TeaList" : [
-            {"id":1, "url":"image/Non coffee/(hot)얼그레이티.png" ,"title": "얼그레이티 (HOT)","desc":"꽃향 가득한 라벤더와 베르가못 향이 진한 홍차와 블렌딩된 향긋한 블랙 티"},
+            {"id":1, "url":"image/Non coffee/(hot)얼그레이티.png" ,"title": "얼그레이티 (HOT)","desc":"꽃향 가득한 라벤더와 베르가못 향이 진한 홍차와 블렌딩된 향긋한 블랙 티", "price": 6000},
             {"id":2, "url":"image/Non coffee/(hot)우롱티.png" ,"title": "우롱티 (HOT)","desc":"묵직하고 깊은 향을 간직한 고소한 우롱차"},
             {"id":3, "url":"image/Non coffee/(hot)유자티.png" ,"title": "유자티 (HOT)","desc":"국내산 고흥 유자를 사용하여 만든 과육이 풍부한 달콤한 과일차"},
             {"id":4, "url":"image/Non coffee/(hot)카모마일.png" ,"title": "카모마일 (HOT)","desc":"캐모마일과 레몬 그라스, 레몬밤, 히비스커스 등 블렌딩되어 은은하고 차분한 향이 기분을 좋게하는 허브 티"},
@@ -55,7 +55,7 @@
             {"id":6, "url":"image/desert/블루베리베이글.png" ,"title": "블루베리 베이글","desc":"플레인 베이글에 블루베리의 상큼한 풍미를 더한 매력적인 베이글"}
         ],
         "desert":[
-            {"id":1, "url":"image/desert/치즈.png" ,"title": "치즈 조각케이크","desc":"부드럽고 촉촉한 식감과 진한 크림 치즈 맛의 구움 치즈케이크"},
+            {"id":1, "url":"image/desert/치즈.png" ,"title": "치즈 조각케이크","desc":"부드럽고 촉촉한 식감과 진한 크림 치즈 맛의 구움 치즈케이크", "price": 5500},
             {"id":2, "url":"image/desert/딸기조각.png" ,"title": "딸기 생크림 조각케이크","desc":"부드러운 생크림과 달콤한 딸기가 샌딩된 조각 케이크"},
             {"id":3, "url":"image/desert/쿠ㅋㅡ.png" ,"title": "쿠키앤크림 ","desc":"진한 치즈 무스크림 사이로 바삭하고 촉촉한 쿠키가 토핑된 떠먹는 케이크"},
             {"id":4, "url":"image/desert/티라미수.png" ,"title": "티라미수 케이크","desc":"커피에 적신 촉촉한 시트와 마스카포네 치즈크림을 간편하게 떠먹는 타입의 티라미수"},

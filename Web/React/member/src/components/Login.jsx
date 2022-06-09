@@ -8,6 +8,9 @@ const Login = () => {
   const onSubmit = () => {
       console.log('아이디: ' + userId);
       console.log('비밀번호: ' + userPass);
+      if(userId == ''){
+          alert('아이디를 입력하세요')
+      }
       axios.post('/user_inform/onLogin', null, {
           params: {
               'user_id' : userId,
@@ -28,9 +31,8 @@ const Login = () => {
   const handlePass = (e) => {
     setUserPass(e.target.value)
 }
-
   return (
-    <div>
+    <div className='formbox'>
        <h2>LOGIN</h2>
        <div>
            <label>ID: </label>

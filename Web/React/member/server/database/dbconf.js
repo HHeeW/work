@@ -1,8 +1,8 @@
 const mysql = require('mysql');
-const database = mysql.createPool({
+const dbfonf = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'good6617',
-    database: 'study01'
+    password: '3223',
+    database: 'smapleDB'
 });
-module.exports = database;
+module.exports = dbfonf;
