@@ -14,7 +14,7 @@ const H_Pay = () => {
         <div className='H_Product_Cancel'></div>
       </div>
       <HList totalPay={totalPay} setTotalPay={setTotalPay} />
-      <div>{totalPay}원</div>
+      <div className='H_Product_Total'><h3>총 가격: {totalPay}원</h3></div>
     </div>
   )
 }

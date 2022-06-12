@@ -90,6 +90,16 @@
     background-color: rgb(250, 100, 100);
 }
 
+.H_Product_Total{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+.H_Product_Total h3{
+    margin-right: 50px;
+}
 
 
 .H_Busket_Box{
