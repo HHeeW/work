@@ -10,6 +10,7 @@ const errorHandler = require('errorhandler');
 const expressErrorHandler = require('express-error-handler');
 
 const app = express();
+
 //router 등록
 const router = express.Router()
 
@@ -35,6 +36,15 @@ app.use(expressSession({
 
 //라우터 미들웨어 등록
 app.use('/', router);
+
+//에러 메시지
+expressErrorHandler({
+    static: {
+        '404' : './public/404.html'
+    }
+})
+app.use(expressErrorHandler.httpError(404));
+app.use(errorHandler);
 
 //서버 실행
 http.createServer(app).listen(app.get('port'), ()=>{
