@@ -11,8 +11,8 @@ const RestList = () => {
   useEffect(()=>{
       axios.get('./json/rest.json')
       .then(rs => setRest(...rest, rs.data))
-      //.then(rs=>console.log(rs.data))
-  }, []);
+      // .then(rs=>console.log(rs.data))
+  }, [rest]);
     
   return (
     <Container>
@@ -25,17 +25,17 @@ const RestList = () => {
             {
                rest.map( c => (
                 <RestListItem 
-                id={c.id}
-                sigun={c.sigun}
-                title={c.title}
-                tel={c.tel}
-                title_food={c.title_food}    
-                zip={c.zip}
-                address={c.address}
-                address_old={c.address_old}
-                latitude={c.latitude}
-                longitude={c.longitude}
-                radius={c.radius}
+                  id={c.id}
+                  sigun={c.sigun}
+                  title={c.title}
+                  tel={c.tel}
+                  title_food={c.title_food}    
+                  zip={c.zip}
+                  address={c.address}
+                  address_old={c.address_old}
+                  latitude={c.latitude}
+                  longitude={c.longitude}
+                  radius={c.radius}
                 />   
                ))    
             }
