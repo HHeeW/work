@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container, ListGroup } from 'reactstrap'
 import RestListItem from './RestListItem'
 import axios from 'axios'
-import { Outlet } from '@mui/icons-material'
+// import { Outlet } from '@mui/icons-material'
 import {Link} from 'react-router-dom'
 
 const RestList = () => {
@@ -10,16 +10,16 @@ const RestList = () => {
 
   useEffect(()=>{
       axios.get('./json/rest.json')
-      .then(rs => setRest(...rest, rs.data))
+      .then(rs => setRest([...rest], rs.data))
       // .then(rs=>console.log(rs.data))
   }, [rest]);
-    
+  
   return (
     <Container>
         <h1 className="text-center my-5"> 경기도 맛집 리스트 </h1>
         <div className='text-right mb-2'>
             <Link to="/write" className='write'>글쓰기</Link>
-            <Outlet/>
+            {/* <Outlet/> */}
          </div>
         <ListGroup>
             {

@@ -4,7 +4,7 @@ import {ListGroupItem, Row, Col } from 'reactstrap'
 import { Restaurant , MyLocation, Call, MenuBook,  MapsHomeWork } from '@mui/icons-material'
 
 const RestListItem = (props) => {
-
+    console.log(props)
   const [lat, setLat] = useState('');
   const [lon, setLon] = useState('');
   const [radius, setRadus] = useState('');
@@ -13,7 +13,7 @@ const RestListItem = (props) => {
      setLat(props.latitude);
      setLon(props.longitude);
      setRadus(props.radius);
-  }, [])  
+  }, [props])  
 
   return (
     <ListGroupItem className="py-4 px-4">
