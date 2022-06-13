@@ -6,6 +6,10 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 
+//파일 가져오기
+const {login, product, logout } = require('./module/module');
+const {setUserCookie, showCookie} = require('./module/cookie_module')
+
 const app = express();
 
 //포트설정
@@ -30,69 +34,19 @@ app.use(expressSession({
 //router
 const router = express.Router();
 
-router.route('/process/login/:name').post((req,res)=>{
-    console.log('process/login 호출');
-    let userid = req.body.userid || req.query.userid;
-    let userpass = req.body.userpass || req.query.userpass;
-    let username = req.params.name;
-    if(req.session.user) {
-        console.log('이미 로그인 되어 있습니다.');
-        res.redirect('/www/product.html');
-    }else{
-        req.session.user = {
-            id: userid,
-            name: username,
-            level: 100
-        };
-        res.writeHead(200, {"Content-type": "text/html;charset=utf8"});
-        res.write(`
-            <h1>로그인 성공</h1>
-            <p>ID: ${userid}</p>
-            <p><a href="/product">상품 페이지로 이동</a></p>
-        `);
-        res.end();
-    }
-});
+router.route('/process/login/:name').post(login);
 
 //
-router.route('/product').get((req, res)=>{
-    console.log('product 호출됨');
-    if(req.session.user) {
-         res.redirect('/www/product.html');
-    }else{
-        res.redirect('/www/login.html');
-    };
-})
+router.route('/product').get(product)
 
 //로그아웃
-router.route('/logout').get((req,res)=>{
-    if(req.session.user) {
-        console.log('로그아웃 합니다.');
-        req.session.destroy((err)=>{
-            if(err) {
-                console.log('세션 삭제 시 에러가 발생했습니다.');
-                return;
-            }
-            console.log('세션 삭제 성공');
-            res.redirect('/product');
-        })
-    }
-});
+router.route('/logout').get(logout);
 
 //쿠키저장
-router.route('/setUserCookie').get((req, res)=>{
-    res.cookie('user', {
-        id:"hong",
-        name:"홍길동",
-        power: 10000
-    });
-    res.redirect('/showCookie');
-});
+router.route('/setUserCookie').get(setUserCookie);
 
 //쿠키확인
-router.route('/showCookie').get((req, res)=>{
-    res.send(req.cookies);
-});
+router.route('/showCookie').get(showCookie);
 
 //라우터 미들웨어 등록
 app.use('/', router);
