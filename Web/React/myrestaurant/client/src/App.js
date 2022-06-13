@@ -1,4 +1,3 @@
-import React from 'react'
 import RestList from './component/RestList';
 import RestWrite from './component/RestWrite';
 import { BrowserRouter, Routes, Route} from 'react-router-dom'

@@ -1,63 +1,48 @@
 import React, { useState, useEffect } from 'react'
-import { Roadview , Map} from 'react-kakao-maps-sdk'
-import {ListGroupItem, Row, Col } from 'reactstrap'
-import { Restaurant , MyLocation, Call, MenuBook,  MapsHomeWork } from '@mui/icons-material'
+import { Container, ListGroup } from 'reactstrap'
+import RestListItem from './RestListItem'
+import axios from 'axios'
+import { Outlet } from '@mui/icons-material'
+import {Link} from 'react-router-dom'
 
-const RestListItem = (props) => {
-
-  const [lat, setLat] = useState('');
-  const [lon, setLon] = useState('');
-  const [radius, setRadus] = useState('');
+const RestList = () => {
+  const [rest, setRest] = useState([]);
 
   useEffect(()=>{
-     setLat(props.latitude);
-     setLon(props.longitude);
-     setRadus(props.radius);
-  }, [])  
-
+      axios.get('./json/rest.json')
+      .then(rs => setRest(...rest, rs.data))
+      //.then(rs=>console.log(rs.data))
+  }, []);
+    
   return (
-    <ListGroupItem className="py-4 px-4">
-    <Row>
-        <Col xs="4">
-           <Roadview
-                position={{
-                    lat: lat,
-                    lng: lon,
-                    radius: radius,
-                }}
-                style={{
-                    width: "100%",
-                    height: "250px",
-                    borderRadius: "15px",
-                    border: "2px solid #333"
-                }}
-            />    
-        </Col>
-        <Col xs="5">
-            <h2><Restaurant color="secondary" /> {props.title}</h2>
-             <p><MyLocation color="primary" /> {props.sigun}</p>
-             <p><Call/> {props.tel}</p>
-             <p><MenuBook/> {props.title_food}</p>
-            <p><MapsHomeWork/> ({props.zip}) {props.address} 
-                <br /> {props.address_old}</p>
-        </Col>
-        <Col xs="3">
-            <Map 
-               center={{
-                   lat: lat,
-                   lng: lon
-               }}
-               style={{
-                   width:"250px",
-                   height:"200px",
-                   border: "1px solid #ddd",
-               }}
-               level={3}
-            />   
-        </Col>
-    </Row>
-</ListGroupItem> 
+    <Container>
+        <h1 className="text-center my-5"> 경기도 맛집 리스트 </h1>
+        <div className='text-right mb-2'>
+            <Link to="/write" className='write'>글쓰기</Link>
+            <Outlet/>
+         </div>
+        <ListGroup>
+            {
+               rest.map( c => (
+                <RestListItem 
+                id={c.id}
+                sigun={c.sigun}
+                title={c.title}
+                tel={c.tel}
+                title_food={c.title_food}    
+                zip={c.zip}
+                address={c.address}
+                address_old={c.address_old}
+                latitude={c.latitude}
+                longitude={c.longitude}
+                radius={c.radius}
+                />   
+               ))    
+            }
+      
+        </ListGroup>
+    </Container>
   )
 }
 
-export default RestListItem
+export default RestList
