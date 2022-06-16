@@ -26,14 +26,11 @@ const connectDB = () => {
             updateDt : {type: Date, default: Date.now}
         });
 
-        // UserSchema.static('findById', (id, callback)=>{
-        //     return this.find({id: id}, callback);
-        // });
-        UserSchema.statics.findById = (id, callback)=>{
-            return this.find({id: id}, callback);
+        UserSchema.statics.findById = function (id, callback){
+            return this.find({ id: id }, callback);
         }
 
-        UserSchema.statics.findAll = function(callback){
+        UserSchema.statics.findAll = function(callback) {
             return this.find({}, callback);
         }
 
@@ -93,21 +90,21 @@ app.use(session({
     }
 }));
 
-app.use((req, res, next) => {
-    console.log('모든 요청이 다 실행 됨');
-    req.data = "오늘 날씨 좋다.";
-    next();
-}, (req, res, next)=>{
-    console.log('이전 미들웨어에서 보내준 데이터는 ' + req.data + '입니다.');
-    next();
-});
+// app.use((req, res, next) => {
+//     console.log('모든 요청이 다 실행 됨');
+//     req.data = "오늘 날씨 좋다.";
+//     next();
+// }, (req, res, next)=>{
+//     console.log('이전 미들웨어에서 보내준 데이터는 ' + req.data + '입니다.');
+//     next();
+// });
 
-app.get('/', (req, res, next)=>{
-    console.log('GET/ 요청에서만 실행됨');
-    next();
-},(req, res)=>{
-    throw new Error('에러는에러 처리 미들웨어로 보냄');
-});
+// app.get('/', (req, res, next)=>{
+//     console.log('GET/ 요청에서만 실행됨');
+//     next();
+// },(req, res)=>{
+//     throw new Error('에러는에러 처리 미들웨어로 보냄');
+// });
 
 //업로드 파일은 세 종류  1. 오직 하나  2. 파일 여러개  3. 파일 없음
 //싱글업로드 upload.single('파일네임')   req.file
@@ -144,7 +141,9 @@ app.post('/process/login', (req, res)=>{
                       <p>사용자 : ${docs[0].name} 님 환영하지라~</p>
                    </div>
                    <br>
-                   <a href="/login.html">다시 로그인 해보기</a>
+                   <a href="/login.html">다시 로그인 해보기</a> ||
+                   <a href="/register.html">새로운 회원 등록 하기</a>||
+                   <a href="/list">회원목록보기</a>
                 `);
                 res.end();
                 return;
@@ -220,7 +219,9 @@ app.post('/register', upload.single('image'), (req, res)=>{
                         <img src="uploads/${newfileName}" alt="새사용자" />  
                     </p>
                     <p>${username}님이 새로운 회원으로 등록되었습니다.</p>
-                    <p><a href="/register.html">추가등록</a></p>
+                    <a href="/login.html">다시 로그인 해보기</a> ||
+                    <a href="/register.html">새로운 회원 등록 하기</a>||
+                    <a href="/list">회원목록보기</a>
                 `);
                 res.end();               
             }
@@ -237,7 +238,60 @@ app.post('/register', upload.single('image'), (req, res)=>{
 
 });
 
-app.use('/list'(req, res, next))
+app.use('/list', (req, res, next) => {
+    if(database) {
+        UserModel.findAll((err, results) => {
+            if(err){
+                console.log('에러');
+                res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
+                res.write('<h1>에러발생</h1>');
+                res.end();
+                return;
+            }
+            if(results) {
+               //console.dir(results);
+               res.writeHead(200, {"Content-Type": "text/html;charset=utf-8"});
+               res.write(`<style>
+                  ul{
+                      width:600px;
+                      list-style-type:none;
+                      margin:0 auto;
+                      padding:0;
+                  }
+                  li{
+                    border-bottom:1px dashed #999;
+                    padding:15px 20px;
+                    display:flex;
+                    justify-content:space-between;
+                    img{
+                        max-width:150px;
+                    }
+                    div{
+                        width:40%;
+                    }
+                  }
+               </style>`);
+               res.write(`<h3 style="text-center">사용자 리스트</h3>`);
+               res.write("<ul>");
+               for( let i=0; i< results.length; i++){
+                  let img = results[i]._doc.newfileName;
+                  let oimg = results[i]._doc.orifileName;
+                  let username = results[i]._doc.name;
+                  let userid = results[i]._doc.id;
+                  res.write(`
+                      <img src="uploads/${img}" alt="${oimg}" />
+                      <div><label>이름</label> ${username} </div>
+                      <div><label>아이디</label> ${userid} </div>
+                  `);
+               }
+               res.write("</ul>");
+               res.end();
+            }
+        })
+    }
+
+    next();
+});
 
 app.use((err, req, res, next)=>{
     console.log(err);
@@ -273,35 +327,35 @@ const authUser = (id, password, callback) => {
             callback(err, null);
             return;
         }
-        console.log('id %s 로 검색');
+        console.log('id %s 검색', id);
         if(results.length > 0){
-            console.log('아이디 일치')
-            if(results[0]._doc.password === password){
-                console.log('로그인 성공 \n 세션을 만든다.')
+            console.log('아이디 일치');
+            if(results[0]._doc.password === password) {
+                console.log('로그인 성공 \n 쎄션을 만든다.');
                 callback(null, results);
             }else{
                 console.log('비밀번호가 일치하지 않습니다.');
-                callback(null, null)
+                callback(null, null);
             }
         }else{
-            console.log(id + '란 아이디는 없습니다. 다시 확인하세요');
-            callback(null, null)
+            console.log(id + '란 아이디는 없습니다. 다시 확인하세요.');
+            callback(null, null);
         }
     })
 
-    UserModel.find({"id": id, "password": password}, (err, docs) => {
-        if(err) {
-            callback(err, null);
-            return;
-        }
-        if(docs.length > 0) {
-            console.log('일치하는 사용자를 찾음');
-            callback(null, docs);
-        }else{
-            console.log('일치하는 사용자를 찾지 못함.');
-            callback(null, null);
-        }
-    });
+    // UserModel.find({"id": id, "password": password}, (err, docs) => {
+    //     if(err) {
+    //         callback(err, null);
+    //         return;
+    //     }
+    //     if(docs.length > 0) {
+    //         console.log('일치하는 사용자를 찾음');
+    //         callback(null, docs);
+    //     }else{
+    //         console.log('일치하는 사용자를 찾지 못함.');
+    //         callback(null, null);
+    //     }
+    // });
 };
 
 app.listen(app.get('port'), ()=>{

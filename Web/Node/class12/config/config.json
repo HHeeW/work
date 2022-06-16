@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": 3223,
-    "database": "smapleDB",
+    "password": "good6617",
+    "database": "study01",
     "host": "localhost",
     "dialect": "mysql"
   },
