@@ -26,9 +26,16 @@ const connectDB = () => {
             updateDt : {type: Date, default: Date.now}
         });
 
-        UserSchema.static('findById', (id, callback)=>{
+        // UserSchema.static('findById', (id, callback)=>{
+        //     return this.find({id: id}, callback);
+        // });
+        UserSchema.statics.findById = (id, callback)=>{
             return this.find({id: id}, callback);
-        });
+        }
+
+        UserSchema.statics.findAll = function(callback){
+            return this.find({}, callback);
+        }
 
         UserModel = mongoose.model('users', UserSchema);
         console.log('UserModel 정의함');
@@ -230,6 +237,8 @@ app.post('/register', upload.single('image'), (req, res)=>{
 
 });
 
+app.use('/list'(req, res, next))
+
 app.use((err, req, res, next)=>{
     console.log(err);
     res.status(500).send(err.message);
@@ -258,6 +267,28 @@ const registerUser = (userInfo, callback) => {
 
 const authUser = (id, password, callback) => {
     console.log('authUser 호출됨' + id +' , ' + password);
+
+    UserModel.findById(id, (err, results)=>{
+        if(err){
+            callback(err, null);
+            return;
+        }
+        console.log('id %s 로 검색');
+        if(results.length > 0){
+            console.log('아이디 일치')
+            if(results[0]._doc.password === password){
+                console.log('로그인 성공 \n 세션을 만든다.')
+                callback(null, results);
+            }else{
+                console.log('비밀번호가 일치하지 않습니다.');
+                callback(null, null)
+            }
+        }else{
+            console.log(id + '란 아이디는 없습니다. 다시 확인하세요');
+            callback(null, null)
+        }
+    })
+
     UserModel.find({"id": id, "password": password}, (err, docs) => {
         if(err) {
             callback(err, null);
