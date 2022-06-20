@@ -5,13 +5,23 @@ const static = require('serve-static')
 const mysql = require('mysql')
 const database = require('./config/database')
 const connection = mysql.createConnection(database);
+const nunjucks = require('nunjucks');
 
 connection.connect();
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use('./', static(path.join(__dirname, ' public')))
 app.use('views', static(path.join(__dirname + 'views'))) //view 폴더 지정
-app.set ('view engin', 'ejs');
+app.set ('view engin', 'html');
+
+//configure 첫 번째 인자로 views 폼더의 경로를 넣음, 두 번째 인자로 옵션을 넣음
+//watch 가 true이면 html 파일이 변경될 때 템플릿 엔진을 다시 렌더링
+//확정자는 html 또는 njk로 함.
+nunjucks.configure({
+    express: app,
+    watch: true
+});
+
 
 app.set('port', process.env.PORT || 4000);
 
