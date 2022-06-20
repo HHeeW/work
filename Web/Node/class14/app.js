@@ -10,9 +10,12 @@ connection.connect();
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use('./', static(path.join(__dirname, ' public')))
-
+app.use('views', static(path.join(__dirname + 'views'))) //view 폴더 지정
+app.set ('view engin', 'ejs');
 
 app.set('port', process.env.PORT || 4000);
+
+
 app.get('/', (req,res)=>{
     res.send('Root');
 })
@@ -20,7 +23,51 @@ app.get('/loginok', (req, res)=>{
     console.log('loginok 폴더로 대기중');
     const userid = req.body.userid;
     const userpass = req.body.userpass;
-    connection.query('Select * from members where userid =?')
+    const qry = 'Select * from members where userid =?';
+    if( connection){
+        connection.query(qry, [userid, userpass], (err,results)=>{
+            if(err){
+                res.send(err);
+            }else{
+                if(results.length < 1){
+                    console.log(qry);
+                    console.log('로그인 실패');
+                }else{
+                    let ulevel;
+                    switch(results[0].userlevel){
+                        case 1:
+                            ulevel = '일반 회원';
+                            break;
+                        case 2:
+                            ulevel = '정회원';
+                            break;
+                        case 99:
+                            ulevel = '운영자';
+                            break;
+                    }
+                    const context = {
+                        'num': results[0].num,
+                        'userid': results[0].userid,
+                        'username': results[0].username,
+                        'indate': results[0].indate,
+                        'logindate': results[0].logindate,
+                        'userlevel': ulevel
+                    };
+                    req.app.render('loginok', context, (err, html)=>{
+                        res.writeHead(200, {"Content-type": "text/html; charset=utf-8"})
+                        if(err){
+                            console.log('에러발생');
+                            res.write('<h1>사용자 데이터 조회중 에러 발생</h1>');
+                            res.end();
+                        }
+                        res.end(html);
+                    })
+                }
+            }
+        });
+    }else{
+        console.log(connection.relese())
+    }
 })
 
 app.listen(app.get('port'), ()=>{
