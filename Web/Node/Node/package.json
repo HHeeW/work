@@ -11,5 +11,10 @@
     "SNS"
   ],
   "author": "HHeeWon",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.0",
+    "sequelize-cli": "^6.4.1"
+  }
 }
