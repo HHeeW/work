@@ -1,0 +1,15 @@
+{
+  "name": "node_sns",
+  "version": "0.0.1",
+  "description": "node로 만든 SNS 서비스",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "SNS"
+  ],
+  "author": "HHeeWon",
+  "license": "ISC"
+}
