@@ -1,0 +1,17 @@
+{
+  "name": "mysns",
+  "version": "0.0.0.1",
+  "description": "nodeJS로 만드는 SNS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "HeeWon",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.1",
+    "sequelize-cli": "^6.4.1"
+  }
+}
