@@ -8,7 +8,11 @@ const path = require('path');
 
 dotenv.config();
 const pageRouter = require('./routes/page'); //모듈화
+const { sequelize } = require('./models');
+const passportConfig = require('./passport');  //로그인관리
+
 const app = express();
+passportConfig(); //패스포트 설정
 app.set('port', process.env.PORT||4000); //포트셋팅
 
 /** 템플릿 엔진 **/
@@ -16,6 +20,14 @@ app.set('view engine', 'html');
 nunjucks.configure('views', {
     express: app,
     watch: true
+});
+/** DB연결 */
+sequelize.sync({ force: false })
+.then(()=>{
+    console.log('db연결 성공');
+})
+.catch((err)=>{
+    console.error(err);
 });
 
 /** log 셋팅 */
@@ -37,6 +49,8 @@ app.use(session({
         secure: false
     }
 }));
+app.use(passport.initialize());  //요청객체(req)에 passport를 셋팅
+app.use(passport.session());  //req.session에 passport정보를 저장
 
 app.use('/', pageRouter);
 app.use((req, res, next)=>{
