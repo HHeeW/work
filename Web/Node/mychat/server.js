@@ -9,12 +9,12 @@ let UserSchema;
 let UserModel;
 
 const connectDB = () =>{
-    const database = 'mongode://127.0.0.1:27017/local'
+    const databaseUrl = 'mongode://127.0.0.1:27017/local'
     mongoose.Promise = global.Promise;
     mongoose.connect(databaseUrl);
     database = mongoose.connection;
     database.on('open',()=>{
-        
+
     })
 }
 //에러 핸들러 모듈
