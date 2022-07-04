@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const static = require('serve-static');
 const nunjucks = require('nunjucks');
 const router = express.Router();
+const multer = require('multer');
 
 let database;
 let UserSchema;
@@ -38,6 +39,20 @@ const connectDB = () => {
     });
     database.on('error', console.error.bind(console, 'mongoose 연결 에러'));
 }
+
+//업로드 셋팅
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+        //const ext = path.extname(file.originalname)
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+});
+
+const upload = multer({ storage: storage });
+
 
 //에러핸들러 모듈
 //const expressErrorHandler = require('express-error-handler');
@@ -97,12 +112,37 @@ app.post('/loginok', (req, res, next)=>{
              res.render('error', { rs: '로그인 실패'});
          }
       }
-    
    });
 });
 
+app.post('/joinok', upload.single('file'), (req, res, next)=>{
+     const userid = req.body.userid;
+     const userpass = req.body.userpass;
+     const username = req.body.username;
+     const newfileName = req.file.filename;
+     const orifileName = req.file.originalname;
+     const fileExt = req.file.mimetype;
+     const fileSize = req.file.size;
+     const user = new UserModel({
+         'id' : userid,
+         'name' : username,
+         'password' : userpass,
+         'newfileName' : newfileName,
+         'orifileName' : orifileName,
+         'fileExt' : fileExt,
+         'fileSize' : fileSize
+     });
+     user.save((err)=>{
+         if(err) {
+            console.error(err);
+         }else{
+            console.log('사용자 데이터 추가됨');
+            res.redirect('/login.html');
+         }
+     })
+});
 
 app.listen(app.get('port'), ()=>{
     console.log(app.get('port') + ' port listen...');
     connectDB();
-})
+});
