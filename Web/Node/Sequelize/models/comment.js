@@ -7,7 +7,7 @@ module.exports = class Comment extends Sequelize.Model {
                 type: Sequelize.STRING(100),
                 allowNull: false,
             },
-            create_at: {
+            created_at: {
                 type: Sequelize.DATE,
                 allowNull: true,
                 defaultValue: Sequelize.NOW,
@@ -15,7 +15,7 @@ module.exports = class Comment extends Sequelize.Model {
         },{
             sequelize,
             timestamp: false,
-            moduelName: 'Comment',
+            modelName: 'Comment',
             tableName: 'comments',
             paranoid: false,
             charset: 'utf8mb4',

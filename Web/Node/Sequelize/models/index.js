@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 const User = require('./user');
-const Comment = require('./commemt')
+const Comment = require('./comment')
 
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config')[env];
+const config = require('../config/config')[env];
 const db = {};
 
 const sequelize = new Sequelize(config.database, config.username, config.password, config);
