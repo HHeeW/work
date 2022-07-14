@@ -1,13 +1,16 @@
 import React from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainPage from './components/MainPage'
+import ViewPage from './components/ViewPage'
+
 const App = () => {
   return (
-    <div>
-        <Router>
-            <Route path='/' exact render={(props)=><MainPage/>}/>
-        </Router>
-    </div>
+    <Router>
+      <Routes>
+          <Route path="/" exact={true} element={<MainPage />} />
+          <Route path="/view/:id" element={<ViewPage />} />
+       </Routes>  
+    </Router>
   )
 }
 
