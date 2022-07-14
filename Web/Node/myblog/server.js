@@ -25,8 +25,42 @@ app.get('/api/view/:id', (req, res)=>{
         }
         res.send(result);
     })
+});
+//Route for creating posts
+app.get('/api/create', (req, res)=>{
+    const username = req.body.userName;
+    const password = req.body.userPass;
+    const title = req.body.title;
+    const text = req.body.text;
 })
+db.query(
+    "insert into blog_posts (title, post_text, user_name, pass) values (?, ?, ?, ?)",
+    [title, text, username, password],
+    (err, result)=>{
+        if(err){
+            console.log(err);
+        }
+        console.log(result);
+    }
+)
 
+//Update
+
+//delete
+app.post('/api/delete', (req, res)=>{
+    const id = req.body.id;
+    const pass = req.body.pass;
+    db.query("delete from blog_posts where id=? and pass=?", [id, pass], (err,result)=>{
+        if(err){
+            console.log(err)
+        }
+        if(result){
+            res.send(1);
+        }else{
+            res.send(0)
+        }
+    })
+})
 
 //listen
 app.listen(PORT, ()=>{
