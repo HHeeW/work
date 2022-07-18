@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Axios from 'axios'
+import BtnNav from './BtnNav.jsx'
 
 const ViewPage = () => {
+  const v = 1;
   const { id } = useParams();
   const [postView, setPostView] = useState({
     id: '', 
@@ -36,11 +38,12 @@ const ViewPage = () => {
 //          }
 //       });
 //   }
-  console.log("파라미터: "+id);
+
   return (
     <div>
        <h3>{postView.title}</h3>
        <p>{postView.post_text}</p>
+       <BtnNav v={v} id={id} />
     </div>
   )
 }

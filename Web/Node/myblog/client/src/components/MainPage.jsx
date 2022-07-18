@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
+import BtnNav from './BtnNav.jsx'
 
 const MainPage = () => {
 
   const [postList, setPostList] = useState([]);
- 
+//   const [tab, setTab] = useState('curr');
+
+//   const setDealTab = (s) => {
+//       setTab(s);
+//   }
+
+  const v = 0;
+
   useEffect(()=>{
       Axios.get("/api/get")
       .then((res)=>{
@@ -37,6 +45,17 @@ const MainPage = () => {
                 </div>
             ))
         }
+
+        {/* <div 
+         className={`btn ${tab === 'curr' ? 'active' : ''}`} 
+         onClick={()=>setDealTab('curr')}>
+            메뉴
+        </div>
+        <div className={`btn ${tab === 'prev' ? 'active': ''}`}
+        onClick={()=>setDealTab('prev')}>
+            메뉴2
+         </div> */}
+         <BtnNav v={v} id="0"/>
     </div>
   )
 }
