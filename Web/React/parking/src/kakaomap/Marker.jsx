@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CustomOverlayMap, MapMarker } from 'react-kakao-maps-sdk'
+import { MapMarker } from 'react-kakao-maps-sdk'
 const Marker = (props) => {
     const [isOpen, setIsOpen] = useState(false)
   return (
@@ -24,16 +24,12 @@ const Marker = (props) => {
             },
           }}
       >{isOpen && (
-        <CustomOverlayMap position={{lat: props.lat, lng: props.lng,}}>
-            <div className="wrap bg-white p-3">
+        
+            <div className="wrap bg-white p-3" style={{padding:"10px", marginTop: "-50px",backgroundColor: "white", border: "1px solid #000", borderRadius:"10px"}} onClick={() => setIsOpen(false)}
+                    title="닫기">
               <div className="info">
-                <div className="title h4 text-primary">
+                <div className="title h4 text-primary" style={{fontSize:"20px", fontWeight:" bold"}}>
                     {props.name}
-                  <span
-                    className="close text-danger mx-3"
-                    onClick={() => setIsOpen(false)}
-                    title="닫기"
-                  >X</span>
                 </div>
                 <div className="body">
                   <div className="desc">
@@ -47,8 +43,6 @@ const Marker = (props) => {
                 </div>
               </div>
             </div>
-            ;
-          </CustomOverlayMap>
         )}
       </MapMarker>
   )

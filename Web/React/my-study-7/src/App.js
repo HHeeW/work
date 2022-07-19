@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 // import WuseCallback from '../component/WuseCallback'
-import Box from './component/Box'
+import Box from '../component/Box'
 
 const App = () => {
   // const [number, setNumber] = useState(0);
