@@ -233,7 +233,10 @@ main{
 /* 메인블럭 */
 
 .main_brick{
-    border: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* border: 1px solid #333; */
 }
 
 .brick{
@@ -312,7 +315,7 @@ main{
 .main_item_flash{
     border-top: 1px solid #efeff0;
     position: relative;
-    display: none;
+    /* display: none; */
 }
 .main_item_flash span{
     position: absolute;
@@ -412,7 +415,7 @@ main{
     height: 1px;
     margin: -1px;
 }
-.cjs_ctw #info{
+.cjs_ctw .info{
     color: #929294;
     font-size: 11px;
     font-weight: 400;
