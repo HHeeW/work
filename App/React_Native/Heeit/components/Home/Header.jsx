@@ -9,7 +9,7 @@ const Header = () => {
     <View style={header.header}>
         <View style={[header.box, main.row]}>
           <View style={header.logobox}>
-            <Image source={require('../img/logo.png')} style={{width:100, height:30}} />
+            <Image source={require('../../img/logo.png')} style={{width:100, height:30}} />
           </View>
           <View style={[header.searchbox, main.row]}>
             <Icon name='search' color='#00EE00' size={20} style={{paddingLeft:10, paddingRight:10}} />

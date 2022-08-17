@@ -3,7 +3,7 @@ import { Image, Text, View, TouchableHighlight } from 'react-native'
 import main from './main'
 import Icon2 from 'react-native-vector-icons/Feather'
 import userpick from './userpick'
-
+import thisweek from './thisweek'
 const Thisweek = () => {
   return (
     <View>
@@ -14,6 +14,9 @@ const Thisweek = () => {
         <View>
             {roop2()}
         </View>
+        <View style={[thisweek.viewBox, main.margin]}>
+            <Text style={[main.h3, main.center]}>전체보기</Text>
+        </View>
     </View>
   )
 }
@@ -21,7 +24,7 @@ const Thisweek = () => {
 const roop2=()=>{
     let week2=[]
     for(let j=0;j<2;j++){
-        week2.push(<View style={main.row} >
+        week2.push(<View style={main.row} key={j} >
             {roop1()}
         </View>)
     }
@@ -37,25 +40,28 @@ const roop1 = ()=>{
                 underlayColor="#DDD"
                 onPress={() => {}} 
                 style={userpick.sliderpick}
+                key={i}
             >
-                <View style={[ userpick.sliderbox]}>
+                <View style={[ thisweek.weekbox]}>
                     <View style={[ {position:'relative'}, main.marginTB]}>
                         <Icon2 name='bookmark' size={25} style={userpick.bookmark} />
-                        <Image source={require(`../img/img01.jpg`)} style={[userpick.images]} />
+                        <Image source={require('../../img/img01.jpg')} style={[thisweek.img]} />
                     </View>
                     <View>
                         <Text style={main.h4}>원빌리언</Text>
                         <Text style={[main.h4, main.bold, main.marginTB]}>[신입/주니어급]프론트엔드 개발자 채용</Text>
-                        <View style={main.row}>
-                            <Image source={require('../img/money.png')} style={{width:20, height:20}} />
+                        <View style={[main.row, thisweek.graybox]}>
+                            <Image source={require('../../img/money.png')} style={{width:20, height:20}} />
                             <Text style={[main.h4, main.colorGray]}>취업축하금 100만원</Text>
                         </View>
                     </View>
                 </View>
             </TouchableHighlight>
         )
+        
     }
     return week1
     
 }
+
 export default Thisweek

@@ -22,7 +22,7 @@ const Userpick = () => {
                     <View style={[ userpick.sliderbox]}>
                         <View style={[ {position:'relative'}]}>
                             <Icon2 name='bookmark' size={25} style={userpick.bookmark} />
-                            <Image source={require('../img/img01.jpg')} style={userpick.images} />
+                            <Image source={require('../../img/img01.jpg')} style={userpick.images} />
                         </View>
                         <View>
                             <Text style={main.h4}>원빌리언</Text>
@@ -37,7 +37,7 @@ const Userpick = () => {
                     <View style={[ userpick.sliderbox]}>
                         <View style={[ {position:'relative'}]}>
                             <Icon2 name='bookmark' size={25} style={userpick.bookmark} />
-                            <Image source={require('../img/img01.jpg')} style={userpick.images} />
+                            <Image source={require('../../img/img01.jpg')} style={userpick.images} />
                         </View>
                         <View>
                             <Text style={main.h4}>원빌리언</Text>
@@ -52,7 +52,7 @@ const Userpick = () => {
                     <View style={[ userpick.sliderbox]}>
                         <View style={[ {position:'relative'}]}>
                             <Icon2 name='bookmark' size={25} style={userpick.bookmark} />
-                            <Image source={require('../img/img01.jpg')} style={userpick.images} />
+                            <Image source={require('../../img/img01.jpg')} style={userpick.images} />
                         </View>
                         <View>
                             <Text style={main.h4}>원빌리언</Text>
@@ -67,7 +67,7 @@ const Userpick = () => {
                     <View style={[ userpick.sliderbox]}>
                         <View style={[ {position:'relative'}]}>
                             <Icon2 name='bookmark' size={25} style={userpick.bookmark} />
-                            <Image source={require('../img/img01.jpg')} style={userpick.images} />
+                            <Image source={require('../../img/img01.jpg')} style={userpick.images} />
                         </View>
                         <View>
                             <Text style={main.h4}>원빌리언</Text>

@@ -8,7 +8,7 @@ const Slider = () => {
   return (
     <View style={[main.marginLR, {flex:1}]}>
         <View style={[main.marginTB, slide.slidebox]}>
-            <Image source={require('../img/slider01.png')} style={{width:'100%', height:'100%'}} />
+            <Image source={require('../../img/slider01.png')} style={{width:'100%', height:'100%'}} />
             <View style={slide.textbox}>
               <Text style={slide.text}>아이케어닥터</Text>
               <Text style={slide.text}>ReactNative 프로그래머</Text>

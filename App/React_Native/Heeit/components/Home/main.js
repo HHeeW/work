@@ -34,7 +34,10 @@ const main = StyleSheet.create({
         marginBottom:10
     },
     colorGray:{
-        color:'#aaa'
+        color:'#555'
+    },
+    center:{
+        textAlign:'center'
     }
 })
 

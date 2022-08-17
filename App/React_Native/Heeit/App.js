@@ -1,20 +1,23 @@
 import React from 'react'
-import { ScrollView } from 'react-native'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Slider from './components/Slider'
-import Thisweek from './components/Thisweek'
-import Userpick from './components/Userpick'
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import Home from './components/Home'
+import Search from './components/Search';
+import Footer from './components/Home/Footer'
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <>
-      <Header/>
-      <ScrollView style={{marginBottom:50}}>
-        <Slider/>
-        <Userpick/>
-        <Thisweek/>
-      </ScrollView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Search" component={Search} />
+      </Stack.Navigator>
+    </NavigationContainer>
       <Footer/>
     </>
   )
