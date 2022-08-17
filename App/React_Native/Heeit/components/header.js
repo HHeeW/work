@@ -9,6 +9,7 @@ const header = StyleSheet.create({
         backgroundColor:'rgba(255,255,255,0.1)',
         alignItems:'center',
         marginTop:50,
+        marginBottom:10
     },
     box:{
         flex:1,
@@ -31,8 +32,7 @@ const header = StyleSheet.create({
         justifyContent:'space-evenly'
     },
     searctext:{
-        flex:1,
-        color:'#aaa'
+        flex:1
     }
 })
 

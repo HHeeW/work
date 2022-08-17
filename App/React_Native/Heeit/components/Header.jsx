@@ -1,6 +1,6 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/Feather'
-import { Image, Text, View } from 'react-native'
+import { Image, Text, TextInput, View } from 'react-native'
 import header from './header'
 import main from './main'
 
@@ -13,7 +13,7 @@ const Header = () => {
           </View>
           <View style={[header.searchbox, main.row]}>
             <Icon name='search' color='#00EE00' size={20} style={{paddingLeft:10, paddingRight:10}} />
-            <Text style={[header.searctext, main.h4]}>'HTML'를 검색해보세요</Text>
+            <TextInput placeholderTextColor={[header.searctext, main.h4]} style={[header.searctext, main.h4]} placeholder="'HTML'를 검색해보세요" />
           </View>
         </View>
     </View>

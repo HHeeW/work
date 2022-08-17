@@ -32,6 +32,9 @@ const main = StyleSheet.create({
     marginTB:{
         marginTop:10,
         marginBottom:10
+    },
+    colorGray:{
+        color:'#aaa'
     }
 })
 

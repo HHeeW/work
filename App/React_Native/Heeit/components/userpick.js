@@ -18,6 +18,11 @@ const userpick = StyleSheet.create({
     sliderbox:{
         width:150
     },
+    sliderpick:{
+        marginRight:10,
+        marginLeft:10
+        
+    },
     bookmark:{
         position:'absolute',
         top:0,
@@ -26,6 +31,7 @@ const userpick = StyleSheet.create({
         color:'#fff',
         backgroundColor:'rgba(0,0,0,0.3)'
     }
+    
 })
 
 export default userpick

@@ -14,7 +14,10 @@ const footer = StyleSheet.create({
         marginRight:10,
     },
     iconbox:{
-        alignItems:'center'
+        alignItems:'center',
+        padding:5,
+        paddingRight:15,
+        paddingLeft:15,
     }
 })
 
