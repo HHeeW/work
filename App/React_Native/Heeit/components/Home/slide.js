@@ -3,16 +3,18 @@ import { StyleSheet } from "react-native";
 const slide = StyleSheet.create({
     slidebox:{
         flex:1,
-        height:200,
+        height:250,
         borderWidth:1,
-        borderColor:'black'
+        borderColor:'black',
+        borderRadius:5,
+        overflow:'hidden'
     },
     go:{
         flex:1,
         padding:10,
         paddingLeft:20,
         paddingRight:20,
-        backgroundColor:'rgba(0,238,0,0.1)',
+        backgroundColor:'rgba(0,240,0,0.1)',
         borderRadius:5
     },
     textbox:{

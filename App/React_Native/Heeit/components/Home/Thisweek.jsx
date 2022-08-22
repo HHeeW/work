@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, Text, View, TouchableHighlight } from 'react-native'
-import main from './main'
+import main from '../main'
 import Icon2 from 'react-native-vector-icons/Feather'
 import userpick from './userpick'
 import thisweek from './thisweek'
@@ -12,7 +12,7 @@ const Thisweek = () => {
             <Text style={[main.h1, main.bold]}>이번주 인기 포지션</Text>
         </View>
         <View>
-            {roop2()}
+            {loop2()}
         </View>
         <View style={[thisweek.viewBox, main.margin]}>
             <Text style={[main.h3, main.center]}>전체보기</Text>
@@ -21,17 +21,17 @@ const Thisweek = () => {
   )
 }
 
-const roop2=()=>{
+const loop2=()=>{
     let week2=[]
     for(let j=0;j<2;j++){
         week2.push(<View style={main.row} key={j} >
-            {roop1()}
+            {loop1()}
         </View>)
     }
     return week2;
 }
 
-const roop1 = ()=>{
+const loop1 = ()=>{
     let week1=[];
     for(let i=1;i<3;i++){
         week1.push(

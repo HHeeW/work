@@ -1,19 +1,22 @@
 import React from 'react'
-import { ScrollView } from 'react-native'
+import { ScrollView, View } from 'react-native'
 import Header from './Home/Header'
 import Slider from './Home/Slider'
 import Thisweek from './Home/Thisweek'
 import Userpick from './Home/Userpick'
+import main from './main'
 
 const Home = () => {
   return (
     <>
+      <View style={main.background}>
       <Header/>
-      <ScrollView style={{marginBottom:50}}>
-        <Slider/>
-        <Userpick/>
-        <Thisweek/>
-      </ScrollView>
+        <ScrollView>
+          <Slider/>
+          <Userpick/>
+          <Thisweek/>
+        </ScrollView>
+      </View>
     </>
   )
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { Image, Text, View } from 'react-native'
-import main from './main'
+import main from '../main'
 import slide from './slide'
 
 const Slider = () => {
   return (
-    <View style={[main.marginLR, {flex:1}]}>
+    <View style={[main.marginLR, {flex:1, marginTop:60}]}>
         <View style={[main.marginTB, slide.slidebox]}>
             <Image source={require('../../img/slider01.png')} style={{width:'100%', height:'100%'}} />
             <View style={slide.textbox}>

@@ -19,7 +19,7 @@ const main = StyleSheet.create({
     },
     row:{
         flexDirection:'row',
-        justifyContent:'space-around',
+        // justifyContent:'space-around',
         alignItems:'center'
     },
     margin:{
@@ -33,11 +33,18 @@ const main = StyleSheet.create({
         marginTop:10,
         marginBottom:10
     },
+    marginauto:{
+        marginLeft: 'auto',
+        marginRight:'auto'
+    },
     colorGray:{
         color:'#555'
     },
     center:{
         textAlign:'center'
+    },
+    background:{
+        backgroundColor:'#fff'
     }
 })
 

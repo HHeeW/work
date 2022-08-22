@@ -2,7 +2,7 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/Feather'
 import { Image, Text, TextInput, View } from 'react-native'
 import header from './header'
-import main from './main'
+import main from '../main'
 
 const Header = () => {
   return (

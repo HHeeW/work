@@ -2,14 +2,15 @@ import { StyleSheet } from "react-native";
 
 const header = StyleSheet.create({
     header:{
+        width:'100%',
+        backgroundColor:'rgba(255,255,255,0.9)',
+        alignItems:'center',
+        paddingTop:10,
+        paddingBottom:10,
+        position:'absolute',
         top:0,
         left:0,
-        width:'100%',
-        height:50,
-        backgroundColor:'rgba(255,255,255,0.1)',
-        alignItems:'center',
-        marginTop:50,
-        marginBottom:10
+        zIndex:100
     },
     box:{
         flex:1,
@@ -19,12 +20,12 @@ const header = StyleSheet.create({
         marginRight:10
     },
     logobox:{
-        flex:1,
+        flex:0.3,
         justifyContent:'center',
-        alignItems:'center'
+        alignItems: 'flex-start'
     },
     searchbox:{
-        flex:2.5,
+        flex:0.8,
         backgroundColor:'#ddd',
         borderRadius:30,
         paddingTop:10,
