@@ -11,7 +11,7 @@ const Thisweek = () => {
             <Text style={[main.h1, main.bold]}>프론트엔드 개발자</Text>
             <Text style={[main.h1, main.bold]}>이번주 인기 포지션</Text>
         </View>
-        <View>
+        <View style={main.marginauto}>
             {loop2()}
         </View>
         <View style={[thisweek.viewBox, main.margin]}>
@@ -33,7 +33,7 @@ const loop2=()=>{
 
 const loop1 = ()=>{
     let week1=[];
-    for(let i=1;i<3;i++){
+    for(let i=0;i<2;i++){
         week1.push(
             <TouchableHighlight 
                 activeOpacity={0.6}
@@ -42,7 +42,7 @@ const loop1 = ()=>{
                 style={userpick.sliderpick}
                 key={i}
             >
-                <View style={[ thisweek.weekbox]}>
+                <View style={[ thisweek.weekbox, main.margin]}>
                     <View style={[ {position:'relative'}, main.marginTB]}>
                         <Icon2 name='bookmark' size={25} style={userpick.bookmark} />
                         <Image source={require('../../img/img01.jpg')} style={[thisweek.img]} />
