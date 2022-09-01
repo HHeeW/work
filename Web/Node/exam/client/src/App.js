@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'a'
+import axios from 'axios'
 const App = () => {
   //데이터를 저장할 공간
   const [serverList, setServerList] = useState([]);
