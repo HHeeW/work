@@ -2,7 +2,7 @@ const { check, validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const tmp_dir = path.join(__dirname, '../uploads_tmp');
-const dir = path.join(__dirname, '../uploads');
+const dir = path.join(__dirname, '../../admin/public/uploads');  
 
 exports.postValidator = [
     check('title').trim().not().isEmpty().withMessage('제목을 입력하는데 에러가 발생했습니다.'),

@@ -1,10 +1,12 @@
 const multer = require('multer');
-const upload = multer({dest: 'uploads_tmp/'})
+const path = require('path');
+const tmp_dir = path.join(__dirname, '../uploads_tmp/');
+const upload = multer({dest: tmp_dir})
 //destination (어느 폴더에 업로드 한 파일을 저장할 지 결정),  
 //filename(파일 명을 결정하는 옵션) 두 가지 옵션이 가능    multer.diskStorage()
 const storage = multer.diskStorage({
    destination: function(req, file, cb){
-       cb(null, './uploads_tmp/');
+       cb(null, tmp_dir);
    },
    filename: function(req, file, cb) {
        cb(null, `${Date.now()}__${file.originalname}`);

@@ -4,11 +4,13 @@ require('./db');
 require('express-async-errors');
 const app = express();
 const morgan = require('morgan');
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
+const cors = require('cors');
 
 //라우터 post
 const postRouter = require('./routers/post');
 
+app.use(cors({origin: 'http://localhost:3000'}));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use('/api/post', postRouter);
