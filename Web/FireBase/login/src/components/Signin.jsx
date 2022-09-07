@@ -15,14 +15,14 @@ const Signin = () => {
         <form>
             <div className='flex flex-col py-2'>
                 <label className='py-2 font-medium'>Email Address</label>
-                <input  type={'email'} className="border p-3"/>
+                <input type={'email'} className="border p-3"/>
             </div>
-            <div>
+            <div className='flex flex-col py-2'>
                 <label className='py-2 font-medium'>Password</label>
-                <input  type={'password'} className="border p-3"/>
+                <input type={'password'} className="border p-3"/>
             </div>
             <button className='border border-blue-500 bg-blue-600 
-                            hover:bg-blue-500 w-full p-4 my-2 text-white'>Sign Up</button>
+                            hover:bg-blue-500 w-full p-4 my-2 text-white'>Sign In</button>
         </form>
     </div>
   )
