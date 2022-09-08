@@ -1,0 +1,32 @@
+<template lang="ko">
+  <Top/>
+  <router-view/>
+</template>
+
+<script>
+import Top from './components/Top.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Top
+}
+}
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+li{
+  list-style-type: none;
+}
+img{
+  max-height: 100%;
+  max-width: 100%;
+}
+</style>

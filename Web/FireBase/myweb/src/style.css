@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .TopBtn{
+        @apply px-5 py-2 border-2 rounded-full border-r-2 hover:bg-white hover:text-blue-800
+    }
+}

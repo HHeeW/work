@@ -8,14 +8,14 @@ const Signup = () => {
     const [error, setError] = useState('');
 
     const {createUser} = UserAuth();
-    const navigate = useNavigate();
+    const nav = useNavigate();
 
     const _handleSubmit = async(e) => {
         e.preventDefault();
         setError('');
         try{
             await createUser(email, password)
-            navigate('/account');
+            nav('/account');
         } catch(e){
             setError(e.message);
             console.log(e.message);
@@ -23,7 +23,7 @@ const Signup = () => {
     }
 
   return (
-    <div className='max-w-[700px] max-auto my-16 p-4'>
+    <div className='max-w-[700px] max-auto my-16 mx-auto p-4'>
         <div>
             <h1 className='text-2xl font-bold py-2'>
                 회원가입
