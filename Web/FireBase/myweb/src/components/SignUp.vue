@@ -15,10 +15,17 @@
             </div>
             <button type="submit" className='border bg-blue-800 
                             hover:bg-blue-500 w-1/3 p-1 my-2 text-white'>이메일 확인</button>
-
+            <div className='flex flex-col py-2'>
+                <label className='py-2 font-medium'>비밀번호</label>
+                <input type="password" className="border p-3 text-center" onchange="e=>Email(e.target.value)"/>
+            </div>
+            <div className='flex flex-col py-2'>
+                <label className='py-2 font-medium'>비밀번호 확인</label>
+                <input type="password" className="border p-3 text-center" onchange="e=>Email(e.target.value)"/>
+            </div>
             <div v-for="(e, i) in list1" :key="i" className='flex flex-col py-2'>
                 <label className='py-2 font-medium'>{{e}}</label>
-                <input type={{list2[i]}} className="border p-3 text-center" v-model="list2[i]"/>
+                <input type="text" className="border p-3 text-center" v-model="list2[i]"/>
             </div>
 
             <button type="submit" className='border bg-blue-800 
@@ -32,14 +39,13 @@
         name:"SignUp",
         data(){
             return{
-                list1:['비밀번호', '비밀번호 확인','이름', '연락처','주소', '소개'],
-                list2:['Password', 'RePassword', 'Name', 'Tel', 'Adress', 'Info']
+                list1:['이름', '연락처','주소', '소개'],
+                list2:['Name', 'Tel', 'Adress', 'Info']
+
             }
         },
         methods:{
-
-        }
-        
+        },
     }
 </script>
 
