@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -72,4 +73,80 @@ const AppStack = () => {
 
 export default AppStack
 
+=======
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons, Ionicons, FontAwesome5 } from 'react-native-vector-icons';
+
+import HomeScreen from '../screens/HomeScreen';
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const FeedStack = ({navigation}) => {
+  <Stack.Navigator>
+      <Stack.Screen 
+          name="F Login"
+          component={HomeScreen}
+          options={{
+             headerTitleAlign: 'center',
+             headerTitleStyle: {
+                color:'#2e64e5',
+                fontSize: 18
+             },
+             headerStyle:{
+               shadowColor: '#fff',
+               elevation:0
+             },
+             headerRight: () => (
+                <View style={{marginRight: 10}}>
+                    <FontAwesome5.Button
+                        name="plus"
+                        size={22}
+                        backgroundColor="#fff"
+                        color="#2e64e5"
+                        onPress={()=>navigation.navigate('/')}
+                    />    
+                </View>
+             )
+          }}
+        />  
+  </Stack.Navigator>
+}
+
+const AppStack = () => {
+  const getTabBarVisibility = (route) => {
+     const routeName = route.state
+        ? route.state.route[route.state.index].name 
+        : '';    
+  };
+  return (
+    <Tab.Navigator
+       tabBarOptions={{
+          activeTintColor: '#2e64e5'
+       }}
+    >
+      <Tab.Screen
+         name="Home"
+         component={FeedStack}
+         options = {({route})=> ({
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color, size }) => (
+               <MaterialCommunityIcons
+                  name="home-outlines"
+                  color={color}
+                  size={size}
+               />   
+            )
+         })}
+      />   
+    </Tab.Navigator>   
+  )
+}
+
+export default AppStack
+
+>>>>>>> bbb1fe6a3e1fa9f52bf01c7f1ea65d3342320427
 const styles = StyleSheet.create({})
