@@ -11,22 +11,50 @@
         <form onsubmit={handleSubmit}>
             <div className='flex flex-col py-2'>
                 <label className='py-2 font-medium'>이메일 주소</label>
-                <input type="email" className="border p-3 text-center" onchange="{e=>setEmail(e.target.value)}"/>
+                <input type="email" v-model="email" className="border p-3 text-center"/>
             </div>
             <div className='flex flex-col py-2'>
                 <label className='py-2 font-medium'>비밀번호</label>
-                <input type="password" className="border p-3 text-center" onchange="{e=>setPassword(e.target.value)}"/>
+                <input type="password" v-model="password" className="border p-3 text-center"/>
             </div>
-            <button className='border border-blue-500 bg-blue-800 
+            <button @click="SignIn" className='border border-blue-500 bg-blue-800 
                             hover:bg-blue-500 w-full p-4 my-2 text-white'>로그인</button>
         </form>
     </div>
 </template>
 
 <script>
-    export default {
-        name:"SignIn"
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../main'
+
+export default {
+    name:"SignIn",
+    data(){
+        return{
+            email: '',
+            password: ''
+        }
+    },
+    methods:{
+        async SignIn(err){
+            err.preventDefault();
+            try{
+                await signInWithEmailAndPassword(auth, this.email, this.password)
+                this.$router.replace('MyInfo')
+            }catch(err){
+                alert(err.code)
+                console.log(err.message)
+            }
+        }
+    },
+    mounted(){
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                this.$router.replace('/')
+            }
+        })
     }
+}
 </script>
 
 <style scoped>

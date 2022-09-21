@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ $route.params.name }}</h1>
+    <h1>홈페이지</h1>
   </div>
 </template>
 
@@ -9,9 +9,6 @@ export default {
   name: 'HelloWorld',
   props: {
   },
-  created(){
-    console.log(this.$route)
-  }
 }
 </script>
 

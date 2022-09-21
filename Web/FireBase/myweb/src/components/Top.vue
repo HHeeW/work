@@ -9,12 +9,17 @@
                 </ul>
             </div>
             <div class="w-2/5 w- h-24 flex justify-evenly items-center text-xl">
-                <router-link to="/SignIn">
-                    <button class="TopBtn">로그인</button>
-                </router-link>
-                <router-link to="/SignUp">
-                    <button class="TopBtn">회원가입</button>
-                </router-link>
+                <div v-if=User>
+                    <button @click="SignOut" class="TopBtn">로그아웃</button>
+                </div>
+                <div v-else>
+                    <router-link to="/SignIn">
+                        <button class="TopBtn">로그인</button>
+                    </router-link>
+                    <router-link to="/SignUp">
+                        <button class="TopBtn">회원가입</button>
+                    </router-link>
+                </div>
                 <button @click="MyInfo" class="h-16 w-16 bg-white rounded-full flex justify-center items-center">
                     <img class="h-10 mt-2" src="../assets/logo.png" alt="Vue logo">
                 </button>
@@ -24,11 +29,15 @@
 </template>
 
 <script>
+import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { auth } from '../main'
+
 export default {
     name: 'TopNav',
     data(){
         return{
-            menu: ['Home', 'Skill', 'About']
+            menu: ['Home', 'Skill', 'About'],
+            User: false
         }
     },
     methods:{
@@ -54,11 +63,22 @@ export default {
             
         },
         MyInfo(){
-            this.$router.push({
-                name:'MyInfo',
-                params:{name:'사용자 이름'}
-            })
+            this.$router.replace('MyInfo')
+        },
+        SignOut(){
+            this.$router.replace('/')
+            signOut(auth);
+            alert('로그아웃 되었습니다~');
         }
+    },
+    mounted(){
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                this.User = true;
+            } else {
+                this.User = false;
+            }
+        })
     }
 }
 </script>

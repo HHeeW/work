@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "236665693477",
+    "project_id": "golf-f7f57",
+    "storage_bucket": "golf-f7f57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236665693477:android:c49a7c766c971a6787a6cc",
+        "android_client_info": {
+          "package_name": "com.golfapp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236665693477-g0v2gf0esluqdib62j0hnp56c4lo4rkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATlAr8du6rlMzwtwic_TU_IKCSvC_-hPg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236665693477-g0v2gf0esluqdib62j0hnp56c4lo4rkd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "236665693477-h2ak25b3uaalvqqvg5p3v5r5c5dj5736.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "HeeWon.com"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
