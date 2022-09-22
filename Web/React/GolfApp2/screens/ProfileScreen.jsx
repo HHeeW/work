@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, Alert } from 'react-native'
 import React, { useState, useEffect, useContext} from 'react'
 import firestore from '@react-native-firebase/firestore'
 import { AuthContext } from '../context/AuthProvider'
@@ -14,40 +14,36 @@ const ProfileScreen = ({ navigation, route}) => {
 
   // console.log(route.param ? '1'+route.param.userId : '2')
 
-  // const fetchPost = async () => {
-  //   try{
-  //     await firestore()
-  //       .collection('members')
-  //       .where('userId', '==', route.param ? route.param.userId : user.Id)
-  //       .get()
-  //       .then((querySnapshot) => {
-  //         console.dir(querySnapshot)
-  //       })
-  //   }catch(e){
-  //     console.log(e)
-  //   }
-  // }
-
-  const getUser = async()=>{
+  const fetchPost = async () => {
     await firestore()
-    .collection('members')
-    .doc( route.params ? route.params.email : user.uid)
-    .get()
-    .then((res)=>{
-      console.log(res.data)
-    })
+      .collection('members')
+      .doc(route.param ? route.param.email : user.uid)
+      .get()
+      .then((res) => {
+        // console.log(res.data())
+        const mem = res.data();
+        if(mem.fname === ''){
+          Alert.alert('아직 회원정보를 입력하지 않으셨습니다.')
+          navigation.navigate('EditProfile');
+          return;
+        }else{
+
+        }
+      })
   }
+
+  
 
   useEffect(()=>{
     console.log('실행')
-    getUser();
+    fetchPost();
   },[navigation, loading])
 
   return (
     <SafeAreaView style={{flex:1, backgroundColor:'#fff'}}>
       <ScrollView style={{paddingTop: 50}}>
         <Text>
-          유저 {userData}
+          유저
         </Text>
         <FormButton onPress={ logout }
                     buttonTitle="로그아웃"
