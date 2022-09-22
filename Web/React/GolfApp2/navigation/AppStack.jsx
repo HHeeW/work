@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -12,11 +12,12 @@ import MessagesScreen from '../screens/MessagesScreen'
 import ProfileScreen from '../screens/ProfileScreen'
 import EditProdileScreen from '../screens/EditProdileScreen';
 import ChatScreen from '../screens/ChatScreen';
+import BoardScreen from '../screens/BoardScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const FeedStack = ({navigation}) => {
+const FeedStack = ({navigation}) => (
    <Stack.Navigator>
       <Stack.Screen
          name='Home'
@@ -45,9 +46,28 @@ const FeedStack = ({navigation}) => {
             )
          }}
       />
+      <Stack.Screen
+         name='Board'
+         component={BoardScreen}
+         options={{
+            title:'',
+            headerTitleAlign: 'center',
+            headerStyle:{
+               backgroundColor: '#0c751e',
+               shadowColor: '#02300a',
+               elevation: 2
+            },
+            headerBackTitleVisible: false,
+            headerBackImage: () => (
+               <View style={{marginLeft: 15}}>
+                  <Ionicons name='arrow-back' size={25} color='#fff'/>
+               </View>
+            )
+         }}
+      />
    </Stack.Navigator>
-}
-const MessagesStack = ({navigation}) => {
+)
+const MessagesStack = ({navigation}) => (
    <Stack.Navigator>
       <Stack.Screen
          name = "Messages"
@@ -62,14 +82,26 @@ const MessagesStack = ({navigation}) => {
          })}
       />
    </Stack.Navigator>
-}
-const ProfileStack = ({navigation}) => {
+)
+const ProfileStack = ({navigation}) => (
    <Stack.Navigator>
       <Stack.Screen
          name = "Profile"
          component={ProfileScreen}
          options={{
-            headerShown: false
+            title: '',
+            headerTitleAlign: 'center',
+            headerStyle:{
+               backgroundColor: '#fff',
+               shadowColor: '#fff',
+               elevation: 0
+            },
+            headerBackTitleVisible: false,
+            headerBackImage: () => (
+               <View style={{marginLeft: 15}}>
+                  <Ionicons name='arrow-back' size={25} color="#0c751e"/>
+               </View>
+            )
          }}
       />
       <Stack.Screen
@@ -80,7 +112,7 @@ const ProfileStack = ({navigation}) => {
          }}
       />
    </Stack.Navigator>
-}
+)
 
 const AppStack = () => {
 
