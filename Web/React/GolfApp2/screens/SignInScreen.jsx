@@ -10,9 +10,9 @@ import {
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../context/AuthProvider';
 
-import FormInput from '../componet/FormInput';
-import FormButton from '../componet/FormButton';
-import SocialButton from '../componet/SocialButton';
+import FormInput from '../component/FormInput';
+import FormButton from '../component/FormButton';
+import SocialButton from '../component/SocialButton';
 import { validateEmail, removeWhitespace } from '../utils/Valitate'
 
 const SigninScreen = ({navigation}) => {

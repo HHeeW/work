@@ -6,12 +6,10 @@ import {
   Alert ,
   ImageBackground,
   Platform,
-  Switch
+  Switch,
+  Dimensions
 } from 'react-native'
-import React, { useEffect, useContext, useState, createRef} from 'react'
-
-import FormButton from '../component/FormButton';
-import FormInput from '../component/FormInput';
+import React, { useEffect, useContext, useState } from 'react'
 
 import { AuthContext } from '../context/AuthProvider'
 import firestore from '@react-native-firebase/firestore'
@@ -25,21 +23,26 @@ import Animated from 'react-native-reanimated';
 import BottomSheet from 'reanimated-bottom-sheet'
 import ImagePicker from 'react-native-image-crop-picker';
 
-const EditProfileScreen = () => {
+import FormButton from '../component/FormButton';
+
+const deviceWidth = Dimensions.get('window').width;
+const deviceHeight = Dimensions.get('window').height;
+
+const EditProfileScreen = ({navigation, route }) => {
  const { user, logout } = useContext(AuthContext);
  const [image, setImage] = useState(null);
  const [uploading, setUploading] = useState(false);
+ const [ transferred, setTransFerred ] = useState(0);
  const [userData, setUserData] = useState({
      age: 0,
      average: 0,
-     email: user.uid,
+     email: user.email,
      fname:'',
      gender: false,
      tel: '',
      userImg: null
  });
 
- 
  const getUser = async() => {
    await firestore()
    .collection('members')
@@ -52,6 +55,81 @@ const EditProfileScreen = () => {
    })
  }
 
+ const uploadImage = async () => {
+  if(image === null) {
+    return null
+  }
+  const uploadUri = image;
+  let filename = uploadUri.substring(uploadUri.lastIndexOf('/') +1);
+
+  //파일이름에 날짜 추가해서 이름 변경
+  const extension = filename.split('.').pop();
+  const fname = filename.split('.').slice(0, -1).join('.')
+  filename = fname + Date.now() + '.' + extension;
+
+  setUploading(true);
+  setTransFerred(0);
+
+  const storageRef = storage().ref(`members/${filename}`)
+  //업로딩 카운트
+  const task = storageRef.putFile(uploadUri);
+
+  task.on('state_changed', (taskSnapshot) => {
+    console.log(`${taskSnapshot.bytesTransferred} transferred out of ${taskSnapshot.totalBytes}`)
+  
+
+  setTransFerred(
+    Math.round(taskSnapshot.bytesTransferred / taskSnapshot.totalBytes) * 100
+  );
+  });
+  try{
+    await task;
+    const url = await storageRef.getDownloadURL();
+    setUploading(false);
+    setImage(null);
+    return url;
+  } catch(e){
+    console.log(e);
+    return null;
+  }
+ }
+ const handleUpdate = async () =>{
+  let imgUrl = await uploadImage();
+  if(imgUrl === null && userData.userImg){
+    imgUrl = userData.userImg;
+  }
+
+  firestore()
+  .collection('members')
+  .doc(user.uid)
+  .update({
+    age: userData.age,
+    average: userData.average,
+    fname: userData.fname,
+    gender:  userData.gender,
+    tel: userData.tel,
+    userImg: imgUrl
+  })
+  .then(()=>{
+    Alert.alert('프로필이 업데이트 되었습니다.',
+      [  
+        {
+          text:'확인',
+          onPress: ()=>{
+            navigation.navigate('Profile');
+          }
+        },
+        {
+          text:'취소',
+          onPress: ()=>{
+            navigation.navigate('Home');
+          }
+        }
+      ]
+    );
+  })
+ }
+
  const toggleSwitch = () => {
     const gnd = !userData.gender;
     setUserData({...userData, gender: gnd});
@@ -61,89 +139,123 @@ const EditProfileScreen = () => {
     getUser();
  }, []);
 
- const takePhotoFromCamera =() =>{
-  console.log('');
+ const takePhotoFromCamera = () => {
+    ImagePicker.openCamera({
+      compressImageMaxHeight: 300,
+      compressImageMaxWidth: 300,
+      cropping: true,
+      compressImageQuality: 0.7
+    }).then((image)=>{
+      // console.log(image)
+      const imageUrl = Platform.OS === 'ios' ? image.sourceURL : image.path;
+      setImage(imageUrl);
+      this.bs.current.snapTo(1);
+    })
  }
- const takePhotoFormLibrary = () => {
-  console.log('');
- }
+ const takePhotoFromLibrary = () => {
+  ImagePicker.openPicker({
+    compressImageMaxHeight: 300,
+    compressImageMaxWidth: 300,
+    cropping: true,
+    compressImageQuality: 0.7
+  }).then((image)=>{
+    // console.log(image)
+    const imageUrl = Platform.OS === 'ios' ? image.sourceURL : image.path;
+    setImage(imageUrl);
+    this.bs.current.snapTo(1);
+  })
 
- renderInner = () => {
-  <View style={styles.panel}>
-    <View style={{ alignItems:'center'}}>
-      <Text style={styles.panelTitle}>사진업로드</Text>
-      <Text style={styles.panelSubtitle}>프로필 사진을 선택하시오</Text>
+ renderInner = () => (
+    <View style={styles.panel}>
+       <View style={{alignItems:'center'}}>
+           <Text style={styles.panelTitile}>사진업로드</Text>
+           <Text style={styles.panelSubtitle}>프로필사진을 선택하세요.</Text>
+       </View>
+       <TouchableOpacity
+            style={styles.panelButton}
+            onPress={takePhotoFromCamera}>
+           <Text style={styles.panelButtonTitle}>사진찍기</Text>
+       </TouchableOpacity>
+       <TouchableOpacity
+            style={styles.panelButton}
+            onPress={takePhotoFromLibrary}>
+           <Text style={styles.panelButtonTitle}>갤러리에서 가져오기</Text>
+       </TouchableOpacity>
+       <TouchableOpacity
+            style={[styles.panelButton, { marginBottom: 40}]}
+            onPress={() => this.bs.current.snapTo(1)}>
+           <Text style={styles.panelButtonTitle}>취 소</Text>
+       </TouchableOpacity>
     </View>
-    <TouchableOpacity
-        style={styles.panelButton}
-        onPress={takePhotoFromCamera}>
-        <Text style={styles.panelButtonTitle}>사진 찍기</Text>
-    </TouchableOpacity>
-    <TouchableOpacity
-        style={styles.panelButton}
-        onPress={takePhotoFormLibrary}>
-        <Text style={styles.panelButtonTitle}>갤러리에서 가져오기</Text>
-    </TouchableOpacity>
-    <TouchableOpacity
-        style={styles.panelButton}
-        onPress={()=> this.bs.current.snapTo(1)}>
-        <Text style={styles.panelButtonTitle}>취소</Text>
-    </TouchableOpacity>
-  </View>
- }
- renderHeader = () => {
- }
+ )
 
- 
- bs = createRef();
- fall = new Animated.Value(1)
- const { age, average, email, fname, gender, tel, userImg } = userData;
+ renderHeader = () => (
+      <View style={styles.header}>
+          <View style={styles.panelHeader}>
+             <View style={styles.panelHandle} />
+          </View>
+      </View>
+ )
+
+ bs = React.createRef();
+ fall = new Animated.Value(1);
+
+const { age, average, email, fname, gender, tel, userImg } = userData;
 
 return (
    <View style={styles.container}>
-    <BottomSheet
-      ref = {this.bs}
-      snapPoints = {[330, -15]}
-      renderContext = {renderInner()}
-      renderHeader={renderHeader()}
-      initialSnap={}
-      callbackNode={this.fall}
-      enabledGesture
-    />
-     <View style={{alignItems: 'center', marginBottom:20}}>
-         <TouchableOpacity >
-             <View style={{ height: 100, width: 100, 
-                            borderRadius: 15, 
-                            justifyContent:'center',
-                            alignItems:'center' 
-                          }}
-             >
-                <ImageBackground 
-                    source={{
-                       uri: image ?
-                          image : userData ?
-                             userData.userImg : 'https://firebasestorage.googleapis.com/v0/b/golf-f7f57.appspot.com/o/members%2Fimg-back.jpg?alt=media&token=5ec7dba1-3def-4a8c-a300-3067139abae3'
-                    }}
-                    style={{ height: 100, width: 100 }}
-                    imageStyle={{borderRadius: 15}}
-                >
-                 <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-                     <MaterialCommunityIcons
-                         name="camera"
-                         size={35}
-                         color="#fff"
-                         style={{
-                           opacity: 0.7,
-                           alignItems:'center',
-                           justifyContent:'center',
-                           borderWidth: 1,
-                           borderColor: '#fff',
-                           borderRadius: 10
-                         }}
-                     />    
-                 </View>
-               </ImageBackground>      
-             </View>             
+      <BottomSheet
+        ref={this.bs}
+        snapPoints={[330, -5]}
+        renderContent={this.renderInner}
+        renderHeader={this.renderHeader}
+        initialSnap={1}
+        callbackNode={this.fall}
+        enabledGestureInteraction={true}
+      />
+      <Animated.View
+          style={{margin:20, opacity: Animated.add(0.1, Animated.multiply(this.fall, 1.0))}}
+      >
+      <View style={{alignItems: 'center', position:'relative'}}>
+          <TouchableOpacity onPress={()=>(this.bs.current.snapto(1))}>
+            <View
+               style={{
+                   height: 100,
+                   width: 100,
+                   borderRadius: 15,
+                   justifyContent: 'center',
+                   alignItems: 'center',
+               }}>
+            <ImageBackground
+                 source={{
+                   uri: image
+                   ? image
+                   : userData
+                      ? userData.userImg ||
+                          'https://firebasestorage.googleapis.com/v0/b/golf-f7f57.appspot.com/o/members%2Fimg-back.jpg?alt=media&token=5ec7dba1-3def-4a8c-a300-3067139abae3'
+                           : 'https://firebasestorage.googleapis.com/v0/b/golf-f7f57.appspot.com/o/members%2Fimg-back.jpg?alt=media&token=5ec7dba1-3def-4a8c-a300-3067139abae3',
+                 }}
+                style={{height: 100, width: 100}}
+                imageStyle={{borderRadius: 15}}>
+               <View
+                   style={{
+                      flex: 1,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+               }}>
+               <MaterialCommunityIcons
+                   name="camera"
+                   size={35}
+                   color="#fff"
+                   style={{
+                      opacity: 0.7,
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                   }}
+                 />
+               </View>
+             </ImageBackground>
+            </View>
          </TouchableOpacity>
          <Text style={{ marginTop: 10, fontSize: 18, fontWeight:'bold'}}>
              {email} 님
@@ -209,8 +321,14 @@ return (
              onChangeText={(txt)=>setUserData({...userData, average: txt})}
          />    
      </View>
+     <View style={[styles.action, {borderBottomColor:'transparents'}]}>
+      <FormButton buttonTitle = "회원정보 등록/수정" backgroundColor='#0c751e'/>
+     </View>
+     </Animated.View>
+     
    </View>
  )
+}
 }
 
 export default EditProfileScreen
@@ -218,7 +336,7 @@ export default EditProfileScreen
 const styles = StyleSheet.create({
   container: {
      flex: 1,
-     backgroundColor: '#fff'
+     backgroundColor: '#fff',
   },
   commandButton : {
      padding: 15,
@@ -228,9 +346,9 @@ const styles = StyleSheet.create({
      marginTop: 10
   },
   panel: {
-     padding: 20,
+     padding: 40,
      backgroundColor: '#fff',
-     width: '100%'
+     width: deviceWidth,
   },
   header: {
    backgroundColor: '#fff',
@@ -242,34 +360,37 @@ const styles = StyleSheet.create({
    borderTopLeftRadius: 20,
    borderTopRightRadius: 20
   },
-  panelHeader:{
-    width: 40,
-    height:8,
-    borderRadius: 5,
-    backgroundColor: '#0000040',
-    marginBottom:10
+  panelHeader: {
+    alignItems:'center'
   },
-  panelTitle:{
+  panelHandle: {
+    width: 40,
+    height: 8,
+    borderRadius: 5,
+    backgroundColor:'#00000040',
+    marginBottom: 10
+  },
+  panelTitile: {
     fontSize: 28,
     height: 35
   },
-  panelSubtitle:{
+  panelSubtitle: {
     fontSize: 15,
-    color: '#999',
+    color:'#999',
     height: 30,
     marginBottom: 10
   },
-  panelButton:{
-    padding:13,
+  panelButton: {
+    padding: 13,
     borderRadius: 10,
     backgroundColor: '#0c751e',
-    alignItems: 'center',
-    marginVertical: 10
+    alignItems:'center',
+    marginVertical: 7  
   },
-  panelButtonTitle:{
+  panelButtonTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff'
+    color:'#fff'  
   },
   action: {
    flexDirection: 'row',
@@ -279,7 +400,8 @@ const styles = StyleSheet.create({
    borderBottomColor: '#d2d2d2',
    paddingBottom: 5,
    marginHorizontal:30,
-   alignItems:'center'
+   alignItems:'center',
+   marginHorizontal: 30
   },
   actionError: {
    flexDirection: 'row',

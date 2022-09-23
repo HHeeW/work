@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView, Alert } from 'react-n
 import React, { useState, useEffect, useContext} from 'react'
 import firestore from '@react-native-firebase/firestore'
 import { AuthContext } from '../context/AuthProvider'
-import FormButton from '../componet/FormButton'
+import FormButton from '../component/FormButton'
 const ProfileScreen = ({ navigation, route}) => {
 
   const { user, logout } = useContext(AuthContext)
@@ -13,7 +13,7 @@ const ProfileScreen = ({ navigation, route}) => {
   const [ userData, setUserData ] = useState(null);
 
   // console.log(route.param ? '1'+route.param.userId : '2')
-
+  /**
   const fetchPost = async () => {
     await firestore()
       .collection('members')
@@ -31,13 +31,38 @@ const ProfileScreen = ({ navigation, route}) => {
         }
       })
   }
-
-  
+  */
+  const getUser = async() =>{
+    await firestore()
+    .collection('members')
+    .doc( route.parms ? route.params.email : user.uid)
+    .get()
+    .then((res)=>{
+      const mem = res.data();
+      if(mem.fname === ''){
+        Alert.alert('회원 정보를 입력해주세요'
+          [  
+            {
+              text:'확인',
+              onPress: ()=>{ navigation.navigate('EditeProfile')}
+            },
+            {
+              text:'취소',
+              onPress: ()=>{ navigation.navigate('Home')}
+            }
+          ]
+        )
+      } else{
+        setUserData(mem)
+      }
+    })
+    
+  }
 
   useEffect(()=>{
-    console.log('실행')
-    fetchPost();
-  },[navigation, loading])
+    getUser();
+    na
+  },[navigation])
 
   return (
     <SafeAreaView style={{flex:1, backgroundColor:'#fff'}}>
