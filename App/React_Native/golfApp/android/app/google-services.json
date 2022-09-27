@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "425664164094",
+    "firebase_url": "https://my-app-33e57-default-rtdb.firebaseio.com",
+    "project_id": "my-app-33e57",
+    "storage_bucket": "my-app-33e57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425664164094:android:271d30c69e04504308b5af",
+        "android_client_info": {
+          "package_name": "com.golfapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425664164094-svt3ft485a5jvlg4pikn47j23m8qv2vu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmjk8N_Dn_0SisK8Gz5NJxxfZwmF56vFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425664164094-svt3ft485a5jvlg4pikn47j23m8qv2vu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
