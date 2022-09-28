@@ -105,8 +105,12 @@ const FeedStack =({navigation}) => {
           name="Board"
           component={BoardScreen}
           options={{
-              title: '',
+              title: '골프그룹생성',
               headerTitleAlign: 'center',
+              headerTitleStyle:{
+               color: '#fff',
+               fontWeight:'bold',
+              },
               headerStyle:{
                  backgroundColor:'#0c751e',
                  shadowColor:'#02300a',

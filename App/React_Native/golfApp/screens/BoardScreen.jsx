@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, Dimensions, FlatList } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, Dimensions, FlatList, TouchableOpacity } from 'react-native'
 import React, { useContext, useState } from 'react'
 
 import { openDatabase } from 'react-native-sqlite-storage'
@@ -59,7 +59,6 @@ const BoardScreen = ({ navigation }) => {
         [],
         (sqlTnx, res) =>{
           let len = res.rows.length;
-          console.log(res.rows.item)
           console.log('총' + len+ '개의 데이터 확인');
           if(len > 0){
             let results=[];
@@ -69,7 +68,7 @@ const BoardScreen = ({ navigation }) => {
                 id: item.id,
                 tel: item.tel,
                 zipcode01: item.zipcode01,
-                zipcode02: zipcode02,
+                zipcode02: item.zipcode02,
                 address01: item.address01,
                 address02: item.address02,
                 coursename: item.course_name,
@@ -77,14 +76,13 @@ const BoardScreen = ({ navigation }) => {
                 y: item.y
               })
             }
-            console.log(results)
             setCourse(results);
           }else{
               setCourse([]);
           }
         },
         error=>{
-          console.log('err'+ error.message)
+          console.log('error'+ error.message)
         }
       )
     })
@@ -95,20 +93,22 @@ const BoardScreen = ({ navigation }) => {
     getCourse(zones[e])
   }
   const viewCourse = ({item}) => (
-    <View style={{
-          height:100,
-          flexDirection: 'row',
-          padding: 10,
-          borderWidth: 1,
-          borderColor: '#000',
-          margin: 10
-          }}
-    >
-      <Text> {item.coursename} </Text>
-      <Text> {item.zipcode01 ? item.zipcode01 : item.zipcode02} </Text>
-      <Text> {item.address01 ? item.address01 : item.address02} </Text>
-      <Text> {item.tel ? item.tel : '전화 번호가 없습니다.'} </Text>
-    </View>
+    <TouchableOpacity>
+      <View style={{
+            flexDirection: 'column',
+            backgroundColor: '#fff',
+            padding: 10,
+            borderWidth: 1,
+            borderColor: '#ddd',
+            margin: 10
+            }}
+      >
+        <Text style={{fontSize:16, fontWeight: 'bold', color:'#0c751e'}}> {item.coursename} </Text>
+        <Text> {item.address01 ? item.address01 : item.address02} </Text>
+        <Text> {item.zipcode01 ? item.zipcode01 : item.zipcode02} </Text>
+        <Text> {item.tel ? item.tel : '전화 번호가 없습니다.'} </Text>
+      </View>
+    </TouchableOpacity>
   )
 
   return (
@@ -126,11 +126,15 @@ const BoardScreen = ({ navigation }) => {
           />
         </View>
         <View style={styles.formGroup}>
+          {course.length ?
           <FlatList 
               data={course}
               renderItem={viewCourse}
               key={item => item.id}
           />
+          :
+          <Text style={{flex:1, fontSize: 16,textAlign:'center'}}>좌/우로 스크롤 해보세요</Text>
+        }
         </View>
       </View>
     </SafeAreaView>
@@ -156,7 +160,7 @@ const styles = StyleSheet.create({
   itemText:{
     fontSize: 14,
     fontWeight: 'bold',
-    paddingLeft:15
+    color:'#0c751e'
   },
   label:{
     width:80,

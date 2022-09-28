@@ -11,8 +11,6 @@ import {
     Dimensions 
 } from 'react-native'
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder'
-import storage from '@react-native-firebase/storage'
-import firestore from '@react-native-firebase/firestore'
 import { Container } from '../styles/mainStyle'
 
 import { data } from '../tempDB/data';
@@ -63,6 +61,7 @@ const HomeScreen = ({ navigation }) => {
          />     
      )
   }
+  
 
   return ( 
     <SafeAreaView style={{flex: 1, backgroundColor:'#dedede'}}>

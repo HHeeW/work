@@ -8,6 +8,7 @@ const width = Dimensions.get('window').width;
 let currentSlideIndex = 0;
 let intervalId;
 
+
 const CarouselCourse = () => {
   const [ dataToRender, setDataToRender ] = useState([]);
   const [ visibleSlideIndex, setVisibleSlideIndex ] = useState(0);
