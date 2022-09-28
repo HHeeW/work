@@ -105,17 +105,18 @@ const HomeScreen = ({ navigation }) => {
              width:'100%', 
              paddingHorizontal:10, 
              paddingBottom:15, 
-             alignItems:'flex-end'
+             alignItems:'flex-end',
             }}>
-               <TouchableOpacity style={{ 
-                  padding:5, 
-                  borderWidth:1, 
-                  marginTop:-10, 
-                  borderColor:'#0c751e',
-                  borderRadius: 5 }}
+               <TouchableOpacity 
+                  style={{ 
+                     padding:5, 
+                     marginTop:-10, 
+                     backgroundColor:'#0c751e',
+                     borderRadius: 5,
+                  }}
                  onPress={()=>navigation.navigate('Detail', {actdate: ''})}
                >
-                 <Text> 날짜별보기 </Text>
+                  <Text style={{color: '#fff'}}> 날짜별 보기 </Text>
                </TouchableOpacity>
            </View>
            <View style={styles.container}>

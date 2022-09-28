@@ -30,12 +30,12 @@ const FeedStack =({navigation}) => {
           component={HomeScreen}
           options={{
              headerTitleAlign: 'center',
+             headerTintColor:'#fff',
              headereTitleStyle: {
                 fontFamily: 'Gugi-Regular',
                 fontWeight: 'bold',
                 fontSize: 20
              },
-             headerTintColor:'#fff',
              headerStyle:  {
                 shadowColor: '#b7ffc3',
                 elevation: 5,
@@ -43,21 +43,28 @@ const FeedStack =({navigation}) => {
                 borderBottomColor: '#063b0f',
                 borderBottomWidth: 3
              },
+             headerLeft: ()=>(
+               <View style={{marginLeft:10}}>
+                   <MaterialCommunityIcons.Button
+                         name="logout"
+                         size={22}
+                         backgroundColor="#fff"
+                         color="#e21e1e"
+                         onPress={logout}
+                         borderRadius={50}
+                         style={{marginRight:-10}}
+                   />
+               </View> 
+              ),
              headerRight: ()=>(
-              <View style={{width:100, marginRight: 10, flexDirection:'row', justifyContent:'space-between'}}>
-                <MaterialCommunityIcons.Button
-                     name="logout"
-                     size={22}
-                     backgroundColor="#ddd"
-                     color="#e21e1e"
-                     onPress={logout}
-                 />  
+              <View style={{marginRight: 10}}>
                 <FontAwesome5.Button
                      name="plus"
                      size={22}
-                     backgroundColor="#ddd"
+                     backgroundColor="#fff"
                      color="#0c751e"
                      onPress={()=> navigation.navigate('Board')}
+                     style={{marginRight:-10}}
                  />    
               </View>
              ),
@@ -69,6 +76,10 @@ const FeedStack =({navigation}) => {
           options={{
               title: '날짜별보기',
               headerTitleAlign: 'center',
+              headerTitleStyle:{
+               color:'#fff',
+               fontWeight:'bold'
+              },
               headerStyle:{
                  backgroundColor:'#0c751e',
                  shadowColor:'#02300a',
@@ -149,8 +160,23 @@ const FeedStack =({navigation}) => {
 const MessageStack =({navigation}) => (
   <Stack.Navigator>
       <Stack.Screen
-          name="Messages"
+          name="채팅"
           component={MessagesScreen}
+          options={{
+            headerTitleAlign: 'center',
+            headerTintColor:'#fff',
+            headereTitleStyle: {
+               fontFamily: 'Gugi-Regular',
+               fontWeight: 'bold',
+               fontSize: 20
+            },
+            headerStyle:  {
+               shadowColor: '#b7ffc3',
+               elevation: 5,
+               backgroundColor: '#0c751e',
+               borderBottomColor: '#063b0f',
+               borderBottomWidth: 3
+            }}}
       />
       <Stack.Screen    
           name="Chat"
@@ -166,11 +192,23 @@ const MessageStack =({navigation}) => (
 const ProfileStack = ({ navigation }) => (
   <Stack.Navigator>
       <Stack.Screen
-          name="Profile"
+          name="프로필"
           component={ProfileScreen}
           options={{
-            headerShown: false
-          }}
+            headerTitleAlign: 'center',
+            headerTintColor:'#fff',
+            headereTitleStyle: {
+               fontFamily: 'Gugi-Regular',
+               fontWeight: 'bold',
+               fontSize: 20
+            },
+            headerStyle:  {
+               shadowColor: '#b7ffc3',
+               elevation: 5,
+               backgroundColor: '#0c751e',
+               borderBottomColor: '#063b0f',
+               borderBottomWidth: 3
+            }}}
       />
       <Stack.Screen
           name="EditProfile"
@@ -203,8 +241,7 @@ const AppStack = () => {
        <Tab.Screen
            name="Home"
            component= { FeedStack }
-           options={            
-            ({route})=>({
+           options={({route})=>({
              tabBarLabel : 'Home',
              tabBarIcon: ({ color, size}) => (
                 <MaterialCommunityIcons
@@ -212,7 +249,8 @@ const AppStack = () => {
                    color={color}
                    size={size}
                 />           
-             )
+             ),
+             headerShown:false
            })}
        />    
        <Tab.Screen
@@ -226,11 +264,12 @@ const AppStack = () => {
                    color={color}
                    size={size}
                 />           
-             )
+             ),
+             headerShown:false
            })}
        />  
        <Tab.Screen
-           name="회원정보수정/등록"
+           name="Profile"
            component= { ProfileStack }
            options={{
              tabBarIcon: ({ color, size}) => (
@@ -239,7 +278,8 @@ const AppStack = () => {
                    color={color}
                    size={size}
                 />           
-             )
+             ),
+             headerShown:false
            }}
        />         
      </Tab.Navigator>   

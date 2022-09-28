@@ -132,10 +132,10 @@ const CarouselCourse = () => {
                                              marginHorizontal:10
                                             }}
                     >
-                        <Text style={{ fontSize:25, color:'yellow', margin:10, marginTop:30, fontWeight:'bold' }}>
+                        <Text style={{ fontSize:25, color:'yellow', margin:10, marginTop:30, fontWeight:'bold',textShadowColor:'rgba(0,0,0,0.5)', textShadowOffset:{width:2, height:2}, textShadowRadius:1 }}>
                             {item.name}
                         </Text>
-                        <Text style={{ fontSize:16, color:'white', marginHorizontal:10}}>
+                        <Text style={{ fontSize:16, color:'white', marginHorizontal:10, textShadowColor:'rgba(0,0,0,0.75)', textShadowOffset:{width:2, height:2}, textShadowRadius:1}}>
                             {item.content}
                         </Text>
                     </ImageBackground>                        

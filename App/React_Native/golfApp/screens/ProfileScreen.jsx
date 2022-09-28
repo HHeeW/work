@@ -142,7 +142,7 @@ const ProfileScreen = ({ navigation, route }) => {
                  <Text style={styles.userBtnTxt}>회원정보수정</Text>  
               </TouchableOpacity> 
               <TouchableOpacity 
-                  style={styles.userBtn}
+                  style={[styles.userBtn, {borderColor:'red'}]}
                   onPress={()=> logout()}
               >
                  <Text style={[styles.userBtnTxt, {color: 'red'}]}>로그아웃</Text>  
