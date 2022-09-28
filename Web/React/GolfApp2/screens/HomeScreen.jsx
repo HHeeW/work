@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View, ScrollView, SafeAreaView, FlatList, Alert } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, SafeAreaView, FlatList } from 'react-native'
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder'
 import storage from '@react-native-firebase/storage'
 import firestore from '@react-native-firebase/firestore'
 import { Container } from '../styles/mainStyle'
 
+import { data } from '../tempDB/data'
+import CaroselCouse from '../component/CaroselCouse'
+import Card from '../component/Card'
+
+/*
 const Posts = [
   {
     id: '1',
@@ -73,12 +78,17 @@ const Posts = [
     members: '일루수, 이루수, 삼루수'
   },
 ]
+ */
 
 const HomeScreen = ({navigation}) => {
-  const [posts, setPosts] = useState(null);
+  const [datas, setDatas] = useState(null);
   const [loading, setLoading] = useState(false);
   const [deleted, setDeleted] = useState(false);
 
+  useEffect(()=>{
+    setDatas(data);
+  },[data.length])
+  /*
   const fetchPosts = async()=>{
     try{
       const list = [];
@@ -93,9 +103,23 @@ const HomeScreen = ({navigation}) => {
 
     }
   }
+   */
 
   const ListHeader = () => {
     return null
+   }
+
+   const vlists=({item}) => {
+    return(
+      <Card course={item.course}
+            address={item.address}
+            membercount={item.membercount}
+            mcount={item.mcount}
+            money={item.money}
+            sdate={item.sdate}
+            edate={item.edate}
+      />
+    )
    }
 
   return (
@@ -133,18 +157,14 @@ const HomeScreen = ({navigation}) => {
       </ScrollView>
       :
       <Container>
-        <FlatList
-          data={Posts}
-          renderItem={({item})=>(
-            <View>
-              {item.admin}
-            </View>
-          )}
-          keyExtractor={(item)=>item.id}
-          showsVerticalScrollIndicator={false}
-          ListHeaderComponent={ListHeader}
-          ListFooterComponent={ListHeader}
-        />
+        <CaroselCouse />
+        <View style={styles.container} >
+          <FlatList
+              data={datas}
+              key ={item => item.id}
+              renderItem = {Card}
+          />
+        </View>
       </Container>
       }
     </SafeAreaView>
@@ -153,4 +173,10 @@ const HomeScreen = ({navigation}) => {
 
 export default HomeScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 15
+  }
+})

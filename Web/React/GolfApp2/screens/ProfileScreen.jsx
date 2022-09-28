@@ -73,7 +73,7 @@ const ProfileScreen = ({ navigation, route}) => {
 
   useEffect(()=>{
     getUser();
-    na
+    
   },[navigation])
 
   return (

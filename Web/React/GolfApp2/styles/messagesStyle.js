@@ -22,10 +22,10 @@ export const UserImgWrapper = styled.View`
     padding-bottom: 15px;
 `
 
-export const UserImg = styled.image`
+export const UserImg = styled.Image`
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 25px;
 `;
 
 export const TextSection = styled.View`
