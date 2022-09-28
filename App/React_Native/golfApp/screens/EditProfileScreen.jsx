@@ -106,11 +106,11 @@ const EditProfileScreen = ({ navigation, route }) => {
          fname: userData.fname,
          gender: userData.gender,
          tel: userData.tel,
-         userImg: imgUrl
+         // userImg: imgUrl
      })
      .then(()=>{
         Alert.alert(
-          '프로필이 업데이트 되었습니다.',
+          '수정','프로필이 업데이트 되었습니다.',
           [
             {
               text: '확인',
@@ -118,10 +118,14 @@ const EditProfileScreen = ({ navigation, route }) => {
                 navigation.navigate('Profile');
               }
             }
-          ]        
+         ]
         );
-     }) 
+     })
+     .catch((error)=>{
+      console.log('Error', error.message)
+     })
   }
+  
 
   const toggleSwitch = () => {
      const gnd = !userData.gender;

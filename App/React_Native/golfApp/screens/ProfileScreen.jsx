@@ -67,7 +67,7 @@ const ProfileScreen = ({ navigation, route }) => {
      navigation.addListener('focus', ()=>setLoading(!loading));
   },[navigation, loading])
 //   console.log(userData);
-  console.log(userData.createAt);
+//   console.log(userData.createAt);
   return (
     <SafeAreaView style={styles.container}>
        <ScrollView style={{flex:1, padding:20}}
