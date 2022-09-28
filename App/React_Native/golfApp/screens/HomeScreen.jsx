@@ -59,6 +59,7 @@ const HomeScreen = ({ navigation }) => {
               sdate={item.sdate}
               edate={item.edate}
               navigation={navigation}
+              id={item.id}
          />     
      )
   }

@@ -14,6 +14,7 @@ import EditProfileScreen from '../screens/EditProfileScreen';
 import ChatScreen from '../screens/ChatScreen';
 import BoardScreen from '../screens/BoardScreen';
 import DetailScreen from '../screens/DetailScreen';
+import DetailViewScreen from '../screens/DetailViewScreen';
 
 import { AuthContext } from '../context/AuthProvider'
 
@@ -67,6 +68,25 @@ const FeedStack =({navigation}) => {
           component={DetailScreen}
           options={{
               title: '날짜별보기',
+              headerTitleAlign: 'center',
+              headerStyle:{
+                 backgroundColor:'#0c751e',
+                 shadowColor:'#02300a',
+                 elevation:2
+              },
+              headerBackTitleVisible: false,
+              headerBackImage: ()=> (
+                <View style={{marginLeft: 15}}>
+                    <Ionicons name="arrow-back" size={25} color="#FFFFFF" />
+                </View>
+              )
+          }}
+        />
+        <Stack.Screen
+          name="DetailViewScreen"
+          component={DetailViewScreen}
+          options={{
+              title: '상세보기',
               headerTitleAlign: 'center',
               headerStyle:{
                  backgroundColor:'#0c751e',

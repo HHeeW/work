@@ -34,10 +34,10 @@ const Card = ({navigation, course, address, membercount, mcount, money, sdate, e
         style={styles.card}
      >
       <View style={styles.container}>  
-        <View>
+        <TouchableOpacity onPress={()=>navigation.navigate('DetailView', {id: id})}>
             <Text style={styles.title}>{course}</Text>
             <Text style={styles.sub}>{spaddr} | 남은인원 ({parseInt(membercount) - parseInt(mcount)} 명) </Text>
-        </View>
+        </TouchableOpacity>
         <View>
             <Text style={[styles.new, {backgroundColor: bgcolor}]}>D-DAY:{dday}</Text>
         </View>
