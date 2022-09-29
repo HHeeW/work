@@ -1,36 +1,12 @@
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, Dimensions, FlatList, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, Dimensions, FlatList, TouchableOpacity } from 'react-native'
 import React, { useContext, useState } from 'react'
 
-import { openDatabase } from 'react-native-sqlite-storage'
-import Picker from 'react-native-picker-horizontal'
 import { AuthContext } from '../context/AuthProvider'
-
-const db = openDatabase({
-  name:'golfcourse.db',
-  localStorage:'default',
-  createFromLocation: '~www/golfcourse.db'
-},
-(DB)=>{
-  console.log('접속성공')
-},
-(error)=>{
-  console.log('에러', error.message);
-}
-)
-
-const zones = [
-  '서울', '부산', '대구', '대전', '울산', '세종', '경기도', '강원도', '충청북도', '청충남도', '전라북도', '전라남도', '경상북도', '경상남도', '제주'
-];
+import { db } from '../component/OpenDb'
+import LocalName from '../component/LocalName'
+import CourseName from '../component/CourseName'
 
 const width = Dimensions.get('window').width;
-const itemWidth = 100;
-const renderItem = (item, index) => (
-  <View style={[styles.item, {width: itemWidth}]}>
-    <Text style={styles.itemText}>
-      {item}
-    </Text>
-  </View>
-)
 
 const BoardScreen = ({ navigation }) => {
 
@@ -90,51 +66,23 @@ const BoardScreen = ({ navigation }) => {
 
   const selectedCity = (e) => {
     // console.log(zones[e])
-    getCourse(zones[e])
+    getCourse(e)
   }
-  const viewCourse = ({item}) => (
-    <TouchableOpacity>
-      <View style={{
-            flexDirection: 'column',
-            backgroundColor: '#fff',
-            padding: 10,
-            borderWidth: 1,
-            borderColor: '#ddd',
-            margin: 10
-            }}
-      >
-        <Text style={{fontSize:16, fontWeight: 'bold', color:'#0c751e'}}> {item.coursename} </Text>
-        <Text> {item.address01 ? item.address01 : item.address02} </Text>
-        <Text> {item.zipcode01 ? item.zipcode01 : item.zipcode02} </Text>
-        <Text> {item.tel ? item.tel : '전화 번호가 없습니다.'} </Text>
-      </View>
-    </TouchableOpacity>
-  )
+  
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>골프그룹 개설</Text>
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, marginTop: 20}}>
+        {/* 지역선택 */}
         <View style={styles.formGroup}>
           <Text style={styles.label}>지역선택</Text>
-          <Picker
-              data={zones}
-              renderItem={renderItem}
-              itemWidth={itemWidth}
-              initialIndex={1}
-              onChange={newValue => selectedCity(newValue)}
-          />
+          <LocalName selectedCity={selectedCity} />
         </View>
-        <View style={styles.formGroup}>
-          {course.length ?
-          <FlatList 
-              data={course}
-              renderItem={viewCourse}
-              key={item => item.id}
-          />
-          :
-          <Text style={{flex:1, fontSize: 16,textAlign:'center'}}>좌/우로 스크롤 해보세요</Text>
-        }
+
+        {/* 골프장선택 */}
+        <View style={[styles.formGroup, {height:100}]}>
+          <Text style={styles.label}>장소선택</Text>
+          <CourseName course={ course } />
         </View>
       </View>
     </SafeAreaView>
@@ -148,27 +96,14 @@ const styles = StyleSheet.create({
     padding: 10,
     flex: 1,
     alignItems: 'center'
-  },
-  title:{
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 20
-  },
-  item:{
-    padding: 5
-  },
-  itemText:{
-    fontSize: 14,
-    fontWeight: 'bold',
-    color:'#0c751e'
-  },
+  },  
   label:{
-    width:80,
+    width:100,
     fontSize: 18,
     fontWeight:'bold',
     borderRightWidth: 1,
     borderRightColor: '#999',
-    marginHorizontal:10
+    marginHorizontal:10,
   },
   formGroup:{
     width,

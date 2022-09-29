@@ -42,7 +42,7 @@ export default {
                 await signInWithEmailAndPassword(auth, this.email, this.password)
                 this.$router.replace('MyInfo')
             }catch(err){
-                alert(err.code)
+                alert('아이디와 비밀번호가 일치하지 않습니다.')
                 console.log(err.message)
             }
         }

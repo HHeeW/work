@@ -66,8 +66,16 @@ const ProfileScreen = ({ navigation, route }) => {
      getUser();
      navigation.addListener('focus', ()=>setLoading(!loading));
   },[navigation, loading])
+
+  let createTime = ''
+  if(userData){
+   const tstamp = userData.createAt.seconds;
+   let date = new Date(tstamp * 1000);
+   createTime = `${date.getFullYear()}년 ${date.getMonth()+1}월 ${date.getDate()}일 ${date.getHours()}시 ${date.getMinutes()}분`
+  }
+//   console.log(createTime)
+//   console.log(userData.createAt)
 //   console.log(userData);
-//   console.log(userData.createAt);
   return (
     <SafeAreaView style={styles.container}>
        <ScrollView style={{flex:1, padding:20}}
@@ -97,7 +105,7 @@ const ProfileScreen = ({ navigation, route }) => {
                   가입일
               </Text>
               <Text style={styles.aboutUser}>
-                  { userData&& userData.email }
+                  { userData&& createTime }
               </Text>
           </View>
           <View style={styles.aboutUserWrapper}>
@@ -121,7 +129,7 @@ const ProfileScreen = ({ navigation, route }) => {
                   나이
               </Text>
               <Text style={styles.aboutUser}>
-                  { userData&& userData.age }
+                  { userData&& userData.age }살
               </Text>
           </View>
           <View style={styles.aboutUserWrapper}>
