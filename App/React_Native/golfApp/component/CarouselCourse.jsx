@@ -36,7 +36,7 @@ const CarouselCourse = () => {
              animated: true,
              index: currentSlideIndex + 1
           }) 
-       }, 4000);
+       }, 60000);
     }else{
         pauseSlider();
     } 

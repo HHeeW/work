@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Picker from 'react-native-picker-horizontal'
+import { useEffect } from 'react';
 
 const zones = [
     '서울', '부산', '대구', '대전', '울산', '세종', '경기도', '강원도', '충청북도', '청충남도', '전라북도', '전라남도', '경상북도', '경상남도', '제주'
@@ -22,7 +23,7 @@ const LocalName = ({ selectedCity }) => {
             data={zones}
             renderItem={renderItem}
             itemWidth={itemWidth}
-            initialIndex={3}
+            initialIndex={0}
             onChange={v => selectedCity(zones[v])}
         />
     </>

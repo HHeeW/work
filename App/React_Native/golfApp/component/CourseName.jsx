@@ -4,19 +4,25 @@ import React from 'react'
 import Picker from 'react-native-picker-horizontal'
 
 const width = Dimensions.get('window').width;
-const itemWidth = 100;
+const itemWidth = 150;
 
 const renderItem = (item) => {
+    let name = item.coursename;
+    if(name.length > 9){
+        name = name.substr(0,9)
+        name += '...'
+    }
     return(
-        <View>
-            <Text style={{fontSize:10}}>{item.coursename}</Text>
+        <View style={styles.item}>
+            <Text style={styles.itemText}>{name}</Text>
             {/* <Text style={{fontSize:10}}> {item.address01 ? item.address01 : item.address02} </Text> */}
-            <Text style={{fontSize:10}}> {item.tel ? item.tel : '전화 번호가 없습니다.'} </Text>
+            {/* <Text style={styles.itemTexttb}> {item.tel ? item.tel : '전화 번호가 없습니다.'} </Text> */}
         </View>
     )
 }
 
-const CourseName = ({ course }) => {
+const CourseName = ({ course, setAdress }) => {
+    
   return (
     <>
         <Picker
@@ -24,7 +30,8 @@ const CourseName = ({ course }) => {
             renderItem={renderItem}
             itemWidth={itemWidth}
             intialIndex={1}
-            onChange={item=> console.log(item)}
+            onChange={item=> setAdress(course[item].address01  )}
+            style={{ postion:'absolute', left: -100, zIndex: 1}}
         />
     </>
   )
@@ -32,4 +39,21 @@ const CourseName = ({ course }) => {
 
 export default CourseName
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    item: {
+        marginTop: 20, 
+        width: itemWidth,
+        height: 30
+    },
+    itemText:{
+        fontSize: 9,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#000'
+    },
+    itemTexttb:{
+        textAlign:'center',
+        fontSize:6,
+        color: '#000'
+    }
+})
