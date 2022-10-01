@@ -45,7 +45,6 @@
 <script>
 import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
 import { auth } from '../main'
-import { firestore } from 'FireBase/fireStore'
 
 export default {
     name:"SignUp",
@@ -77,11 +76,12 @@ export default {
     },
     methods:{
         SignUp(){
-            if(this.passwordCheck2 && this.emailCheck){createUserWithEmailAndPassword(auth, this.email, this.password2)
+            auth().collection('members').add({test:0}).then(r => console.log(r)).catch(e => console.log(e));
+            
+            if(this.passwordCheck2 && this.emailCheck){
+                createUserWithEmailAndPassword(auth, this.email, this.password2)
                 .then(()=>{
-                    
                     this.$router.replace('MyInfo')
-                .catch(error=> console.log('데이터저장중 에러발생', error))  
                 })
             }else{
                 alert("아이디와 비밀번호를 확인해주세요")
@@ -125,18 +125,6 @@ export default {
             this.$router.replace('/')
         }
     },
-    firestore:{
-        document: firestore.collection('members').doc(auth().currentUser.uid)
-                    .set({
-                        nname: '',
-                        gender: '',
-                        age: 0,
-                        email: this.email,
-                        tel: '',
-                        createAt: firestore.Timestamp.fromDate(new Date()),
-                        userImg: null
-                    })
-    }
 }
 </script>
 

@@ -52,6 +52,30 @@ export const AuthProvider = ( { children }) => {
      }
   }
 
+  //게시물 업로드
+  const postupload = async (post) => {
+    try{
+        await auth().createUserWithEmailAndPassword(email, password)
+        .then(()=>{
+           firestore().collection('members').doc(auth().currentUser.uid)
+           .set({
+               fname: '',
+               gender: '',
+               age: 20,
+               average: 99,
+               email: email,
+               tel: '',
+               createAt: firestore.Timestamp.fromDate(new Date()),
+               userImg: null
+           })
+         .catch(error=> console.log('데이터저장중 에러발생', error))  
+        })
+
+    }catch(e){
+       console.log(e)
+    }
+ }
+
   return (
     <AuthContext.Provider value={{ user, setUser, signin, signup, logout }}>
         { children }

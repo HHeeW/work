@@ -21,7 +21,20 @@ const renderItem = (item) => {
     )
 }
 
-const CourseName = ({ course, setAdress }) => {
+const CourseName = ({ course, setAdress, insertData, setInsertData }) => {
+
+    const handleInsert = (i) => {
+        setAdress(course[i].address01)
+        const zipcode = course[i].zipcode02 ? course[i].zipcode02 : course[i].zipcode01;
+        const address = course[i].address02 ? course[i].address02 : course[i].address01;
+        setInsertData({
+            ...insertData,
+            zipcode,
+            address,
+            course: course[i].coursename,
+            tel: course[i].tel
+        })
+    }
     
   return (
     <>
@@ -30,7 +43,7 @@ const CourseName = ({ course, setAdress }) => {
             renderItem={renderItem}
             itemWidth={itemWidth}
             intialIndex={1}
-            onChange={item=> setAdress(course[item].address01  )}
+            onChange={item=> handleInsert(item)}
             style={{ postion:'absolute', left: -100, zIndex: 1}}
         />
     </>
